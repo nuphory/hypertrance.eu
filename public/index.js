@@ -2,8 +2,8 @@ let root = document.documentElement;
 
 const videos = {
     blue: {
-        path: "mp4/blue.mp4"
-    }
+        path: "mp4/blue.mp4",
+    },
     // green: {
     //     path: "mp4/green.mp4"
     // }
@@ -21,9 +21,60 @@ Object.keys(buttons).forEach((id) => {
     let anchor = document.createElement("a");
     anchor.setAttribute("id", id + "-anchor");
     anchor.setAttribute("href", buttons[id].url);
+    anchor.setAttribute("target", "_blank");
     anchor.appendChild(button);
 
     document.getElementById("buttons").appendChild(anchor);
+});
+
+/**
+ * section generator
+ */
+Object.keys(sections).forEach((id) => {
+    let sectionElement = document.createElement("div");
+    sectionElement.setAttribute("id", id + "-section");
+    sectionElement.setAttribute("class", "section fadein");
+    document.getElementById("sections").appendChild(sectionElement);
+
+    let headerElement = document.createElement("h2");
+    headerElement.setAttribute("id", id + "-header");
+    headerElement.setAttribute("class", "section-header");
+    headerElement.innerText = sections[id].header.toUpperCase();
+    document.getElementById(id + "-section").appendChild(headerElement);
+
+    let contentElement = document.createElement("span");
+    contentElement.setAttribute("id", id + "-content");
+    contentElement.setAttribute("class", "section-content");
+    document.getElementById(id + "-section").appendChild(contentElement);
+
+    let content = sections[id].content;
+
+    if (id === "artists") {
+        Object.values(content).forEach((obj) => {
+            let paragraph = document.createElement("div");
+            paragraph.setAttribute("class", "artist-link credit");
+            paragraph.innerHTML =
+                '<a target="_blank" href="' +
+                obj.url +
+                '">' +
+                obj.name +
+                "</div>";
+
+            document.getElementById(id + "-content").appendChild(paragraph);
+        });
+    } else {
+        Object.values(content).forEach((obj) => {
+            let paragraph = document.createElement("p");
+            paragraph.setAttribute("class", "section-paragraph");
+            paragraph.innerText = obj;
+
+            document.getElementById(id + "-content").appendChild(paragraph);
+        });
+    }
+
+    let divider = document.createElement("div");
+    divider.setAttribute("class", "divider");
+    document.getElementById(id + "-content").appendChild(divider);
 });
 
 let height = window.innerHeight;
@@ -42,42 +93,6 @@ window.addEventListener("resize", (event) => {
 
     root.style.setProperty("--center-margin", margin + "px");
 });
-
-/**
- * section generator
- */
-Object.keys(sections).forEach((id) => {
-    let section = document.createElement("div");
-    section.setAttribute("id", id + "-section");
-    section.setAttribute("class", "section");
-    document.getElementById("sections").appendChild(section);
-
-    let header = document.createElement("h2");
-    header.setAttribute("id", id + "-header");
-    header.setAttribute("class", "section-header");
-    header.innerText = sections[id].header.toUpperCase();
-
-    let content = document.createElement("span");
-    content.setAttribute("id", id + "-content");
-    content.setAttribute("class", "section-content");
-
-    document.getElementById(id + "-section").appendChild(header);
-    document.getElementById(id + "-section").appendChild(content);
-
-    Object.values(sections[id].content).forEach((p) => {
-        let paragraph = document.createElement("p");
-        paragraph.setAttribute("class", "section-paragraph");
-        paragraph.innerText = p;
-
-        document.getElementById(id + "-content").appendChild(paragraph);
-    });
-
-    let divider = document.createElement("div");
-    divider.setAttribute("class", "divider");
-    document.getElementById("sections").appendChild(divider);
-});
-
-Object.values(sections).forEach((section) => {});
 
 loadBackgroundImage("img/background.jpg");
 fadeIn("fadein");
@@ -120,10 +135,9 @@ async function fadeIn(className) {
         const element = elements[i];
         console.log(element);
         fadeInElement(element);
-        await new Promise((resolve) => setTimeout(resolve, 300));
+        await new Promise((resolve) => setTimeout(resolve, 2000));
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 3000));
     loadBackgroundVideo("mp4/background.mp4");
 }
 
