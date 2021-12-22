@@ -1,12 +1,143 @@
-const sections = {
+const sections =
+{
     "artbook": {
         "header": "The Artbook", // title of the section
-        "content": [ // text in the section (every object in the array is a new line, think of the comma's as <br> characters)
+        "content": [
+            // text in the section (every object in the array is a new line, think of the comma's as <br> characters)
             "We have chosen the infinite key to the sacred reality to crack the ETERNALiSTiC REFLEX CORE COPY PROTECTiON.",
             "The ViRTUAL ECHO floating through us was the key to success.",
             "Thanks to it, we have broken seemingly impossible encryption code in a matter of over 1 month.",
             "SiNCERE THANK YOU TO EVERYONE WHO SUPPORTS US! ENJOY THiS FiNE RELEASE! AND DON'T FORGET TO SUPPORT THE ORIGINAL DEVELOPER IF YOU ENJOY THE SOFTWARE.",
-            "Unzip, run hyprtrnc.exe and enjoy.",
+            "Unzip, run hyprtrnc.exe and enjoy."
         ]
+    },
+    "artists": {
+        "header": "Artists",
+        "content": {
+            "aekae": {
+                "name": "Aekae",
+                "url": ""
+            },
+            "andrew-b": {
+                "name": "Andrew B",
+                "url": ""
+            },
+            "arenagate": {
+                "name": "arenagate",
+                "url": ""
+            },
+            "ceez": {
+                "name": "ceez",
+                "url": ""
+            },
+            "crisp": {
+                "name": "crisp",
+                "url": ""
+            },
+            "demon-of-waves": {
+                "name": "Demon Of Waves",
+                "url": "https://soundcloud.com/demon_of_waves"
+            },
+            "djeb": {
+                "name": "djeb",
+                "url": "https://www.youtube.com/channel/UCqbuC1m9c--M4M4pia9191w/featured"
+            },
+            "ekuriz": {
+                "name": "EKuriZ",
+                "url": ""
+            },
+            "ena": {
+                "name": "ena",
+                "url": ""
+            },
+            "jackflash": {
+                "name": "jackflash",
+                "url": ""
+            },
+            "jenceno": {
+                "name": "jenceno",
+                "url": ""
+            },
+            "fractalflame": {
+                "name": "Ky/fractalflame",
+                "url": ""
+            },
+            "luna-enta": {
+                "name": "Luna Lenta",
+                "url": ""
+            },
+            "metaroom": {
+                "name": "METAROOM",
+                "url": ""
+            },
+            "miyajy": {
+                "name": "MiYAjY",
+                "url": ""
+            },
+            "ms": {
+                "name": "MS",
+                "url": ""
+            },
+            "neurolink": {
+                "name": "NEUROLINK",
+                "url": ""
+            },
+            "noah-b": {
+                "name": "noah b",
+                "url": ""
+            },
+            "sam-waitin": {
+                "name": "SAM WAITIN",
+                "url": ""
+            },
+            "sci": {
+                "name": "sci",
+                "url": ""
+            },
+            "sister-ausa": {
+                "name": "Sister AUSA",
+                "url": ""
+            },
+            "skrullz": {
+                "name": "Skrullz",
+                "url": ""
+            },
+            "stessie": {
+                "name": "Stessie",
+                "url": ""
+            },
+            "telemist": {
+                "name": "telemist",
+                "url": ""
+            },
+            "type-r": {
+                "name": "type R",
+                "url": ""
+            },
+            "v8cola": {
+                "name": "v8cola",
+                "url": ""
+            },
+            "volant": {
+                "name": "VOLANT",
+                "url": ""
+            },
+            "wsx": {
+                "name": "Wsx",
+                "url": "https://wsx.moe/"
+            },
+            "wyste": {
+                "name": "wyste",
+                "url": ""
+            },
+            "xyrax alaria": {
+                "name": "Xyrax Alaria",
+                "url": ""
+            },
+            "yazanoo1": {
+                "name": "yazanoo1",
+                "url": ""
+            }
+        }
     }
 }
