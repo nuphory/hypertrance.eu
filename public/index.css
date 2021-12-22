@@ -115,6 +115,11 @@ footer {
     text-align: center;
 }
 
+#buttons > a {
+    width: calc(100vw - 20px);
+    margin: 5px 10px;
+}
+
 .button {
     background-color: rgba(0, 0, 0, 0.363);
     margin: 5px;
@@ -145,10 +150,6 @@ footer {
     -webkit-flex-direction: column;
     flex-direction: column;
     /* float: left; */
-}
-
-#buttons > * {
-    margin: 5px;
 }
 
 #sections {
@@ -219,7 +220,7 @@ footer {
     .content {
         width: 400px;
     }
-    #buttons > * {
+    #buttons > a {
         margin: 5px auto;
         width: 400px;
     }
@@ -266,5 +267,10 @@ footer {
 
     .content {
         width: 1000px;
+    }
+    @media screen and (max-height: 1080px) {
+        .content {
+            padding-top: 51px;
+        }
     }
 }
