@@ -1,7 +1,7 @@
 {
     "video": {
-        "text": "watch premiere (soon)",
-        "url": "#"
+        "text": "re-watch VOD",
+        "url": "https://youtu.be/nONsDtHZk5Y"
     },
     "album": {
         "text": "buy album",
@@ -14,5 +14,9 @@
     "artbook-physical": {
         "text": "preorder physical",
         "url": "https://buy.stripe.com/eVa9Bf8Yw1KKbPq9AA"
+    },
+    "discord": {
+        "text": "join discord",
+        "url": "https://discord.gg/XhSzYSFTkq"
     }
 }
