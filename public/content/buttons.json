@@ -1,18 +1,20 @@
 {
     "video": {
-        "text": "watch premiere",
-        "url": "https://youtu.be/mpUlvQxFaRA"
+        "text": "watch premiere (soon)",
+        "url": "#"
     },
     "album": {
-        "text": "buy album",
+        "text": "buy album (soon)",
         "url": "#"
     },
     "artbook-digital": {
-        "text": "digital artbook",
-        "url": "https://volantmusic.gumroad.com/l/hypertrance1"
+        "text": "digital artbook (soon)",
+        "url": "#",
+        "url.old": "https://volantmusic.gumroad.com/l/hypertrance1"
     },
     "artbook-physical": {
-        "text": "physical artbook",
-        "url": "https://buy.stripe.com/eVa9Bf8Yw1KKbPq9AA"
+        "text": "physical artbook (soon)",
+        "url": "#",
+        "url.old": "https://buy.stripe.com/eVa9Bf8Yw1KKbPq9AA"
     }
 }
