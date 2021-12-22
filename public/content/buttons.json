@@ -5,10 +5,14 @@ const buttons = {
     },
     "album": {
         "text": "buy album",
-        "url": ""
+        "url": "#"
     },
     "artbook": {
-        "text": "preorder artbook",
-        "url": ""
-    }
+        "text": "preorder artbook   ",
+        "url": "#"
+    },
+    "artbook": {
+        "text": "preorder artbook   ",
+        "url": "#"
+    },
 }
