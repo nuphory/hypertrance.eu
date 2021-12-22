@@ -1,5 +1,14 @@
 let root = document.documentElement;
 
+const videos = {
+    blue: {
+        path: "mp4/blue.mp4"
+    },
+    green: {
+        path: "mp4/green.mp4"
+    }
+};
+
 /**
  * button generator
  */
@@ -17,8 +26,22 @@ Object.keys(buttons).forEach((id) => {
     document.getElementById("buttons").appendChild(anchor);
 });
 
-let sectionsOffset = 30 * Object.keys(buttons).length;
-root.style.setProperty("--sections-offset", 238 + sectionsOffset + "px");
+let height = window.innerHeight;
+let contentHeight = document.querySelector(".capture").clientHeight;
+let margin = height * 0.5 - contentHeight * 0.5;
+
+root.style.setProperty("--center-margin", margin + "px");
+
+window.addEventListener("resize", (event) => {
+    if (window.innerHeight === height) return;
+
+    height = window.innerHeight;
+    contentHeight = document.querySelector(".capture").clientHeight;
+
+    margin = height * 0.5 - contentHeight * 0.5;
+
+    root.style.setProperty("--center-margin", margin + "px");
+});
 
 /**
  * section generator
@@ -54,22 +77,18 @@ Object.keys(sections).forEach((id) => {
     document.getElementById("sections").appendChild(divider);
 });
 
-Object.values(sections).forEach((section) => {
-    console.log(section);
-});
+Object.values(sections).forEach((section) => {});
 
 loadBackgroundImage("img/background.jpg");
-setTimeout(() => loadBackgroundVideo("mp4/background.mp4"), 2000);
+loadBackgroundVideo("mp4/background.mp4");
+fadeIn("fadein");
 
 async function loadBackgroundImage(path) {
-    console.debug("adding background");
     document.getElementById("background").innerHTML =
         '<img src="' + path + '"></img>';
 }
 
 async function loadBackgroundVideo(path) {
-    console.debug(document.getElementById("background"));
-
     let video = document.createElement("video");
 
     video.autoplay = true;
@@ -77,8 +96,41 @@ async function loadBackgroundVideo(path) {
     video.loop = true;
 
     video.setAttribute("id", "background-video-video");
+    video.setAttribute("class", "fadein");
 
-    video.innerHTML = '<source src="' + path + '" type="video/mp4">';
+    video.innerHTML =
+        '<source src="' +
+        Object.values(videos)[~~(Math.random() * Object.values(videos).length)]
+            .path +
+        '" type="video/mp4">';
 
     document.getElementById("background").appendChild(video);
+
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    fadeInElement(video);
+}
+
+/**
+ * iterates through all elements with provided className
+ * @param className className to look for
+ */
+async function fadeIn(className) {
+    let elements = document.getElementsByClassName(className);
+    console.log(elements);
+    for (let i = 0; i < elements.length; i++) {
+        const element = elements[i];
+        console.log(element);
+        fadeInElement(element);
+        await new Promise((resolve) => setTimeout(resolve, 300));
+    }
+}
+
+/**
+ * fades in provided element
+ * @param {Element} element element to apply class to
+ */
+function fadeInElement(element) {
+    let originalClass = element.getAttribute("class");
+
+    element.setAttribute("class", originalClass + " startFade");
 }
