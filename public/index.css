@@ -193,11 +193,6 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-@media screen and (orientation: landscape) {
-    #background * {
-        /* transform: scale(1); */
-    }
-}
 @media screen and (min-width: 360px) {
     h1 {
         font-size: 2.5em;
