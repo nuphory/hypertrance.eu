@@ -37,7 +37,6 @@ h2 {
 }
 
 a {
-    display: block;
     color: white;
     text-decoration: none;
 
@@ -46,7 +45,6 @@ a {
 }
 
 a:hover {
-    /* animation: underline; */
     text-underline-offset: 4px;
     text-decoration: underline;
     transform: translateY(-2px);
@@ -61,6 +59,11 @@ iframe {
 }
 iframe:hover {
     transform: translateY(-2px);
+}
+
+footer {
+    width: auto;
+    margin: 32px auto;
 }
 
 .cover {
