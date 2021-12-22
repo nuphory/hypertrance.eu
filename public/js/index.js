@@ -80,7 +80,6 @@ Object.keys(sections).forEach((id) => {
 Object.values(sections).forEach((section) => {});
 
 loadBackgroundImage("img/background.jpg");
-loadBackgroundVideo("mp4/background.mp4");
 fadeIn("fadein");
 
 async function loadBackgroundImage(path) {
@@ -106,7 +105,7 @@ async function loadBackgroundVideo(path) {
 
     document.getElementById("background").appendChild(video);
 
-    await new Promise((resolve) => setTimeout(resolve, 300));
+    await new Promise((resolve) => setTimeout(resolve, 100));
     fadeInElement(video);
 }
 
@@ -123,6 +122,9 @@ async function fadeIn(className) {
         fadeInElement(element);
         await new Promise((resolve) => setTimeout(resolve, 300));
     }
+
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    loadBackgroundVideo("mp4/background.mp4");
 }
 
 /**
