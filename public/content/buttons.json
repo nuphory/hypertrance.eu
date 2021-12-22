@@ -7,8 +7,12 @@
         "text": "buy album",
         "url": "#"
     },
-    "artbook": {
-        "text": "preorder artbook   ",
-        "url": "#"
+    "artbook-digital": {
+        "text": "digital artbook",
+        "url": "https://volantmusic.gumroad.com/l/hypertrance1"
+    },
+    "artbook-physical": {
+        "text": "physical artbook",
+        "url": "https://buy.stripe.com/eVa9Bf8Yw1KKbPq9AA"
     }
 }

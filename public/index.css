@@ -34,6 +34,11 @@ h2 {
     margin: 0;
 }
 
+.one {
+    font-size: 1.4em;
+    font-weight: 100;
+}
+
 a {
     width: fit-content;
     margin: auto;
