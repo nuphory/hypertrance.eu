@@ -1,4 +1,4 @@
-const buttons = {
+{
     "video": {
         "text": "watch premiere",
         "url": "https://youtu.be/mpUlvQxFaRA"

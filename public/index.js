@@ -9,73 +9,8 @@ const videos = {
     // }
 };
 
-/**
- * button generator
- */
-Object.keys(buttons).forEach((id) => {
-    let button = document.createElement("div");
-    button.setAttribute("id", id + "-button");
-    button.setAttribute("class", "button");
-    button.innerHTML = "<p>" + buttons[id].text.toUpperCase() + "</p>";
-
-    let anchor = document.createElement("a");
-    anchor.setAttribute("id", id + "-anchor");
-    anchor.setAttribute("href", buttons[id].url);
-    anchor.setAttribute("target", "_blank");
-    anchor.appendChild(button);
-
-    document.getElementById("buttons").appendChild(anchor);
-});
-
-/**
- * section generator
- */
-Object.keys(sections).forEach((id) => {
-    let sectionElement = document.createElement("div");
-    sectionElement.setAttribute("id", id + "-section");
-    sectionElement.setAttribute("class", "section fadein");
-    document.getElementById("sections").appendChild(sectionElement);
-
-    let headerElement = document.createElement("h2");
-    headerElement.setAttribute("id", id + "-header");
-    headerElement.setAttribute("class", "section-header");
-    headerElement.innerText = sections[id].header.toUpperCase();
-    document.getElementById(id + "-section").appendChild(headerElement);
-
-    let contentElement = document.createElement("span");
-    contentElement.setAttribute("id", id + "-content");
-    contentElement.setAttribute("class", "section-content");
-    document.getElementById(id + "-section").appendChild(contentElement);
-
-    let content = sections[id].content;
-
-    if (id === "artists") {
-        Object.values(content).forEach((obj) => {
-            let paragraph = document.createElement("div");
-            paragraph.setAttribute("class", "artist-link credit");
-            paragraph.innerHTML =
-                '<a target="_blank" href="' +
-                obj.url +
-                '">' +
-                obj.name +
-                "</div>";
-
-            document.getElementById(id + "-content").appendChild(paragraph);
-        });
-    } else {
-        Object.values(content).forEach((obj) => {
-            let paragraph = document.createElement("p");
-            paragraph.setAttribute("class", "section-paragraph");
-            paragraph.innerText = obj;
-
-            document.getElementById(id + "-content").appendChild(paragraph);
-        });
-    }
-
-    let divider = document.createElement("div");
-    divider.setAttribute("class", "divider");
-    document.getElementById(id + "-content").appendChild(divider);
-});
+generateButtons();
+generateSections();
 
 let height = window.innerHeight;
 let contentHeight = document.querySelector(".capture").clientHeight;
@@ -96,6 +31,97 @@ window.addEventListener("resize", (event) => {
 
 loadBackgroundImage("img/background.jpg");
 fadeIn("fadein");
+
+/**
+ * button generator
+ */
+function generateButtons() {
+    console.log("ajax");
+    $.getJSON("content/buttons.json", (json) => {
+        console.log(json);
+        Object.keys(json).forEach((id) => {
+            let button = document.createElement("div");
+            button.setAttribute("id", id + "-button");
+            button.setAttribute("class", "button");
+            button.innerHTML = "<p>" + json[id].text.toUpperCase() + "</p>";
+
+            let anchor = document.createElement("a");
+            anchor.setAttribute("id", id + "-anchor");
+            anchor.setAttribute("href", json[id].url);
+            anchor.setAttribute("target", "_blank");
+            anchor.appendChild(button);
+
+            document.getElementById("buttons").appendChild(anchor);
+        });
+
+        contentHeight = document.querySelector(".capture").clientHeight;
+        margin = height * 0.5 - contentHeight * 0.5;
+
+        root.style.setProperty("--center-margin", margin + "px");
+    });
+}
+
+/**
+ * section generator
+ */
+function generateSections() {
+    console.log("ajax");
+    $.getJSON("content/sections.json", (json) => {
+        console.log(json);
+        Object.keys(json).forEach((id) => {
+            let sectionElement = document.createElement("div");
+            sectionElement.setAttribute("id", id + "-section");
+            sectionElement.setAttribute("class", "section fadein");
+            document.getElementById("sections").appendChild(sectionElement);
+
+            let headerElement = document.createElement("h2");
+            headerElement.setAttribute("id", id + "-header");
+            headerElement.setAttribute("class", "section-header");
+            headerElement.innerText = json[id].header.toUpperCase();
+            document.getElementById(id + "-section").appendChild(headerElement);
+
+            let contentElement = document.createElement("span");
+            contentElement.setAttribute("id", id + "-content");
+            contentElement.setAttribute("class", "section-content");
+            document
+                .getElementById(id + "-section")
+                .appendChild(contentElement);
+
+            let content = json[id].content;
+
+            if (id === "artists") {
+                Object.values(content).forEach((obj) => {
+                    let paragraph = document.createElement("div");
+                    paragraph.setAttribute("class", "artist-link credit");
+                    paragraph.innerHTML =
+                        '<a target="_blank" href="' +
+                        obj.url +
+                        '">' +
+                        obj.name +
+                        "</div>";
+
+                    document
+                        .getElementById(id + "-content")
+                        .appendChild(paragraph);
+                });
+            } else {
+                Object.values(content).forEach((obj) => {
+                    let paragraph = document.createElement("p");
+                    paragraph.setAttribute("class", "section-paragraph");
+                    paragraph.innerText = obj;
+
+                    document
+                        .getElementById(id + "-content")
+                        .appendChild(paragraph);
+                });
+            }
+
+            let divider = document.createElement("div");
+            divider.setAttribute("class", "divider");
+            document.getElementById(id + "-content").appendChild(divider);
+        });
+    });
+}
 
 async function loadBackgroundImage(path) {
     document.getElementById("background").innerHTML =

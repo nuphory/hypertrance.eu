@@ -1,9 +1,7 @@
-const sections =
 {
     "artbook": {
-        "header": "The Artbook", // title of the section
+        "header": "The Artbook",
         "content": [
-            // text in the section (every object in the array is a new line, think of the comma's as <br> characters)
             "We have chosen the infinite key to the sacred reality to crack the ETERNALiSTiC REFLEX CORE COPY PROTECTiON.",
             "The ViRTUAL ECHO floating through us was the key to success.",
             "Thanks to it, we have broken seemingly impossible encryption code in a matter of over 1 month.",
