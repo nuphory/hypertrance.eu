@@ -3,10 +3,10 @@ let root = document.documentElement;
 const videos = {
     blue: {
         path: "mp4/blue.mp4"
-    },
-    green: {
-        path: "mp4/green.mp4"
     }
+    // green: {
+    //     path: "mp4/green.mp4"
+    // }
 };
 
 /**
