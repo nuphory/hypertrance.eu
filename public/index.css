@@ -1,6 +1,5 @@
 :root {
     --video-width: calc(100vw - 10px);
-    --sections-offset: 230px;
     --border-radius: 32px;
     --center-margin: 0px;
 }
@@ -36,6 +35,8 @@ h2 {
 }
 
 a {
+    width: fit-content;
+    margin: auto;
     color: white;
     text-decoration: none;
 
@@ -110,6 +111,7 @@ footer {
 }
 
 .button {
+    background-color: rgba(0, 0, 0, 0.363);
     margin: 5px;
     border-color: rgba(255, 255, 255, 0.7);
     border-style: solid;
@@ -124,11 +126,13 @@ footer {
 
 .fadein {
     opacity: 0;
-    transition: opacity 2s ease;
+    transform: translateY(32px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .startFade {
     opacity: 1;
+    transform: translateY(0);
 }
 
 #buttons {
@@ -159,6 +163,8 @@ footer {
 }
 
 .credit {
+    width: fit-content;
+    margin: auto;
     color: white;
     text-decoration: none;
 
