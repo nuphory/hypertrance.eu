@@ -158,6 +158,24 @@ footer {
     object-fit: cover;
 }
 
+.credit {
+    color: white;
+    text-decoration: none;
+
+    border-radius: var(--border-radius);
+    transition: transform 0.1s ease;
+}
+
+.credit:hover {
+    text-underline-offset: 4px;
+    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
+.credit:active {
+    transform: scale(0.99);
+}
+
 #overground {
     background-color: rgba(0, 0, 0, 0.7);
 }

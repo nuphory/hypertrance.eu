@@ -2,9 +2,11 @@ const sections = {
     "artbook": {
         "header": "The Artbook", // title of the section
         "content": [ // text in the section (every object in the array is a new line, think of the comma's as <br> characters)
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet neque volutpat, condimentum eros pretium, congue dolor. Quisque finibus ullamcorper pharetra. Pellentesque dapibus diam nulla, sit amet porttitor velit aliquet a. Aenean interdum, tellus vel dictum fermentum, libero arcu porta ex, non consectetur risus eros vel nisi. Phasellus metus nulla, tempor vel nisi in, faucibus gravida risus. Donec eu semper eros. Quisque a lorem porta, sollicitudin justo at, blandit arcu. ",
-            "Nunc pulvinar interdum sapien non euismod. Aenean eleifend enim eget magna suscipit, sit amet finibus lectus dignissim. Donec porttitor mi et mauris ullamcorper pellentesque. Sed sit amet sem felis. Nulla blandit velit sit amet justo vulputate, sit amet dictum ligula facilisis. Mauris vel malesuada nisl, in maximus dolor. Aenean ultrices mi sapien, eget maximus eros commodo hendrerit. Sed ornare nulla lacus, et fermentum mauris congue et. Etiam magna urna, eleifend in maximus at, fringilla in arcu. Aliquam lacus turpis, malesuada eu erat eu, consequat placerat purus. Ut auctor, libero non facilisis hendrerit, sem turpis mattis metus, quis laoreet lectus nisl nec elit.",
-            "Morbi et libero vel dolor mollis viverra. Vestibulum tincidunt mi et tincidunt vehicula. Duis faucibus sapien non dictum egestas. Praesent in mi iaculis, pulvinar dolor sed, accumsan dui. Duis faucibus vitae nulla feugiat commodo. Nulla sed venenatis risus. Nullam scelerisque augue massa, nec sodales nunc ullamcorper vitae. Duis tempor, dui non interdum dignissim, turpis ex efficitur dui, nec pharetra odio nunc a urna. Pellentesque neque quam, facilisis quis neque at, consequat efficitur ante. Ut ultrices hendrerit risus in blandit. "
-        ] 
+            "We have chosen the infinite key to the sacred reality to crack the ETERNALiSTiC REFLEX CORE COPY PROTECTiON.",
+            "The ViRTUAL ECHO floating through us was the key to success.",
+            "Thanks to it, we have broken seemingly impossible encryption code in a matter of over 1 month.",
+            "SiNCERE THANK YOU TO EVERYONE WHO SUPPORTS US! ENJOY THiS FiNE RELEASE! AND DON'T FORGET TO SUPPORT THE ORIGINAL DEVELOPER IF YOU ENJOY THE SOFTWARE.",
+            "Unzip, run hyprtrnc.exe and enjoy.",
+        ]
     }
 }
