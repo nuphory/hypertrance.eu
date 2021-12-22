@@ -1,6 +1,9 @@
 :root {
-    --video-width: 400px;
+    --video-width: calc(100vw - 10px);
     --sections-offset: 230px;
+    --border-radius: 32px;
+
+    --center-margin: 0px;
 }
 
 html,
@@ -15,7 +18,7 @@ body {
 }
 
 body {
-    background-color: #1e1e1e;
+    background-color: #0a1113;
 }
 
 main {
@@ -24,23 +27,40 @@ main {
 }
 
 h1 {
-    font-size: 4em;
-    margin: 0px;
+    font-size: 2em;
+    margin: 0;
 }
+
 h2 {
-    font-size: 3em;
-    margin: 0px;
+    font-size: 1.25em;
+    margin: 0;
 }
 
 a {
+    display: block;
     color: white;
     text-decoration: none;
+
+    border-radius: var(--border-radius);
+    transition: transform 0.1s ease;
 }
 
 a:hover {
     /* animation: underline; */
     text-underline-offset: 4px;
     text-decoration: underline;
+    transform: translateY(-2px);
+}
+
+a:active {
+    transform: scale(0.99);
+}
+
+iframe {
+    transition: transform 0.1s ease;
+}
+iframe:hover {
+    transform: translateY(-2px);
 }
 
 .cover {
@@ -62,42 +82,24 @@ a:hover {
 }
 
 .video {
-    border-radius: 32px;
+    margin: 5px;
+    border-radius: var(--border-radius);
     width: var(--video-width);
     height: calc(var(--video-width) * 0.5625);
 }
 
-.d-flex {
-    display: flex;
-}
-
-.flex-item {
-    margin: auto;
-}
-
-.flex-column {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-}
-
-.flex-row {
-    -webkit-flex-direction: row;
-    flex-direction: row;
-}
-
 .content {
-    /* display: block; */
+    position: static;
     margin: auto;
-    width: 1000px;
+    padding-top: var(--center-margin);
+    width: 100%;
     height: 100%;
     text-align: center;
 }
 
 .capture {
-    height: 100%;
     align-items: center;
     text-align: center;
-    margin-bottom: calc(-50vh + var(--sections-offset));
 }
 
 .capture > span {
@@ -105,29 +107,37 @@ a:hover {
     text-align: center;
 }
 
-.buttons {
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    float: left;
-}
-
 .button {
     margin: 5px;
-    width: 400px;
     border-color: rgba(255, 255, 255, 0.7);
     border-style: solid;
     border-width: 2px;
-    border-radius: 32px;
+    border-radius: var(--border-radius);
+    transition: border-color 0.2s ease-out;
 }
 
 .button:hover {
     border-color: white;
-    transform: translateY(-1px);
 }
 
-.button:active {
-    transform: scale(0.99);
+.fadein {
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.startFade {
+    opacity: 1;
+}
+
+#buttons {
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    /* float: left; */
+}
+
+#buttons > * {
+    margin: 5px;
 }
 
 #sections {
@@ -141,20 +151,89 @@ a:hover {
     left: -9999px;
     right: -9999px;
     margin: auto;
-    height: 120%;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
-    /* filter: blur(8px); */
-    transform: scale(1.2);
 }
 
 #overground {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-#video-anchor,
-#album-anchor {
-    order: 1;
+@media screen and (orientation: landscape) {
+    #background * {
+        /* transform: scale(1); */
+    }
 }
-#artbook {
-    order: 3;
+@media screen and (min-width: 360px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.75em;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    :root {
+        --video-width: 400px;
+    }
+
+    .video {
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 420px) {
+    .content {
+        width: 400px;
+    }
+    #buttons > * {
+        margin: 5px auto;
+        width: 400px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    :root {
+        --video-width: 530px;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size: 3em;
+    }
+
+    .content {
+        width: 600px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    :root {
+        --video-width: 720px;
+    }
+
+    .content {
+        width: 1000px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    :root {
+        --video-width: 720px;
+    }
+
+    .content {
+        width: 1000px;
+    }
 }
