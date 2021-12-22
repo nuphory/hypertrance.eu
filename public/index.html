@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HYPERTRANCE, Vol. 1</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/index.css" />
+        <script
+            type="text/javascript"
+            language="javascript"
+            src="buttons.json"
+        ></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+
+    <body>
+        <div class="cover" id="background">
+            <div id="background-video"></div>
+        </div>
+        <div class="cover" id="overground"></div>
+        <div class="content column">
+            <h1>HYPERTRANCE VOL.1</h1>
+            <div class="divider"></div>
+            <div class="video">
+                <iframe
+                    class="video"
+                    src="https://www.youtube.com/embed/mpUlvQxFaRA"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <div class="divider"></div>
+
+            <div class="buttons">
+                <a target="_blank" id="video-button" href="#">
+                    <div class="button">
+                        <p id="video-text"></p>
+                    </div>
+                </a>
+                <a target="_blank" id="album-button" href="#">
+                    <div class="button">
+                        <p id="album-text"></p>
+                    </div>
+                </a>
+                <a target="_blank" id="artbook-button" href="#">
+                    <div class="button">
+                        <p id="artbook-text"></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </body>
+
+    <script src="js/index.js"></script>
+</html>

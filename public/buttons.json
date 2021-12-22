@@ -1,0 +1,14 @@
+const buttons = {
+    "video": {
+        "text": "watch livestream",
+        "url": "https://youtu.be/mpUlvQxFaRA"
+    },
+    "album": {
+        "text": "buy album",
+        "url": ""
+    },
+    "artbook": {
+        "text": "preorder artbook",
+        "url": ""
+    }
+}
