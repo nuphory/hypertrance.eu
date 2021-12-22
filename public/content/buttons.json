@@ -1,6 +1,6 @@
 const buttons = {
     "video": {
-        "text": "watch livestream",
+        "text": "watch premiere",
         "url": "https://youtu.be/mpUlvQxFaRA"
     },
     "album": {
@@ -10,9 +10,5 @@ const buttons = {
     "artbook": {
         "text": "preorder artbook   ",
         "url": "#"
-    },
-    "artbook": {
-        "text": "preorder artbook   ",
-        "url": "#"
-    },
+    }
 }
