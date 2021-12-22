@@ -10,17 +10,17 @@ Over a period of 1 month, we created 20 pieces of music and 40 artworks, combini
 
 # Artists
 - Aekae
-- BennettBlogs
+- aetherphase
 - arenagate
+- AUSA
+- BennettBlogs
 - c-zer
-- still crisp
 - Demon Of Waves
 - djeb
 - Kuri
 - ena
 - jackflash
 - Jenceno
-- aetherphase
 - Luna Lenta
 - METAROOM
 - MiYAjY
@@ -28,9 +28,9 @@ Over a period of 1 month, we created 20 pieces of music and 40 artworks, combini
 - NOAH B
 - SAM WAITIN
 - sci
-- AUSA
 - Skrullz
 - Stessie
+- still crisp
 - synce
 - telemist
 - Type R
