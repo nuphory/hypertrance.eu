@@ -26,17 +26,19 @@
     </head>
 
     <body>
-        <div class="cover background" id="background">
+        <div class="fadein cover background" id="background">
             <div id="background-video"></div>
         </div>
         <div class="cover background" id="overground"></div>
 
         <div class="content">
-            <div class="d-flex flex-column flex-item capture">
-                <span class="d-flex flex-column flex-item">
+            <div class="capture">
+                <span class="fadein">
                     <h1>HYPERTRANCE</h1>
                     <h2>VOL.1</h2>
                     <div class="divider"></div>
+                </span>
+                <span class="fadein">
                     <div id="video-preview">
                         <iframe
                             class="video"
@@ -48,11 +50,15 @@
                         ></iframe>
                     </div>
                     <div class="divider"></div>
+                </span>
+                <span class="fadein">
                     <div id="buttons"></div>
                     <div class="divider"></div>
                 </span>
             </div>
-            <div class="d-flex flex-column" id="sections"></div>
+            <span class="fadein">
+                <div class="d-flex flex-column" id="sections"></div>
+            </span>
         </div>
     </body>
 
