@@ -69,6 +69,7 @@ iframe:hover {
 footer {
     width: auto;
     margin: 32px auto;
+    padding-bottom: 80px;
 }
 
 .cover {
@@ -190,6 +191,12 @@ footer {
 
 #overground {
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (orientation: landscape) {
+    #background * {
+        /* transform: scale(1); */
+    }
 }
 @media screen and (min-width: 360px) {
     h1 {
