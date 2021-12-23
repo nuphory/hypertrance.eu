@@ -16,8 +16,6 @@ let height = window.innerHeight;
 let contentHeight = document.querySelector(".capture").clientHeight;
 let margin = height * 0.5 - contentHeight * 0.5;
 
-root.style.setProperty("--center-margin", margin + "px");
-
 window.addEventListener("resize", (event) => {
     if (window.innerHeight === height) return;
 
@@ -27,6 +25,7 @@ window.addEventListener("resize", (event) => {
     margin = height * 0.5 - contentHeight * 0.5;
 
     root.style.setProperty("--center-margin", margin + "px");
+    root.style.setProperty("--content-height", contentHeight + "px");
 });
 
 loadBackgroundImage("img/background.jpg");
@@ -58,6 +57,7 @@ function generateButtons() {
         margin = height * 0.5 - contentHeight * 0.5;
 
         root.style.setProperty("--center-margin", margin + "px");
+        root.style.setProperty("--content-height", contentHeight + "px");
     });
 }
 
