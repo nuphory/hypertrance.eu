@@ -1,4 +1,4 @@
 .prettierrc
-
+docker/
 node_modules/
 package-lock.json
