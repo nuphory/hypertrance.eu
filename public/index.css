@@ -194,6 +194,24 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+#modal {
+    transition: opacity 1s ease, transform 1s ease;
+    opacity: 0;
+    padding-top: 80px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#modal img {
+    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(32px);
+}
+
 @media screen and (min-width: 360px) {
     h1 {
         font-size: 2.5em;

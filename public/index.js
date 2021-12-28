@@ -1,4 +1,29 @@
 let root = document.documentElement;
+modal = document.getElementById("modal");
+
+let keyStream = [];
+let konamiCode = [
+    "ArrowUp",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowRight",
+    "KeyB",
+    "KeyA",
+    "Enter",
+];
+
+window.addEventListener("keydown", (e) => {
+    if (keyStream.length == 11) keyStream.shift();
+    keyStream.push(e.code);
+    if (keyStream.equals(konamiCode)) {
+        console.log("wow! you found the glaceon!");
+        addGlaceon();
+    }
+});
 
 const videos = {
     blue: {
@@ -176,3 +201,36 @@ function fadeInElement(element) {
 
     element.setAttribute("class", originalClass + " startFade");
 }
+
+async function addGlaceon() {
+    modal.style.setProperty("opacity", 1);
+    modal.childNodes[1].style.setProperty("transform", "translateY(0px)");
+}
+
+Array.prototype.equals = function (array) {
+    // if the other array is a falsy value, return
+    if (!array) return false;
+
+    // compare lengths - can save a lot of time
+    if (this.length != array.length) return false;
+
+    for (var i = 0, l = this.length; i < l; i++) {
+        // Check if we have nested arrays
+        if (this[i] instanceof Array && array[i] instanceof Array) {
+            // recurse into the nested arrays
+            if (!this[i].equals(array[i])) return false;
+        } else if (this[i] != array[i]) {
+            // Warning - two different object instances will never be equal: {x:20} != {x:20}
+            return false;
+        }
+    }
+    return true;
+};
+// Hide method from for-in loops
+Object.defineProperty(Array.prototype, "equals", { enumerable: false });
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.setProperty("opacity", 0);
+    }
+};
