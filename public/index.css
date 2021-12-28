@@ -195,7 +195,8 @@ footer {
 }
 
 #modal {
-    transition: opacity 1s ease, transform 1s ease;
+    visibility: hidden;
+    transition: opacity 1s ease, transform 1s ease, display 1s ease;
     opacity: 0;
     padding-top: 80px;
     position: fixed;

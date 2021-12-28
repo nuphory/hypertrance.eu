@@ -211,12 +211,14 @@ function fadeInElement(element) {
 }
 
 async function addGlaceon() {
+    modal.style.visibility = "visible";
     console.log("wow! you found the glaceon!");
     glaceon = true;
     modal.style.setProperty("opacity", 1);
     modal.childNodes[1].style.setProperty("transform", "translateY(0px)");
 }
 async function removeGlaceon() {
+    modal.style.visibility = "hidden";
     console.log("ok bye :(");
     glaceon = false;
     modal.style.setProperty("opacity", 0);
