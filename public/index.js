@@ -246,6 +246,7 @@ Array.prototype.equals = function (array) {
 Object.defineProperty(Array.prototype, "equals", { enumerable: false });
 
 window.onclick = function (event) {
+    if (!glaceon) return;
     if (event.target == modal) {
         removeGlaceon();
     }
