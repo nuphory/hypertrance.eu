@@ -232,5 +232,7 @@ Object.defineProperty(Array.prototype, "equals", { enumerable: false });
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.setProperty("opacity", 0);
+
+        modal.childNodes[1].style.setProperty("transform", "translateY(32px)");
     }
 };
