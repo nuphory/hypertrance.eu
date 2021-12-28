@@ -16,12 +16,20 @@ let konamiCode = [
     "Enter",
 ];
 
+let glaceon = false;
+
 window.addEventListener("keydown", (e) => {
     if (keyStream.length == 11) keyStream.shift();
     keyStream.push(e.code);
-    if (keyStream.equals(konamiCode)) {
-        console.log("wow! you found the glaceon!");
-        addGlaceon();
+
+    if (glaceon) {
+        if (e.code === "Escape" || e.code === "KeyQ") {
+            removeGlaceon();
+        }
+    } else {
+        if (keyStream.equals(konamiCode)) {
+            addGlaceon();
+        }
     }
 });
 
@@ -203,8 +211,16 @@ function fadeInElement(element) {
 }
 
 async function addGlaceon() {
+    console.log("wow! you found the glaceon!");
+    glaceon = true;
     modal.style.setProperty("opacity", 1);
     modal.childNodes[1].style.setProperty("transform", "translateY(0px)");
+}
+async function removeGlaceon() {
+    console.log("ok bye :(");
+    glaceon = false;
+    modal.style.setProperty("opacity", 0);
+    modal.childNodes[1].style.setProperty("transform", "translateY(32px)");
 }
 
 Array.prototype.equals = function (array) {
@@ -231,8 +247,6 @@ Object.defineProperty(Array.prototype, "equals", { enumerable: false });
 
 window.onclick = function (event) {
     if (event.target == modal) {
-        modal.style.setProperty("opacity", 0);
-
-        modal.childNodes[1].style.setProperty("transform", "translateY(32px)");
+        removeGlaceon();
     }
 };
