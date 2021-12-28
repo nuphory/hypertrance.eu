@@ -3,3 +3,4 @@ docker/
 node_modules/
 package-lock.json
 ssl/
+hypertrance-web.zip
