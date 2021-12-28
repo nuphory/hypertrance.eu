@@ -7,12 +7,12 @@
         "text": "buy album",
         "url": "https://volantmusic.bandcamp.com/album/hypertrance-vol-1"
     },
-    "artbook-digital": {
-        "text": "buy artbook (digital)",
-        "url": "https://volantmusic.gumroad.com/l/hypertrance1"
+    "artbook-gumroad": {
+        "text": "artbook (paypal)",
+        "url": "https://volantmusic.gumroad.com/l/hypertrance1p"
     },
-    "artbook-physical": {
-        "text": "preorder physical",
+    "artbook-stripe": {
+        "text": "artbook (card)",
         "url": "https://buy.stripe.com/eVa9Bf8Yw1KKbPq9AA"
     },
     "discord": {
