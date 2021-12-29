@@ -209,6 +209,8 @@ footer {
 }
 
 #modal img {
+    pointer-events: none;
+
     transition: opacity 1s ease, transform 1s ease;
     transform: translateY(32px);
 }

@@ -212,6 +212,8 @@ function fadeInElement(element) {
 
 async function addGlaceon() {
     // modal.style.visibility = "visible";
+    modal.style.setProperty("pointer-events", "auto");
+
     console.log("wow! you found the glaceon!");
     glaceon = true;
     modal.style.setProperty("opacity", 1);
@@ -219,6 +221,8 @@ async function addGlaceon() {
 }
 async function removeGlaceon() {
     // modal.style.visibility = "hidden";
+    modal.style.setProperty("pointer-events", "none");
+
     console.log("ok bye :(");
     glaceon = false;
     modal.style.setProperty("opacity", 0);
