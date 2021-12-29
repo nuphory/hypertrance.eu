@@ -68,9 +68,9 @@ fadeIn("fadein");
  * button generator
  */
 function generateButtons() {
-    console.log("ajax");
+    // console.log("ajax");
     $.getJSON("content/buttons.json", (json) => {
-        console.log(json);
+        // console.log(json);
         Object.keys(json).forEach((id) => {
             let button = document.createElement("div");
             button.setAttribute("id", id + "-button");
@@ -98,9 +98,9 @@ function generateButtons() {
  * section generator
  */
 function generateSections() {
-    console.log("ajax");
+    // console.log("ajax");
     $.getJSON("content/sections.json", (json) => {
-        console.log(json);
+        // console.log(json);
         Object.keys(json).forEach((id) => {
             let sectionElement = document.createElement("div");
             sectionElement.setAttribute("id", id + "-section");
@@ -189,10 +189,10 @@ async function loadBackgroundVideo(path) {
  */
 async function fadeIn(className) {
     let elements = document.getElementsByClassName(className);
-    console.log(elements);
+    // console.log(elements);
     for (let i = 0; i < elements.length; i++) {
         const element = elements[i];
-        console.log(element);
+        // console.log(element);
         fadeInElement(element);
         await new Promise((resolve) => setTimeout(resolve, 2000));
     }
