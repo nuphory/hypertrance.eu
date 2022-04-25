@@ -1,0 +1,49 @@
+{
+  "name": "hypertrance",
+  "version": "1.0.0",
+  "description": "HYPERTRANCE is the definitive culmination of NEOY2K music and art.",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel ",
+    "build": "parcel build && xcopy /Y /E /I src\\static docs\\static",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mia-cx/hypertrance.git"
+  },
+  "keywords": [
+    "hypertrance",
+    "volant",
+    "music",
+    "album"
+  ],
+  "author": "mia-cx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mia-cx/hypertrance/issues"
+  },
+  "homepage": "https://github.com/mia-cx/hypertrance#readme",
+  "devDependencies": {
+    "@parcel/core": "^2.5.0",
+    "@parcel/packager-raw-url": "2.5.0",
+    "@parcel/transformer-webmanifest": "2.5.0",
+    "@types/bootstrap": "^5.1.10",
+    "@types/jquery": "^3.5.14",
+    "parcel": "^2.5.0",
+    "parcel-reporter-static-files-copy": "^1.3.4"
+  },
+  "targets": {
+    "default": {
+      "source": "src/index.html",
+      "distDir": "./docs"
+    }
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "staticFiles": {
+    "staticPath": "src/static",
+    "staticOutPath": "static"
+  }
+}
