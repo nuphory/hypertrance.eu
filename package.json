@@ -4,8 +4,8 @@
   "description": "HYPERTRANCE is the definitive culmination of NEOY2K music and art.",
   "default": "index.html",
   "scripts": {
-    "start": "parcel ",
-    "build": "parcel build && xcopy /Y /E /I src\\static docs\\static",
+    "start": "parcel",
+    "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
