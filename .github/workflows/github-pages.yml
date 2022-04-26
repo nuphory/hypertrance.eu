@@ -65,7 +65,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: hypertrance
-        run: ls -l
+      - run: ls -l
 
       - name: deploy to gitHub pages
         if: success()
