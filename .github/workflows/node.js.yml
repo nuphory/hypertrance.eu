@@ -31,5 +31,5 @@ jobs:
           # dest: # optional, default is ~/setup-pnpm
           # If specified, run `pnpm install`
           run_install: true # optional, default is null
-      - run: pnpm run build --if-present
+      - run: pnpm run build
       - run: cp -r src/static docs/
