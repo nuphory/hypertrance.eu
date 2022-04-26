@@ -45,19 +45,19 @@ jobs:
           name: hypertrance
           path: dist/
 
-      - name: import gpg
-        # You may pin to the exact commit or the version.
-        # uses: crazy-max/ghaction-import-gpg@e00cb83a68c1158b29afc5217dd0582cada6d172
-        uses: crazy-max/ghaction-import-gpg@v4.4.0
-        with:
-          # GPG private key exported as an ASCII armored version or its base64 encoding
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          # Passphrase of the GPG private key
-          passphrase: ${{ secrets.PASSPHRASE }}
-          # Set GPG signing keyID for this Git repository
-          git_user_signingkey: true # optional, default is false
-          # Sign all commits automatically
-          git_commit_gpgsign: true # optional, default is false
+      # - name: import gpg
+      #   # You may pin to the exact commit or the version.
+      #   # uses: crazy-max/ghaction-import-gpg@e00cb83a68c1158b29afc5217dd0582cada6d172
+      #   uses: crazy-max/ghaction-import-gpg@v4.4.0
+      #   with:
+      #     # GPG private key exported as an ASCII armored version or its base64 encoding
+      #     gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+      #     # Passphrase of the GPG private key
+      #     passphrase: ${{ secrets.PASSPHRASE }}
+      #     # Set GPG signing keyID for this Git repository
+      #     git_user_signingkey: true # optional, default is false
+      #     # Sign all commits automatically
+      #     git_commit_gpgsign: true # optional, default is false
 
       - name: deploy to pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.0
