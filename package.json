@@ -36,14 +36,10 @@
   "targets": {
     "default": {
       "source": "src/index.html",
-      "distDir": "./docs"
+      "distDir": "./dist"
     }
   },
   "dependencies": {
     "jquery": "^3.6.0"
-  },
-  "staticFiles": {
-    "staticPath": "src/static",
-    "staticOutPath": "static"
   }
 }
