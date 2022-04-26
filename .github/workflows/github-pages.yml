@@ -1,0 +1,67 @@
+name: pages build & deploy using pnpm & parcel
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: use node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: setup pnpm
+      # You may pin to the exact commit or the version.
+      # uses: pnpm/action-setup@35ab4267a1a21c8e8cb1c087cf1642e891ff57bd
+      uses: pnpm/action-setup@v2.2.1
+      with:
+        # Version of PNPM to install
+        version: 7.0.0-rc.8# optional
+        # Where to store PNPM files
+        # dest: # optional, default is ~/setup-pnpm
+        # If specified, run `pnpm install`
+        run_install: true # optional, default is null
+    - name: build
+      run: |
+        pnpm run build
+        cp src/static dist/
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: import gpg
+      # You may pin to the exact commit or the version.
+      # uses: crazy-max/ghaction-import-gpg@e00cb83a68c1158b29afc5217dd0582cada6d172
+      uses: crazy-max/ghaction-import-gpg@v4.4.0
+      with:
+        # GPG private key exported as an ASCII armored version or its base64 encoding
+        gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+        # Passphrase of the GPG private key
+        passphrase: ${{ secrets.PASSPHRASE }}
+        # Set GPG signing keyID for this Git repository
+        git_user_signingkey: true # optional, default is false
+        # Sign all commits automatically
+        git_commit_gpgsign: true # optional, default is false
+    
+    - name: deploy to github pages
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        target_branch: gh-pages
+        build_dir: dist
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
