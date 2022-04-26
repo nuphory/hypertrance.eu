@@ -39,7 +39,7 @@ jobs:
           cp -r src/static dist/
 
       - name: upload artifact
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v3
         with:
           name: hypertrance
           path: dist/
@@ -69,6 +69,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: hypertrance
+
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
