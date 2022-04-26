@@ -11,16 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: checkout 🛎️
+        uses: actions/checkout@v3
 
-      - name: setup node.js
+      - name: node ⚙️
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
 
-      - name: setup pnpm
-        # You may pin to the exact commit or the version.
-        # uses: pnpm/action-setup@35ab4267a1a21c8e8cb1c087cf1642e891ff57bd
+      - name: pnpm ⚙️
         uses: pnpm/action-setup@v2.2.1
         with:
           # Version of PNPM to install
@@ -28,24 +27,23 @@ jobs:
           # Where to store PNPM files
           # dest: # optional, default is ~/setup-pnpm
           # If specified, run `pnpm install`
-          run_install: true # optional, default is null
-      - name: build
+          run_install: false # optional, default is null
+
+      - run: ls -l
+
+      - name: build 🔧
         run: |
+          pnpm install
           pnpm run build
           cp -r src/static dist/
 
-      - name: upload artifact
+      - run: ls -l dist/
+
+      - name: upload artifact 🗃️
         uses: actions/upload-artifact@v3
         with:
           name: hypertrance
           path: dist/
-  deploy:
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
 
       - name: import gpg
         # You may pin to the exact commit or the version.
@@ -61,17 +59,46 @@ jobs:
           # Sign all commits automatically
           git_commit_gpgsign: true # optional, default is false
 
-      - name: download artifact
-        uses: actions/download-artifact@v3
+      - name: deploy to pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:
-          name: hypertrance
-      - run: ls -l
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
+  # deploy:
+  #   needs: build
 
-      - name: deploy to gitHub pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          target_branch: gh-pages
-          build_dir: hypertrance
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     # - uses: actions/checkout@v3
+  #     - run: ls -l
+
+  #     - name: import gpg
+  #       # You may pin to the exact commit or the version.
+  #       # uses: crazy-max/ghaction-import-gpg@e00cb83a68c1158b29afc5217dd0582cada6d172
+  #       uses: crazy-max/ghaction-import-gpg@v4.4.0
+  #       with:
+  #         # GPG private key exported as an ASCII armored version or its base64 encoding
+  #         gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+  #         # Passphrase of the GPG private key
+  #         passphrase: ${{ secrets.PASSPHRASE }}
+  #         # Set GPG signing keyID for this Git repository
+  #         git_user_signingkey: true # optional, default is false
+  #         # Sign all commits automatically
+  #         git_commit_gpgsign: true # optional, default is false
+
+  #     - name: download artifact
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: hypertrance
+
+  #     - run: ls -l
+
+  #     - name: deploy to gitHub pages
+  #       if: success()
+  #       uses: crazy-max/ghaction-github-pages@v2
+  #       with:
+  #         target_branch: gh-pages
+  #         build_dir: hypertrance
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
