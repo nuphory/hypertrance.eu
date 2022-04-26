@@ -1,0 +1,141 @@
+{
+    "artbook": {
+        "header": "The Artbook",
+        "content": [
+            "HYPERTRANCE is the definitive culmination of NEOY2K music and art.",
+            "This collective and collaborative project has been host to such creativity and persistence, and the pride associated with this volume is immense.",
+            "Over a period of 1 month, we created 20 pieces of music and 40 artworks, combining to an hour of live music entertainment.",
+            "The digital Artbooks contains high definition renders of all 40 of the artworks in this volume.",
+            "The physical Artbooks is limited edition with high definition prints of the 40 featured artworks. They will be sold out soon."
+        ]
+    },
+    "artists": {
+        "header": "Artists",
+        "content": {
+            "aekae": {
+                "name": "Aekae",
+                "url": "https://soundcloud.com/aekaemusic"
+            },
+            "aetherphase": {
+                "name": "aetherphase",
+                "url": "https://twitter.com/aetherphase"
+            },
+            "arenagate": {
+                "name": "arenagate",
+                "url": "https://soundcloud.com/arenagate"
+            },
+            "ausa": {
+                "name": "AUSA",
+                "url": "https://soundcloud.com/ausamusicofficial"
+            },
+            "bennettblogs": {
+                "name": "BennettBlogs",
+                "url": "https://twitter.com/BennettBlogs"
+            },
+            "c-zer": {
+                "name": "c-zer",
+                "url": "https://soundcloud.com/thisisczer"
+            },
+            "demon-of-waves": {
+                "name": "Demon Of Waves",
+                "url": "https://soundcloud.com/demon_of_waves"
+            },
+            "djeb": {
+                "name": "djeb",
+                "url": "https://www.youtube.com/channel/UCqbuC1m9c--M4M4pia9191w/featured"
+            },
+            "kuri": {
+                "name": "Kuri",
+                "url": "https://twitter.com/EkuriZ"
+            },
+            "ena": {
+                "name": "ena",
+                "url": "https://twitter.com/enagok225"
+            },
+            "jackflash": {
+                "name": "jackflash",
+                "url": "https://twitter.com/jackflash776"
+            },
+            "jenceno": {
+                "name": "Jenceno",
+                "url": "https://www.soundcloud.com/jenceno"
+            },
+            "luna-enta": {
+                "name": "Luna Lenta",
+                "url": "https://soundcloud.com/lunalenta"
+            },
+            "metaroom": {
+                "name": "METAROOM",
+                "url": "https://soundcloud.com/themetaroom"
+            },
+            "miyajy": {
+                "name": "MiYAjY",
+                "url": "https://twitter.com/MiYAjY_quasar"
+            },
+            "neurolink": {
+                "name": "NEUROLINK",
+                "url": "https://soundcloud.com/neurolinkmusic"
+            },
+            "noah-b": {
+                "name": "NOAH B",
+                "url": "https://soundcloud.com/thisisnoahb"
+            },
+            "sam-waitin": {
+                "name": "SAM WAITIN",
+                "url": "https://twitter.com/sam_waitin"
+            },
+            "sci": {
+                "name": "sci",
+                "url": "https://twitter.com/scidsgn"
+            },
+            "skrullz": {
+                "name": "Skrullz",
+                "url": "https://soundcloud.com/skrullz"
+            },
+            "stessie": {
+                "name": "Stessie",
+                "url": "https://soundcloud.com/stessieofficial"
+            },
+            "still-crisp": {
+                "name": "still crisp",
+                "url": "https://soundcloud.com/stillcrisp"
+            },
+            "synce": {
+                "name": "synce",
+                "url": "https://twitter.com/syncearts"
+            },
+            "telemist": {
+                "name": "telemist",
+                "url": "https://soundcloud.com/telemist"
+            },
+            "type-r": {
+                "name": "Type R",
+                "url": "https://twitter.com/imTYPE_R"
+            },
+            "v8cola": {
+                "name": "V8COLA",
+                "url": "https://soundcloud.com/v8cola"
+            },
+            "volant": {
+                "name": "VOLANT",
+                "url": "https://soundcloud.com/volantmusic"
+            },
+            "wsx": {
+                "name": "Wsx",
+                "url": "https://wsx.moe/"
+            },
+            "wyste": {
+                "name": "wyste",
+                "url": "https://twitter.com/_wyste"
+            },
+            "xyrax": {
+                "name": "Xyrax / AlariaSystem",
+                "url": "https://www.deviantart.com/alariasystem"
+            },
+            "yazanoo16": {
+                "name": "yazanoo16",
+                "url": "https://www.twitter.com/yazanoo16"
+            }
+        }
+    }
+}

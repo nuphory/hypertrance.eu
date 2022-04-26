@@ -1,0 +1,22 @@
+{
+    "video": {
+        "text": "re-watch VOD",
+        "url": "https://youtu.be/nONsDtHZk5Y"
+    },
+    "album": {
+        "text": "buy album",
+        "url": "https://volantmusic.bandcamp.com/album/hypertrance-vol-1"
+    },
+    "artbook-gumroad": {
+        "text": "artbook (paypal)",
+        "url": "https://volantmusic.gumroad.com/l/hypertrance1p"
+    },
+    "artbook-stripe": {
+        "text": "artbook (card)",
+        "url": "https://buy.stripe.com/eVa9Bf8Yw1KKbPq9AA"
+    },
+    "discord": {
+        "text": "join discord",
+        "url": "https://discord.gg/RF7t34QJmr"
+    }
+}
