@@ -37,6 +37,12 @@ jobs:
         run: |
           pnpm run build
           cp -r src/static dist/
+
+      - name: upload artifact
+        uses: actions/upload-artifact
+        with:
+          name: hypertrance
+          path: dist/
   deploy:
     needs: build
 
@@ -59,6 +65,10 @@ jobs:
           # Sign all commits automatically
           git_commit_gpgsign: true # optional, default is false
 
+      - name: download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: hypertrance
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
