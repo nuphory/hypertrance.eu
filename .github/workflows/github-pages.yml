@@ -36,7 +36,7 @@ jobs:
       - name: build
         run: |
           pnpm run build
-          cp src/static dist/
+          cp -r src/static dist/
   deploy:
     needs: build
 
