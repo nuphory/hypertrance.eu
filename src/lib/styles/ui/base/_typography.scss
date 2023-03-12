@@ -13,22 +13,22 @@ html {
 	}
 
 	h1 {
-		@apply text-3xl sm:text-4xl min-[1342px]:text-5xl;
+		@apply text-2xl xs:text-3xl sm:text-4xl min-[1342px]:text-5xl;
 	}
 	h2 {
-		@apply text-2xl sm:text-3xl;
+		@apply text-xl xs:text-2xl sm:text-3xl;
 	}
 	h3 {
-		@apply text-xl;
+		@apply text-lg xs:text-xl;
 	}
 	h4 {
-		@apply text-lg;
+		@apply text-base xs:text-lg;
 	}
 	h5 {
 		@apply text-base;
 	}
 	h6 {
-		@apply text-base;
+		@apply text-sm;
 	}
 
 	a {

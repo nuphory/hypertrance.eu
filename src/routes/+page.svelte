@@ -82,8 +82,9 @@
 			<iframe
 				class="
                                                 row-span-6
-                                                aspect-video w-[calc(100%+2rem)] xl:w-full
-                                                -mx-4 xl:mx-0
+                                                aspect-video w-[calc(100%+4rem)] xl:w-full
+						max-xl:shadow-black/50 max-xl:shadow-2xl
+                                                -mx-8 xl:mx-0
                                         "
 				src="https://www.youtube-nocookie.com/embed/nONsDtHZk5Y?start=9"
 				title="Hypertrance 2"
