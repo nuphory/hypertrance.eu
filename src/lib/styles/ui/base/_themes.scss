@@ -1,0 +1,190 @@
+@use 'sass:color';
+@use '$lib/styles/ui/color-palette.scss' as *;
+
+@mixin dark-theme {
+	// Text
+	--text-neutral: theme(colors.zinc.300);
+	--text-primary: theme(colors.hyperblue.300);
+	--text-secondary: theme(colors.teal.300);
+	--text-tertiary: theme(colors.indigo.300);
+
+	--text-link-neutral: theme(colors.white);
+	--text-link-primary: theme(colors.hyperblue.400);
+	--text-link-secondary: theme(colors.teal.400);
+	--text-link-tertiary: theme(colors.indigo.400);
+
+	--text-link-neutral-hover: theme(colors.white);
+	--text-link-primary-hover: theme(colors.hyperblue.300);
+	--text-link-secondary-hover: theme(colors.teal.300);
+	--text-link-tertiary-hover: theme(colors.indigo.300);
+
+	--text-link-neutral-active: theme(colors.zinc.500);
+	--text-link-primary-active: theme(colors.hyperblue.600);
+	--text-link-secondary-active: theme(colors.teal.600);
+	--text-link-tertiary-active: theme(colors.indigo.600);
+
+	// Background
+	--background-neutral: theme(colors.zinc.900);
+	--background-primary: theme(colors.hyperblue.900);
+	--background-secondary: theme(colors.teal.900);
+	--background-tertiary: theme(colors.indigo.900);
+
+	// Button
+	--button-background-neutral: var(--text-link-neutral);
+	--button-background-primary: var(--text-link-primary);
+	--button-background-secondary: var(--text-link-secondary);
+	--button-background-tertiary: var(--text-link-tertiary);
+
+	--button-background-neutral-hover: var(--text-link-neutral-hover); // unused
+	--button-background-primary-hover: var(--text-link-primary-hover); // unused
+	--button-background-secondary-hover: var(--text-link-secondary-hover); // unused
+	--button-background-tertiary-hover: var(--text-link-tertiary-hover); // unused
+
+	--button-background-neutral-active: var(--text-link-neutral-active); // unused
+	--button-background-primary-active: var(--text-link-primary-active); // unused
+	--button-background-secondary-active: var(--text-link-secondary-active); // unused
+	--button-background-tertiary-active: var(--text-link-tertiary-active); // unused
+
+	--button-text-neutral: theme(colors.black);
+	--button-text-primary: theme(colors.hyperblue.100);
+	--button-text-secondary: theme(colors.teal.100);
+	--button-text-tertiary: theme(colors.indigo.100);
+
+	--button-text-neutral-hover: theme(colors.black);
+	--button-text-primary-hover: theme(colors.hyperblue.50);
+	--button-text-secondary-hover: theme(colors.teal.50);
+	--button-text-tertiary-hover: theme(colors.indigo.50);
+
+	--button-text-neutral-active: theme(colors.black);
+	--button-text-primary-active: theme(colors.hyperblue.200);
+	--button-text-secondary-active: theme(colors.teal.200);
+	--button-text-tertiary-active: theme(colors.indigo.200);
+
+	// Border
+	--border-neutral: var(--button-background-neutral);
+	--border-primary: var(--button-background-primary);
+	--border-secondary: var(--button-background-secondary);
+	--border-tertiary: var(--button-background-tertiary);
+
+	--border-neutral-hover: var(--button-background-neutral-hover);
+	--border-primary-hover: var(--button-background-primary-hover);
+	--border-secondary-hover: var(--button-background-secondary-hover);
+	--border-tertiary-hover: var(--button-background-tertiary-hover);
+
+	--border-neutral-active: var(--button-background-neutral-active);
+	--border-primary-active: var(--button-background-primary-active);
+	--border-secondary-active: var(--button-background-secondary-active);
+	--border-tertiary-active: var(--button-background-tertiary-active);
+
+	// Color
+	--color-information: var(--text-neutral);
+	// --color-debug: theme(colors.zinc.300) / 65;
+	--color-success: theme(colors.green.400);
+	--color-warning: theme(colors.amber.400);
+	--color-error: theme(colors.red.400);
+
+	color-scheme: dark;
+}
+@mixin light-theme {
+	// Text
+	--text-neutral: theme(colors.zinc.700);
+	--text-primary: theme(colors.hyperblue.600);
+	--text-secondary: theme(colors.teal.600);
+	--text-tertiary: theme(colors.indigo.600);
+
+	--text-link-neutral: theme(colors.black);
+	--text-link-primary: theme(colors.hyperblue.500);
+	--text-link-secondary: theme(colors.teal.500);
+	--text-link-tertiary: theme(colors.indigo.500);
+
+	--text-link-neutral-hover: theme(colors.zinc.700);
+	--text-link-primary-hover: theme(colors.hyperblue.400);
+	--text-link-secondary-hover: theme(colors.teal.400);
+	--text-link-tertiary-hover: theme(colors.indigo.400);
+
+	--text-link-neutral-active: theme(colors.black);
+	--text-link-primary-active: theme(colors.hyperblue.600);
+	--text-link-secondary-active: theme(colors.teal.600);
+	--text-link-tertiary-active: theme(colors.indigo.600);
+
+	// Background
+	--background-neutral: theme(colors.zinc.200);
+	--background-primary: theme(colors.hyperblue.200);
+	--background-secondary: theme(colors.teal.200);
+	--background-tertiary: theme(colors.indigo.200);
+
+	// Button
+	--button-background-neutral: var(--text-link-neutral);
+	--button-background-primary: var(--text-link-primary);
+	--button-background-secondary: var(--text-link-secondary);
+	--button-background-tertiary: var(--text-link-tertiary);
+
+	--button-background-neutral-hover: var(--text-link-neutral-hover); // unused
+	--button-background-primary-hover: var(--text-link-primary-hover); // unused
+	--button-background-secondary-hover: var(--text-link-secondary-hover); // unused
+	--button-background-tertiary-hover: var(--text-link-tertiary-hover); // unused
+
+	--button-background-neutral-active: var(--text-link-neutral-active); // unused
+	--button-background-primary-active: var(--text-link-primary-active); // unused
+	--button-background-secondary-active: var(--text-link-secondary-active); // unused
+	--button-background-tertiary-active: var(--text-link-tertiary-active); // unused
+
+	--button-text-neutral: theme(colors.white);
+	--button-text-primary: theme(colors.hyperblue.100);
+	--button-text-secondary: theme(colors.teal.100);
+	--button-text-tertiary: theme(colors.indigo.100);
+
+	--button-text-neutral-hover: theme(colors.white);
+	--button-text-primary-hover: theme(colors.hyperblue.50);
+	--button-text-secondary-hover: theme(colors.teal.50);
+	--button-text-tertiary-hover: theme(colors.indigo.50);
+
+	--button-text-neutral-active: theme(colors.white);
+	--button-text-primary-active: theme(colors.hyperblue.200);
+	--button-text-secondary-active: theme(colors.teal.200);
+	--button-text-tertiary-active: theme(colors.indigo.200);
+
+	// Border
+	--border-neutral: var(--button-background-neutral);
+	--border-primary: var(--button-background-primary);
+	--border-secondary: var(--button-background-secondary);
+	--border-tertiary: var(--button-background-tertiary);
+
+	--border-neutral-hover: var(--button-background-neutral-hover);
+	--border-primary-hover: var(--button-background-primary-hover);
+	--border-secondary-hover: var(--button-background-secondary-hover);
+	--border-tertiary-hover: var(--button-background-tertiary-hover);
+
+	--border-neutral-active: var(--button-background-neutral-active);
+	--border-primary-active: var(--button-background-primary-active);
+	--border-secondary-active: var(--button-background-secondary-active);
+	--border-tertiary-active: var(--button-background-tertiary-active);
+
+	// Color
+	--color-information: var(--text-neutral);
+	// --color-debug: theme(colors.zinc.300) / 65;
+	--color-success: theme(colors.green.500);
+	--color-warning: theme(colors.amber.500);
+	--color-error: theme(colors.red.500);
+
+	color-scheme: light;
+}
+
+[data-theme='dark'] {
+	@include dark-theme;
+}
+
+[data-theme='light'] {
+	@include light-theme;
+}
+
+// OS Default.
+:root:not([data-theme='dark'], [data-theme='light']) {
+	@media (prefers-color-scheme: light) {
+		@include light-theme;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		@include dark-theme;
+	}
+}

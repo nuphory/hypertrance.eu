@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'Comsat';
+	src: url('/assets/type/Comsat-Navy-Unit.woff') format('woff'),
+		url('/assets/type/Comsat-Navy-Unit.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	h1,
+	h2 {
+		@apply font-comsat tracking-widest;
+	}
+
+	h1 {
+		@apply text-3xl sm:text-4xl min-[1342px]:text-5xl;
+	}
+	h2 {
+		@apply text-2xl sm:text-3xl;
+	}
+	h3 {
+		@apply text-xl;
+	}
+	h4 {
+		@apply text-lg;
+	}
+	h5 {
+		@apply text-base;
+	}
+	h6 {
+		@apply text-base;
+	}
+
+	a {
+		@apply inline-block;
+		&:not(.reset) {
+			&:hover {
+				@apply underline;
+			}
+			&:active {
+				@apply underline;
+			}
+		}
+	}
+}

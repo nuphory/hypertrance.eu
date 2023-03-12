@@ -1,3 +1,57 @@
+@use '$lib/styles/ui/base/themes';
+@use '$lib/styles/ui/base/typography';
+@use '$lib/styles/ui/base/colors';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--transition-duration: 500ms;
+}
+
+*,
+*::before,
+*::after {
+	@apply box-border;
+	// @apply ring-1 ring-green-500;
+	@apply transition-sizing duration-default ease-out;
+}
+
+html {
+	font-family: sans-serif;
+	scroll-behavior: smooth;
+	body {
+		@apply transition-colors duration-default ease-out;
+		@apply flex flex-col justify-between;
+		@apply min-h-screen-small bg-neutral text-neutral;
+	}
+	main {
+		@apply relative bg-primary min-h-[calc(100svh-4rem)];
+	}
+
+	section {
+		@apply relative p-8;
+		&:not(:first-child) {
+			@apply my-8;
+		}
+		&:first-child {
+			@apply flex flex-col;
+			@apply min-h-[inherit];
+			@apply xl:min-h-[48rem];
+		}
+	}
+
+	a {
+		@apply transition-quick duration-default ease-out;
+
+		&:not(.reset) {
+			&:hover {
+				@apply -translate-y-1;
+			}
+			&:active {
+				@apply translate-y-px;
+			}
+		}
+	}
+}

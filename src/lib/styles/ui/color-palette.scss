@@ -1,0 +1,23 @@
+@use 'sass:color';
+
+// Colors
+$color-hyperblue: #3399ff;
+$color-hyperblue-50: color.change($color-hyperblue, $lightness: 95%);
+$color-hyperblue-100: color.change($color-hyperblue, $lightness: 90%);
+$color-hyperblue-150: color.change($color-hyperblue, $lightness: 85%);
+$color-hyperblue-200: color.change($color-hyperblue, $lightness: 80%);
+$color-hyperblue-250: color.change($color-hyperblue, $lightness: 75%);
+$color-hyperblue-300: color.change($color-hyperblue, $lightness: 70%);
+$color-hyperblue-350: color.change($color-hyperblue, $lightness: 65%);
+$color-hyperblue-400: color.change($color-hyperblue, $lightness: 60%);
+$color-hyperblue-450: color.change($color-hyperblue, $lightness: 55%);
+$color-hyperblue-500: color.change($color-hyperblue, $lightness: 50%);
+$color-hyperblue-550: color.change($color-hyperblue, $lightness: 45%);
+$color-hyperblue-600: color.change($color-hyperblue, $lightness: 40%);
+$color-hyperblue-650: color.change($color-hyperblue, $lightness: 35%);
+$color-hyperblue-700: color.change($color-hyperblue, $lightness: 30%);
+$color-hyperblue-750: color.change($color-hyperblue, $lightness: 25%);
+$color-hyperblue-800: color.change($color-hyperblue, $lightness: 20%);
+$color-hyperblue-850: color.change($color-hyperblue, $lightness: 15%);
+$color-hyperblue-900: color.change($color-hyperblue, $lightness: 10%);
+$color-hyperblue-950: color.change($color-hyperblue, $lightness: 5%);

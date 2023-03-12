@@ -1,0 +1,87 @@
+@use 'sass:color';
+@use '$lib/styles/ui/color-palette.scss' as *;
+@use '$lib/styles/ui/base/themes' as *;
+
+html {
+	&[data-theme='dark'] {
+		.invert-colors {
+			@include light-theme;
+		}
+	}
+
+	&[data-theme='light'] {
+		.invert-colors {
+			@include dark-theme;
+		}
+	}
+
+	button {
+		@apply transition-quick duration-default ease-out;
+		@apply relative p-4 px-8;
+		--button-background-main: var(--button-background-neutral);
+		--button-border-main: var(--button-background-neutral);
+		--button-text-main: var(--button-text-neutral);
+		--button-text-hover: var(--button-text-neutral-hover);
+		--button-text-active: var(--button-text-neutral-active);
+
+		&.button-primary {
+			--button-background-main: var(--button-background-primary);
+			--button-border-main: var(--button-background-primary);
+			--button-text-main: var(--button-text-primary);
+			--button-text-hover: var(--button-text-primary-hover);
+			--button-text-active: var(--button-text-primary-active);
+		}
+		&.button-secondary {
+			--button-background-main: var(--button-background-secondary);
+			--button-border-main: var(--button-background-secondary);
+			--button-text-main: var(--button-text-secondary);
+			--button-text-hover: var(--button-text-secondary-hover);
+			--button-text-active: var(--button-text-secondary-active);
+		}
+		&.button-tertiary {
+			--button-background-main: var(--button-background-tertiary);
+			--button-border-main: var(--button-background-tertiary);
+			--button-text-main: var(--button-text-tertiary);
+			--button-text-hover: var(--button-text-tertiary-hover);
+			--button-text-active: var(--button-text-tertiary-active);
+		}
+
+		@apply text-[var(--button-background-main)] ring-2 ring-[var(--button-border-main)];
+
+		&::before {
+			@apply transition-[transform,background-position] duration-default ease-in-out absolute -z-10 inset-0 bg-left-top content-[''];
+
+			background: linear-gradient(
+				135deg,
+				transparent 0% 40%,
+				var(--button-background-main) 60% 100%
+			);
+			background-size: 300%;
+		}
+
+		&:hover {
+			@apply scale-100;
+			@apply text-[var(--button-text-hover)] ring-neutral-hover;
+			&::before {
+				@apply scale-110;
+				@apply bg-right-bottom;
+			}
+		}
+		&:active {
+			@apply scale-95;
+			@apply text-[var(--button-text-active)] ring-neutral-active;
+		}
+	}
+
+	a {
+		@apply text-link-neutral;
+		&:not(.reset) {
+			&:hover {
+				@apply text-link-neutral-hover;
+			}
+			&:active {
+				@apply text-link-neutral-active;
+			}
+		}
+	}
+}
