@@ -77,47 +77,6 @@
                                         pointer-events-none opacity-100
                                 "
 			/>
-
-			<!-- <div 
-                                class="
-                                        absolute
-                                        bottom-6 right-0
-                                        w-12
-                                        border-b-2 border-l-2
-                                        pointer-events-none opacity-100
-                                "
-                        />
-                        <div 
-                                class="
-                                        absolute
-                                        bottom-4 right-0
-                                        h-2
-                                        w-24
-                                        border-b-2 border-r-2
-                                        pointer-events-none opacity-100
-                                "
-                        />
-                        <div 
-                                class="
-                                        absolute
-                                        bottom-2 right-0
-                                        
-                                        w-36
-                                        border-b-2 border-r-2
-                                        pointer-events-none opacity-100
-                                "
-                        />
-                        <div 
-                                class="
-                                        absolute
-                                        bottom-0 right-0
-                                        h-2
-                                        w-64
-                                        border-b-2 border-r-2
-                                        pointer-events-none opacity-100
-                                "
-                        /> -->
-
 			<h1 class="shrink row-start-1 xl:col-start-2 m-8">HYPERTRANCE 2</h1>
 			<!-- TODO update youtube video ID -->
 			<iframe
