@@ -229,6 +229,6 @@ export const tracklist = [
 	}
 ];
 
-export const visualArtists = []
+export const visualArtists = [];
 
 export default tracklist;
