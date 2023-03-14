@@ -1,12 +1,21 @@
-const colors = require('tailwindcss/colors');
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		screens: {
+			'2xs': '425px',
+			xs: '576px',
+			sm: '640px',
+			md: '768px',
+			lg: '1024px'
+		},
 		extend: {
-			screens: {
-				xs: '576px'
+			container: {
+				center: true,
+				padding: {
+					DEFAULT: '1rem',
+					sm: '2rem'
+				}
 			},
 			transitionProperty: {
 				quick:
@@ -168,7 +177,9 @@ module.exports = {
 			ringOffsetColor: {},
 
 			fontFamily: {
-				comsat: 'Comsat, sans-serif'
+				comsat: 'Comsat, sans-serif',
+				'comsat-navy': 'Comsat Navy, sans-serif',
+				montserrat: 'Montserrat, sans-serif'
 			},
 			colors: {
 				information: 'var(--color-information) <alpha-value>',
@@ -218,8 +229,16 @@ module.exports = {
 					900: '#001a33',
 					950: '#000d1a'
 				}
+			},
+			backdropBrightness: {
+				DEFAULT: '50%'
 			}
 		}
 	},
-	plugins: []
+	plugins: [
+		require('tailwind-perspective'),
+		require('@tailwindcss/container-queries'),
+		require('@tailwindcss/line-clamp')
+	]
 };
+
