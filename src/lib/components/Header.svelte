@@ -2,9 +2,9 @@
 	import { name } from '$lib/identity';
 </script>
 
-<header class="">
-	<nav class="flex flex-row justify-between items-center h-[4rem] max-w-7xl m-auto p-4">
-		<h2><a href="/" class="reset hover:scale-105 origin-left">{name.toUpperCase()}</a></h2>
+<header class="sticky top-0 h-[4rem] w-screen -mb-[4rem] z-50 backdrop-blur">
+	<nav class="container h-full flex flex-row justify-between items-center">
+		<h1 class="text-3xl px-8" aria-level={1}><a href="/" class="reset hover:scale-105 origin-left">{name}</a></h1>
 		<ul class="hidden">
 			<li><a href="/">Home</a></li>
 			<li><a href="/about">About</a></li>

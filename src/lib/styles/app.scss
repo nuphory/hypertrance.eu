@@ -8,6 +8,7 @@
 
 :root {
 	--transition-duration: 500ms;
+	--perspective: 20rem;
 }
 
 *,
@@ -19,27 +20,58 @@
 }
 
 html {
-	font-family: sans-serif;
+	@apply transition-colors duration-default ease-out;
+	@apply h-screen-small min-h-screen-small w-full;
+
+	@apply font-montserrat lowercase;
 	scroll-behavior: smooth;
+
 	body {
-		@apply transition-colors duration-default ease-out;
-		@apply flex flex-col justify-between;
-		@apply min-h-screen-small bg-neutral text-neutral;
+		@apply flex flex-col items-center;
+		// @apply overflow-hidden;
+		@apply bg-neutral text-neutral;
 	}
+
 	main {
-		@apply relative bg-primary min-h-[calc(100svh-4rem)];
+		@apply @container relative;
+		// @apply transform-style-3d;
+		// @apply perspective-[var(--perspective)];
+		// @apply perspective-origin-top;
+		@apply min-h-screen-small w-full;
+		@apply overflow-clip;
+
+		.wrapper {
+			@apply min-h-[inherit];
+		}
+		// @apply overflow-clip;
+		>section {
+			&:not(:first-of-type) {
+				@apply md:container;
+				@apply mb-8 py-8 px-8;
+			}
+			&:first-of-type {
+				@apply pt-12;
+				@apply min-h-[inherit] sm:min-h-0;
+				@apply backdrop-blur-none backdrop-brightness-100;
+				// @apply xl:min-h-[48rem];
+			}
+			&:last-of-type {
+				@apply mb-0 pb-8 px-4 xs:px-8;
+			}
+		}
+	}
+
+	button {
+		@apply transition-quick duration-default ease-out;
+		@apply relative p-4 px-4 2xs:px-8;
 	}
 
 	section {
-		@apply relative p-8;
-		&:not(:first-child) {
-			@apply my-8;
-		}
-		&:first-child {
-			@apply flex flex-col;
-			@apply min-h-[inherit];
-			@apply xl:min-h-[48rem];
-		}
+		@apply relative;
+		@apply mb-8 py-8 px-8;
+
+		@apply flex flex-col justify-between;
+		@apply backdrop-blur backdrop-brightness-50;
 	}
 
 	a {

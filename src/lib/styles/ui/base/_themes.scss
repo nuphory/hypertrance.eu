@@ -45,17 +45,17 @@
 	--button-background-secondary-active: var(--text-link-secondary-active); // unused
 	--button-background-tertiary-active: var(--text-link-tertiary-active); // unused
 
-	--button-text-neutral: theme(colors.black);
+	--button-text-neutral: theme(colors.white);
 	--button-text-primary: theme(colors.hyperblue.100);
 	--button-text-secondary: theme(colors.teal.100);
 	--button-text-tertiary: theme(colors.indigo.100);
 
-	--button-text-neutral-hover: theme(colors.black);
+	--button-text-neutral-hover: theme(colors.white);
 	--button-text-primary-hover: theme(colors.hyperblue.50);
 	--button-text-secondary-hover: theme(colors.teal.50);
 	--button-text-tertiary-hover: theme(colors.indigo.50);
 
-	--button-text-neutral-active: theme(colors.black);
+	--button-text-neutral-active: theme(colors.white);
 	--button-text-primary-active: theme(colors.hyperblue.200);
 	--button-text-secondary-active: theme(colors.teal.200);
 	--button-text-tertiary-active: theme(colors.indigo.200);

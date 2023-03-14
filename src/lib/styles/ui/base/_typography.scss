@@ -1,15 +1,72 @@
 @font-face {
-	font-family: 'Comsat';
-	src: url('/assets/type/Comsat-Navy-Unit.woff') format('woff'),
-		url('/assets/type/Comsat-Navy-Unit.woff2') format('woff2');
-	font-weight: normal;
+	font-family: 'Comsat Navy';
+	src: url('/assets/type/woff/Comsat/Comsat-Navy-Stealth.woff') format('woff'),
+		url('/assets/type/woff2/Comsat/Comsat-Navy-Stealth.woff2') format('woff2');
+	font-weight: 200, 'Stealth';
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Comsat Navy';
+	src: url('/assets/type/woff/Comsat/Comsat-Navy-Station.woff') format('woff'),
+		url('/assets/type/woff2/Comsat/Comsat-Navy-Station.woff2') format('woff2');
+	font-weight: 'Station';
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Comsat Navy';
+	src: url('/assets/type/woff/Comsat/Comsat-Navy-Storm.woff') format('woff'),
+		url('/assets/type/woff2/Comsat/Comsat-Navy-Storm.woff2') format('woff2');
+	font-weight: 'Storm';
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Comsat Navy';
+	src: url('/assets/type/woff/Comsat/Comsat-Navy-Unit.woff') format('woff'),
+		url('/assets/type/woff2/Comsat/Comsat-Navy-Unit.woff2') format('woff2');
+	font-weight: 400, 'Unit';
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Comsat Navy';
+	src: url('/assets/type/woff/Comsat/Comsat-Navy-Box.woff') format('woff'),
+		url('/assets/type/woff2/Comsat/Comsat-Navy-Box.woff2') format('woff2');
+	font-weight: 'Box';
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Comsat Navy';
+	src: url('/assets/type/woff/Comsat/Comsat-Navy-Fat.woff') format('woff'),
+		url('/assets/type/woff2/Comsat/Comsat-Navy-Fat.woff2') format('woff2');
+	font-weight: 'Fat';
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Comsat Navy';
+	src: url('/assets/type/woff/Comsat/Comsat-Navy-Black.woff') format('woff'),
+		url('/assets/type/woff2/Comsat/Comsat-Navy-Black.woff2') format('woff2');
+	font-weight: 700, 'Black';
 	font-style: normal;
 }
 
 html {
+	main {
+		h1,
+		h2 {
+			@apply mb-8;
+		}
+	}
 	h1,
 	h2 {
-		@apply font-comsat tracking-widest;
+		@apply font-montserrat;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply before:content-['::_'];
 	}
 
 	h1 {

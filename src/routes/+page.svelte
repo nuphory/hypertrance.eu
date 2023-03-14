@@ -1,154 +1,234 @@
 <script lang="ts">
 	// Imports
-	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 
+	// Assets
+	import backgroundImgSrcSet from '$lib/assets/img/hypertrance-2-background-still.png?jpg&srcset&w=576;640;768;1028;1280;1920;2560';
+	import backgroundVideoSrc from '$lib/assets/vid/hypertrance-2-background-1440p12M.mp4';
 	import tracklist from '$lib/assets/tracklist';
+	import { goto } from '$app/navigation';
 
 	onMount(() => {
 		if (!browser) return;
-		document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
-		window.addEventListener('scroll', () => {
-			document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+		document.documentElement.style.setProperty('--page-height', `${document.body.clientHeight}px`);
+
+		document.body.addEventListener('copy', () => {
+			document.querySelectorAll("[aria-hidden='true']").forEach((el) => {
+				el.classList.add('hidden');
+				setTimeout(() => {
+					el.classList.remove('hidden');
+				});
+			});
 		});
 	});
 </script>
 
 <main>
-	<section class="justify-center overflow-clip">
-		<iframe
-			class="
-                                transition-none
-                                absolute left-1/2 top-1/2 
-                                -translate-y-[calc(50%-var(--scroll-y,0px)/2)] -translate-x-1/2 scale-125
-                                aspect-video min-w-full min-h-full
-                                pointer-events-none
-                        "
-			title="Hypertrance 2 bg-video"
-			frameborder="0"
-			src="https://www.youtube-nocookie.com/embed/nONsDtHZk5Y?autoplay=1&controls=0&showinfo=0&autohide=1&mute=1&start=9"
+	<!-- Background -->
+	<figure
+		class="transition-none absolute -top-[12.5%] origin-top -translate-y-[calc(var(--scroll-y)*-0.5)] min-w-full min-h-[100%] pointer-events-none"
+	>
+		<img
+			srcset={backgroundImgSrcSet}
+			class="transition-none absolute object-cover top-0 left-half -translate-x-half min-h-full"
+			alt="Background"
 		/>
-
-		<div
-			class="
-                                content-[''] absolute inset-0 bg-black opacity-25 z-0
-                        "
-		/>
-
-		<div
-			class="
-                                container
-                                relative 
-                                grid grid-cols-1 auto-cols-min xl:grid-cols-[1.78fr_1fr] items-start
-                                max-w-2xl xl:max-w-7xl m-auto
-
-                                
-                                after:content-[''] after:absolute after:inset-0 after:bg-black after:opacity-75 after:z-0
-                                [&>*]:z-10
-                        "
+		<!-- Video -->
+		<video
+			class="transition-none absolute object-cover top-0 left-half -translate-x-half max-w-none min-h-full"
+			autoplay
+			muted
+			loop
 		>
-			<!-- Artistic / Flair divs -->
-			<div
-				class="
-                                        absolute
-                                        top-0 max-xl:left-0 xl:right-0
-                                        h-12 xl:h-12 min-[1342px]:h-[3.4rem] 
-                                        w-48 xl:w-64
-                                        border-t-2 max-xl:border-l-2 xl:border-r-2 
-                                        pointer-events-none opacity-100
-                                "
-			/>
-			<div
-				class="
-                                        absolute
-                                        top-12 xl:top-12 min-[1342px]:top-[3.4rem] max-xl:left-0 xl:right-0
-                                        w-5 xl:w-28 min-[1342px]:w-6
-                                        border-t-2 
-                                        pointer-events-none opacity-100
-                                "
-			/>
-			<div
-				class="
-                                        absolute
-                                        top-14 xl:top-14 min-[1342px]:top-[3.9rem] max-xl:left-0 xl:right-0
-                                        h-48 
-                                        w-2 xl:w-6 min-[1342px]:w-2
-                                        border-t-2 max-xl:border-l-2 xl:border-r-2
-                                        pointer-events-none opacity-100
-                                "
-			/>
-			<h1 class="shrink row-start-1 xl:col-start-2 m-8">HYPERTRANCE 2</h1>
-			<!-- TODO update youtube video ID -->
-			<iframe
-				class="
-                                                row-span-6
-                                                aspect-video w-[calc(100%+4rem)] xl:w-full
-						max-xl:shadow-black/50 max-xl:shadow-2xl
-                                                -mx-8 xl:mx-0
-                                        "
-				src="https://www.youtube-nocookie.com/embed/nONsDtHZk5Y?start=9"
-				title="Hypertrance 2"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
-			/>
-			<p class="m-8 xl:mt-0 xl:col-start-2">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem debitis velit asperiores quae
-				repudiandae, quo architecto libero culpa nesciunt eos quidem doloribus? Iure hic nemo,
-				deleniti sequi porro at modi!
-			</p>
-			<ul class="xl:mx-8 xl:col-start-2 flex flex-row items-center gap-4">
-				<!-- Buy button -->
-				<li><button class="button-primary"><b>Buy Now</b></button></li>
-				<!-- Stream link -->
-				<li><a href="/" class="underline">Stream elsewhere</a></li>
-			</ul>
+			<source src={backgroundVideoSrc} type="video/mp4" />
+		</video>
+		<!-- YouTube -->
+		<!-- <iframe
+			class="absolute left-half -translate-x-half max-w-none min-h-full"
+			title="Background Video"
+			frameborder="0"
+			src="https://www.youtube-nocookie.com/embed/nONsDtHZk5Y?autoplay=1&controls=0&showinfo=0&loop&autohide=1&mute=1&start=9"
+		/> -->
+	</figure>
+
+	<section class="max-w-none font-comsat-navy mix-blend-lighten" id="hero">
+		<div class="perspective-40 mt-24 text-white uppercase ">
+			<div class="origin-bottom rotate-x-6 sm:-mt-14 md:-mt-[5rem] lg:-mt-[7rem]">
+				<div class="container relative mx-auto px-0">
+					<span
+						class="block translate-y-[2.5%] text-[16rem] md:text-[24rem] lg:text-[32rem] leading-[16rem] md:leading-[24rem] lg:leading-[32rem]  tracking-widest text-right text-white [-webkit-text-fill-color:black] [-webkit-text-stroke-width:1px] select-none pointer-events-none"
+						>02</span
+					>
+					<div class="absolute top-1/2 -translate-y-1h w-full h-1/4 bg-black" />
+				</div>
+				<div
+					class="container relative flex justify-between items-start max-w-none mx-0 px-0 -mt-[9rem] mb-[9rem] md:-mt-[13.25rem] md:mb-[13.25rem] lg:-mt-[18rem] lg:mb-[18rem]"
+				>
+					<div
+						class="grow h-[0.2rem] md:h-[0.3rem] lg:h-[0.4rem] -ml-16 md:-ml-32 lg:-ml-[32rem] -mr-4 md:-mr-8 bg-white"
+					/>
+					<div class="container px-0">
+						<span
+							class="block w-fit ml-auto -mt-[0.45rem] md:-mt-[0.65rem] lg:-mt-[1rem] mr-[1rem] md:mr-[1.75rem] lg:mr-[2.5rem] text-[0.75rem] md:text-[1rem] lg:text-[1.5rem] leading-[1.5rem] md:leading-[2rem] lg:leading-[3rem] tracking-[1.125rem] md:tracking-[1.75rem] lg:tracking-[2.2rem]  text-left text-white"
+						>
+							<span class="inline" aria-hidden="true">[</span><span
+								class="inline"
+								role="heading"
+								aria-level={1}
+								>HYPERTRANCE<span class="inline -tracking-[0.5rem]">&nbsp;</span>2</span
+							><span class="inline" aria-hidden="true"><br />[.</span>
+						</span>
+					</div>
+					<div
+						class="grow h-[0.4rem] md:h-[0.6rem] lg:h-[0.8rem] -ml-4 md:-ml-8 -mr-16 md:-mr-32 lg:-mr-[32rem] bg-white"
+					/>
+				</div>
+				<ul
+					class="hidden container sm:flex justify-between xs:justify-end items-start gap-10 md:gap-[4.5rem] -mt-16 lg:-mt-32 mb-6 text-xs md:text-base [&>li]:md:w-48"
+				>
+					<li class="max-xs:flex-1">
+						<button
+							class=" w-full mr-4 sm:mr-0 md:mr-4  button-neutral tracking-[0.2rem] uppercase backdrop-blur backdrop-brightness-95"
+							on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
+						>
+							<span>Discord</span>
+						</button>
+					</li>
+					<li class="max-xs:flex-1 md:mr-4 lg:mr-8">
+						<button
+							class=" w-full mr-4 sm:mr-0 md:mr-4 button-primary tracking-[0.2rem] uppercase backdrop-blur backdrop-brightness-95"
+							on:click={() => window.open('http://nuphory.bandcamp.com', '_blank')}
+						>
+							<span>Buy Now</span>
+						</button>
+						<span class="block -mb-16 mt-1 text-xs text-right font-montserrat lowercase"
+							>or <a href="/">stream elsewhere</a></span
+						>
+					</li>
+				</ul>
+				<div class="container flex md:justify-center gap-2 lg:-mt-20 mb-">
+					<div
+						class="flex-1 md:basis-1/3 sm:scale-50 origin-top-right text-right text-[3rem] leading-[2.85rem]"
+					>
+						<span aria-hidden="true">]</span>
+					</div>
+					<div
+						class="basis-72 sm:basis-72 md:basis-2/3 sm:scale-50 origin-top-left text-[0.75rem]  uppercase tracking-[0.2rem] select-none pointer-events-none"
+					>
+						<span class="block w-fit select-text pointer-events-auto">Brought to you</span>
+						<span class="block w-fit select-text pointer-events-auto">by various artists.</span>
+						<span class="select-none pointer-events-none" aria-hidden="true"><br />2K3.R</span>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
-	<section>
-		<div class="mx-auto max-w-7xl">
-			<h2>TRACKLIST</h2>
+
+	<article class="container flex flex-col lg:flex-row gap-8">
+		<section class="basis-2/3" id="about">
+			<h2>what is hypertrance?</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam placeat hic quisquam culpa
+				omnis non dicta sequi, dolore possimus, eligendi officiis nostrum. Placeat provident
+				deleniti culpa totam recusandae, voluptates aperiam!
+			</p>
+			<p>
+				Quae ducimus a dolore ex molestiae cupiditate ipsum fuga tempore, quam quasi voluptate,
+				perferendis et enim nam fugit eius harum! Non aspernatur explicabo tenetur similique
+				obcaecati. Error rerum sunt ipsa.
+			</p>
+			<p>
+				Quaerat illo repudiandae sit placeat dolor. Quos, magni consequatur, autem quo facere
+				assumenda dolorem ducimus modi illo voluptate ad praesentium repudiandae, esse aperiam
+				labore accusamus consequuntur nostrum. Temporibus, molestias pariatur!
+			</p>
+			<p>
+				Natus doloribus eius fugit quis expedita nihil hic excepturi quam dolorem aut quos numquam
+				sint explicabo animi, aspernatur commodi amet quia, repellendus similique quidem? Sapiente
+				quasi quos accusamus quia praesentium!
+			</p>
+			<p>
+				Vero sit omnis molestiae dolore temporibus! Animi praesentium eligendi veritatis, eaque
+				voluptatem consequuntur laborum in laboriosam saepe veniam neque itaque officiis rerum est?
+				Sapiente tempore dolores obcaecati nobis suscipit odio!
+			</p>
+		</section>
+		<section id="tracklist">
+			<h2>tracklist</h2>
 			<ol class="list-decimal max-w-lg">
 				{#each tracklist as track}
 					<li class="ml-8">
 						<div class="flex gap-1">
 							<div class="tracklist__artists flex-1 text-left">
 								{#each track.artists as artist, i}
-									{#if i !== 0}
-										<span class="tracklist__combinator">&nbsp&</span>
-									{/if}
-									{#if artist.link}
-										<a href={artist.link} class="tracklist__artist">{artist.name}</a>
-									{:else}
-										<span class="tracklist__artist">{artist.name}</span>
+									{#if artist}
+										{#if i !== 0}
+											<span class="tracklist__combinator">&nbsp&</span>
+										{/if}
+										{#if artist.links.length > 0}
+											<a
+												class="tracklist__artist"
+												href={(
+													artist.links.find((link) => link.name === 'bandcamp') ??
+													artist.links.find((link) => link.name === 'spotify') ??
+													artist.links.find((link) => link.name === 'soundcloud') ??
+													artist.links[0]
+												).url}
+											>
+												{artist.name}
+											</a>
+										{:else}
+											<span class="tracklist__artist">{artist.name}</span>
+										{/if}
 									{/if}
 								{/each}
 							</div>
 							<span class="tracklist__separator">-</span>
 							<span class="tracklist__title flex-1">
-								{#if track.link}
-									<a href={track.link}>{track.title}</a>
+								{#if track.links.length > 0}
+									<a
+										class="tracklist__artist"
+										href={(
+											track.links.find((link) => link.name === 'bandcamp') ??
+											track.links.find((link) => link.name === 'spotify') ??
+											track.links.find((link) => link.name === 'soundcloud') ??
+											track.links[0]
+										).url}
+									>
+										{track.title}
+									</a>
 								{:else}
-									{track.title}
+									<span class="tracklist__artist">{track.title}</span>
 								{/if}
 							</span>
 						</div>
 					</li>
 				{/each}
 			</ol>
-		</div>
+		</section>
+	</article>
+	<section class="sticky bottom-0 max-w-none sm:translate-y-full font-comsat-navy">
+		<ul class="container flex justify-between xs:justify-end items-start gap-8">
+			<li class="max-xs:flex-1">
+				<button
+					class=" w-full mr-4 sm:mr-0 md:mr-4  button-neutral tracking-[0.2rem] uppercase backdrop-blur backdrop-brightness-95"
+					on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
+				>
+					<span>Discord</span>
+				</button>
+			</li>
+			<li class="max-xs:flex-1 ">
+				<button
+					class=" w-full mr-4 sm:mr-0 md:mr-4 button-primary tracking-[0.2rem] uppercase backdrop-blur backdrop-brightness-95"
+					on:click={() => window.open('http://nuphory.bandcamp.com', '_blank')}
+				>
+					<span>Buy Now</span>
+				</button>
+				<span class="block -mb-16 mt-1 text-xs text-right font-montserrat lowercase"
+					>or <a href="/">stream elsewhere</a></span
+				>
+			</li>
+		</ul>
 	</section>
 </main>
-
-<style lang="scss">
-	:root {
-		--scroll-y: 0px;
-	}
-	ul {
-		*:not(:first-child) {
-			&::before {
-				@apply content-['or'] mr-4;
-			}
-		}
-	}
-</style>
