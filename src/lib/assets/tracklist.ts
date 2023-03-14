@@ -1,234 +1,130 @@
-export const tracklist = [
+import artists, { type Artist, type Link } from '$lib/assets/artists';
+
+type Track = {
+	title: string;
+	artists: (Artist | undefined)[];
+	links: Link[];
+};
+
+export const tracklist: Track[] = [
 	{
 		title: 'HYPERTRANCE',
-		artists: [
-			{
-				name: 'nuphory',
-				link: 'https://soundcloud.com/nuphory'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'nuphory')],
+		links: []
 	},
 	{
 		title: 'everafter',
-		artists: [
-			{
-				name: 'wyste',
-				link: 'https://soundcloud.com/wyste'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'wyste')],
+		links: []
 	},
 	{
 		title: 'infinity',
-		artists: [
-			{
-				name: 'aekae',
-				link: 'https://soundcloud.com/aekaemusic'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'aekae')],
+		links: []
 	},
 	{
 		title: 'digital eternity',
 		artists: [
-			{
-				name: 'yuuni',
-				link: 'https://soundcloud.com/yuunimoosic'
-			},
-			{
-				name: 'aekae',
-				link: 'https://soundcloud.com/aekaemusic'
-			}
+			artists.find((artist) => artist.name.toLowerCase() === 'yuuni'),
+			artists.find((artist) => artist.name.toLowerCase() === 'aekae')
 		],
-		link: ''
+
+		links: []
 	},
 	{
 		title: 'Myria Exaxis',
-		artists: [
-			{
-				name: 'Type R',
-				link: 'https://soundcloud.com/hiimtype_r'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'type r')],
+		links: []
 	},
 	{
 		title: 'EXOPLANET // HYPERTRANCE',
 		artists: [
-			{
-				name: 'nuphory',
-				link: 'https://soundcloud.com/nuphory'
-			},
-			{
-				name: 'Luna Lenta',
-				link: 'https://soundcloud.com/lunalenta'
-			}
+			artists.find((artist) => artist.name.toLowerCase() === 'nuphory'),
+			artists.find((artist) => artist.name.toLowerCase() === 'luna lenta')
 		],
-		link: ''
+		links: []
 	},
 	{
 		title: 'Carry All Before One v2',
 		artists: [
-			{
-				name: 'Lure Rabbit',
-				link: 'https://soundcloud.com/lurerabbit'
-			},
-			{
-				name: 'NaiMeng',
-				link: ''
-			}
+			artists.find((artist) => artist.name.toLowerCase() === 'lure rabbit'),
+			artists.find((artist) => artist.name.toLowerCase() === 'naimeng')
 		],
-		link: ''
+		links: []
 	},
 	{
 		title: 'Ghost Wire',
-		artists: [
-			{
-				name: 'crayvxn',
-				link: 'https://soundcloud.com/crayvxn'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'crayvxn')],
+		links: []
 	},
 	{
 		title: 'Infinite Evolution',
-		artists: [
-			{
-				name: 'Neurolink',
-				link: 'https://soundcloud.com/neurolinkmusic'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'neurolink')],
+		links: []
 	},
 	{
 		title: 'through the forest',
-		artists: [
-			{
-				name: 'voxkai',
-				link: 'https://soundcloud.com/voxkai'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'voxkai')],
+		links: []
 	},
 	{
-		title: 'Dryftcurrent',
-		artists: [
-			{
-				name: 'Kassio Project',
-				link: 'https://soundcloud.com/kassio-971255094'
-			}
-		],
-		link: ''
+		title: 'dryft:current',
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'kassio project')],
+		links: []
 	},
 	{
 		title: 'Wait For Me',
-		artists: [
-			{
-				name: 'D4VT0R',
-				link: 'https://soundcloud.com/d4vt0rmusic'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'd4vt0r')],
+		links: []
 	},
 	{
-		title: 'REJECTEDBYHYPERTRANCE',
-		artists: [
-			{
-				name: 'still crisp',
-				link: 'https://soundcloud.com/stillcrisp'
-			}
-		],
-		link: ''
+		title: 'REJECTED BY HYPERTRANCE',
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'still crisp')],
+		links: []
 	},
 	{
 		title: 'ask the universe',
-		artists: [
-			{
-				name: 'Gasker',
-				link: 'https://soundcloud.com/gasker'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'gasker')],
+		links: []
 	},
 	{
 		title: 'SSR05',
-		artists: [
-			{
-				name: 'MOSHII LIGHTZ',
-				link: 'https://soundcloud.com/moshii-lightz'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'moshii lightz')],
+		links: []
 	},
 	{
 		title: 'I NEED',
-		artists: [
-			{
-				name: 'C-ZER',
-				link: 'https://soundcloud.com/thisisczer'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'c-zer')],
+		links: []
 	},
 	{
 		title: 'STEP10',
-		artists: [
-			{
-				name: 'SAM WAITIN',
-				link: 'https://soundcloud.com/samwaitin'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'sam waitin')],
+		links: []
 	},
 	{
 		title: 'Moon Shine',
 		artists: [
-			{
-				name: 'Lunanescence',
-				link: 'https://soundcloud.com/lunanescence'
-			},
-			{
-				name: 'Luna Lenta',
-
-				link: 'https://soundcloud.com/lunalenta'
-			}
+			artists.find((artist) => artist.name.toLowerCase() === 'lunanescence'),
+			artists.find((artist) => artist.name.toLowerCase() === 'luna lenta')
 		],
-		link: ''
+		links: []
 	},
 	{
 		title: 'juju stomp',
-		artists: [
-			{
-				name: 'disctr4k',
-				link: 'https://soundcloud.com/disctr4k'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'disctr4k')],
+		links: []
 	},
 	{
 		title: 'Twilight',
-		artists: [
-			{
-				name: 'Ausa',
-
-				link: 'https://soundcloud.com/ausamusicofficial'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'ausa')],
+		links: []
 	},
 	{
 		title: 'soul vertex',
-		artists: [
-			{
-				name: 'Noah B',
-				link: 'https://soundcloud.com/thisisnoahb'
-			}
-		],
-		link: ''
+		artists: [artists.find((artist) => artist.name.toLowerCase() === 'noah b')],
+		links: []
 	}
 ];
-
-export const visualArtists = [];
 
 export default tracklist;
