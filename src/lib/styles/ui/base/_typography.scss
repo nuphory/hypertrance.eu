@@ -55,7 +55,9 @@ html {
 			@apply mb-8;
 		}
 	}
-	h1,
+	h1 {
+                @apply font-comsat-navy;
+        }
 	h2 {
 		@apply font-montserrat;
 	}
@@ -99,4 +101,8 @@ html {
 			}
 		}
 	}
+
+        button {
+                @apply font-comsat-navy;
+        }
 }

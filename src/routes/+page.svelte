@@ -60,6 +60,7 @@
 <main>
 	<!-- Background -->
 	<figure
+                aria-level={2}
 		class="transition-none absolute -z-10 top-0 origin-top -translate-y-[calc(var(--scroll-y)*-0.5)] min-w-full min-h-[75%] pointer-events-none"
 	>
 		<img
@@ -102,18 +103,17 @@
 						class="grow h-[0.2rem] md:h-[0.3rem] lg:h-[0.4rem] -ml-16 md:-ml-32 lg:-ml-[32rem] -mr-4 md:-mr-8 bg-white"
 					/>
 					<div class="container px-0">
-						<span
-							class="block w-fit ml-auto -mt-[0.45rem] md:-mt-[0.65rem] lg:-mt-[1rem] mr-[1rem] md:mr-[1.75rem] lg:mr-[2.5rem] text-[0.75rem] md:text-[1rem] lg:text-[1.5rem] leading-[1.5rem] md:leading-[2rem] lg:leading-[3rem] tracking-[1.125rem] md:tracking-[1.75rem] lg:tracking-[2.2rem]  text-left text-white"
+						<h1 class="block w-fit ml-auto -mt-[0.45rem] md:-mt-[0.65rem] lg:-mt-[1rem] mr-[1rem] md:mr-[1.75rem] lg:mr-[2.5rem] text-[0.75rem] md:text-[1rem] lg:text-[1.5rem] leading-[1.5rem] md:leading-[2rem] lg:leading-[3rem] tracking-[1.125rem] md:tracking-[1.75rem] lg:tracking-[2.2rem] text-left text-white before:content-['']"
 						>
 							<span class="inline select-none pointer-events-none" aria-hidden="true">[</span><span
-								class="inline"
+								class="inline select-text"
 								role="heading"
 								aria-level={1}
 								>HYPERTRANCE<span class="inline -tracking-[0.5rem]">&nbsp;</span>2</span
 							><span class="inline select-none pointer-events-none" aria-hidden="true"
 								><br />[.</span
 							>
-						</span>
+						</h1>
 					</div>
 					<div
 						class="grow h-[0.4rem] md:h-[0.6rem] lg:h-[0.8rem] -ml-4 md:-ml-8 -mr-16 md:-mr-32 lg:-mr-[32rem] bg-white"
@@ -173,7 +173,7 @@
 				/>
 			</section>
 			<section class="lg:row-start-1 row-span-2" id="about">
-				<h2>what is hypertrance?</h2>
+				<h2 aria-level={2} >what is hypertrance?</h2>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam placeat hic quisquam
 					culpa omnis non dicta sequi, dolore possimus, eligendi officiis nostrum. Placeat provident
