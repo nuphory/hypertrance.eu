@@ -27,7 +27,7 @@
 <main>
 	<!-- Background -->
 	<figure
-		class="transition-none absolute -z-10 -top-[12.5%] origin-top -translate-y-[calc(var(--scroll-y)*-0.5)] min-w-full min-h-[60%] pointer-events-none"
+		class="transition-none absolute -z-10 top-0 origin-top -translate-y-[calc(var(--scroll-y)*-0.5)] min-w-full min-h-[75%] pointer-events-none"
 	>
 		<img
 			srcset={backgroundImgSrcSet}
