@@ -2,6 +2,10 @@
 	// Imports
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+        
+        // Assets
+	import artists from '$lib/assets/artists';
+        import faviconSrc from '$lib/assets/img/logo/SVG/favicon.svg';
 
 	// Components
 	import Footer from '$lib/components/Footer.svelte';
@@ -11,8 +15,8 @@
 	import '$lib/styles/app.scss';
 
 	import '@fontsource/montserrat';
-	import { description, name } from '$src/lib/identity';
-	import artists from '$src/lib/assets/artists';
+	import { description, name, url } from '$src/lib/identity';
+
 
 	onMount(() => {
 		if (!browser) return;
@@ -39,7 +43,6 @@
                 sizes="192x192"
                 href="/assets/favicon/android-chrome-192x192.png"
         />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/assets/favicon/site.webmanifest" />
         <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#272d3b" />
         <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
@@ -48,6 +51,7 @@
         <meta name="msapplication-TileColor" content="#272d3b" />
         <meta name="msapplication-TileImage" content="/assets/favicon/mstile-144x144.png" /> 
         <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml" /> -->
+        <link rel="icon" type="image/png" sizes="16x16" href="{url}/assets/img/logo/hypertrance-favicon.svg" />
         <meta name="theme-color" content="#fffaf7" />
 
         <meta property="og:site_name" content={name} />
