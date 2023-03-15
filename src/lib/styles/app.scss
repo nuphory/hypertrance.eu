@@ -52,7 +52,7 @@ html {
 			&:first-of-type {
 				@apply pt-12;
 				
-				@apply backdrop-blur-none backdrop-brightness-100;
+				@apply backdrop-blur-none bg-none;
 				// @apply xl:min-h-[48rem];
 			}
 			&:last-of-type {
