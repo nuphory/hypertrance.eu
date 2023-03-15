@@ -5,7 +5,7 @@
 
 	// Assets
 	import backgroundImgSrcSet from '$lib/assets/img/hypertrance-2-background-still.png?jpg&srcset&w=576;640;768;1028;1280;1920;2560';
-	import backgroundVideoSrc from '$lib/assets/vid/hypertrance-2-background-1440p12M.mp4';
+	import backgroundVideoSrc from '$lib/assets/vid/hypertrance-2-background-1440p9M.mp4';
 	import tracklist from '$lib/assets/tracklist';
 	import { goto } from '$app/navigation';
 
@@ -52,12 +52,12 @@
 		/> -->
 	</figure>
 
-	<section class="max-w-none font-comsat-navy mix-blend-lighten" id="hero">
+	<section class="max-w-none font-comsat-navy mix-blend-lighten px-0" id="hero">
 		<div class="perspective-40 mt-24 text-white uppercase ">
 			<div class="origin-bottom rotate-x-6 sm:-mt-14 md:-mt-[5rem] lg:-mt-[7rem]">
-				<div class="container relative mx-auto px-0">
+				<div class="container relative mx-auto px-0 font-extralight">
 					<span
-						class="block translate-y-[2.5%] text-[16rem] md:text-[24rem] lg:text-[32rem] leading-[16rem] md:leading-[24rem] lg:leading-[32rem]  tracking-widest text-right text-white [-webkit-text-fill-color:black] [-webkit-text-stroke-width:1px] select-none pointer-events-none"
+						class="block translate-y-[2.5%] -mr-8 lg:-mr-4 text-[16rem] md:text-[24rem] lg:text-[32rem] leading-[16rem] md:leading-[24rem] lg:leading-[32rem] tracking-[3rem] md:tracking-[4rem] lg:tracking-[4.5rem] text-right text-white [-webkit-text-fill-color:black] [-webkit-text-stroke-width:1px] select-none pointer-events-none"
 						>02</span
 					>
 					<div class="absolute top-1/2 -translate-y-1h w-full h-1/4 bg-black" />
@@ -95,7 +95,7 @@
 							<span>Discord</span>
 						</button>
 					</li>
-					<li class="max-xs:flex-1 md:mr-4 lg:mr-8">
+					<li class="max-xs:flex-1 md:mr-4 lg:mr-12">
 						<button
 							class=" w-full mr-4 sm:mr-0 md:mr-4 button-primary tracking-[0.2rem] uppercase backdrop-blur backdrop-brightness-95"
 							on:click={() => window.open('http://nuphory.bandcamp.com', '_blank')}
@@ -125,8 +125,16 @@
 		</div>
 	</section>
 
-	<article class="container flex flex-col lg:flex-row gap-8">
-		<section class="basis-2/3" id="about">
+	<article class="container grid lg:grid-cols-2 gap-8 auto-rows-max">
+		<section class="p-0 lg:-mb-8 lg:col-start-2">
+			<iframe
+                                class="aspect-video"
+				frameborder="0"
+                                title="Hypertrance 2"
+				src="https://www.youtube-nocookie.com/embed/nONsDtHZk5Y?autoplay=1&controls=0&showinfo=0&loop&autohide=1&mute=1&start=9"
+			/>
+		</section>
+		<section class="lg:row-start-1 row-span-2" id="about">
 			<h2>what is hypertrance?</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam placeat hic quisquam culpa
