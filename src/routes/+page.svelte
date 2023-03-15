@@ -11,16 +11,18 @@
 	import { goto } from '$app/navigation';
 	import { description, name, tagline, url } from '$src/lib/identity';
 
-	onMount(() => {
+	onMount(async () => {
 		if (!browser) return;
 		document.documentElement.style.setProperty('--page-height', `${document.body.clientHeight}px`);
 
-		document.querySelectorAll('iframe').forEach((el) => {
-			el.setAttribute('src', el.dataset.src?.toString());
-			setTimeout(() => {
-				el.classList.remove('opacity-0');
-			}, 200);
-		});
+		setTimeout(async () => {
+			document.querySelectorAll('iframe').forEach((el) => {
+				el.setAttribute('src', `${el.dataset.src}`);
+				setTimeout(async () => {
+					el.classList.remove('opacity-0');
+				}, 200);
+			});
+		}, 0);
 
 		document.body.addEventListener('copy', () => {
 			document.querySelectorAll("[aria-hidden='true']").forEach((el) => {
