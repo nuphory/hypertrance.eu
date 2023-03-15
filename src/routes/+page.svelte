@@ -94,7 +94,7 @@
 		/> -->
 	</figure>
 
-	<section class="max-w-none font-comsat-navy px-0" id="hero">
+	<section class="max-w-none font-comsat-navy px-0 bg-transparent" id="hero">
 		<div class="mt-24 perspective-40 text-white uppercase ">
 			<div class="origin-bottom rotate-x-6 sm:-mt-14 md:-mt-[5rem] lg:-mt-[7rem] ">
 				<div class="container relative mx-auto px-0 font-extralight">
