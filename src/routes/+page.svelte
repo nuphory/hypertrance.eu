@@ -4,7 +4,7 @@
 	import { browser } from '$app/environment';
 
 	// Assets
-	import summaryImgSrc from '$lib/assets/img/summary.png?jpg&width=400';
+	import summaryImgSrc from '$lib/assets/img/summary.png?jpg&w=800';
 	import backgroundImgSrcSet from '$lib/assets/img/hypertrance-2-background-still.png?jpg&srcset&w=576;640;768;1028;1280;1920;2560';
 	import backgroundVideoSrc from '$lib/assets/vid/hypertrance-2-background-1440p9M.mp4';
 	import tracklist from '$lib/assets/tracklist';
