@@ -4,19 +4,23 @@
 	import { browser } from '$app/environment';
 
 	// Assets
+	import summaryImgSrc from '$lib/assets/img/summary.png?jpg&width=400';
 	import backgroundImgSrcSet from '$lib/assets/img/hypertrance-2-background-still.png?jpg&srcset&w=576;640;768;1028;1280;1920;2560';
 	import backgroundVideoSrc from '$lib/assets/vid/hypertrance-2-background-1440p9M.mp4';
 	import tracklist from '$lib/assets/tracklist';
 	import { goto } from '$app/navigation';
+	import { description, name, tagline, url } from '$src/lib/identity';
 
 	onMount(() => {
 		if (!browser) return;
 		document.documentElement.style.setProperty('--page-height', `${document.body.clientHeight}px`);
 
-                document.querySelectorAll("iframe").forEach((el) => {
-                        el.setAttribute('src', el.dataset.src?.toString());
-                        setTimeout(() => {el.classList.remove('opacity-0')}, 200);
-                });
+		document.querySelectorAll('iframe').forEach((el) => {
+			el.setAttribute('src', el.dataset.src?.toString());
+			setTimeout(() => {
+				el.classList.remove('opacity-0');
+			}, 200);
+		});
 
 		document.body.addEventListener('copy', () => {
 			document.querySelectorAll("[aria-hidden='true']").forEach((el) => {
@@ -29,6 +33,30 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{name}</title>
+	<meta name="title" content="{name} — {tagline}" />
+
+	<meta name="description" content={description} />
+
+	<link rel="canonical" href={url} />
+
+	<meta name="robots" content="index, follow" />
+
+	<meta property="og:title" content="{name} — {tagline}" />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content="{url}{summaryImgSrc}" />
+	<meta property="og:url" content={url} />
+	<meta property="og:type" content="website" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@{name}" />
+	<meta name="twitter:creator" content="@{name}" />
+	<meta name="twitter:title" content="{name} — {tagline}" />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content="{url}{summaryImgSrc}" />
+</svelte:head>
+
 <main>
 	<!-- Background -->
 	<figure
@@ -38,7 +66,7 @@
 			srcset={backgroundImgSrcSet}
 			class="transition-none absolute object-cover top-0 left-half -translate-x-half landscape:min-w-full min-h-full"
 			alt="Background"
-                        loading="lazy"
+			loading="lazy"
 		/>
 		<!-- Video -->
 		<video
@@ -46,7 +74,6 @@
 			autoplay
 			muted
 			loop
-                       
 		>
 			<source src={backgroundVideoSrc} type="video/mp4" />
 		</video>
@@ -78,12 +105,14 @@
 						<span
 							class="block w-fit ml-auto -mt-[0.45rem] md:-mt-[0.65rem] lg:-mt-[1rem] mr-[1rem] md:mr-[1.75rem] lg:mr-[2.5rem] text-[0.75rem] md:text-[1rem] lg:text-[1.5rem] leading-[1.5rem] md:leading-[2rem] lg:leading-[3rem] tracking-[1.125rem] md:tracking-[1.75rem] lg:tracking-[2.2rem]  text-left text-white"
 						>
-							<span class="inline" aria-hidden="true">[</span><span
+							<span class="inline select-none pointer-events-none" aria-hidden="true">[</span><span
 								class="inline"
 								role="heading"
 								aria-level={1}
 								>HYPERTRANCE<span class="inline -tracking-[0.5rem]">&nbsp;</span>2</span
-							><span class="inline" aria-hidden="true"><br />[.</span>
+							><span class="inline select-none pointer-events-none" aria-hidden="true"
+								><br />[.</span
+							>
 						</span>
 					</div>
 					<div

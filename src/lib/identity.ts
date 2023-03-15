@@ -1,6 +1,6 @@
 export const name = 'hypertrance';
 export const tagline = 'the definitive culmination of neoy2k music and art';
-export const description = '';
+export const description = 'lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 
 export const url = 'https://hypertrance.eu';
 
