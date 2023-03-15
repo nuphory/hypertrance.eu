@@ -22,6 +22,12 @@
 					el.classList.remove('opacity-0');
 				}, 200);
 			});
+			document.querySelectorAll('source').forEach((el) => {
+				el.setAttribute('src', `${el.dataset.src}`);
+				setTimeout(async () => {
+					el.classList.remove('opacity-0');
+				}, 200);
+			});
 		}, 0);
 
 		document.body.addEventListener('copy', () => {
@@ -77,7 +83,7 @@
 			muted
 			loop
 		>
-			<source src={backgroundVideoSrc} type="video/mp4" />
+			<source data-src={backgroundVideoSrc} class="transition-opacity duration-default ease-out opacity-0" type="video/mp4" />
 		</video>
 		<!-- YouTube -->
 		<!-- <iframe
