@@ -14,9 +14,6 @@
 	import { description, name } from '$src/lib/identity';
 	import artists from '$src/lib/assets/artists';
 
-        // Images
-        import "";
-
 	onMount(() => {
 		if (!browser) return;
 
