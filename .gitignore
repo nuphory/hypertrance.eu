@@ -9,3 +9,13 @@ node_modules
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 dist
+src/lib/assets/vid/hypertrance-2-background-20M.mp4
+src/lib/assets/vid/hypertrance-2-background-720p6M.mp4
+src/lib/assets/vid/hypertrance-2-background-1080p12M.mp4
+src/lib/assets/vid/hypertrance-2-background-1080p20M.mp4
+src/lib/assets/vid/hypertrance-2-background-1440p4M.mp4
+src/lib/assets/vid/hypertrance-2-background-1440p6M.mp4
+src/lib/assets/vid/hypertrance-2-background-1440p10M.mp4
+src/lib/assets/vid/hypertrance-2-background-1440p12M.mp4
+src/lib/assets/vid/hypertrance-2-background-square.mp4
+src/lib/assets/vid/hypertrance-2-background.mp4
