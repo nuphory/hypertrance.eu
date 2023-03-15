@@ -37,7 +37,7 @@ html {
 		// @apply transform-style-3d;
 		// @apply perspective-[var(--perspective)];
 		// @apply perspective-origin-top;
-		@apply min-h-screen-small w-full;
+		@apply w-full;
 		@apply overflow-clip;
 
 		.wrapper {

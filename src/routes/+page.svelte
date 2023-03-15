@@ -219,7 +219,7 @@
 			</section>
 		</article>
 	</div>
-	<section class="sticky bottom-0 max-w-none sm:h-0 sm:translate-y-full font-comsat-navy">
+	<section class="sticky bottom-0 max-w-none sm:h-0 sm:p-0 sm:m-0 sm:translate-y-full overflow-clip font-comsat-navy">
 		<ul class="container flex justify-between xs:justify-end items-start gap-8">
 			<li class="max-xs:flex-1">
 				<button
