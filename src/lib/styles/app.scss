@@ -51,7 +51,7 @@ html {
 			}
 			&:first-of-type {
 				@apply pt-12;
-				@apply min-h-[inherit] sm:min-h-0;
+				
 				@apply backdrop-blur-none backdrop-brightness-100;
 				// @apply xl:min-h-[48rem];
 			}

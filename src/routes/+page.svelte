@@ -36,7 +36,7 @@
 		/>
 		<!-- Video -->
 		<video
-			class="transition-none absolute object-cover top-0 left-half -translate-x-half max-w-none min-h-full"
+			class="transition-none absolute object-cover top-0 left-half -translate-x-half min-h-full"
 			autoplay
 			muted
 			loop
@@ -53,7 +53,7 @@
 	</figure>
 
 	<section class="max-w-none font-comsat-navy mix-blend-lighten px-0" id="hero">
-		<div class="perspective-40 mt-24 text-white uppercase ">
+		<div class="mt-24 text-white uppercase ">
 			<div class="origin-bottom rotate-x-6 sm:-mt-14 md:-mt-[5rem] lg:-mt-[7rem]">
 				<div class="container relative mx-auto px-0 font-extralight">
 					<span
