@@ -5,7 +5,6 @@
         
         // Assets
 	import artists from '$lib/assets/artists';
-        import faviconSrc from '$lib/assets/img/logo/hypertrance-favicon.svg';
 
 	// Components
 	import Footer from '$lib/components/Footer.svelte';
