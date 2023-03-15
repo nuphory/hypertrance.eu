@@ -269,7 +269,7 @@
 		<ul class="container flex justify-between xs:justify-end items-start gap-8">
 			<li class="max-xs:flex-1">
 				<button
-					class=" w-full mr-4 sm:mr-0 md:mr-4  button-neutral tracking-[0.2rem] uppercase backdrop-blur backdrop-brightness-95"
+					class=" w-full mr-4 sm:mr-0 md:mr-4  button-neutral tracking-[0.2rem] uppercase backdrop-blur bg-black/50"
 					on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
 				>
 					<span>Discord</span>
@@ -277,7 +277,7 @@
 			</li>
 			<li class="max-xs:flex-1 ">
 				<button
-					class=" w-full mr-4 sm:mr-0 md:mr-4 button-primary tracking-[0.2rem] uppercase backdrop-blur backdrop-brightness-95"
+					class=" w-full mr-4 sm:mr-0 md:mr-4 button-primary tracking-[0.2rem] uppercase backdrop-blur bg-black/50"
 					on:click={() => window.open('http://nuphory.bandcamp.com', '_blank')}
 				>
 					<span>Buy Now</span>
