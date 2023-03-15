@@ -22,8 +22,8 @@
 					el.classList.remove('opacity-0');
 				}, 200);
 			});
-			document.querySelectorAll('source').forEach((el) => {
-				el.setAttribute('src', `${el.dataset.src}`);
+			document.querySelectorAll('video').forEach((el: HTMLVideoElement) => {
+				el.play();
 				setTimeout(async () => {
 					el.classList.remove('opacity-0');
 				}, 200);
@@ -78,12 +78,12 @@
 		/>
 		<!-- Video -->
 		<video
-			class="transition-none absolute object-cover top-0 left-half -translate-x-half landscape:min-w-full min-h-full"
-			autoplay
+			class="transition-opacity duration-default ease-out opacity-0 absolute object-cover top-0 left-half -translate-x-half landscape:min-w-full min-h-full"
+			preload="none"
 			muted
 			loop
 		>
-			<source data-src={backgroundVideoSrc} class="transition-opacity duration-default ease-out opacity-0" type="video/mp4" />
+			<source src={backgroundVideoSrc} class="" type="video/mp4" />
 		</video>
 		<!-- YouTube -->
 		<!-- <iframe
