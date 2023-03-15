@@ -13,6 +13,11 @@
 		if (!browser) return;
 		document.documentElement.style.setProperty('--page-height', `${document.body.clientHeight}px`);
 
+                document.querySelectorAll("iframe").forEach((el) => {
+                        el.setAttribute('src', el.dataset.src?.toString());
+                        setTimeout(() => {el.classList.remove('opacity-0')}, 200);
+                });
+
 		document.body.addEventListener('copy', () => {
 			document.querySelectorAll("[aria-hidden='true']").forEach((el) => {
 				el.classList.add('hidden');
@@ -33,6 +38,7 @@
 			srcset={backgroundImgSrcSet}
 			class="transition-none absolute object-cover top-0 left-half -translate-x-half landscape:min-w-full min-h-full"
 			alt="Background"
+                        loading="lazy"
 		/>
 		<!-- Video -->
 		<video
@@ -40,6 +46,7 @@
 			autoplay
 			muted
 			loop
+                       
 		>
 			<source src={backgroundVideoSrc} type="video/mp4" />
 		</video>
@@ -130,10 +137,10 @@
 				<iframe
 					allow="fullscreen"
 					allowfullscreen
-					class="aspect-video "
+					class="transition-opacity duration-default ease-out aspect-video opacity-0"
 					frameborder="0"
 					title="Hypertrance 2"
-					src="https://www.youtube-nocookie.com/embed/nONsDtHZk5Y?&controls=1&showinfo=1&start=9"
+					data-src="https://www.youtube-nocookie.com/embed/nONsDtHZk5Y?&controls=1&showinfo=1&start=9"
 				/>
 			</section>
 			<section class="lg:row-start-1 row-span-2" id="about">
