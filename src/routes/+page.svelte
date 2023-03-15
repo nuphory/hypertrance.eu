@@ -88,15 +88,15 @@
 				>
 					<li class="max-xs:flex-1">
 						<button
-							class=" w-full mr-4 sm:mr-0 md:mr-4  button-neutral tracking-[0.2rem] uppercase backdrop-blur backdrop-brightness-95"
+							class="w-full mr-4 sm:mr-0 md:mr-4  button-neutral tracking-[0.2rem] uppercase backdrop-blur shadow-lg shadow-hyperblue-900/75 bg-black/50"
 							on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
 						>
 							<span>Discord</span>
 						</button>
 					</li>
-					<li class="max-xs:flex-1 md:mr-4 lg:mr-12">
+					<li class="max-xs:flex-1 md:mr-4 lg:mr-12 ">
 						<button
-							class=" w-full mr-4 sm:mr-0 md:mr-4 button-primary tracking-[0.2rem] uppercase backdrop-blur backdrop-brightness-95"
+							class=" w-full mr-4 sm:mr-0 md:mr-4 button-primary tracking-[0.2rem] uppercase backdrop-blur shadow-lg shadow-hyperblue-900/75 bg-black/50"
 							on:click={() => window.open('http://nuphory.bandcamp.com', '_blank')}
 						>
 							<span>Buy Now</span>
@@ -108,7 +108,7 @@
 				</ul>
 				<div class="container flex md:justify-center gap-2 lg:-mt-20 mb-">
 					<div
-						class="flex-1 md:basis-1/3 sm:scale-50 origin-top-right text-right text-[3rem] leading-[2.85rem]"
+						class="flex-1 md:basis-1/3 sm:scale-50 origin-top-right text-right text-[3rem] leading-[2.85rem] select-none"
 					>
 						<span aria-hidden="true">]</span>
 					</div>
@@ -219,7 +219,9 @@
 			</section>
 		</article>
 	</div>
-	<section class="sticky bottom-0 max-w-none sm:h-0 sm:p-0 sm:m-0 sm:translate-y-full overflow-clip font-comsat-navy">
+	<section
+		class="sticky bottom-0 max-w-none sm:h-0 sm:p-0 sm:m-0 sm:translate-y-full overflow-clip font-comsat-navy"
+	>
 		<ul class="container flex justify-between xs:justify-end items-start gap-8">
 			<li class="max-xs:flex-1">
 				<button
@@ -247,6 +249,5 @@
 <style lang="scss">
 	span.cutout {
 		clip-path: polygon(100% 33%, 0 33%, 0 0, 100% 0%, 100% 100%, 0 100%, 0 60%, 100% 60%);
-		
 	}
 </style>
