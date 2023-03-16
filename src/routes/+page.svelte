@@ -182,18 +182,18 @@
 				<ul class="z-50 container hidden md:flex justify-end gap-12 mt-36 lg:mt-48 [&>li]:w-48">
 					<li class="order-2 mr-5 ">
 						<button
-							class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg shadow-black/50 bg-black/50 button-primary"
+							class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-primary"
 							on:click={() => window.open('http://nuphory.bandcamp.com', '_blank')}
 						>
 							<span>Buy Now</span>
 						</button>
-						<span class="block -mb-16 mt-1 text-xs text-right font-montserrat lowercase"
+						<span class="block -mb-16 mt-1 text-[0.5rem] leading-[0.5rem] text-right font-yeysk tracking-widest lowercase"
 							>or <a href="/">stream elsewhere</a></span
 						>
 					</li>
 					<li class="order-1 ">
 						<button
-							class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg shadow-black/50 bg-black/50 button-neutral "
+							class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-neutral "
 							on:click={toggleHero}
 						>
 							<span>Watch</span>
@@ -261,20 +261,20 @@
 		class="sticky bottom-0 md:h-0 md:!p-0 md:m-0 md:translate-y-full overflow-clip font-comsat-navy"
 	>
 		<ul class="container flex justify-evenly items-start gap-8">
-			<li class="grow order-2">
+			<li class="flex-1 order-2">
 				<button
-					class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg shadow-black/50 bg-black/50 button-primary"
+					class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-primary"
 					on:click={() => window.open('http://nuphory.bandcamp.com', '_blank')}
 				>
 					<span>Buy Now</span>
 				</button>
-				<span class="block -mb-16 mt-1 text-xs text-right font-montserrat lowercase"
+				<span class="block -mb-16 mt-1 text-[0.5rem] leading-[0.5rem] text-right font-yeysk tracking-widest lowercase"
 					>or <a href="/">stream elsewhere</a></span
 				>
 			</li>
-			<li class="grow order-1">
+			<li class="flex-1 order-1">
 				<button
-					class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg shadow-black/50 bg-black/50 button-neutral "
+					class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-neutral "
 					on:click={toggleHero}
 				>
 					<span>Watch</span>

@@ -179,7 +179,8 @@ module.exports = {
 			fontFamily: {
 				comsat: 'Comsat, sans-serif',
 				'comsat-navy': 'Comsat Navy, sans-serif',
-				montserrat: 'Montserrat, sans-serif'
+				montserrat: 'Montserrat, sans-serif',
+				yeysk: 'Yeysk, sans-serif'
 			},
 			colors: {
 				information: 'var(--color-information) <alpha-value>',

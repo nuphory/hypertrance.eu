@@ -47,6 +47,12 @@
 	font-weight: 900;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Yeysk';
+	src: url('/assets/type/woff/YeyskRegular-JzaM.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
 
 html {
 	main {
@@ -96,6 +102,7 @@ html {
 
 	a {
 		@apply inline-block;
+                // @apply font-yeysk;
 		&:not(.reset) {
 			&:hover {
 				@apply underline;

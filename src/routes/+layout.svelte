@@ -14,7 +14,7 @@
 	import '$lib/styles/app.scss';
 
 	import '@fontsource/montserrat';
-	import { description, name, url } from '$src/lib/identity';
+	import { description, name, url } from '$lib/identity';
 
 	onMount(() => {
 		if (!browser) return;
@@ -56,7 +56,7 @@
 	<meta name="twitter:creator" content="@{name}" />
 </svelte:head>
 
-<Header />
+<!-- <Header /> -->
 <slot />
 <Footer />
 
