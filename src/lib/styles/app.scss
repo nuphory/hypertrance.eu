@@ -8,7 +8,6 @@
 
 :root {
 	--transition-duration: 400ms;
-	--perspective: 20rem;
 }
 
 *,
@@ -21,69 +20,115 @@
 
 html {
 	@apply transition-colors duration-default ease-out;
-	@apply h-screen-small min-h-screen-small w-full;
-
 	@apply font-montserrat lowercase;
 	scroll-behavior: smooth;
 
 	body {
-		@apply flex flex-col items-center;
-		// @apply overflow-hidden;
 		@apply bg-neutral text-neutral;
-	}
 
-	main {
-		@apply @container relative;
-		// @apply transform-style-3d;
-		// @apply perspective-[var(--perspective)];
-		// @apply perspective-origin-top;
-		@apply w-full;
-		@apply overflow-clip;
+		main {
+                        
+			@apply perspective-40 perspective-origin-top;
+			@apply h-screen-large w-full;
+			@apply overflow-x-clip overflow-y-scroll;
+			@apply @container;
+			@apply min-h-screen-large w-full;
 
-		.wrapper {
-			@apply min-h-[inherit];
-		}
-		// @apply overflow-clip;
-		>section {
-			&:not(:first-of-type) {
-				@apply md:container;
-				@apply mb-8 py-8 px-8;
+			section {
+				@apply relative;
+                                
+				@apply transform-style-3d;
+
+				&:not(:first-of-type) {
+					@apply py-8;
+                                        @apply backdrop-blur bg-black/50;
+                                        &:not(:last-of-type) {
+                                                @apply mb-8;
+                                        }
+				}
+
+				// section {
+				// 	@apply relative;
+				// 	@apply mb-8 py-8 px-8;
+
+				// 	@apply flex flex-col justify-between;
+				// 	@apply backdrop-blur bg-black/50;
+				// }
 			}
-			&:first-of-type {
-				@apply pt-12;
-				
-				@apply backdrop-blur-none bg-none;
-				// @apply xl:min-h-[48rem];
+			button {
+				@apply transition-quick duration-default ease-out;
+				@apply relative p-4 px-4 2xs:px-8;
+				@apply pointer-events-auto;
 			}
-			&:last-of-type {
-				@apply mb-0 pb-8 px-4 xs:px-8;
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p {
+				@apply pointer-events-auto;
 			}
-		}
-	}
+			a {
+				@apply transition-quick duration-default ease-out;
+				@apply pointer-events-auto;
 
-	button {
-		@apply transition-quick duration-default ease-out;
-		@apply relative p-4 px-4 2xs:px-8;
-	}
-
-	section {
-		@apply relative;
-		@apply mb-8 py-8 px-8;
-
-		@apply flex flex-col justify-between;
-		@apply backdrop-blur bg-black/50;
-	}
-
-	a {
-		@apply transition-quick duration-default ease-out;
-
-		&:not(.reset) {
-			&:hover {
-				@apply -translate-y-1;
-			}
-			&:active {
-				@apply translate-y-px;
+				&:not(.reset) {
+					&:hover {
+						@apply -translate-y-1;
+					}
+					&:active {
+						@apply translate-y-px;
+					}
+				}
 			}
 		}
 	}
 }
+
+// html {
+// 	@apply transition-colors duration-default ease-out;
+// 	@apply font-montserrat lowercase;
+// 	scroll-behavior: smooth;
+
+// 	body {
+// 		@apply flex flex-col items-center;
+//                 @apply perspective-40;
+//                 @apply h-screen-large;
+//                 // @apply overflow-x-hidden overflow-y-scroll;
+// 		@apply bg-neutral text-neutral;
+// 	}
+
+// 	main {
+// 		@apply @container relative;
+//                 @apply min-h-screen-large w-full;
+
+//                 >section {
+//                         @apply relative;
+//                         @apply transform-style-3d;
+//                 }
+
+// 		// @apply overflow-clip;
+// 		>section {
+// 			// &:not(:first-of-type) {
+// 			// 	@apply md:container;
+// 			// 	@apply mb-8 py-8 px-8;
+// 			// }
+// 			// &:first-of-type {
+// 			// 	@apply pt-12;
+
+// 			// 	@apply backdrop-blur-none bg-none;
+// 			// 	// @apply xl:min-h-[48rem];
+// 			// }
+// 			// &:last-of-type {
+// 			// 	@apply mb-0 pb-8 px-4 xs:px-8;
+// 			// }
+// 		}
+// 	}
+
+// 	button {
+// 		@apply transition-quick duration-default ease-out;
+// 		@apply relative p-4 px-4 2xs:px-8;
+// 	}
+
+// }

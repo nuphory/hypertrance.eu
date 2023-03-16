@@ -61,7 +61,8 @@ html {
 		}
 
 		&::before {
-			@apply transition-[transform,background-position] duration-default ease-out absolute -z-10 inset-0 bg-left-top content-[''] mix-blend-normal;
+			@apply transition-[transform,background-position,margin] duration-default ease-out absolute -z-10 inset-0 bg-left-top content-[''] mix-blend-normal;
+                        @apply m-0;
 
 			background: linear-gradient(
 				135deg,
@@ -76,7 +77,7 @@ html {
 		&:hover {
 			@apply text-[var(--button-text-hover)] ring-neutral-hover;
 			&::before {
-				@apply scale-110;
+				@apply -m-1;
 				background-position: 33% 33%;
 			}
 		}
@@ -84,7 +85,7 @@ html {
 			@apply scale-95;
 			@apply text-[var(--button-text-active)];
 			&::before {
-				@apply scale-110;
+				@apply -m-1;
 				@apply bg-right-bottom;
 			}
 		}
