@@ -180,6 +180,7 @@ module.exports = {
 				comsat: 'Comsat, sans-serif',
 				'comsat-navy': 'Comsat Navy, sans-serif',
 				montserrat: 'Montserrat, sans-serif',
+				inter: 'Inter, sans-serif',
 				yeysk: 'Yeysk, sans-serif'
 			},
 			colors: {

@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@fontsource/fira-code': ^4.5.13
   '@fontsource/fira-mono': ^4.5.10
+  '@fontsource/inter': ^4.5.15
   '@fontsource/montserrat': ^4.5.14
   '@fontsource/playfair-display-sc': ^4.5.11
   '@playwright/test': ^1.28.1
@@ -39,6 +40,7 @@ specifiers:
 devDependencies:
   '@fontsource/fira-code': 4.5.13
   '@fontsource/fira-mono': 4.5.10
+  '@fontsource/inter': 4.5.15
   '@fontsource/montserrat': 4.5.14
   '@fontsource/playfair-display-sc': 4.5.11
   '@playwright/test': 1.31.2
@@ -304,6 +306,10 @@ packages:
 
   /@fontsource/fira-mono/4.5.10:
     resolution: {integrity: sha512-bxUnRP8xptGRo8YXeY073DSpfK74XpSb0ZyRNpHV9WvLnJ7TwPOjZll8hTMin7zLC6iOp59pDZ8EQDj1gzgAQQ==}
+    dev: true
+
+  /@fontsource/inter/4.5.15:
+    resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
     dev: true
 
   /@fontsource/montserrat/4.5.14:

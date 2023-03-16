@@ -14,6 +14,7 @@
 	import '$lib/styles/app.scss';
 
 	import '@fontsource/montserrat';
+	import '@fontsource/inter/400.css';
 	import { description, name, url } from '$lib/identity';
 
 	onMount(() => {
