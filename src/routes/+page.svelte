@@ -41,8 +41,8 @@
 </script>
 
 <svelte:head>
-	<title>hypertrance 2</title>
-	<meta name="title" content="hypertrance 2" />
+	<title>{name}</title>
+	<meta name="title" content={name} />
 
 	<meta name="description" content={description} />
 
