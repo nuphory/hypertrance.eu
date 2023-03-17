@@ -162,7 +162,7 @@
 							<span>Buy Now</span>
 						</button>
 						<span class="block -mb-16 mt-1 font-inter text-[0.5rem] leading-[0.5rem] text-right tracking-widest lowercase"
-							>or <a href="/">stream elsewhere</a></span
+							>or <a href="https://fanlink.to/hypertrance2">stream elsewhere</a></span
 						>
 					</li>
 					<li class="order-1 ">
@@ -206,7 +206,7 @@
 					<span>Buy Now</span>
 				</button>
 				<span class="block -mb-16 mt-1 font-inter text-[0.5rem] leading-[0.5rem] text-right tracking-widest lowercase"
-					>or <a href="/">stream elsewhere</a></span
+					>or <a href="https://fanlink.to/hypertrance2">stream elsewhere</a></span
 				>
 			</li>
 			<li class="flex-1 order-1">
