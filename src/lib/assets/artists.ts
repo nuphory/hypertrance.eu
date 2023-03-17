@@ -87,8 +87,8 @@ const musicians: {
 				LinkKind.APPLE_MUSIC,
 				'https://music.apple.com/us/artist/lunanescence/1570829354'
 			),
-			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/lunanesence'),
-			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/lunanescence/'),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/lunanesence_'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/lunanescence_official/'),
 			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/lunanescence'),
 			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://lunanescence.bandcamp.com/')
 		},
