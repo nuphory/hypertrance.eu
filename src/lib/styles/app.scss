@@ -29,10 +29,10 @@ html {
 		main {
                         
 			@apply perspective-40 perspective-origin-top;
-			@apply h-screen-large w-full;
+			@apply h-screen-dynamic w-full;
 			@apply overflow-x-clip overflow-y-scroll;
 			@apply @container;
-			@apply min-h-screen-large w-full;
+			@apply min-h-screen-dynamic w-full;
 
 			section {
 				@apply relative;
@@ -85,50 +85,3 @@ html {
 		}
 	}
 }
-
-// html {
-// 	@apply transition-colors duration-default ease-out;
-// 	@apply font-montserrat lowercase;
-// 	scroll-behavior: smooth;
-
-// 	body {
-// 		@apply flex flex-col items-center;
-//                 @apply perspective-40;
-//                 @apply h-screen-large;
-//                 // @apply overflow-x-hidden overflow-y-scroll;
-// 		@apply bg-neutral text-neutral;
-// 	}
-
-// 	main {
-// 		@apply @container relative;
-//                 @apply min-h-screen-large w-full;
-
-//                 >section {
-//                         @apply relative;
-//                         @apply transform-style-3d;
-//                 }
-
-// 		// @apply overflow-clip;
-// 		>section {
-// 			// &:not(:first-of-type) {
-// 			// 	@apply md:container;
-// 			// 	@apply mb-8 py-8 px-8;
-// 			// }
-// 			// &:first-of-type {
-// 			// 	@apply pt-12;
-
-// 			// 	@apply backdrop-blur-none bg-none;
-// 			// 	// @apply xl:min-h-[48rem];
-// 			// }
-// 			// &:last-of-type {
-// 			// 	@apply mb-0 pb-8 px-4 xs:px-8;
-// 			// }
-// 		}
-// 	}
-
-// 	button {
-// 		@apply transition-quick duration-default ease-out;
-// 		@apply relative p-4 px-4 2xs:px-8;
-// 	}
-
-// }
