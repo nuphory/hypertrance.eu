@@ -120,7 +120,7 @@ html {
         }
 
         ul {
-                @apply list-disc;
-                @apply list-inside;
+                list-style-type: ":: ";
+                @apply list-outside;
         }
 }

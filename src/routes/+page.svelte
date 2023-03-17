@@ -198,8 +198,8 @@
 		<h2>what is hypertrance?</h2>
 		<ul>
 			<h3>hypertrance</h3>
-			<p>
-				coined by nuphory, Aekae
+                        coined by nuphory, Aekae
+			<p class="ml-4">
 				<li>very open BPM range (135-180)</li>
 				<li>high energy in the drops</li>
 				<li>big 4x4 trance drums</li>
@@ -213,8 +213,8 @@
 		</ul>
 		<ul>
 			<h3>neotrance (VS)</h3>
-			<p>
-				coined by virtual self
+                        coined by virtual self
+			<p class="ml-4">
 				<li>using various hardtrance and hardcore elements</li>
 				<li>reminiscent of beatmania / DDR type music</li>
 				<li>emphasis on lain sorta vibes</li>
@@ -228,8 +228,8 @@
 
 		<ul>
 			<h3>sextrance</h3>
-			<p>
-				coined by purity filter
+                        coined by purity filter
+			<p class="ml-4">
 				<li>bpm range very wide (140-200)</li>
 				<li>heavy use of sound degradation in the mixes</li>
 				<li>captures a sort of early youtube type feeling</li>
@@ -239,16 +239,16 @@
 
 		<ul>
 			<h3>neotrance (techno)</h3>
-			<p>
-				coined by
+                        coined by ???
+			<p class="ml-4">
 				<li>techno genre, can probably find definition online</li>
 			</p>
 		</ul>
 
 		<ul>
 			<h3>hardwave</h3>
-			<p>
-				coined by ???
+                        coined by ???
+			<p class="ml-4">
 				<li>mixture of trap beats and trance synths</li>
 				<li>bpms around 150</li>
 				<li>halftime drums, very trap influenced</li>
