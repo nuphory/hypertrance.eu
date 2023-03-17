@@ -26,7 +26,7 @@
                                         absolute flex justify-center items-center gap-2 
                                         bottom-0 left-0
                                         -translate-y-full 
-                                        -m-4 
+                                        -my-4 
                                         p-0 group-hover:p-2
                                         max-w-0 group-hover:max-w-7xl
                                         max-h-0 group-hover:max-h-[8rem]
