@@ -103,7 +103,7 @@ html {
 
 	a {
 		@apply inline-block;
-                // @apply font-yeysk;
+                @apply font-inter;
 		&:not(.reset) {
 			&:hover {
 				@apply underline;
