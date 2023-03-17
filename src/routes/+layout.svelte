@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
 	<link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
 	<link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#000000" />
 	<link rel="shortcut" href="/assets/img/favicon/favicon.ico" />
@@ -37,16 +37,20 @@
 	<meta name="msapplication-TileColor" content="#ffffff" />
 	<meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml" />
 	<meta name="theme-color" content="#ffffff" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon.svg" />
-
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon.svg" />
 
 	<meta property="og:site_name" content={name} />
 
 	<meta
 		name="keywords"
-		content="{name}, {name} music, music, house, trance, hypertrance, neoy2k, progressive house, {artists
-			.map((artist) => artist.name)
-			.join(', ')}}"
+		content="
+                        {name}, {name} music, music, house, trance, hypertrance, neoy2k, progressive house, 
+                        {
+                                Object.values(artists)
+                                .map((artist) => artist.name)
+                                .join(', ')
+                        }
+                "
 	/>
 	<meta name="description" content={description} />
 

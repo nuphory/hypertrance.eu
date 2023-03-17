@@ -5,6 +5,7 @@
 	// Assets
 	import tracklist from '$lib/assets/tracklist';
 	import { onMount } from 'svelte';
+	import Artist from './utils/Artist.svelte';
 
 	onMount(() => {
 		if (!browser) return;
@@ -47,21 +48,7 @@
                                                                         {#if i !== 0}
                                                                                 <span class="tracklist__combinator">&nbsp&</span>
                                                                         {/if}
-                                                                        {#if artist.links.length > 0}
-                                                                                <a
-                                                                                        class="tracklist__artist"
-                                                                                        href={(
-                                                                                                artist.links.find((link) => link.name === 'bandcamp') ??
-                                                                                                artist.links.find((link) => link.name === 'spotify') ??
-                                                                                                artist.links.find((link) => link.name === 'soundcloud') ??
-                                                                                                artist.links[0]
-                                                                                        ).url}
-                                                                                >
-                                                                                        {artist.name}
-                                                                                </a>
-                                                                        {:else}
-                                                                                <span class="tracklist__artist">{artist.name}</span>
-                                                                        {/if}
+                                                                        <Artist artist={artist} />
                                                                 {/if}
                                                         {/each}
                                                 </div>
