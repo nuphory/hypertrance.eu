@@ -31,6 +31,7 @@
                                         max-w-0 group-hover:max-w-7xl
                                         rounded-lg
                                         overflow-clip
+					ring-2 ring-white
 
                                         bg-black bg-opacity-50 backdrop-blur
                                 "
