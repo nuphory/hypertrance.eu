@@ -107,6 +107,7 @@
 			<video
 				class="transition-quick duration-default ease-out absolute top-0 origin-top min-h-full min-w-full opacity-0 object-cover"
 				preload="none"
+                                playsinline
 				muted
 				loop
 			>

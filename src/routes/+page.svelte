@@ -81,6 +81,7 @@
 			<video
 				class="absolute top-0 min-h-full min-w-full transition-opacity duration-default ease-out opacity-0 object-cover"
 				preload="none"
+                                playsinline
 				muted
 				loop
 			>
