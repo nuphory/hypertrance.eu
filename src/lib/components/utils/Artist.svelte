@@ -24,12 +24,13 @@
                                 class="
                                         transition-quick duration-default delay-500 ease-out 
                                         absolute flex justify-center items-center gap-2 
-                                        bottom-0 left-half 
-                                        -translate-x-half -translate-y-full 
+                                        bottom-0 left-0
+                                        -translate-y-full 
                                         -m-4 
                                         p-0 group-hover:p-2
                                         max-w-0 group-hover:max-w-7xl
-                                        max-h-0 group-hover:max-h-7xl
+                                        max-h-0 group-hover:max-h-[8rem]
+                                        
                                         opacity-0 group-hover:opacity-100
                                         rounded-lg
                                         overflow-clip
