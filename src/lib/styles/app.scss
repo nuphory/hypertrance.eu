@@ -75,7 +75,7 @@ html {
 
 				&:not(.reset) {
 					&:hover {
-						@apply -translate-y-1;
+						@apply -translate-y-px;
 					}
 					&:active {
 						@apply translate-y-px;
