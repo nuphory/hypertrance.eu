@@ -157,7 +157,7 @@
 					<li class="order-2 mr-5 ">
 						<button
 							class="w-full backdrop-blur shadow-lg  button-primary"
-							on:click={() => window.open('http://nuphory.bandcamp.com', '_blank')}
+							on:click={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 						>
 							<span>Buy Now</span>
 						</button>
