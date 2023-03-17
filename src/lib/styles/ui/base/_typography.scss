@@ -118,4 +118,9 @@ html {
                 @apply font-comsat-navy uppercase;
                 @apply tracking-[0.2rem];
         }
+
+        ul {
+                @apply list-disc;
+                @apply list-inside;
+        }
 }

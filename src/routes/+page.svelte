@@ -153,7 +153,7 @@
 					</div>
 					<div class="grow -ml-4 -mr-96 h-2 md:h-[0.65rem] lg:h-[0.9rem] bg-white" />
 				</div>
-				<ul class="z-50 container hidden md:flex justify-end gap-12 mt-36 lg:mt-48 [&>li]:w-48">
+				<ul class="z-50 container hidden md:flex justify-end gap-12 mt-36 lg:mt-48 [&>li]:w-48 list-none">
 					<li class="order-2 mr-5 ">
 						<button
 							class="w-full backdrop-blur shadow-lg  button-primary"
@@ -194,10 +194,80 @@
 		</div>
 	</section>
 	<HypertranceTwo />
+               <section id="about" class="transition-quick duration-default ease-out container">
+		<h2>what is hypertrance?</h2>
+		<ul>
+			<h3>hypertrance</h3>
+			<p>
+				coined by nuphory, Aekae
+				<li>very open BPM range (135-180)</li>
+				<li>high energy in the drops</li>
+				<li>big 4x4 trance drums</li>
+				<li>tight mixing</li>
+				<li>strong emphasis on emotional impact (chord progs, "epic" sounds)</li>
+				<li>grand storytelling in the tracks</li>
+				<li>emotional, quieter (maybe piano driven) breakdowns</li>
+				<li>heavy emphasis on using authentic feeling sounds</li>
+				<li>capturing the optimstic futurism of y2k</li>
+			</p>
+		</ul>
+		<ul>
+			<h3>neotrance (VS)</h3>
+			<p>
+				coined by virtual self
+				<li>using various hardtrance and hardcore elements</li>
+				<li>reminiscent of beatmania / DDR type music</li>
+				<li>emphasis on lain sorta vibes</li>
+				<li>cyberia</li>
+				<li>dystopian future</li>
+				<li>bpm range from 140-180</li>
+				<li>beats can be 4x4 or halftime, very trancey drums</li>
+				<li>speedcore added into tracks regularly</li>
+			</p>
+		</ul>
+
+		<ul>
+			<h3>sextrance</h3>
+			<p>
+				coined by purity filter
+				<li>bpm range very wide (140-200)</li>
+				<li>heavy use of sound degradation in the mixes</li>
+				<li>captures a sort of early youtube type feeling</li>
+				<li>heavy emphasis on fast drumbeats</li>
+			</p>
+		</ul>
+
+		<ul>
+			<h3>neotrance (techno)</h3>
+			<p>
+				coined by
+				<li>techno genre, can probably find definition online</li>
+			</p>
+		</ul>
+
+		<ul>
+			<h3>hardwave</h3>
+			<p>
+				coined by ???
+				<li>mixture of trap beats and trance synths</li>
+				<li>bpms around 150</li>
+				<li>halftime drums, very trap influenced</li>
+				<li>overall ethereal vibe</li>
+				<li>lots of pad and atmosphere usage</li>
+			</p>
+		</ul>
+
+		<button
+			class="w-full button-neutral mt-8"
+			on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
+		>
+			<span>Join our Discord</span>
+		</button>
+	</section>
 	<section
 		class="sticky bottom-0 md:h-0 md:!p-0 md:m-0 md:translate-y-full overflow-clip font-comsat-navy"
 	>
-		<ul class="container flex justify-evenly items-start gap-8">
+		<ul class="container flex justify-evenly items-start gap-8 list-none">
 			<li class="flex-1 order-2">
 				<button
 					class="w-full backdrop-blur shadow-lg button-primary"
@@ -219,6 +289,7 @@
 			</li>
 		</ul>
 	</section>
+ 
 </main>
 
 <style lang="scss">
