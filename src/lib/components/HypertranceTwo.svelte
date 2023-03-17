@@ -33,7 +33,7 @@
                         class="w-full transition-opacity duration-default ease-out aspect-video shadow-lg shadow-black/50 opacity-0"
                         frameborder=0
                         title="Hypertrance 2"
-                        data-src="https://www.youtube-nocookie.com/embed/nONsDtHZk5Y?&autoplay=1&mute=1&controls=1&showinfo=1&start=9"
+                        data-src="https://www.youtube-nocookie.com/embed/3sCu-zjVa5c?&autoplay=1&mute=1&controls=1&showinfo=1&start=9"
                 />
         </section>
         <section class="container mb-8" id="tracklist" in:fade={{ duration: 400 }}>
