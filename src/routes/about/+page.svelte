@@ -90,8 +90,8 @@
 	<section
 		id="hero"
 		class="relative top-0 w-full {isHeroOpen
-			? 'h-[100lvh] -mb-[100lvh]'
-			: 'h-[50lvh] -mb-[50lvh]'} font-comsat-navy pointer-events-none"
+			? 'h-[100dvh] -mb-[100dvh]'
+			: 'h-[50dvh] -mb-[50dvh]'} font-comsat-navy pointer-events-none"
 	>
 		<a
 			href="/hypertrance-2"

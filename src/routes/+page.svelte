@@ -67,7 +67,7 @@
 <main>
 	<section
 		id="hero"
-		class="w-full -mb-[100lvh] h-screen-large font-comsat-navy pointer-events-none"
+		class="w-full -mb-[100dvh] h-screen-dynamic font-comsat-navy pointer-events-none"
 	>
 		<figure
 			class="absolute origin-top -translate-z-40 scale-[200%] min-h-screen-small w-full overflow-clip [&>*]:pointer-events-none pointer-events-auto"
@@ -90,10 +90,10 @@
 		</figure>
 		<div
 			id="background"
-			class="absolute top-0 h-screen-large w-full origin-top -translate-z-40 scale-[200%] pointer-events-none"
+			class="absolute top-0 h-screen-dynamic w-full origin-top -translate-z-40 scale-[200%] pointer-events-none"
 		>
-			<div class="h-screen-large w-full bg-gradient-to-t from-neutral via-transparent" />
-			<div class="min-h-[25lvh] w-full bg-neutral" />
+			<div class="h-screen-dynamic w-full bg-gradient-to-t from-neutral via-transparent" />
+			<div class="min-h-[25dvh] w-full bg-neutral" />
 		</div>
 		<div
 			class="relative transition-sizing duration-default ease-out perspective-origin-bottom perspective-40 transform-style-3d origin-bottom translate-y-40 -translate-z-20 scale-150 h-48 text-white pointer-events-auto"
