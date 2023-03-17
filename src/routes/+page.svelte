@@ -50,7 +50,7 @@
 
 	<meta name="robots" content="index, follow" />
 
-	<meta property="og:title" content="{name} — {tagline}" />
+	<meta property="og:title" content="{name} {tagline ? `— ${tagline}`: ""}" />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content="{url}{summaryImgSrc}" />
 	<meta property="og:url" content={url} />
