@@ -1,668 +1,295 @@
-/**
- * Context comments:
- * # of Tracks on album,Track Title(s),Artist Name,,SoundCloud Link,,Spotify Link,,Apple Music Link,,Twitch Profile,,Youtube Profile,,Instagram Link,,Twitter Link,,Facebook Link,,Bandcamp Link,,Legal Name (composer credit),Country of Recording,Mixer Credit,EMAIL (for royalty splits),Invited to SplitShare,All systems go
- */
+import type { Artist } from '$lib/types/artist';
+import { Link, LinkKind } from '$lib/types/link';
 
-export type Artist = {
-	name: string;
-	links: Link[];
-};
-
-export type Link = {
-	name:
-		| 'soundcloud'
-		| 'spotify'
-		| 'applemusic'
-		| 'twitch'
-		| 'youtube'
-		| 'instagram'
-		| 'twitter'
-		| 'facebook'
-		| 'bandcamp'
-		| 'website';
-	url: string;
-};
-
-export const musicians: Artist[] = [
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/nuphory'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/2K0uRwlc2VKeRoWS8Iuija?si=qfECieyUQ_ep5VPZpr8GHg'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/nuphory/1638776851'
-			},
-			{
-				name: 'twitch',
-				url: 'https://twitch.tv/nuphory'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/nuphory'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/nuphory/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/nuphory'
-			},
-			{
-				name: 'facebook',
-				url: 'https://www.facebook.com/nuphory'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://nuphory.bandcamp.com/'
-			},
-			{
-				name: 'website',
-				url: 'https://nuphory.com/'
-			}
-		],
+const musicians: {
+	[key: string]: Artist;
+} = {
+	NUPHORY: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/nuphory'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/2K0uRwlc2VKeRoWS8Iuija'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/nuphory/1638776851'
+			),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://twitch.tv/nuphory'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/nuphory'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/nuphory/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/nuphory'),
+			FACEBOOK: new Link(LinkKind.FACEBOOK, 'https://www.facebook.com/nuphory'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://nuphory.bandcamp.com/'),
+			WEBSITE: new Link(LinkKind.WEBSITE, 'https://nuphory.com/')
+		},
 		name: 'nuphory'
 	},
-	{
-                links: [
-                {
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/aekaemusic'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/2YXVRXrYHVJrC5P1eTGYSu'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/aekae/1545741130'
-			},
-			{
-				name: 'twitch',
-				url: 'https://twitch.tv/aekaemusic'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/@aekaemusic'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/aekaemusic/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/aekaemusic'
-			},
-			{
-				name: 'facebook',
-				url: 'https://www.facebook.com/aekaemusic'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://aekae.bandcamp.com'
-			}
-		],
+	AEKAE: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/aekaemusic'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/2YXVRXrYHVJrC5P1eTGYSu'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/aekae/1545741130'
+			),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://twitch.tv/aekaemusic'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@aekaemusic'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/aekaemusic/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/aekaemusic'),
+			FACEBOOK: new Link(LinkKind.FACEBOOK, 'https://www.facebook.com/aekaemusic'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://aekae.bandcamp.com')
+		},
 		name: 'Aekae'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/thisisnoahb'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/4F4w1Gkfja6wPJzuMKCLmk'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/noah-b/1071519331'
-			},
-			{
-				name: 'twitch',
-				url: 'https://www.twitch.tv/thisisnoahb'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/_thisisnoahb/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/thisisnoahb'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://thisisnoahb.bandcamp.com/'
-			}
-		],
+	NOAH_B: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/thisisnoahb'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/4F4w1Gkfja6wPJzuMKCLmk'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/noah-b/1071519331'
+			),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/thisisnoahb'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/_thisisnoahb/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/thisisnoahb'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://thisisnoahb.bandcamp.com/')
+		},
 		name: 'Noah B'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/gasker'
-			},
-			{
-				name: 'twitch',
-				url: 'https://www.twitch.tv/gaskerbpm'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/@gaskerbpm'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/gaskerbpm/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/Gasker8'
-			}
-		],
+	GASKER: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/gasker'),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/gaskerbpm'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@gaskerbpm'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/gaskerbpm/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/Gasker8')
+		},
 		name: 'Gasker'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/disctr4k'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/05ksHwXiCA9qt1bV1nN8F7'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/disctr4k/1554665449'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/@disctr4k'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/disctr4k/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/disctr4k'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://disctr4k.bandcamp.com/'
-			}
-		],
+	DISCTR4K: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/disctr4k'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/05ksHwXiCA9qt1bV1nN8F7'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/disctr4k/1554665449'
+			),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@disctr4k'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/disctr4k/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/disctr4k'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://disctr4k.bandcamp.com/')
+		},
 		name: 'disctr4k'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/lunanescence'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/4kwmsmcjqgP2QcSzMTuDLL'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/lunanescence/1570829354'
-			},
-			{
-				name: 'twitch',
-				url: 'https://www.twitch.tv/lunanesence'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/lunanescence_official/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/lunanescence__'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://lunanescence.bandcamp.com/'
-			}
-		],
+	LUNANESCENCE: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/lunanescence'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/4kwmsmcjqgP2QcSzMTuDLL'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/lunanescence/1570829354'
+			),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/lunanesence'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/lunanescence/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/lunanescence'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://lunanescence.bandcamp.com/')
+		},
 		name: 'Lunanescence'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/hiimtype_r'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/15guHFW3ZQDoaWttbI2IRp'
-			},
-			{
-				name: 'twitch',
-				url: 'https://twitch.tv/type_rrr'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/imTYPE_R'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://type-r.bandcamp.com'
-			}
-		],
+	TYPE_R: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/hiimtype_r'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/15guHFW3ZQDoaWttbI2IRp'),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://twitch.tv/type_rrr'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/imTYPE_R'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://type-r.bandcamp.com/')
+		},
 		name: 'Type R'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/yuunimoosic'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/2x7yh8Cj6IPMk46qjsZdLW'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/yuuni/1650439511'
-			},
-			{
-				name: 'twitch',
-				url: 'https://www.twitch.tv/yuuniosu'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/@yuunimoosic'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/yuunimoosic'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://yuuni.bandcamp.com'
-			}
-		],
+	YUUNI: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/yuunimoosic'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/2x7yh8Cj6IPMk46qjsZdLW'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/yuuni/1650439511'
+			),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/yuuniosu'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@yuunimoosic'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/yuunimoosic'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://yuuni.bandcamp.com/')
+		},
 		name: 'yuuni'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/wyste'
-			},
-			{
-				name: 'twitch',
-				url: 'https://www.twitch.tv/wystemusic'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/@wystemusic'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/_wyste/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/_wyste'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://wyste.bandcamp.com'
-			}
-		],
+	WYSTE: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/wyste'),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/wystemusic'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@wystemusic'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/_wyste/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/_wyste'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://wyste.bandcamp.com/')
+		},
 		name: 'wyste'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/d4vt0r'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/@D4VT0R'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/d4vt0r/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/D4VT0R_'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://d4vt0r.bandcamp.com/'
-			}
-		],
+	D4VT0R: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/d4vt0r'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@D4VT0R'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/d4vt0r/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/D4VT0R_'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://d4vt0r.bandcamp.com/')
+		},
 		name: 'D4VT0R'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/samwaitin'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/4fUt1H64XAKDyYNRqUYzPG'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/sam-waitin/1579494907'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/samwaitin/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/sam_waitin'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://samwaitin.bandcamp.com/releases'
-			}
-		],
+	SAM_WAITIN: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/samwaitin'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/4fUt1H64XAKDyYNRqUYzPG'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/sam-waitin/1579494907'
+			),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/samwaitin/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/sam_waitin'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://samwaitin.bandcamp.com/')
+		},
 		name: 'SAM WAITIN'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/lurerabbit'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/rabbit_lure'
-			}
-		],
+	LURE_RABBIT: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/lurerabbit'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/rabbit_lure')
+		},
 		name: 'Lure Rabbit'
 	},
-	{
-		links: [],
+	NAIMENG: {
 		name: 'NaiMeng'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/lunalenta'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/36un9X6TbRfeYAMadbI2SN'
-			},
-			{
-				name: 'twitch',
-				url: 'https://www.twitch.tv/lunalenta'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/lunalenta_ht/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/luna_lenta'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://lunalenta.bandcamp.com/track/yesterday'
-			}
-		],
+	LUNA_LENTA: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/lunalenta'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/36un9X6TbRfeYAMadbI2SN'),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/lunalenta'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/lunalenta_ht/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/luna_lenta'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://lunalenta.bandcamp.com/')
+		},
 		name: 'Luna Lenta'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/voxkai'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/3IKcTlbewbdMVkmUNimaQ0'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/voxkai/1518828664'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/voxkai_'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://voxkai.bandcamp.com/'
-			}
-		],
+	VOXKAI: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/voxkai'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/3IKcTlbewbdMVkmUNimaQ0'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/voxkai/1518828664'
+			),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/voxkai_'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://voxkai.bandcamp.com/')
+		},
 		name: 'voxkai'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/thisisczer'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/2PpGIcLGdpUVBwKGXLztTm'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/c-zer/1630210572'
-			},
-			{
-				name: 'twitch',
-				url: 'https://twitch.tv/thisisczer'
-			},
-			{
-				name: 'instagram',
-				url: 'https://instagram.com/thisisczer'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/thisisczer'
-			},
-			{
-				name: 'facebook',
-				url: 'https://facebook.com/thisisczer'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://thisisczer.bandcamp.com/'
-			}
-		],
+	C_ZER: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/thisisczer'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/2PpGIcLGdpUVBwKGXLztTm'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/c-zer/1630210572'
+			),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://twitch.tv/thisisczer'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/thisisczer/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/thisisczer'),
+			FACEBOOK: new Link(LinkKind.FACEBOOK, 'https://www.facebook.com/thisisczer'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://thisisczer.bandcamp.com/')
+		},
 		name: 'C-ZER'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/kassio-971255094'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/16Bu6VLyQePdnxIUqVNzRi'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/kassio/1546480656'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/@kassioproject'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/kassio_project/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/kassioproject'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://kassiomusic.bandcamp.com/'
-			}
-		],
+	KASSIO_PROJECT: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/kassio-971255094'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/16Bu6VLyQePdnxIUqVNzRi'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/kassio/1546480656'
+			),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@kassioproject'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/kassio_project/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/kassioproject'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://kassiomusic.bandcamp.com/')
+		},
 		name: 'Kassio Project'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/crayvxn'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/1GkulgH4pDrPg8EpIHI2hg'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/channel/UCqFRrPqrdQljTI3s1jIWfTQ'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/crayvxn'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://crayvxn.bandcamp.com/'
-			}
-		],
+	CRAYVXN: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/crayvxn'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/1GkulgH4pDrPg8EpIHI2hg'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@crayvxn'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/crayvxn'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://crayvxn.bandcamp.com/')
+		},
 		name: 'crayvxn'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/moshii-lightz'
-			},
-			{
-				name: 'twitch',
-				url: 'https://www.twitch.tv/moshii_lightz'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/MoshiiLightz'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://moshiilightz.bandcamp.com/'
-			}
-		],
+	MOSHII_LIGHTZ: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/moshii-lightz'),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/moshii_lightz'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/MoshiiLightz'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://moshiilightz.bandcamp.com/')
+		},
 		name: 'MOSHII LIGHTZ'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/neurolinkmusic'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/5Gup0O4o66XeN4PubuVFOS'
-			},
-			{
-				name: 'twitch',
-				url: 'https://www.twitch.tv/neurolinkmusic'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/channel/UCtCP9bFSaXq6-q_2u3tIZOw'
-			},
-			{
-				name: 'instagram',
-				url: 'https://www.instagram.com/neurolink_music/'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/neurolink_dnb'
-			}
-		],
+	NEUROLINK: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/neurolinkmusic'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/5Gup0O4o66XeN4PubuVFOS'),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://www.twitch.tv/neurolinkmusic'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@neurolink704'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/neurolink_music/'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/neurolink_dnb')
+		},
 		name: 'Neurolink'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/ausamusicofficial'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/1mBXHykqQ0zTJafC86uBgO'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/ausa/1533581292'
-			},
-			{
-				name: 'twitch',
-				url: 'https://twitch.tv/ausaofficial'
-			},
-			{
-				name: 'youtube',
-				url: 'https://youtube.com/@ausamusicofficial'
-			},
-			{
-				name: 'instagram',
-				url: 'https://instagram.com/__ausa__'
-			},
-			{
-				name: 'facebook',
-				url: 'https://www.facebook.com/ausaMusicOfficial'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://ausaofficial.bandcamp.com/'
-			}
-		],
+	AUSA: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/ausamusicofficial'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/1mBXHykqQ0zTJafC86uBgO'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/ausa/1533581292'
+			),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://twitch.tv/ausaofficial'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@ausamusicofficial'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/__ausa__'),
+			FACEBOOK: new Link(LinkKind.FACEBOOK, 'https://www.facebook.com/ausaMusicOfficial'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://ausaofficial.bandcamp.com/')
+		},
 		name: 'AUSA'
 	},
-	{
-		links: [
-			{
-				name: 'soundcloud',
-				url: 'https://soundcloud.com/stillcrisp'
-			},
-			{
-				name: 'spotify',
-				url: 'https://open.spotify.com/artist/7I0omdF0bBVakabsP93fJA'
-			},
-			{
-				name: 'applemusic',
-				url: 'https://music.apple.com/us/artist/still-crisp/1537379112'
-			},
-			{
-				name: 'twitch',
-				url: 'https://twitch.tv/stillcrisp'
-			},
-			{
-				name: 'youtube',
-				url: 'https://www.youtube.com/channel/UCLu8_Wgx8oMPk4IN1LPkCjA'
-			},
-			{
-				name: 'twitter',
-				url: 'https://twitter.com/still_crisp'
-			},
-			{
-				name: 'bandcamp',
-				url: 'https://stillcrisp.bandcamp.com/'
-			}
-		],
+	STILL_CRISP: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/stillcrisp'),
+			SPOTIFY: new Link(LinkKind.SPOTIFY, 'https://open.spotify.com/artist/7I0omdF0bBVakabsP93fJA'),
+			APPLE_MUSIC: new Link(
+				LinkKind.APPLE_MUSIC,
+				'https://music.apple.com/us/artist/still-crisp/1537379112'
+			),
+			TWITCH: new Link(LinkKind.TWITCH, 'https://twitch.tv/stillcrisp'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://www.youtube.com/@stillcrisp9106'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/still_crisp'),
+			BANDCAMP: new Link(LinkKind.BANDCAMP, 'https://stillcrisp.bandcamp.com/')
+		},
 		name: 'still crisp'
 	}
-];
+};
 
-export const visualArtists = [];
+const visualArtists: {
+	[key: string]: Artist;
+} = {};
 
-export default [...musicians, ...visualArtists];
+const artists: { [key: string]: Artist } = {
+	...musicians,
+	...visualArtists
+};
+
+export default artists;
+export { musicians, visualArtists };

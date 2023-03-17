@@ -1,129 +1,119 @@
-import artists, { type Artist, type Link } from '$lib/assets/artists';
+import {musicians} from '$lib/assets/artists';
+import type { Artist } from '$lib/types/artist';
+import type { LinkList } from '$lib/types/link';
 
 type Track = {
 	title: string;
 	artists: (Artist | undefined)[];
-	links: Link[];
+	links: LinkList;
 };
 
 export const tracklist: Track[] = [
 	{
 		title: 'HYPERTRANCE',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'nuphory')],
-		links: []
+		artists: [musicians.NUPHORY],
+		links: {}
 	},
 	{
 		title: 'everafter',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'wyste')],
-		links: []
+		artists: [musicians.WYSTE],
+		links: {}
 	},
 	{
 		title: 'infinity',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'aekae')],
-		links: []
+		artists: [musicians.AEKAE],
+		links: {}
 	},
 	{
 		title: 'digital eternity',
-		artists: [
-			artists.find((artist) => artist.name.toLowerCase() === 'yuuni'),
-			artists.find((artist) => artist.name.toLowerCase() === 'aekae')
-		],
+		artists: [musicians.YUUNI, musicians.AEKAE],
 
-		links: []
+		links: {}
 	},
 	{
 		title: 'Myria Exaxis',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'type r')],
-		links: []
+		artists: [musicians.TYPE_R],
+		links: {}
 	},
 	{
 		title: 'EXOPLANET // HYPERTRANCE',
-		artists: [
-			artists.find((artist) => artist.name.toLowerCase() === 'nuphory'),
-			artists.find((artist) => artist.name.toLowerCase() === 'luna lenta')
-		],
-		links: []
+		artists: [musicians.NUPHORY, musicians.LUNA_LENTA],
+		links: {}
 	},
 	{
 		title: 'Carry All Before One v2',
-		artists: [
-			artists.find((artist) => artist.name.toLowerCase() === 'lure rabbit'),
-			artists.find((artist) => artist.name.toLowerCase() === 'naimeng')
-		],
-		links: []
+		artists: [musicians.LURE_RABBIT, musicians.NAIMENG],
+		links: {}
 	},
 	{
 		title: 'Ghost Wire',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'crayvxn')],
-		links: []
+		artists: [musicians.CRAYVXN],
+		links: {}
 	},
 	{
 		title: 'Infinite Evolution',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'neurolink')],
-		links: []
+		artists: [musicians.NEUROLINK],
+		links: {}
 	},
 	{
 		title: 'through the forest',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'voxkai')],
-		links: []
+		artists: [musicians.VOXKAI],
+		links: {}
 	},
 	{
 		title: 'dryft:current',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'kassio project')],
-		links: []
+		artists: [musicians.KASSIO_PROJECT],
+		links: {}
 	},
 	{
 		title: 'Wait For Me',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'd4vt0r')],
-		links: []
+		artists: [musicians.D4VT0R],
+		links: {}
 	},
 	{
 		title: 'REJECTED BY HYPERTRANCE',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'still crisp')],
-		links: []
+		artists: [musicians.STILL_CRISP],
+		links: {}
 	},
 	{
 		title: 'ask the universe',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'gasker')],
-		links: []
+		artists: [musicians.GASKER],
+		links: {}
 	},
 	{
 		title: 'SSR05',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'moshii lightz')],
-		links: []
+		artists: [musicians.MOSHII_LIGHTZ],
+		links: {}
 	},
 	{
 		title: 'I NEED',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'c-zer')],
-		links: []
+		artists: [musicians.C_ZER],
+		links: {}
 	},
 	{
 		title: 'STEP10',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'sam waitin')],
-		links: []
+		artists: [musicians.SAM_WAITIN],
+		links: {}
 	},
 	{
 		title: 'Moon Shine',
-		artists: [
-			artists.find((artist) => artist.name.toLowerCase() === 'lunanescence'),
-			artists.find((artist) => artist.name.toLowerCase() === 'luna lenta')
-		],
-		links: []
+		artists: [musicians.LUNANESCENCE, musicians.LUNA_LENTA],
+		links: {}
 	},
 	{
 		title: 'juju stomp',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'disctr4k')],
-		links: []
+		artists: [musicians.DISCTR4K],
+		links: {}
 	},
 	{
 		title: 'Twilight',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'ausa')],
-		links: []
+		artists: [musicians.AUSA],
+		links: {}
 	},
 	{
 		title: 'soul vertex',
-		artists: [artists.find((artist) => artist.name.toLowerCase() === 'noah b')],
-		links: []
+		artists: [musicians.NOAH_B],
+		links: {}
 	}
 ];
 
