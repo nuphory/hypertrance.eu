@@ -76,7 +76,6 @@
 				srcset={backgroundImgSrcSet}
 				class="absolute top-0 min-h-full min-w-full object-cover"
 				alt="Background"
-				loading="lazy"
 			/>
 			<!-- Video -->
 			<video

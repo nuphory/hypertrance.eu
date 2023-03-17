@@ -102,7 +102,6 @@
 				srcset={backgroundImgSrcSet}
 				class="transition-quick duration-default ease-out absolute top-0 origin-top min-h-full min-w-full object-cover"
 				alt="Background"
-				loading="lazy"
 			/>
 			<!-- Video -->
 			<video
