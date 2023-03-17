@@ -199,7 +199,7 @@
 		<ul class="container flex justify-evenly items-start gap-8">
 			<li class="flex-1 order-2">
 				<button
-					class="w-full backdrop-blur shadow-lg text-[0.5rem] leading-[0.5rem] text-right font-yeysk tracking-widest button-primary"
+					class="w-full backdrop-blur shadow-lg button-primary"
 					on:click={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 				>
 					<span>Buy Now</span>

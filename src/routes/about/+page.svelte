@@ -298,7 +298,7 @@
 		<ul class="container flex justify-evenly items-start gap-8">
 			<li class="flex-1 order-2">
 				<button
-					class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-primary"
+					class="w-full backdrop-blur shadow-lg button-primary"
 					on:click={() => window.open('http://nuphory.bandcamp.com', '_blank')}
 				>
 					<span>Buy Now</span>
@@ -310,7 +310,7 @@
 			</li>
 			<li class="flex-1 order-1">
 				<button
-					class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-neutral "
+					class="w-full backdrop-blur shadow-lg button-neutral "
 					on:click={toggleHero}
 				>
 					<span>Watch</span>
