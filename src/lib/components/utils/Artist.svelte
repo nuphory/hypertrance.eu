@@ -36,6 +36,7 @@
                                         overflow-clip
 					ring-2 ring-white
 
+                                        list-none
                                         bg-black bg-opacity-50 backdrop-blur
                                 "
                         >
