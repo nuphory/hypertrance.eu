@@ -41,7 +41,7 @@ export const tracklist: Track[] = [
 		links: {}
 	},
 	{
-		title: 'Carry All Before One v2',
+		title: 'Carry All Before One',
 		artists: [musicians.LURE_RABBIT, musicians.NAIMENG],
 		links: {}
 	},
