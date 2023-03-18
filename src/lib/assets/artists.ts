@@ -162,6 +162,12 @@ const musicians: {
 		name: 'Lure Rabbit'
 	},
 	NAIMENG: {
+		links: {
+			SOUNDCLOUD: new Link(LinkKind.SOUNDCLOUD, 'https://soundcloud.com/nai-meng-cat'),
+			YOUTUBE: new Link(LinkKind.YOUTUBE, 'https://youtube.com/@naimeng4005'),
+			TWITTER: new Link(LinkKind.TWITTER, 'https://twitter.com/naimeng1234'),
+			INSTAGRAM: new Link(LinkKind.INSTAGRAM, 'https://www.instagram.com/naimeng4005/')
+		},
 		name: 'NaiMeng'
 	},
 	LUNA_LENTA: {
