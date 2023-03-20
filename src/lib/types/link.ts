@@ -69,8 +69,6 @@ class Platform {
 class Link extends Platform {
 	private _url: string;
 
-	private _platform: Platform;
-
 	constructor(
 		platform: Platform,
 		url: string,
@@ -83,15 +81,10 @@ class Link extends Platform {
 		);
 
 		this._url = url;
-		this._platform = platform;
 	}
 
 	get url() {
 		return this._url;
-	}
-
-	get platform() {
-		return this._platform;
 	}
 
 	toString() {
