@@ -1,56 +1,82 @@
-class Link {
-        constructor(public kind: LinkKind, public url: string) {}
+class Platform {
+	static readonly WEBSITE = new Platform('Website', '/assets/img/icon/website.svg', 1);
 
-        toString() {
-                return this.url;
-        }
+	static readonly BANDCAMP = new Platform('Bandcamp', '/assets/img/icon/bandcamp.svg', 1);
+	static readonly SPOTIFY = new Platform('Spotify', '/assets/img/icon/spotify.svg', 2);
+	static readonly APPLE_MUSIC = new Platform('Apple Music', '/assets/img/icon/apple_music.svg', 3);
+	static readonly YOUTUBE = new Platform('YouTube', '/assets/img/icon/youtube.svg', 3);
+	static readonly SOUNDCLOUD = new Platform('SoundCloud', '/assets/img/icon/soundcloud.svg', 4);
+	static readonly TWITCH = new Platform('Twitch', '/assets/img/icon/twitch.svg',4);
 
-        get name() {
-                return this.kind.name;
-        }
+	static readonly INSTAGRAM = new Platform('Instagram', '/assets/img/icon/instagram.svg',5);
+	static readonly TWITTER = new Platform('Twitter', '/assets/img/icon/twitter.svg',5);
+	static readonly FACEBOOK = new Platform('Facebook', '/assets/img/icon/facebook.svg',5);
+        
+	static readonly TUMBLR = new Platform('Tumblr', '/assets/img/icon/website.svg',5);
+	static readonly DEVIANT_ART = new Platform('DeviantArt', '/assets/img/icon/website.svg',5);
+	static readonly NEWGROUNDS = new Platform('Newgrounds', '/assets/img/icon/website.svg',5);
+
+	private _name: string;
+	private _iconSrc: string;
+	private _priority: number;
+
+	constructor(name: string, iconSrc: string, priority?: number) {
+		this._name = name;
+		this._iconSrc = iconSrc;
+		this._priority = priority ?? 0;
+	}
+
+	get name() {
+		return this._name;
+	}
+
+	get iconSrc() {
+		return this._iconSrc;
+	}
+
+	get priority() {
+		return this._priority;
+	}
 }
 
-class LinkKind {
-	static readonly SOUNDCLOUD = new LinkKind(
-		'SOUNDCLOUD',
-		'SoundCloud',
-		'/assets/img/icon/soundcloud.svg'
-	);
-	static readonly SPOTIFY = new LinkKind('SPOTIFY', 'Spotify', '/assets/img/icon/spotify.svg');
-	static readonly APPLE_MUSIC = new LinkKind(
-		'APPLE_MUSIC',
-		'Apple Music',
-		'/assets/img/icon/apple_music.svg'
-	);
-	static readonly TWITCH = new LinkKind('TWITCH', 'Twitch', '/assets/img/icon/twitch.svg');
-	static readonly YOUTUBE = new LinkKind('YOUTUBE', 'YouTube', '/assets/img/icon/youtube.svg');
-	static readonly INSTAGRAM = new LinkKind(
-		'INSTAGRAM',
-		'Instagram',
-		'/assets/img/icon/instagram.svg'
-	);
-	static readonly TWITTER = new LinkKind('TWITTER', 'Twitter', '/assets/img/icon/twitter.svg');
-	static readonly FACEBOOK = new LinkKind(
-		'FACEBOOK',
-		'Facebook',
-		'/assets/img/icon/facebook.svg'
-	);
-	static readonly BANDCAMP = new LinkKind(
-		'BANDCAMP',
-		'Bandcamp',
-		'/assets/img/icon/bandcamp.svg'
-	);
-	static readonly WEBSITE = new LinkKind('WEBSITE', 'Website', '/assets/img/icon/website.svg');
+/**
+ * a link to a user on a social media platform
+ */
+class Link extends Platform {
+	private _url: string;
 
-	constructor(private readonly key: string, public name: string, public icon: string) {}
+	private _platform: Platform;
+
+	constructor(
+		platform: Platform,
+		url: string,
+		options?: { name?: string; iconSrc?: string; priority?: number }
+	) {
+		super(
+			options?.name ?? platform.name,
+			options?.iconSrc ?? platform.iconSrc,
+			options?.priority ?? platform.priority
+		);
+
+		this._url = url;
+		this._platform = platform;
+	}
+
+	get url() {
+		return this._url;
+	}
+
+	get platform() {
+		return this._platform;
+	}
 
 	toString() {
-		return this.key;
+		return this.url;
 	}
 }
 
 type LinkList = {
-	[key in keyof Partial<typeof LinkKind>]: Link;
+	[key in keyof Partial<typeof Platform>]: Link;
 };
 
-export { Link, LinkKind, type LinkList};
+export { Link, Platform, type LinkList };
