@@ -1,15 +1,15 @@
 import { LinkBuilder, Platform } from '$lib/metadata/link';
-import { TrackBuilder } from '$lib/metadata/track';
 
 // Artists
 import AEKAE from '$lib/assets/artists/aekae';
-import YUUNI from '$lib/assets/artists/yuuni';
 import JACKFLASH from '$lib/assets/artists/jackflash';
+import { TrackBuilder } from '$lib/metadata/track';
+import YUUNI from '$lib/assets/artists/yuuni';
 
 const DIGITAL_ETERNITY = new TrackBuilder()
 	.setTitle('Digital Eternity')
-	.addPrimaryArtist(AEKAE)
 	.addPrimaryArtist(YUUNI)
+	.addPrimaryArtist(AEKAE)
 	.addVisualArtist(JACKFLASH)
 	.addLink(
 		new LinkBuilder()
