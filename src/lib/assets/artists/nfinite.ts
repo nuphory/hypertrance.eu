@@ -18,7 +18,7 @@ const NFINITE = new ArtistBuilder()
 	.addLink(
 		new LinkBuilder()
 			.setPlatform(Platform.TWITTER)
-			.setUrl('https://twitter.com/009_infinite')
+			.setUrl('https://twitter.com/_nfinite')
 			.setPriority(0)
 			.create()
 	)
