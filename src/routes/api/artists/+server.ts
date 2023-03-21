@@ -1,38 +1,29 @@
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
-import artists from '$lib/metadata/artist';
+import type { Artist } from '$src/lib/metadata/artist';
 import { toSnakeCase } from '$lib/utils/stringFormat';
 
-export const GET = (({ url }) => {
-	let body;
+const modules = await Promise.all(
+	Object.values(import.meta.glob('$lib/assets/artists/*.ts')).map((module) => module())
+);
+const artists = modules.map((module) => module.default);
 
-	const artistQuery: string | null = url.searchParams.get('artist');
+export const GET = (async ({ url }) => {
+	let artistQuery: string | null = url.searchParams.get('artist');
+
 	if (artistQuery != null) {
-		const artist = Array.from(artists).find(
-			(artist) => toSnakeCase(artist.name) === toSnakeCase(artistQuery)
-		);
+		artistQuery = toSnakeCase(artistQuery);
+		const artist = artists.find((artist: Artist) => {
+			return toSnakeCase(artist.name) === artistQuery;
+		});
+
 		if (artist != null) {
-			body = artist;
+			return json(artist);
 		} else {
 			throw error(404, 'Artist not found');
 		}
-	} else {
-		body = artists;
 	}
 
-	return json(
-		JSON.parse(
-			JSON.stringify(body, (key, value) => {
-				if (value instanceof Map) {
-					return {
-						dataType: 'Map',
-						value: Object.fromEntries(value) // or with spread: value: [...value]
-					};
-				} else {
-					return value;
-				}
-			})
-		)
-	);
+	return json(artists);
 }) satisfies RequestHandler;
