@@ -20,14 +20,13 @@
 
 html {
 	@apply transition-colors duration-default ease-out;
-	@apply font-montserrat lowercase;
+	@apply font-montserrat;
 	scroll-behavior: smooth;
 
 	body {
 		@apply bg-neutral text-neutral;
 
 		main {
-                        
 			@apply perspective-40 perspective-origin-top;
 			@apply h-screen-dynamic w-full;
 			@apply overflow-x-clip overflow-y-scroll;
@@ -36,15 +35,15 @@ html {
 
 			section {
 				@apply relative;
-                                
+
 				@apply transform-style-3d;
 
 				&:not(:first-of-type) {
 					@apply py-8;
-                                        @apply backdrop-blur bg-black/50;
-                                        &:not(:last-of-type) {
-                                                @apply mb-8;
-                                        }
+					@apply backdrop-blur bg-black/50;
+					&:not(:last-of-type) {
+						@apply mb-8;
+					}
 				}
 
 				// section {

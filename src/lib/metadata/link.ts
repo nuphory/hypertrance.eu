@@ -43,9 +43,9 @@ class Platform {
 	static readonly NEWGROUNDS = new Platform('Newgrounds', '/assets/img/icon/website.svg', 500);
 	static readonly DEVIANT_ART = new Platform('DeviantArt', '/assets/img/icon/website.svg', 510);
 	static readonly TUMBLR = new Platform('Tumblr', '/assets/img/icon/website.svg', 520);
-	
-        // Subscription platforms
-        static readonly PATREON = new Platform('Patreon', '/assets/img/icon/website.svg', 600);
+
+	// Subscription platforms
+	static readonly PATREON = new Platform('Patreon', '/assets/img/icon/website.svg', 600);
 
 	readonly name: string;
 	readonly iconSrc: string;
@@ -63,7 +63,7 @@ class Platform {
 		this.priority = priority ?? 0;
 	}
 
-        toString() {
+	toString() {
 		return this.name;
 	}
 }

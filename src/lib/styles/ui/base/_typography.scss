@@ -56,22 +56,22 @@
 
 html {
 	main {
-                @apply font-inter;
+		@apply font-inter;
 		h1,
 		h2 {
 			@apply mb-6;
 		}
 	}
 	h1 {
-                @apply font-comsat-navy;
-        }
+		@apply font-comsat-navy;
+	}
 
-        h3 {
-                @apply mb-4;
-        }
-        p {
-                @apply mb-8;
-        }
+	h3 {
+		@apply mb-4;
+	}
+	p {
+		@apply mb-8;
+	}
 
 	h1,
 	h2,
@@ -103,7 +103,7 @@ html {
 
 	a {
 		@apply inline-block;
-                @apply font-inter;
+		@apply font-inter;
 		&:not(.reset) {
 			&:hover {
 				@apply underline;
@@ -114,13 +114,8 @@ html {
 		}
 	}
 
-        button {
-                @apply font-comsat-navy uppercase;
-                @apply tracking-[0.2rem];
-        }
-
-        ul {
-                list-style-type: ":: ";
-                @apply list-outside;
-        }
+	button {
+		@apply font-comsat-navy uppercase;
+		@apply tracking-[0.2rem];
+	}
 }

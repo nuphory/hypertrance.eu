@@ -10,7 +10,7 @@
 	import tracklist from '$lib/assets/tracklist';
 	import { goto } from '$app/navigation';
 	import { description, name, tagline, url } from '$lib/identity';
-	import HypertranceTwo from '$src/lib/components/HypertranceTwo.svelte';
+	import HypertranceTwo from '$lib/components/HypertranceTwo.svelte';
 
 	let isHeroOpen = false;
 
@@ -107,7 +107,7 @@
 			<video
 				class="transition-quick duration-default ease-out absolute top-0 origin-top min-h-full min-w-full opacity-0 object-cover"
 				preload="none"
-                                playsinline
+				playsinline
 				muted
 				loop
 			>
@@ -184,6 +184,7 @@
 						<button
 							class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-primary"
 							on:click={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
+							on:auxclick={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 						>
 							<span>Buy Now</span>
 						</button>
@@ -196,6 +197,7 @@
 						<button
 							class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-neutral "
 							on:click={toggleHero}
+							on:auxclick={toggleHero}
 						>
 							<span>Watch</span>
 						</button>
@@ -289,6 +291,7 @@
 		<button
 			class="w-full button-neutral mt-8"
 			on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
+			on:auxclick={() => window.open('http://discord.gg/673AfPB', '_blank')}
 		>
 			<span>Join our Discord</span>
 		</button>
@@ -301,6 +304,7 @@
 				<button
 					class="w-full backdrop-blur shadow-lg button-primary"
 					on:click={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
+					on:auxclick={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 				>
 					<span>Buy Now</span>
 				</button>
@@ -313,6 +317,7 @@
 				<button
 					class="w-full backdrop-blur shadow-lg button-neutral "
 					on:click={toggleHero}
+					on:auxclick={toggleHero}
 				>
 					<span>Watch</span>
 				</button>

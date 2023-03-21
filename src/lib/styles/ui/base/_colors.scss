@@ -62,7 +62,7 @@ html {
 
 		&::before {
 			@apply transition-[transform,background-position,margin] duration-default ease-out absolute -z-10 inset-0 bg-left-top content-[''] mix-blend-normal;
-                        @apply m-0;
+			@apply m-0;
 
 			background: linear-gradient(
 				135deg,
