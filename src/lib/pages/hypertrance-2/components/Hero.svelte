@@ -2,6 +2,45 @@
 	// Assets
 	import backgroundImgSrcSet from '$lib/assets/img/hypertrance-2-background-still.png?jpg&srcset&h=360;667;720;768;800;1024;1050;1080;1200;1440;1600;2160';
 	import backgroundVideoSrc from '$lib/assets/vid/hypertrance-2-background-1440p9M.mp4';
+
+	// Components
+	import LinkList from '$lib/components/utils/LinkList.svelte';
+	import { LinkBuilder, Platform } from '$lib/metadata/link';
+
+	const links = [
+		new LinkBuilder()
+			.setPlatform(Platform.BANDCAMP)
+			.setUrl('https://hypertrance.bandcamp.com/album/hypertrance-2')
+			.setPriority(0)
+			.create(),
+		new LinkBuilder()
+			.setPlatform(Platform.SPOTIFY)
+			.setUrl('https://open.spotify.com/album/1iUfnoO7rSOisgFneqNcVV')
+			.setPriority(0)
+			.create(),
+		// new LinkBuilder()
+		// 	.setPlatform(Platform.APPLE_MUSIC)
+		// 	.setUrl('https://music.apple.com/us/album/hypertrance-2/1676638767')
+		// 	.setPriority(0)
+		// 	.create(),
+		// new LinkBuilder()
+		// 	.setPlatform(Platform.TIDAL)
+		// 	.setUrl('https://listen.tidal.com/album/281197146')
+		// 	.setPriority(0)
+		// 	.create(),
+		// new LinkBuilder()
+		// 	.setPlatform(Platform.DEEZER)
+		// 	.setUrl('https://www.deezer.com/en/album/416326587')
+		// 	.setPriority(0)
+		// 	.create(),
+		new LinkBuilder()
+			.setPlatform(Platform.YOUTUBE)
+			.setUrl('https://youtu.be/3sCu-zjVa5c')
+			.setPriority(0)
+			.create()
+	];
+
+	links.sort((a, b) => a.priority - b.priority);
 </script>
 
 <section id="hero" class={$$restProps.class}>
@@ -41,46 +80,46 @@
 			>
 				<span
 					class="
-                                                        inline-block
-                                                        origin-top-right scale-50
-        
-                                                        [-webkit-text-fill-color:transparent] [-webkit-text-stroke-width:2px]
-                                                        font-extralight
-                                                        text-[32rem] md:text-[48rem] lg:text-[64rem]
-                                                        leading-[32rem] md:leading-[48rem] lg:leading-[64rem]
-        
-                                                        cutout
-                                                "
+						inline-block
+						origin-top-right scale-50
+
+						[-webkit-text-fill-color:transparent] [-webkit-text-stroke-width:2px]
+						font-extralight
+						text-[32rem] md:text-[48rem] lg:text-[64rem]
+						leading-[32rem] md:leading-[48rem] lg:leading-[64rem]
+
+						cutout
+					"
 				>
 					02
 				</span>
 			</div>
 			<div
 				class="
-                                                relative flex justify-between 
-                                                -mt-[25.5rem] md:-mt-[38.5rem] lg:-mt-[51rem]
-                                                uppercase
-                                        "
+					relative flex justify-between 
+					-mt-[25.5rem] md:-mt-[38.5rem] lg:-mt-[51rem]
+					uppercase
+				"
 				aria-label="hypertrance 2"
 			>
 				<div class="grow -ml-96 -mr-4 h-1 md:h-[0.325rem] lg:h-[0.45rem] bg-white" />
 				<div
 					class="
-                                                                                container relative
-                                                                                flex justify-end
-                                                                                text-left
-                                                                        "
+						container relative
+						flex justify-end
+						text-left
+					"
 				>
 					<h1
 						class="
-                                                                                        w-min
-                                                                                        origin-top-right scale-50
-                                                                                        -mr-1 -mt-2 md:-mt-[0.65rem] lg:-mt-4 -mb-14 md:-mb-[4.65rem] lg:-mb-28
-                                                                                        text-[1.5rem] md:text-[2rem] lg:text-[3rem] 
-                                                                                        leading-[3rem] md:leading-[4rem] lg:leading-[6rem] 
-                                                                                        tracking-[1.825rem] md:tracking-[2.85rem] lg:tracking-[3.6rem]
-                                                                                        before:content-['']
-                                                                                "
+							w-min
+							origin-top-right scale-50
+							-mr-1 -mt-2 md:-mt-[0.65rem] lg:-mt-4 -mb-14 md:-mb-[4.65rem] lg:-mb-28
+							text-[1.5rem] md:text-[2rem] lg:text-[3rem] 
+							leading-[3rem] md:leading-[4rem] lg:leading-[6rem] 
+							tracking-[1.825rem] md:tracking-[2.85rem] lg:tracking-[3.6rem]
+							before:content-['']
+						"
 					>
 						<span aria-hidden="true" class="select-none pointer-events-none">[</span
 						>HYPERTRANCE<span class="-tracking-[1rem]">&nbsp;</span>2
@@ -102,7 +141,10 @@
 					</button>
 					<span
 						class="block -mb-16 mt-1 font-inter text-[0.75rem] leading-[0.75rem] text-right tracking-widest lowercase"
-						>or <a href="https://fanlink.to/hypertrance2">stream elsewhere</a></span
+						>or <span class="group"
+							><a href="https://fanlink.to/hypertrance2" target="_blank">stream elsewhere</a
+							><LinkList {links} /></span
+						></span
 					>
 				</li>
 				<li class="order-1 ">
