@@ -14,7 +14,9 @@
 		</a>
 		<LinkList links={artist.links} />
 	{:else}
-		<span>{artist.name}</span>
+		<span>
+			{artist.name}&nbsp;
+		</span>
 	{/if}
 </div>
 
