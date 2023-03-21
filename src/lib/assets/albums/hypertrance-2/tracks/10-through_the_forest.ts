@@ -1,11 +1,15 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
+// Musicians
 import NOBONUS from '$lib/assets/artists/nobonus';
-import { TrackBuilder } from '$lib/metadata/track';
-// Artists
+// Visual Artists
 import VOXKAI from '$lib/assets/artists/voxkai';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/10-through_the_forest.mp3';
 
 const THROUGH_THE_FOREST = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('Through The Forest')
 	.addPrimaryArtist(VOXKAI)
 	.addVisualArtist(NOBONUS)

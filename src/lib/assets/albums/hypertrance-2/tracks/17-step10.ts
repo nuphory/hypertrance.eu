@@ -1,12 +1,16 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-import NUPHORY from '$lib/assets/artists/nuphory';
-// Artists
+// Musicians
 import SAM_WAITIN from '$lib/assets/artists/sam_waitin';
-import { TrackBuilder } from '$lib/metadata/track';
+// Visual Artists
 import VLAMS from '$lib/assets/artists/vlams';
+import NUPHORY from '$lib/assets/artists/nuphory';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/17-step10.mp3';
 
 const STEP10 = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('STEP10')
 	.addPrimaryArtist(SAM_WAITIN)
 	.addVisualArtist(VLAMS)

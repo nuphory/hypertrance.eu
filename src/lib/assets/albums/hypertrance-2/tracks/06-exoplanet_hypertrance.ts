@@ -1,11 +1,14 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-import LUNA_LENTA from '$lib/assets/artists/luna_lenta';
-// Artists
+// Musicians & Visual Artists
 import NUPHORY from '$lib/assets/artists/nuphory';
-import { TrackBuilder } from '$lib/metadata/track';
+import LUNA_LENTA from '$lib/assets/artists/luna_lenta';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/06-exoplanet_hypertrance.mp3';
 
 const EXOPLANET_HYPERTRANCE = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('EXOPLANET // HYPERTRANCE')
 	.addPrimaryArtist(NUPHORY)
 	.addPrimaryArtist(LUNA_LENTA)

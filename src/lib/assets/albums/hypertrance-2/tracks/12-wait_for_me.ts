@@ -1,13 +1,16 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import D4VT0R from '$lib/assets/artists/d4vt0r';
+// Visual Artists
 import LINSANG from '$lib/assets/artists/linsang';
 import NUPHORY from '$lib/assets/artists/nuphory';
-import SKXLLFLOWER from '$lib/assets/artists/skxllflower';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/12-wait_for_me.mp3';
 
 const WAIT_FOR_ME = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('Wait For Me')
 	.addPrimaryArtist(D4VT0R)
 	.addVisualArtist(LINSANG)

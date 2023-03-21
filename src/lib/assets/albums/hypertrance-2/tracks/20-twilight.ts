@@ -1,11 +1,15 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import AUSA from '$lib/assets/artists/ausa';
+// Visual Artists
 import LINSANG from '$lib/assets/artists/linsang';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/20-twilight.mp3';
 
 const TWILIGHT = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('Twilight')
 	.addPrimaryArtist(AUSA)
 	.addVisualArtist(LINSANG)

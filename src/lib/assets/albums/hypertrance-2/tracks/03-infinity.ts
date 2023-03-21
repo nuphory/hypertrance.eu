@@ -1,11 +1,15 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import AEKAE from '$lib/assets/artists/aekae';
+// Visual Artists
 import NFINITE from '$lib/assets/artists/nfinite';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/03-infinity.mp3';
 
 const INFINITY = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('Infinity')
 	.addPrimaryArtist(AEKAE)
 	.addVisualArtist(NFINITE)

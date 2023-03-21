@@ -1,12 +1,16 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import LUNANESCENCE from '$lib/assets/artists/lunanescence';
 import LUNA_LENTA from '$lib/assets/artists/luna_lenta';
+// Visual Artists
 import NUPHORY from '$lib/assets/artists/nuphory';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/18-moon_shine.mp3';
 
 const MOON_SHINE = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('Moon Shine')
 	.addPrimaryArtist(LUNANESCENCE)
 	.addPrimaryArtist(LUNA_LENTA)

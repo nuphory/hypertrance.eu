@@ -9,6 +9,7 @@ class Track {
 	readonly primaryArtists: Artist[];
 	readonly featuredArtists?: Artist[];
 	readonly visualArtists?: Artist[];
+	readonly audioSrc?: string;
 	readonly bpm?: number;
 	readonly key?: string;
 	readonly links?: Link[];
@@ -19,6 +20,7 @@ class Track {
 		primaryArtists: Artist[],
 		featuredArtists?: Artist[],
 		visualArtists?: Artist[],
+		audioSrc?: string,
 		bpm?: number,
 		key?: string,
 
@@ -28,6 +30,7 @@ class Track {
 		this.primaryArtists = primaryArtists;
 		this.featuredArtists = featuredArtists;
 		this.visualArtists = visualArtists;
+		this.audioSrc = audioSrc;
 		this.bpm = bpm;
 		this.key = key;
 
@@ -53,6 +56,7 @@ class TrackBuilder {
 	private primaryArtists?: Artist[];
 	private featuredArtists?: Artist[];
 	private visualArtists?: Artist[];
+	private audioSrc?: string;
 	private bpm?: number;
 	private key?: string;
 	private links?: Link[];
@@ -63,6 +67,7 @@ class TrackBuilder {
 			primaryArtists?: Artist[];
 			featuredArtists?: Artist[];
 			visualArtists?: Artist[];
+			audioSrc?: string;
 			bpm?: number;
 			key?: string;
 			links?: Link[];
@@ -72,6 +77,7 @@ class TrackBuilder {
 		this.title = options?.title;
 		this.primaryArtists = options?.primaryArtists;
 		this.visualArtists = options?.featuredArtists;
+		this.audioSrc = options?.audioSrc;
 		this.bpm = options?.bpm;
 		this.key = options?.key;
 		this.links = options?.links;
@@ -136,6 +142,11 @@ class TrackBuilder {
 		return this;
 	}
 
+	setAudioSrc(src: string): TrackBuilder {
+		this.audioSrc = src;
+		return this;
+	}
+
 	setBpm(bpm: number): TrackBuilder {
 		this.bpm = bpm;
 		return this;
@@ -174,6 +185,7 @@ class TrackBuilder {
 			this.primaryArtists,
 			this.featuredArtists,
 			this.visualArtists,
+			this.audioSrc,
 			this.bpm,
 			this.key,
 			this.links

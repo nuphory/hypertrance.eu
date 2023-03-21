@@ -1,12 +1,15 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import CRAYVXN from '$lib/assets/artists/crayvxn';
+// Visual Artists
 import KIMI_TAKEMURA from '$lib/assets/artists/kimi_takemura';
-import SKXLLFLOWER from '$lib/assets/artists/skxllflower';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/08-ghost_wire.mp3';
 
 const GHOST_WIRE = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('Ghost Wire')
 	.addPrimaryArtist(CRAYVXN)
 	.addVisualArtist(KIMI_TAKEMURA)

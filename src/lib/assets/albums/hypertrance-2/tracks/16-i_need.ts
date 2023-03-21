@@ -1,12 +1,15 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import C_ZER from '$lib/assets/artists/c_zer';
+// Visual Artists
 import KADACHI from '$lib/assets/artists/kadachi';
-import SKXLLFLOWER from '$lib/assets/artists/skxllflower';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/16-i_need.mp3';
 
 const I_NEED = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('I NEED')
 	.addPrimaryArtist(C_ZER)
 	.addVisualArtist(KADACHI)

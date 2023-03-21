@@ -1,11 +1,15 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import NOAH_B from '$lib/assets/artists/noah_b';
+// Visual Artists
 import TAKADA from '$lib/assets/artists/takada';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/21-soul_vertex.mp3';
 
 const SOUL_VERTEX = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('Soul Vertex')
 	.addPrimaryArtist(NOAH_B)
 	.addVisualArtist(TAKADA)

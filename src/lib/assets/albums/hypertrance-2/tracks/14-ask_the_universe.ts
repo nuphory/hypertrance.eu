@@ -1,12 +1,16 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import GASKER from '$lib/assets/artists/gasker';
-import NEUROLINK from '$lib/assets/artists/neurolink';
+// Visual Artists
 import NUPHORY from '$lib/assets/artists/nuphory';
-import { TrackBuilder } from '$lib/metadata/track';
+import NEUROLINK from '$lib/assets/artists/neurolink';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/14-ask_the_universe.mp3';
 
 const ASK_THE_UNIVERSE = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('Ask The Universe')
 	.addPrimaryArtist(GASKER)
 	.addVisualArtist(NUPHORY)

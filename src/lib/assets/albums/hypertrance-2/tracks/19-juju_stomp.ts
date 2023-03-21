@@ -1,12 +1,16 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import DISCTR4K from '$lib/assets/artists/disctr4k';
+// Visual Artists
 import NUPHORY from '$lib/assets/artists/nuphory';
 import SKULL_SYSTEM from '$lib/assets/artists/skull_system';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/19-juju_stomp.mp3';
 
 const JUJU_STOMP = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('juju stomp')
 	.addPrimaryArtist(DISCTR4K)
 	.addVisualArtist(NUPHORY)

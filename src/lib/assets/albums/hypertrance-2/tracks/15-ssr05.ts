@@ -1,11 +1,15 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import MOSHII_LIGHTZ from '$lib/assets/artists/moshii_lightz';
+// Visual Artists
 import NUPHORY from '$lib/assets/artists/nuphory';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/15-ssr05.mp3';
 
 const SSR05 = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('SSR05')
 	.addPrimaryArtist(MOSHII_LIGHTZ)
 	.addVisualArtist(NUPHORY)

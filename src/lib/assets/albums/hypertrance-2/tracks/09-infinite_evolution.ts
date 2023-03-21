@@ -1,11 +1,15 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-// Artists
+// Musicians
 import NEUROLINK from '$lib/assets/artists/neurolink';
+// Visual Artists
 import RANZOR_GRAPHICS from '$lib/assets/artists/ranzorgraphics';
-import { TrackBuilder } from '$lib/metadata/track';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/09-infinite_evolution.mp3';
 
 const INFINITE_EVOLUTION = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('Infinite Evolution')
 	.addPrimaryArtist(NEUROLINK)
 	.addVisualArtist(RANZOR_GRAPHICS)

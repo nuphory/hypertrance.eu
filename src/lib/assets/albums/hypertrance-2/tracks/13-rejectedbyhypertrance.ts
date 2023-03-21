@@ -1,11 +1,15 @@
+import { TrackBuilder } from '$lib/metadata/track';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
-import NOBONUS from '$lib/assets/artists/nobonus';
-// Artists
+// Musicians
 import STILL_CRISP from '$lib/assets/artists/still_crisp';
-import { TrackBuilder } from '$lib/metadata/track';
+// Visual Artists
+import NOBONUS from '$lib/assets/artists/nobonus';
+// Audio
+import audioSrc from '$lib/assets/albums/hypertrance-2/audio/13-rejectedbyhypertrance.mp3';
 
 const REJECTEDBYHYPERTRANCE = new TrackBuilder()
+	.setAudioSrc(audioSrc)
 	.setTitle('REJECTEDBYHYPERTRANCE')
 	.addPrimaryArtist(STILL_CRISP)
 	.addVisualArtist(NOBONUS)
