@@ -1,11 +1,24 @@
 <script lang="ts">
-	import type { Artist } from '$lib/types/artist';
-	import Icon from './Icon.svelte';
+	import type { Artist } from '$lib/metadata/artist';
+
+	// Components
+	import LinkList from './LinkList.svelte';
 
 	export let artist: Artist;
 </script>
 
 <div class="inline relative group">
+	{#if artist.links}
+		<a href={artist.links[0].url}>
+			{artist.name}
+		</a>
+		<LinkList links={artist.links} />
+	{:else}
+		<span>{artist.name}</span>
+	{/if}
+</div>
+
+<!-- <div class="inline relative group">
         {#if artist.links}
                 <a
                         class="tracklist__artist"
@@ -19,7 +32,6 @@
                         {artist.name}
                 </a>
                 {#if Object.values(artist.links).length > 1}
-                        <!-- Drop-up -->
                         <ul 
                                 class="
                                         transition-quick duration-default delay-500 ease-out 
@@ -32,9 +44,7 @@
                                         max-h-0 group-hover:max-h-[8rem]
                                         
                                         opacity-0 group-hover:opacity-100
-                                        rounded-lg
-                                        overflow-clip
-					ring-2 ring-white
+                                        
 
                                         list-none
                                         bg-black bg-opacity-50 backdrop-blur
@@ -43,7 +53,7 @@
                                 {#each Object.values(artist.links) as link}
                                         <li class="aspect-square h-6 whitespace-nowrap m-0 p-0">
                                                 <a class="tracklist__artist__link m-0 p-0" href={link.url}>
-                                                        <Icon kind={link.kind} />
+                                                        <Icon kind={link.platform} />
                                                 </a>
                                         </li>
                                 {/each}
@@ -52,4 +62,4 @@
         {:else}
                 <span class="tracklist__artist">{artist.name}</span>
         {/if}
-</div>
+</div> -->

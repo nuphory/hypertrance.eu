@@ -4,7 +4,7 @@
 	import { browser } from '$app/environment';
 
 	// Assets
-	import artists from '$lib/assets/artists';
+	import artists from '$lib/metadata/artist';
 
 	// Components
 	import Footer from '$lib/components/Footer.svelte';
@@ -15,7 +15,7 @@
 
 	import '@fontsource/montserrat';
 	import '@fontsource/inter/400.css';
-	import { description, name, url } from '$lib/identity';
+	import { description, name } from '$lib/identity';
 
 	onMount(() => {
 		if (!browser) return;
@@ -45,11 +45,11 @@
 		name="keywords"
 		content="
                         {name}, {name} music, music, house, trance, hypertrance, neoy2k, progressive house, 
-                        {
-                                Object.values(artists)
-                                .map((artist) => artist.name)
-                                .join(', ')
-                        }
+                        {Array.from(artists)
+			.map((artist) => {
+				return artist.name;
+			})
+			.join(', ')}
                 "
 	/>
 	<meta name="description" content={description} />

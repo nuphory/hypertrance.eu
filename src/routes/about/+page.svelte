@@ -5,12 +5,8 @@
 
 	// Assets
 	import summaryImgSrc from '$lib/assets/img/summary.png?jpg&w=800';
-	import backgroundImgSrcSet from '$lib/assets/img/hypertrance-2-background-still.png?jpg&srcset&w=576;640;768;1028;1280;1920;2560';
-	import backgroundVideoSrc from '$lib/assets/vid/hypertrance-2-background-1440p9M.mp4';
-	import tracklist from '$lib/assets/tracklist';
 	import { goto } from '$app/navigation';
 	import { description, name, tagline, url } from '$lib/identity';
-	import HypertranceTwo from '$src/lib/components/HypertranceTwo.svelte';
 
 	let isHeroOpen = false;
 
@@ -86,7 +82,7 @@
 	<meta name="twitter:image" content="{url}{summaryImgSrc}" />
 </svelte:head>
 
-<main>
+<!-- <main>
 	<section
 		id="hero"
 		class="relative top-0 w-full {isHeroOpen
@@ -103,11 +99,11 @@
 				class="transition-quick duration-default ease-out absolute top-0 origin-top min-h-full min-w-full object-cover"
 				alt="Background"
 			/>
-			<!-- Video -->
+			
 			<video
 				class="transition-quick duration-default ease-out absolute top-0 origin-top min-h-full min-w-full opacity-0 object-cover"
 				preload="none"
-                                playsinline
+				playsinline
 				muted
 				loop
 			>
@@ -184,6 +180,7 @@
 						<button
 							class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-primary"
 							on:click={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
+							on:auxclick={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 						>
 							<span>Buy Now</span>
 						</button>
@@ -196,6 +193,7 @@
 						<button
 							class="w-full tracking-[0.2rem] uppercase backdrop-blur shadow-lg button-neutral "
 							on:click={toggleHero}
+							on:auxclick={toggleHero}
 						>
 							<span>Watch</span>
 						</button>
@@ -289,6 +287,7 @@
 		<button
 			class="w-full button-neutral mt-8"
 			on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
+			on:auxclick={() => window.open('http://discord.gg/673AfPB', '_blank')}
 		>
 			<span>Join our Discord</span>
 		</button>
@@ -301,6 +300,7 @@
 				<button
 					class="w-full backdrop-blur shadow-lg button-primary"
 					on:click={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
+					on:auxclick={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 				>
 					<span>Buy Now</span>
 				</button>
@@ -313,6 +313,7 @@
 				<button
 					class="w-full backdrop-blur shadow-lg button-neutral "
 					on:click={toggleHero}
+					on:auxclick={toggleHero}
 				>
 					<span>Watch</span>
 				</button>
@@ -325,4 +326,4 @@
 	span.cutout {
 		clip-path: polygon(100% 33%, 0 33%, 0 0, 100% 0%, 100% 100%, 0 100%, 0 60%, 100% 60%);
 	}
-</style>
+</style> -->
