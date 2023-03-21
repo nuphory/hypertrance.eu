@@ -30,7 +30,7 @@
 			{#if Array.isArray(track.primaryArtists)}
 				{#each track.primaryArtists as artist, i}
 					{#if i > 0 && i === track.primaryArtists.length - 1}
-						<span class="track__artist--primary__combinator">&amp;</span>
+						<span class="track__artist--primary__combinator">&nbsp;&amp;</span>
 					{:else if i !== 0}
 						<span class="track__artist--primary__combinator">,</span>
 					{/if}
@@ -45,7 +45,7 @@
 				{#if Array.isArray(track.featuredArtists)}
 					{#each track.featuredArtists as artist, i}
 						{#if i > 0 && i === track.featuredArtists.length - 1}
-							<span class="track__artist--featured__combinator">&amp;</span>
+							<span class="track__artist--featured__combinator">&nbsp;&amp;</span>
 						{:else if i !== 0}
 							<span class="track__artist--featured__combinator">,</span>
 						{/if}
@@ -62,9 +62,9 @@
 				{#if Array.isArray(track.visualArtists)}
 					{#each track.visualArtists as artist, i}
 						{#if i > 0 && i === track.visualArtists.length - 1}
-							<span class="track__artist--visual__combinator">&amp;</span>
+							<span class="track__artist--visual__combinator">&nbsp;&amp;</span>
 						{:else if i !== 0}
-							<span class="track__artist--visual__combinator -ml-1">,</span>
+							<span class="track__artist--visual__combinator">,</span>
 						{/if}
 						<Artist {artist} />
 					{/each}
