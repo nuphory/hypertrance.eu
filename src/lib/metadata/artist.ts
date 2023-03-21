@@ -29,11 +29,17 @@ class Artist {
 	}
 }
 
+/**
+ * helper class to generate an Artist object through method chaining
+ */
 class ArtistBuilder {
 	private name?: string;
 	private biography?: string;
 	private links?: Link[];
 
+	/**
+	 *
+	 */
 	constructor(options?: { name?: string; biography?: string; links?: Link[] }, artist?: Artist) {
 		this.name = options?.name;
 		this.biography = options?.biography;

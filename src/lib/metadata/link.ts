@@ -37,7 +37,8 @@ class Platform {
 	static readonly INSTAGRAM = new Platform('Instagram', '/assets/img/icon/instagram.svg', 400);
 	static readonly TWITTER = new Platform('Twitter', '/assets/img/icon/twitter.svg', 410);
 	static readonly FACEBOOK = new Platform('Facebook', '/assets/img/icon/facebook.svg', 420);
-	static readonly FORIIO = new Platform('Facebook', '/assets/img/icon/facebook.svg', 430);
+	static readonly SPACEHEY = new Platform('SpaceHey', '/assets/img/icon/website.svg', 430);
+	static readonly FORIIO = new Platform('Foriio', '/assets/img/icon/website.svg', 440);
 
 	// Art platforms
 	static readonly NEWGROUNDS = new Platform('Newgrounds', '/assets/img/icon/website.svg', 500);

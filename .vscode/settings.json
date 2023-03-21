@@ -19,6 +19,16 @@
 		"newgrounds",
 		"rejectedbyhypertrance",
 		"soundcloud",
+		"SPACEHEY",
 		"tiktok"
-	]
+	],
+	"workbench.colorCustomizations": {},
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true
+	}
 }
