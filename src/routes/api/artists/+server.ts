@@ -1,14 +1,17 @@
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
-import artists from '$lib/assets/artists';
+import artists from '$lib/metadata/artist';
+import { toSnakeCase } from '$lib/utils/stringFormat';
 
 export const GET = (({ url }) => {
 	let body;
 
 	const artistQuery: string | null = url.searchParams.get('artist');
 	if (artistQuery != null) {
-		const artist = artists.get(artistQuery);
+		const artist = Array.from(artists).find(
+			(artist) => toSnakeCase(artist.name) === toSnakeCase(artistQuery)
+		);
 		if (artist != null) {
 			body = artist;
 		} else {
