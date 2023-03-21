@@ -64,8 +64,3 @@
 <!-- <Header /> -->
 <slot />
 <Footer />
-
-<style lang="scss">
-	body {
-	}
-</style>
