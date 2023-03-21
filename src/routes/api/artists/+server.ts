@@ -7,7 +7,7 @@ import { toSnakeCase } from '$lib/utils/stringFormat';
 const modules = await Promise.all(
 	Object.values(import.meta.glob('$lib/assets/artists/*.ts')).map((module) => module())
 );
-const artists = modules.map((module) => module.default);
+const artists = modules.map((module: unknown) => module.default);
 
 export const GET = (async ({ url }) => {
 	let artistQuery: string | null = url.searchParams.get('artist');
