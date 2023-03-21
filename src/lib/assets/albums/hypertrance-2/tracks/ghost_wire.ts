@@ -10,7 +10,7 @@ const GHOST_WIRE = new TrackBuilder()
 	.setTitle('Ghost Wire')
 	.addPrimaryArtist(CRAYVXN)
 	.addVisualArtist(KIMI_TAKEMURA)
-	.addVisualArtist(SKXLLFLOWER)
+	// .addVisualArtist(SKXLLFLOWER)
 	.addLink(
 		new LinkBuilder()
 			.setPlatform(Platform.BANDCAMP)

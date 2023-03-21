@@ -12,7 +12,7 @@ const WAIT_FOR_ME = new TrackBuilder()
 	.addPrimaryArtist(D4VT0R)
 	.addVisualArtist(LINSANG)
 	.addVisualArtist(NUPHORY)
-	.addVisualArtist(SKXLLFLOWER)
+	// .addVisualArtist(SKXLLFLOWER)
 	.addLink(
 		new LinkBuilder()
 			.setPlatform(Platform.BANDCAMP)

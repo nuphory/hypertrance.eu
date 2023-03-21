@@ -12,7 +12,7 @@
 <li
 	class="transition-[outline] duration-default ease-out flex gap-2 w-full p-2 outline outline-2 outline-transparent hover:outline-white [&_.track\_\_artist]:hover:opacity-100"
 >
-	<span class="text-right w-8 text-xl">{trackno}.</span>
+	<span class="text-right w-8 text-xl">{trackno + 1}.</span>
 	<div>
 		<!-- Track Title -->
 		<div class="inline relative group text-xl">

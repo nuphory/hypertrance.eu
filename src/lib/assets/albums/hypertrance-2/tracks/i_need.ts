@@ -10,7 +10,7 @@ const I_NEED = new TrackBuilder()
 	.setTitle('I NEED')
 	.addPrimaryArtist(C_ZER)
 	.addVisualArtist(KADACHI)
-	.addVisualArtist(SKXLLFLOWER)
+	// .addVisualArtist(SKXLLFLOWER)
 	.addLink(
 		new LinkBuilder()
 			.setPlatform(Platform.BANDCAMP)
