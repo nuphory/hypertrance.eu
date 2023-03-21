@@ -27,7 +27,7 @@
 	>
 		{#each links as link}
 			<li class="relative aspect-square h-6">
-				<a href={link.url}>
+				<a href={link.url} target="_blank">
 					<img
 						class="block aspect-square h-6 w-6"
 						src={link.iconSrc}
