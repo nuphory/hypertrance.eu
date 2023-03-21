@@ -3,27 +3,27 @@ import { ArtistBuilder } from '$lib/metadata/artist';
 import { LinkBuilder, Platform } from '$lib/metadata/link';
 
 // Tracks
-import HYPERTRANCE from './tracks/hypertrance';
-import EVERAFTER from './tracks/everafter';
-import INFINITY from './tracks/infinity';
-import DIGITAL_ETERNITY from './tracks/digital_eternity';
-import MYRIA_EXAXIS from './tracks/myria_exaxis';
-import EXOPLANET_HYPERTRANCE from './tracks/exoplanet_hypertrance';
-import CARRY_ALL_BEFORE_ONE from './tracks/carry_all_before_one';
-import GHOST_WIRE from './tracks/ghost_wire';
-import INFINITE_EVOLUTION from './tracks/infinite_evolution';
-import THROUGH_THE_FOREST from './tracks/through_the_forest';
-import DRYFTCURRENT from './tracks/dryftcurrent';
-import WAIT_FOR_ME from './tracks/wait_for_me';
-import REJECTEDBYHYPERTRANCE from './tracks/rejectedbyhypertrance';
-import ASK_THE_UNIVERSE from './tracks/ask_the_universe';
-import SSR05 from './tracks/ssr05';
-import I_NEED from './tracks/i_need';
-import STEP10 from './tracks/step10';
-import MOON_SHINE from './tracks/moon_shine';
-import JUJU_STOMP from './tracks/juju_stomp';
-import TWILIGHT from './tracks/twilight';
-import SOUL_VERTEX from './tracks/soul_vertex';
+import HYPERTRANCE from './tracks/01-hypertrance';
+import EVERAFTER from './tracks/02-everafter';
+import INFINITY from './tracks/03-infinity';
+import DIGITAL_ETERNITY from './tracks/04-digital_eternity';
+import MYRIA_EXAXIS from './tracks/05-myria_exaxis';
+import EXOPLANET_HYPERTRANCE from './tracks/06-exoplanet_hypertrance';
+import CARRY_ALL_BEFORE_ONE from './tracks/07-carry_all_before_one';
+import GHOST_WIRE from './tracks/08-ghost_wire';
+import INFINITE_EVOLUTION from './tracks/09-infinite_evolution';
+import THROUGH_THE_FOREST from './tracks/10-through_the_forest';
+import DRYFTCURRENT from './tracks/11-dryftcurrent';
+import WAIT_FOR_ME from './tracks/12-wait_for_me';
+import REJECTEDBYHYPERTRANCE from './tracks/13-rejectedbyhypertrance';
+import ASK_THE_UNIVERSE from './tracks/14-ask_the_universe';
+import SSR05 from './tracks/15-ssr05';
+import I_NEED from './tracks/16-i_need';
+import STEP10 from './tracks/17-step10';
+import MOON_SHINE from './tracks/18-moon_shine';
+import JUJU_STOMP from './tracks/19-juju_stomp';
+import TWILIGHT from './tracks/20-twilight';
+import SOUL_VERTEX from './tracks/21-soul_vertex';
 
 const HYPERTRANCE_2: Album = new AlbumBuilder()
 	.setTitle('hypertrance 2')
