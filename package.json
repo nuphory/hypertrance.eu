@@ -12,7 +12,8 @@
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"push": "git push"
+		"push": "git push",
+		"merge": "git switch v2 && git fetch && git pull && git merge dev && git push && git switch dev"
 	},
 	"devDependencies": {
 		"@fontsource/fira-code": "^4.5.13",
