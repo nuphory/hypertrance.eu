@@ -2,45 +2,6 @@
 	// Assets
 	import backgroundImgSrcSet from '$lib/assets/img/hypertrance-2-background-still.png?jpg&srcset&h=360;667;720;768;800;1024;1050;1080;1200;1440;1600;2160';
 	import backgroundVideoSrc from '$lib/assets/vid/hypertrance-2-background-1440p9M.mp4';
-
-	// Components
-	import LinkList from '$lib/components/utils/LinkList.svelte';
-	import { LinkBuilder, Platform } from '$lib/metadata/link';
-
-	const links = [
-		new LinkBuilder()
-			.setPlatform(Platform.BANDCAMP)
-			.setUrl('https://hypertrance.bandcamp.com/album/hypertrance-2')
-			.setPriority(0)
-			.create(),
-		new LinkBuilder()
-			.setPlatform(Platform.SPOTIFY)
-			.setUrl('https://open.spotify.com/album/1iUfnoO7rSOisgFneqNcVV')
-			.setPriority(0)
-			.create(),
-		// new LinkBuilder()
-		// 	.setPlatform(Platform.APPLE_MUSIC)
-		// 	.setUrl('https://music.apple.com/us/album/hypertrance-2/1676638767')
-		// 	.setPriority(0)
-		// 	.create(),
-		// new LinkBuilder()
-		// 	.setPlatform(Platform.TIDAL)
-		// 	.setUrl('https://listen.tidal.com/album/281197146')
-		// 	.setPriority(0)
-		// 	.create(),
-		// new LinkBuilder()
-		// 	.setPlatform(Platform.DEEZER)
-		// 	.setUrl('https://www.deezer.com/en/album/416326587')
-		// 	.setPriority(0)
-		// 	.create(),
-		new LinkBuilder()
-			.setPlatform(Platform.YOUTUBE)
-			.setUrl('https://youtu.be/3sCu-zjVa5c')
-			.setPriority(0)
-			.create()
-	];
-
-	links.sort((a, b) => a.priority - b.priority);
 </script>
 
 <section id="hero" class={$$restProps.class}>
@@ -141,9 +102,8 @@
 					</button>
 					<span
 						class="block -mb-16 mt-1 font-inter text-[0.75rem] leading-[0.75rem] text-right tracking-widest lowercase"
-						>or <span class="group"
-							><a href="https://fanlink.to/hypertrance2" target="_blank">stream elsewhere</a
-							><LinkList {links} /></span
+						>or <span class="group relative inline-block transform-style-3d"
+							><a href="https://fanlink.to/hypertrance2" target="_blank">stream elsewhere</a></span
 						></span
 					>
 				</li>
