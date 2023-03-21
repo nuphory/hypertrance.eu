@@ -5,7 +5,7 @@ const NAIMENG = new ArtistBuilder()
 	.setName('NaiMeng')
 	.addLink(
 		new LinkBuilder()
-			.setPlatform(Platform.INSTAGRAM)
+			.setPlatform(Platform.YOUTUBE)
 			.setUrl('https://youtube.com/@naimeng4005')
 			.create()
 	)
