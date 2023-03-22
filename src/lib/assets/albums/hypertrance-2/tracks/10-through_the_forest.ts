@@ -6,10 +6,12 @@ import NOBONUS from '$lib/assets/artists/nobonus';
 // Visual Artists
 import VOXKAI from '$lib/assets/artists/voxkai';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/10-through_the_forest.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/10-through_the_forest.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/10-through_the_forest.ogg';
 
 const THROUGH_THE_FOREST = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Through The Forest')
 	.addPrimaryArtist(VOXKAI)
 	.addVisualArtist(NOBONUS)

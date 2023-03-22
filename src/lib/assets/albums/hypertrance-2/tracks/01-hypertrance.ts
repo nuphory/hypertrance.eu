@@ -4,10 +4,12 @@ import { LinkBuilder, Platform } from '$lib/metadata/link';
 // Musicians & Visual Artists
 import NUPHORY from '$lib/assets/artists/nuphory';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/01-hypertrance.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/01-hypertrance.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/01-hypertrance.ogg';
 
 const HYPERTRANCE = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('hypertrance')
 	.addPrimaryArtist(NUPHORY)
 	.addVisualArtist(NUPHORY)

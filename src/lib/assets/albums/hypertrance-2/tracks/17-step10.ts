@@ -7,10 +7,12 @@ import SAM_WAITIN from '$lib/assets/artists/sam_waitin';
 import VLAMS from '$lib/assets/artists/vlams';
 import NUPHORY from '$lib/assets/artists/nuphory';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/17-step10.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/17-step10.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/17-step10.ogg';
 
 const STEP10 = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('STEP10')
 	.addPrimaryArtist(SAM_WAITIN)
 	.addVisualArtist(VLAMS)

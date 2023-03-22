@@ -4,10 +4,12 @@ import { LinkBuilder, Platform } from '$lib/metadata/link';
 // Musicians & Visual Artists
 import KASSIO_PROJECT from '$lib/assets/artists/kassio_project';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/11-dryftcurrent.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/11-dryftcurrent.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/11-dryftcurrent.ogg';
 
 const DRYFTCURRENT = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Dryftcurrent')
 	.addPrimaryArtist(KASSIO_PROJECT)
 	.addVisualArtist(KASSIO_PROJECT)

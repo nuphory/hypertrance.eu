@@ -7,10 +7,12 @@ import NAIMENG from '$lib/assets/artists/naimeng';
 // Visual Artists
 import NUPHORY from '$lib/assets/artists/nuphory';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/07-carry_all_before_one.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/07-carry_all_before_one.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/07-carry_all_before_one.ogg';
 
 const CARRY_ALL_BEFORE_ONE = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Carry All Before One')
 	.addPrimaryArtist(LURE_RABBIT)
 	.addPrimaryArtist(NAIMENG)

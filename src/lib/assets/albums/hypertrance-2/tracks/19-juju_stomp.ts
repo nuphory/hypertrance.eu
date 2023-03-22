@@ -7,10 +7,12 @@ import DISCTR4K from '$lib/assets/artists/disctr4k';
 import NUPHORY from '$lib/assets/artists/nuphory';
 import SKULL_SYSTEM from '$lib/assets/artists/skull_system';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/19-juju_stomp.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/19-juju_stomp.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/19-juju_stomp.ogg';
 
 const JUJU_STOMP = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('juju stomp')
 	.addPrimaryArtist(DISCTR4K)
 	.addVisualArtist(NUPHORY)

@@ -6,10 +6,12 @@ import STILL_CRISP from '$lib/assets/artists/still_crisp';
 // Visual Artists
 import NOBONUS from '$lib/assets/artists/nobonus';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/13-rejectedbyhypertrance.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/13-rejectedbyhypertrance.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/13-rejectedbyhypertrance.ogg';
 
 const REJECTEDBYHYPERTRANCE = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('REJECTEDBYHYPERTRANCE')
 	.addPrimaryArtist(STILL_CRISP)
 	.addVisualArtist(NOBONUS)

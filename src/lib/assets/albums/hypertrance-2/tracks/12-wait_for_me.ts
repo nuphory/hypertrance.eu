@@ -7,10 +7,12 @@ import D4VT0R from '$lib/assets/artists/d4vt0r';
 import LINSANG from '$lib/assets/artists/linsang';
 import NUPHORY from '$lib/assets/artists/nuphory';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/12-wait_for_me.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/12-wait_for_me.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/12-wait_for_me.ogg';
 
 const WAIT_FOR_ME = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Wait For Me')
 	.addPrimaryArtist(D4VT0R)
 	.addVisualArtist(LINSANG)

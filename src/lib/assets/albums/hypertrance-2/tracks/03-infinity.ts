@@ -6,10 +6,12 @@ import AEKAE from '$lib/assets/artists/aekae';
 // Visual Artists
 import NFINITE from '$lib/assets/artists/nfinite';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/03-infinity.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/03-infinity.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/03-infinity.ogg';
 
 const INFINITY = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Infinity')
 	.addPrimaryArtist(AEKAE)
 	.addVisualArtist(NFINITE)

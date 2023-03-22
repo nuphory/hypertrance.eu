@@ -7,10 +7,12 @@ import LUNA_LENTA from '$lib/assets/artists/luna_lenta';
 // Visual Artists
 import NUPHORY from '$lib/assets/artists/nuphory';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/18-moon_shine.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/18-moon_shine.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/18-moon_shine.ogg';
 
 const MOON_SHINE = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Moon Shine')
 	.addPrimaryArtist(LUNANESCENCE)
 	.addPrimaryArtist(LUNA_LENTA)

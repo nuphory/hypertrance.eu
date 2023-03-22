@@ -6,10 +6,12 @@ import C_ZER from '$lib/assets/artists/c_zer';
 // Visual Artists
 import KADACHI from '$lib/assets/artists/kadachi';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/16-i_need.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/16-i_need.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/16-i_need.ogg';
 
 const I_NEED = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('I NEED')
 	.addPrimaryArtist(C_ZER)
 	.addVisualArtist(KADACHI)

@@ -5,10 +5,12 @@ import { LinkBuilder, Platform } from '$lib/metadata/link';
 import NUPHORY from '$lib/assets/artists/nuphory';
 import LUNA_LENTA from '$lib/assets/artists/luna_lenta';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/06-exoplanet_hypertrance.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/06-exoplanet_hypertrance.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/06-exoplanet_hypertrance.ogg';
 
 const EXOPLANET_HYPERTRANCE = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('EXOPLANET // HYPERTRANCE')
 	.addPrimaryArtist(NUPHORY)
 	.addPrimaryArtist(LUNA_LENTA)

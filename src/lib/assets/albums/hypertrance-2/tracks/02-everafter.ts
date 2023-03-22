@@ -4,10 +4,12 @@ import { TrackBuilder } from '$lib/metadata/track';
 // Musicians & Visual Artists
 import WYSTE from '$lib/assets/artists/wyste';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/02-everafter.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/02-everafter.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/02-everafter.ogg';
 
 const EVERAFTER = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('EverAfter')
 	.addPrimaryArtist(WYSTE)
 	.addVisualArtist(WYSTE)

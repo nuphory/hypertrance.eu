@@ -9,7 +9,7 @@ class Track {
 	readonly primaryArtists: Artist[];
 	readonly featuredArtists?: Artist[];
 	readonly visualArtists?: Artist[];
-	readonly audioSrc?: string;
+	readonly audioSrc?: string[];
 	readonly bpm?: number;
 	readonly key?: string;
 	readonly links?: Link[];
@@ -20,7 +20,7 @@ class Track {
 		primaryArtists: Artist[],
 		featuredArtists?: Artist[],
 		visualArtists?: Artist[],
-		audioSrc?: string,
+		audioSrc?: string[],
 		bpm?: number,
 		key?: string,
 
@@ -56,7 +56,7 @@ class TrackBuilder {
 	private primaryArtists?: Artist[];
 	private featuredArtists?: Artist[];
 	private visualArtists?: Artist[];
-	private audioSrc?: string;
+	private audioSrc?: string[];
 	private bpm?: number;
 	private key?: string;
 	private links?: Link[];
@@ -67,7 +67,7 @@ class TrackBuilder {
 			primaryArtists?: Artist[];
 			featuredArtists?: Artist[];
 			visualArtists?: Artist[];
-			audioSrc?: string;
+			audioSrc?: string[];
 			bpm?: number;
 			key?: string;
 			links?: Link[];
@@ -106,11 +106,8 @@ class TrackBuilder {
 	}
 
 	addPrimaryArtist(artist: Artist): TrackBuilder {
-		if (this.primaryArtists) {
-			this.primaryArtists.push(artist);
-		} else {
-			this.primaryArtists = [artist];
-		}
+		if (!this.primaryArtists) this.primaryArtists = [];
+		this.primaryArtists.push(artist);
 		return this;
 	}
 
@@ -120,11 +117,8 @@ class TrackBuilder {
 	}
 
 	addFeaturedArtist(artist: Artist): TrackBuilder {
-		if (this.featuredArtists) {
-			this.featuredArtists.push(artist);
-		} else {
-			this.featuredArtists = [artist];
-		}
+		if (!this.featuredArtists) this.featuredArtists = [];
+		this.featuredArtists.push(artist);
 		return this;
 	}
 
@@ -134,16 +128,19 @@ class TrackBuilder {
 	}
 
 	addVisualArtist(artist: Artist): TrackBuilder {
-		if (this.visualArtists) {
-			this.visualArtists.push(artist);
-		} else {
-			this.visualArtists = [artist];
-		}
+		if (!this.visualArtists) this.visualArtists = [];
+		this.visualArtists.push(artist);
 		return this;
 	}
 
-	setAudioSrc(src: string): TrackBuilder {
+	setAudioSrc(src: string[]) {
 		this.audioSrc = src;
+		return this;
+	}
+
+	addAudioSrc(src: string): TrackBuilder {
+		if (!this.audioSrc) this.audioSrc = [];
+		this.audioSrc.push(src);
 		return this;
 	}
 
@@ -163,11 +160,8 @@ class TrackBuilder {
 	}
 
 	addLink(link: Link): TrackBuilder {
-		if (this.links) {
-			this.links.push(link);
-		} else {
-			this.links = [link];
-		}
+		if (!this.links) this.links = [];
+		this.links.push(link);
 		return this;
 	}
 

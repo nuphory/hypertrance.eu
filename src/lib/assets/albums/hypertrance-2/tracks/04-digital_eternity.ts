@@ -7,10 +7,12 @@ import AEKAE from '$lib/assets/artists/aekae';
 // Visual Artists
 import JACKFLASH from '$lib/assets/artists/jackflash';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/04-digital_eternity.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/04-digital_eternity.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/04-digital_eternity.ogg';
 
 const DIGITAL_ETERNITY = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Digital Eternity')
 	.addPrimaryArtist(YUUNI)
 	.addPrimaryArtist(AEKAE)

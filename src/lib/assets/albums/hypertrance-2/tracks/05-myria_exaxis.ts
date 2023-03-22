@@ -8,10 +8,12 @@ import RANZOR_GRAPHICS from '$lib/assets/artists/ranzorgraphics';
 import YAZANOO16 from '$lib/assets/artists/yazanoo16';
 import NUPHORY from '$lib/assets/artists/nuphory';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/05-myria_exaxis.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/05-myria_exaxis.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/05-myria_exaxis.ogg';
 
 const MYRIA_EXAXIS = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Myria Exaxis')
 	.addPrimaryArtist(TYPE_R)
 	.addVisualArtist(RANZOR_GRAPHICS)

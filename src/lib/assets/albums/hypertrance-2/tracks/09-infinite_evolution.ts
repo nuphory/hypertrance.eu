@@ -6,10 +6,12 @@ import NEUROLINK from '$lib/assets/artists/neurolink';
 // Visual Artists
 import RANZOR_GRAPHICS from '$lib/assets/artists/ranzorgraphics';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/09-infinite_evolution.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/09-infinite_evolution.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/09-infinite_evolution.ogg';
 
 const INFINITE_EVOLUTION = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Infinite Evolution')
 	.addPrimaryArtist(NEUROLINK)
 	.addVisualArtist(RANZOR_GRAPHICS)

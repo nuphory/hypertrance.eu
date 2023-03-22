@@ -6,10 +6,12 @@ import MOSHII_LIGHTZ from '$lib/assets/artists/moshii_lightz';
 // Visual Artists
 import NUPHORY from '$lib/assets/artists/nuphory';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/15-ssr05.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/15-ssr05.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/15-ssr05.ogg';
 
 const SSR05 = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('SSR05')
 	.addPrimaryArtist(MOSHII_LIGHTZ)
 	.addVisualArtist(NUPHORY)

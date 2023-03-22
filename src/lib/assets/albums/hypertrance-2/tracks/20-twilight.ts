@@ -6,10 +6,12 @@ import AUSA from '$lib/assets/artists/ausa';
 // Visual Artists
 import LINSANG from '$lib/assets/artists/linsang';
 // Audio
-import audioSrc from '$lib/assets/albums/hypertrance-2/audio/20-twilight.mp3';
+import mp3 from '$lib/assets/albums/hypertrance-2/audio/mp3/20-twilight.mp3';
+import opus from '$lib/assets/albums/hypertrance-2/audio/opus/20-twilight.ogg';
 
 const TWILIGHT = new TrackBuilder()
-	.setAudioSrc(audioSrc)
+	.addAudioSrc(opus)
+	.addAudioSrc(mp3)
 	.setTitle('Twilight')
 	.addPrimaryArtist(AUSA)
 	.addVisualArtist(LINSANG)
