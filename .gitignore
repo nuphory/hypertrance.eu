@@ -1,6 +1,6 @@
 # My own, manual gitignore stuff
 
-src/lib/assets/vid/hypertrance-2-background-square.mp4
+hypertrance-2-background.mp4
 
 # SvelteKit gitignore
 .DS_Store
