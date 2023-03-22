@@ -7,6 +7,7 @@
 	import artists from '$lib/metadata/artist';
 
 	// Components
+	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	// import Header from '$lib/components/Header.svelte';
 
@@ -63,4 +64,5 @@
 
 <!-- <Header /> -->
 <slot />
+<AudioPlayer />
 <Footer />
