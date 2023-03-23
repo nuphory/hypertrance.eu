@@ -9,7 +9,7 @@
 	import summaryImgSrc from '$lib/assets/img/hypertrance-2-cover.jpg?jpg&w=800';
 	import { description, name, tagline, url } from '$lib/identity';
 	import Hypertrance2 from '$lib/pages/hypertrance-2/Hypertrance2.svelte';
-	import About from "$lib/components/About.svelte";
+	import About from '$lib/components/About.svelte';
 
 	onMount(async () => {
 		if (!browser) return;
