@@ -1,38 +1,13 @@
-# create-svelte
+# hypertrance
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[![hypertrance banner image](https://user-images.githubusercontent.com/42698687/227067360-a29ec26c-d473-42ea-a7f9-0ad45c3638f3.png)](https://discord.gg/673AfPB)
 
-## Creating a project
+hypertrance is a community driven by online creatives who have a passion for neoy2k music and art. Through the mutual support of all our members we hope to create a positive & kind environment for anyone looking to share this passion.
 
-If you're seeing this, you've probably already done this step. Congrats!
+You can join us on [discord](https://discord.gg/673AfPB)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## [hypertrance.eu](https://hypertrance.eu)
+[hypertrance.eu](https://hypertrance.eu) is the official website of our community. This website will be updated as new content gets released, and our team<sup>[1](#Footnotes)</sup> is constantly working on improving the user experience.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Footnotes
+<sup>1</sup> Our development is currently limited to just [@mia-cx](https://github.com/mia-cx)
