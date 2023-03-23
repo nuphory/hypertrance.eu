@@ -1,5 +1,7 @@
 <script lang="ts">
 	// Assets
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
 	import backgroundImgSrcSet from '$lib/assets/img/hypertrance-2-background-still.png?jpg&srcset&h=360;667;720;768;800;1024;1050;1080;1200;1440;1600;2160';
 	import backgroundVideoSrc from '$lib/assets/vid/hypertrance-2-background-1440p9M.mp4';
 </script>

@@ -7,6 +7,9 @@ import { toSnakeCase } from '$lib/utils/stringFormat';
 const modules = await Promise.all(
 	Object.values(import.meta.glob('$lib/assets/artists/*.ts')).map((module) => module())
 );
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const artists = modules.map((module: unknown) => module.default);
 
 export const GET = (async ({ url }) => {

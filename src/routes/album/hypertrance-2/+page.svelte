@@ -4,6 +4,8 @@
 	import { browser } from '$app/environment';
 
 	// Assets
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
 	import summaryImgSrc from '$lib/assets/img/hypertrance-2-cover.jpg?jpg&w=800';
 	import { description, name, tagline, url } from '$lib/identity';
 	import Hypertrance2 from '$lib/pages/hypertrance-2/Hypertrance2.svelte';
