@@ -1,6 +1,6 @@
 # hypertrance
 
-![image](https://user-images.githubusercontent.com/42698687/227067252-97f764aa-4db1-4bd7-a2cc-56068b5633cb.png)
+![hypertrance banner image](https://user-images.githubusercontent.com/42698687/227067360-a29ec26c-d473-42ea-a7f9-0ad45c3638f3.png)
 
 hypertrance is a community driven by online creatives who have a passion for neoy2k music and art. Through the mutual support of all our members we hope to create a positive & kind environment for anyone looking to share this passion.
 
