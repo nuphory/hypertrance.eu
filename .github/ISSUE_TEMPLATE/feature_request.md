@@ -6,14 +6,18 @@ labels: ''
 assignees: ''
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## Why are you requesting this feature?
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+<!-- A clear and concise description of what your feature aims to solve. Ex. I'm always frustrated when [...] -->
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## Propose a solution
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+<!-- How do you think we should implement this feature? -->
+
+## Alternative solutions (and why they might not work)
+
+<!-- What alternatives have you considered? -->
+
+## Additional context
+
+<!-- Provide any additional context about the feature request here. Ex. screenshots, OS information, etc. -->
