@@ -6,6 +6,7 @@ export default class AudioPlayer {
 	private _loop: 0 | 1 | 2;
 	private _queue: Track[];
 	private _duration?: number;
+	private _canPlayOpus: boolean;
 
 	/**
 	 * @description Creates an audio element with the specified id and class list
@@ -14,6 +15,9 @@ export default class AudioPlayer {
 	 */
 	constructor(id?: string, ...classList: string[]) {
 		this._audioElement = this.createElement(id, ...classList);
+		this._canPlayOpus =
+			this._audioElement.canPlayType('audio/ogg; codecs=opus') !== '' ||
+			this._audioElement.canPlayType('audio/ogg; codecs=opus') !== 'maybe';
 		this._loop = 0;
 		this._queue = [];
 		this._queueIndex = 0;
@@ -66,7 +70,10 @@ export default class AudioPlayer {
 	set queuePosition(index: number) {
 		this._queueIndex = index;
 		const prevPaused = this.element.paused;
-		this.element.src = this.queue[this._queueIndex].audioSrc ?? '';
+		this.element.src = this.queue[this._queueIndex].audioSrc?.[this._canPlayOpus ? 0 : 1] ?? '';
+		if (!prevPaused) {
+			this.element.play();
+		}
 	}
 
 	/**
@@ -144,7 +151,7 @@ export default class AudioPlayer {
 			return;
 		}
 
-		this.element.src = this.queue[this._queueIndex].audioSrc ?? '';
+		this.element.src = this.queue[this._queueIndex].audioSrc?.[this._canPlayOpus ? 0 : 1] ?? '';
 		this.play();
 	}
 
@@ -156,7 +163,7 @@ export default class AudioPlayer {
 
 		this._queueIndex = (this._queueIndex - 1 + this.queue.length) % this.queue.length;
 
-		this.element.src = this.queue[this._queueIndex].audioSrc ?? '';
+		this.element.src = this.queue[this._queueIndex].audioSrc?.[this._canPlayOpus ? 0 : 1] ?? '';
 		this.play();
 	}
 
