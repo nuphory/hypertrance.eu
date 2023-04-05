@@ -1,18 +1,25 @@
 <script lang="ts">
-	import AudioPlayer from "$lib/utils/AudioPlayer";
+	import { browser } from '$app/environment';
+	import AudioPlayer from '$lib/utils/AudioPlayer';
+	import { onMount } from 'svelte';
+	let player: AudioPlayer;
 
-    const player = new AudioPlayer($$restProps.id, $$restProps.class);
+	onMount(() => {
+		if (browser) {
+			player = new AudioPlayer($$restProps.id, $$restProps.class);
+		}
+	});
 </script>
 
 <section class="bg-gray-300 w-full">
-    <div class="container">
-        <!-- Play/Pause -->
-        <div></div>
-        <!-- Progress/Seek bar -->
-        <div></div>
-        <!-- Volume -->
-        <div></div>
-        <!-- Optional: Queue -->
-        <!-- <div></div> -->
-    </div>
+	<div class="container">
+		<!-- Play/Pause -->
+		<div />
+		<!-- Progress/Seek bar -->
+		<div />
+		<!-- Volume -->
+		<div />
+		<!-- Optional: Queue -->
+		<!-- <div></div> -->
+	</div>
 </section>
