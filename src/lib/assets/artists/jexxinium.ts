@@ -19,7 +19,7 @@ const JEXXINIUM = new ArtistBuilder()
 	.addLink(
 		new LinkBuilder()
 			.setPlatform(Platform.SPACEHEY)
-			.setUrl('https://www.deviantart.com/thejexxinium')
+			.setUrl('https://spacehey.com/thejexxinium')
 			.create()
 	)
 	.create();
