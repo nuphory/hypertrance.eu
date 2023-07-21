@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFT generator</title>
+</head>
+
+<body>
+    <audio id="audio"></audio>
+    <script type="module">
+        import { analyze } from "./index.mjs"
+        console.log(document.getElementById("audio"))
+        document.getElementById("button").addEventListener("click", (ev) => {
+            analyze()
+        })
+    </script>
+    <button id="button">Analyze!</button>
+</body>
+
+</html>
