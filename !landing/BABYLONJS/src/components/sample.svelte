@@ -17,7 +17,6 @@
 	path_d = path_d.slice(36, path_d.lastIndexOf('"'));
 
 	$: playing_song_id == song.id ? (am_i_playing = true) : (am_i_playing = false);
-	$: console.log(am_i_playing + song.name);
 
 	async function play() {
 		if (player.current_song_id == song.id) {

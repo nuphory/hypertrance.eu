@@ -1,5 +1,4 @@
 import { ReflectionBlock, Color3, FragmentOutputBlock, GradientBlockColorStep, InputBlock, TransformBlock, NodeMaterial, VertexOutputBlock, NodeMaterialSystemValues, GradientBlock, LerpBlock, Vector2, RemapBlock, AnimatedInputBlockTypes, FresnelBlock, ViewDirectionBlock, PBRMetallicRoughnessBlock, ScaleBlock } from "@babylonjs/core"
-import { SheenBlock } from "@babylonjs/core"
 export function fresnel_material(): NodeMaterial {
     const nodeMaterial = new NodeMaterial("node")
 

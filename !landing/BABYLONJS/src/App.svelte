@@ -16,7 +16,7 @@
 
 	onMount(() => {
 		document.body.appendChild(audio);
-		let ߜ = new ThreeD(canvas);
+		const ߜ = new ThreeD(canvas);
 	});
 
 	audio.addEventListener('pause', () => {
@@ -38,32 +38,36 @@
 </script>
 
 <div id="wrapper">
-	<main class="font-sans text-content_base">
+	<main class="font-michroma text-content_base">
 		<section class="w-full h-screen">
 			<div class="absolute right-[15vw] bottom-[20vh] bg-bg_island p-12">
-				<div class="font-neuropol flex flex-row justify-evenly space-x-6 text-content_emphasis">
-					<span class="h-full align-baseline">
+				<div class="font-suissnord flex flex-row justify-evenly space-x-6 text-content_emphasis">
+					<!-- <span class="h-full align-baseline">
 						<p class="text-8xl font-sans italic">[</p>
-					</span>
+					</span> -->
 					<span class="p-2 align-baseline h-full">
-						<h1 class="text-4xl w-full">hypertrance <br /> soundset 2</h1>
+						<h1 class="text-4xl w-full">hypertrance <br /> samplepack</h1>
 						<span class="flex justify-between w-full relative">
 							<!-- <h2 class="text-l">by hypertrance</h2> -->
-							<p class="text-5xl absolute right-0 -top-[1.5rem]">. . .</p>
+							<!-- <p class="text-5xl absolute right-0 -top-[1.5rem]">. . .</p> -->
 						</span>
 					</span>
-					<span class="h-full align-baseline font-sans italic">
+					<!-- <span class="h-full align-baseline font-sans italic">
 						<p class="text-8xl">]</p>
-					</span>
+					</span> -->
 				</div>
-				<span class="font-conthrax text-xl flex justify-between mt-6 p-2">
-					<button class="bg-bg_inverse p-4 m-2 text-content_emphasis">::buy now</button>
+				<span class="font-sussnord text-xl flex justify-between mt-6 p-2">
+					<button class="bg-bg_inverse p-4 m-2 text-content_inverse">buy now</button>
 					<button class="border-bg_inverse border-2 p-4 m-2 text-content_emphasis"
-						>::learn more</button
+						>learn more</button
 					>
 				</span>
 			</div>
-			<canvas class="w-full h-full bg-bg_base block fixed -z-10" bind:this={canvas} />
+			<div
+				class="w-full h-full bg-bg_base block fixed -z-10 [background:url('/first_frame.webp')_no-repeat_fixed_center]"
+			>
+				<canvas class="w-full h-full absolute left-0 top-0" bind:this={canvas} />
+			</div>
 		</section>
 		<section class="grid grid-cols-1 grid-rows-4 bg-bg_base">
 			{#each db.collections as collection, i}
@@ -72,7 +76,7 @@
 						<div class="w-full h-full bg-bg_side" />
 					{/if}
 					<div class="w-full h-full bg-bg_island p-6">
-						<h3 class="mt-3 text-3xl text-content_emphasis font-conthrax">::{collection.name}</h3>
+						<h3 class="mt-3 text-5xl text-content_emphasis font-suissnord">::{collection.name}</h3>
 						<p class="mt-6">
 							{collection.metadata[0]}
 						</p>
