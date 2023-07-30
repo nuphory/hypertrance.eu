@@ -55,7 +55,7 @@
 				out:fly={{ duration: 500, x: 500, opacity: 100 }}
 				class="pointer-events-auto w-screen max-w-lg max-h-screen backdrop-blur-lg shadow-lg"
 			>
-				<div class="flex justify-between items-center m-8">
+				<div class="flex justify-between items-center m-8 overflow-clip">
 					<h2
 						class="text-2xl flex gap-4 items-center font-comsat-navy text-neutral"
 						id="slide-over-title"
@@ -88,7 +88,7 @@
 						on:click={() => closeCartDrawer()}
 						type="button"
 						class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-clip"
-						><span class="sr-only">Close panel</span>
+						>
 						<!-- Heroicon name: outline/x-mark -->
 						<svg
 							class="h-6 w-6"
@@ -174,7 +174,7 @@
 					</div>
 				</div>
 
-				<div class="">
+				<div class="overflow-clip">
 					{#if $cart && $cart.lines?.nodes.length > 0}
 						<div class="border-t py-6 px-4 sm:px-6">
 							<div class="flex justify-between">
