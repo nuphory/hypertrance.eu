@@ -48,7 +48,7 @@ export default class THREED {
 
 	async init() {
 		this.scene.clearColor = new Color4(0, 0, 0, 0);
-		SceneLoader.AppendAsync('/', 'cinema_compressed.glb', this.scene).then(() => {
+		SceneLoader.AppendAsync('/', 'promo/cinema_compressed.glb', this.scene).then(() => {
 			//this.scene.cameras[0].attachControl(this.canvas, true)
 			this.scene.cameras[0].maxZ = 3000;
 			this.scene.cameras[0].minZ = 1;

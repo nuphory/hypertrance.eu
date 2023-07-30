@@ -10,6 +10,12 @@ module.exports = {
 			lg: '1024px'
 		},
 		extend: {
+                        fontFamily: {
+				michroma: 'Michroma',
+				yeysk: 'Yeysk',
+				suissnord: 'Suissnord'
+			},
+
 			container: {
 				center: true,
 				padding: {
@@ -200,6 +206,16 @@ module.exports = {
 				'text-tertiary': 'var(--text-tertiary)'
                         },
 			colors: {
+
+                                bg_emphasis: 'var(--color-bg-emphasis)',
+				bg_base: 'var(--color-bg-base)',
+				bg_side: 'var(--color-bg-side)',
+				bg_island: 'var(--color-bg-island)',
+				bg_inverse: 'var(--color-bg-inverse)',
+				content_base: 'var(--color-content-base)',
+				content_emphasis: 'var(--color-content-emphasis)',
+				content_inverse: 'var(--color-content-inverse)',
+
 				information: 'var(--color-information) <alpha-value>',
 				success: 'var(--color-success) <alpha-value>',
 				warning: 'var(--color-warning) <alpha-value>',

@@ -10,6 +10,7 @@
 	import ShopifyImage from '$src/lib/components/ShopifyImage.svelte';
 	import Carousel from '$src/lib/components/Carousel.svelte';
 	import CartIcon from '$src/lib/components/icons/CartIcon.svelte';
+	import { addCartItem } from '$src/lib/stores/cart';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -72,6 +73,7 @@
 					mr-2
 					fill-text-neutral
 					opacity-100 "
+                                        on:click={() => {addCartItem(product.)}}
 					/> Add to Cart
 				</button>
 			</div>
