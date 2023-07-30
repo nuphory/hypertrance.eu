@@ -1,59 +1,67 @@
-import { Collection, Ref, RefTo, Song, DB, } from "./node_modules/@euterpe.js/music-library/src/index.js"
-import { songs } from "./songs_list.mjs"
+import {
+	Collection,
+	Ref,
+	RefTo,
+	Song,
+	DB
+} from './node_modules/@euterpe.js/music-library/src/index.js';
+import { songs } from './songs_list.mjs';
 
 export function generate_db() {
-    console.log(songs)
-    //construct db
-    let db = new DB
-    //create collections by folder names
-    let collections = []
-    let new_songs = []
-    for (let i = 0; i < songs.length; i++) {
-        const song = songs[i]
-        const last_i = song.lastIndexOf("\\")
-        const collection_name = song.slice(song.slice(0, last_i).lastIndexOf("\\") + 1, last_i)
-        /*
+	console.log(songs);
+	//construct db
+	let db = new DB();
+	//create collections by folder names
+	let collections = [];
+	let new_songs = [];
+	for (let i = 0; i < songs.length; i++) {
+		const song = songs[i];
+		const last_i = song.lastIndexOf('\\');
+		const collection_name = song.slice(song.slice(0, last_i).lastIndexOf('\\') + 1, last_i);
+		/*
         const foreforelast_i = song.slice(0, forelast_i - 1)
         const foreforeforelast_i = song.slice(0, foreforelast_i - 1).lastIndexOf("\\")
         */
-        if (!collections.includes(collection_name)) {
-            console.log(`creating collection ${collection_name}`)
-            db.add([new Collection({
-                name: collection_name,
-                songs: [],
-                artists: []
-            })])
-            collections.push(collection_name)
-        }
-        let col = db.collections.find(col => col.name == collection_name)
-        // debugger
-        let col_id = col.id
-        console.log(col_id)
-        if (col_id == undefined) {
-            break
-        }
-        new_songs.push({ song: song, collection_id: col_id })
-    }
+		if (!collections.includes(collection_name)) {
+			console.log(`creating collection ${collection_name}`);
+			db.add([
+				new Collection({
+					name: collection_name,
+					songs: [],
+					artists: []
+				})
+			]);
+			collections.push(collection_name);
+		}
+		let col = db.collections.find((col) => col.name == collection_name);
+		// debugger
+		let col_id = col.id;
+		console.log(col_id);
+		if (col_id == undefined) {
+			break;
+		}
+		new_songs.push({ song: song, collection_id: col_id });
+	}
 
-    //create songs
-    for (let i = 0; i < new_songs.length; i++) {
-        let song = new_songs[i]
-        const last_i = song.song.lastIndexOf("\\")
+	//create songs
+	for (let i = 0; i < new_songs.length; i++) {
+		let song = new_songs[i];
+		const last_i = song.song.lastIndexOf('\\');
 
-        const name = song.song.slice(last_i + 1)
-        const song_url = song.song.replace("\\\\", "/")
-        const db_song = new Song({
-            name: name,
-            artists: [],
-            url: new URL("http://127.0.0.1:5500/" + song_url),
-            duration: 0,
-            remix_artists: [],
-            in_collection: new Ref(RefTo.Collections, song.collection_id)
-        })
-        db.add([db_song])
-    }
-    console.log(db)
-    return db
+		const name = song.song.slice(last_i + 1);
+		const song_url = song.song.replace('\\\\', '/');
+		const db_song = new Song({
+			name: name,
+			artists: [],
+			url: new URL('http://127.0.0.1:5500/' + song_url),
+			duration: 0,
+			remix_artists: [],
+			in_collection: new Ref(RefTo.Collections, song.collection_id)
+		});
+		db.add([db_song]);
+	}
+	console.log(db);
+	return db;
 }
 /*
 async function main() {

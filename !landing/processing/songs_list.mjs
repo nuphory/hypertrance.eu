@@ -1,1 +1,1 @@
-export const songs = ["samples\\nuphory\\nuphory - NVISION (EXTENDED MIX).ogg"]
+export const songs = ['samples\\nuphory\\nuphory - NVISION (EXTENDED MIX).ogg'];

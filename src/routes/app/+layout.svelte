@@ -14,7 +14,7 @@
 
 	// Styles
 	import '$lib/styles/app.scss';
-        import '@splidejs/svelte-splide/css';
+	import '@splidejs/svelte-splide/css';
 
 	import '@fontsource/montserrat';
 	import '@fontsource/inter/400.css';

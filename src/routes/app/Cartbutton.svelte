@@ -1,14 +1,11 @@
 <script lang="ts">
+	import Carticon from './Carticon.svelte';
 
-	import Carticon from "./Carticon.svelte";
-
-        let itemCount: number = 0;
-
+	let itemCount: number = 0;
 </script>
 
 <button class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral">
 	<Carticon
-                
 		classList="
                         inline-block
                         transition-[fill,margin] duration-[var(--duration)] ease-out
@@ -19,5 +16,5 @@
                 "
 		{itemCount}
 	/>
-        <span>{String(itemCount).padStart(3, '0')}</span>
+	<span>{String(itemCount).padStart(3, '0')}</span>
 </button>

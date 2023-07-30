@@ -1,14 +1,10 @@
 {
-  "compilerOptions": {
-    "composite": true,
-    "skipLibCheck": true,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "types": [
-      "babylonjs"
-    ]
-  },
-  "include": [
-    "vite.config.ts"
-  ]
+	"compilerOptions": {
+		"composite": true,
+		"skipLibCheck": true,
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"types": ["babylonjs"]
+	},
+	"include": ["vite.config.ts"]
 }

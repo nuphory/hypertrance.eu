@@ -21,6 +21,7 @@
 		"@fontsource/inter": "^4.5.15",
 		"@fontsource/montserrat": "^4.5.14",
 		"@fontsource/playfair-display-sc": "^4.5.11",
+		"@nanostores/persistent": "^0.9.1",
 		"@playwright/test": "^1.36.2",
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-cloudflare": "^2.3.1",
@@ -36,6 +37,7 @@
 		"eslint-config-prettier": "^8.9.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"lodash": "^4.17.21",
+		"nanostores": "^0.9.3",
 		"postcss": "^8.4.27",
 		"postcss-bem-linter": "^3.3.0",
 		"prettier": "^2.8.8",
@@ -55,7 +57,8 @@
 		"vite": "^4.4.7",
 		"vite-imagetools": "^4.0.19",
 		"vitest": "^0.25.8",
-		"wretch": "^2.6.0"
+		"wretch": "^2.6.0",
+		"zod": "^3.21.4"
 	},
 	"type": "module",
 	"dependencies": {

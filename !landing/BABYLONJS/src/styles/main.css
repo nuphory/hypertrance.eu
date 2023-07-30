@@ -1,61 +1,54 @@
-@font-face{
-    font-family: "Neuropol";
-    src:
-        url("/fonts/neuropol.otf") format("opentype")
+@font-face {
+	font-family: 'Neuropol';
+	src: url('/fonts/neuropol.otf') format('opentype');
 }
-@font-face{
-    font-family: "Pridi";
-    font-weight: normal bold light;
-    src:
-        url("/fonts/Pridi-Bold.ttf") format("TrueType"),
-        url("/fonts/Pridi-Light.ttf") format("TrueType"),
-        url("/fonts/Pridi-Regular.ttf") format("TrueType");
+@font-face {
+	font-family: 'Pridi';
+	font-weight: normal bold light;
+	src: url('/fonts/Pridi-Bold.ttf') format('TrueType'),
+		url('/fonts/Pridi-Light.ttf') format('TrueType'),
+		url('/fonts/Pridi-Regular.ttf') format('TrueType');
 }
-@font-face{
-    font-family: "Conthrax Sb";
-    src:
-        url("/fonts/conthrax-sb.otf") format("opentype")
+@font-face {
+	font-family: 'Conthrax Sb';
+	src: url('/fonts/conthrax-sb.otf') format('opentype');
 }
-@font-face{
-    font-family: "Michroma";
-    src:
-        url("/fonts/Michroma.ttf") format("truetype")
+@font-face {
+	font-family: 'Michroma';
+	src: url('/fonts/Michroma.ttf') format('truetype');
 }
-@font-face{
-    font-family: "Suissnord";
-    src:
-        url("/fonts/Suissnord.otf") format("opentype")
+@font-face {
+	font-family: 'Suissnord';
+	src: url('/fonts/Suissnord.otf') format('opentype');
 }
-@font-face{
-    font-family: "Yeysk";
-    src:
-        url("/fonts/Yeysk.otf") format("opentype")
+@font-face {
+	font-family: 'Yeysk';
+	src: url('/fonts/Yeysk.otf') format('opentype');
 }
-
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html{
-    //font-size: calc(0.4rem + 1vh);
-    font-size: calc(0.6rem + .3vw);
+html {
+	//font-size: calc(0.4rem + 1vh);
+	font-size: calc(0.6rem + 0.3vw);
 }
 
 :root {
-    -clip-time-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+	-clip-time-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
-    ---color-content-emphasis: #FFFFFF;
-    --color-content-base: #C6FAFC;
-    --color-content-inverse: #19336F;
+	---color-content-emphasis: #ffffff;
+	--color-content-base: #c6fafc;
+	--color-content-inverse: #19336f;
 
-    --color-bg-emphasis: #19336F;
-    --color-bg-base: #141414;
-    --color-bg-inverse: #C6FAFC;
-    --color-bg-side: #C6FAFC;
-    --color-bg-island: rgba(60, 216, 247, .20);
+	--color-bg-emphasis: #19336f;
+	--color-bg-base: #141414;
+	--color-bg-inverse: #c6fafc;
+	--color-bg-side: #c6fafc;
+	--color-bg-island: rgba(60, 216, 247, 0.2);
 
-    /*
+	/*
     --color-content-emphasis: #F2FFFF;
     --color-content-base: #B7D3DA;
     --color-content-inverse: rgba(20, 20, 20, .5);

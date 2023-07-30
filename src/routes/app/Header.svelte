@@ -4,11 +4,10 @@
 	import Cartbutton from './Cartbutton.svelte';
 </script>
 
-<header >
-	
-	<div class="my-4 container flex gap-10 justify-between items-center">
+<header>
+	<div class="p-4 container flex gap-10 justify-between items-center">
 		<a class="flex-1 whitespace-nowrap" href="/app">:: {id.name}</a>
-		<Navigation class="hidden md:flex"/>
+		<Navigation class="hidden md:flex" />
 		<Cartbutton />
 	</div>
 </header>
