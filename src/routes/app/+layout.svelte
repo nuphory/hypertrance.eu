@@ -7,9 +7,10 @@
 	import artists from '$lib/metadata/artist';
 
 	// Components
-	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
+	import CartDrawer from './CartDrawer.svelte';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
+	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
 	// import Header from '$lib/components/Header.svelte';
 
 	// Styles
@@ -64,6 +65,7 @@
 	<meta name="twitter:creator" content="@{name}" />
 </svelte:head>
 
+<CartDrawer />
 <Header />
 <slot />
 <AudioPlayer />

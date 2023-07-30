@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { CartResult, ProductResult } from './schemas';
-import { config } from './config';
+import { config } from './publicConfig';
 import {
 	ProductsQuery,
 	ProductByHandleQuery,
@@ -17,7 +17,7 @@ const makeShopifyRequest = async (
 	variables: Record<string, unknown> = {},
 	buyerIP: string = ''
 ) => {
-	const isSSR = import.meta.env.SSR;
+	const isSSR = false;
 	const apiUrl = `https://${config.shopifyShop}/api/${config.apiVersion}/graphql.json`;
 
 	function getOptions() {
@@ -62,6 +62,8 @@ const makeShopifyRequest = async (
 	if (json.errors) {
 		throw new Error(json.errors.map((e: Error) => e.message).join('\n'));
 	}
+
+        console.log(json.data)
 
 	return json.data;
 };

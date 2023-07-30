@@ -66,6 +66,11 @@ module.exports = {
 				secondary: 'var(--text-secondary)',
 				tertiary: 'var(--text-tertiary)',
 
+                                "bg-neutral": 'var(--background-neutral)',
+				"bg-primary": 'var(--background-primary)',
+				"bg-secondary": 'var(--background-secondary)',
+				"bg-tertiary": 'var(--background-tertiary)',
+
 				'link-neutral': 'var(--text-link-neutral)',
 				'link-primary': 'var(--text-link-primary)',
 				'link-secondary': 'var(--text-link-secondary)',
@@ -102,6 +107,11 @@ module.exports = {
 				primary: 'var(--background-primary)',
 				secondary: 'var(--background-secondary)',
 				tertiary: 'var(--background-tertiary)',
+
+                                'text-neutral': 'var(--text-neutral)',
+				'text-primary': 'var(--text-primary)',
+				'text-secondary': 'var(--text-secondary)',
+				'text-tertiary': 'var(--text-tertiary)',
 
 				'button-neutral': 'var(--button-background-neutral)',
 				'button-primary': 'var(--button-background-primary)',
@@ -183,6 +193,12 @@ module.exports = {
 				inter: 'Inter, sans-serif',
 				yeysk: 'Yeysk, sans-serif'
 			},
+                        fill: {
+                                'text-neutral': 'var(--text-neutral)',
+				'text-primary': 'var(--text-primary)',
+				'text-secondary': 'var(--text-secondary)',
+				'text-tertiary': 'var(--text-tertiary)'
+                        },
 			colors: {
 				information: 'var(--color-information) <alpha-value>',
 				success: 'var(--color-success) <alpha-value>',
@@ -193,11 +209,7 @@ module.exports = {
 				primary: 'var(--background-primary)',
 				secondary: 'var(--background-secondary)',
 				tertiary: 'var(--background-tertiary)',
-
-				'text-neutral': 'var(--text-neutral)',
-				'text-primary': 'var(--text-primary)',
-				'text-secondary': 'var(--text-secondary)',
-				'text-tertiary': 'var(--text-tertiary)',
+				
 
 				'button-neutral': 'var(--button-background-neutral)',
 				'button-primary': 'var(--button-background-primary)',
