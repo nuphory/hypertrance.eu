@@ -13,7 +13,7 @@
 
 </script>
 
-<button class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral" on:click={openCart}>
+<button class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-clip" on:click={openCart}>
 	<CartIcon
 		class="
 			inline-block

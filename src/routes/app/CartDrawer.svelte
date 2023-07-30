@@ -87,7 +87,7 @@
 					<button
 						on:click={() => closeCartDrawer()}
 						type="button"
-						class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-hidden"
+						class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-clip"
 						><span class="sr-only">Close panel</span>
 						<!-- Heroicon name: outline/x-mark -->
 						<svg
@@ -110,7 +110,7 @@
 							<ul role="list" class="divide-y divide-zinc-100 {cartIsUpdatingClass}">
 								{#each $cart.lines?.nodes as item}
 									<li class="grid py-8 grid-cols-12 gap-3">
-										<div class="overflow-hidden rounded-lg col-span-3 lg:col-span-2">
+										<div class="overflow-clip rounded-lg col-span-3 lg:col-span-2">
 											<ShopifyImage
 												image={item.merchandise.image}
 												classList="object-cover h-full object-center aspect-1"
@@ -135,7 +135,7 @@
 													removeItem(item.id);
 												}}
 												type="button"
-												class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-hidden"
+												class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-clip"
 												disabled={$isCartUpdating}
 											>
 												<svg
@@ -188,7 +188,7 @@
 								<button
 									on:click={() => goto($cart.checkoutUrl)}
 									type="button"
-									class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-primary overflow-hidden"
+									class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-primary overflow-clip"
 								>
 									<!-- Heroicon name: outline/x-mark -->
 									Checkout
