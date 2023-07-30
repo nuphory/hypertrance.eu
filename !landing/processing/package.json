@@ -1,0 +1,16 @@
+{
+	"name": "processing",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"crawl": "node crawler.mjs",
+		"generate_db": "node generate_db.mjs"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@euterpe.js/music-library": "^1.0.2",
+		"filehound": "^1.17.6"
+	}
+}
