@@ -134,7 +134,7 @@
 											<a
 												on:click={
                                                                                                         (e) => {e.preventDefault();
-                                                                                                        if (!$isCartUpdating) return;
+                                                                                                        if ($isCartUpdating) return;
 													removeItem(item.id);
 												}}
                                                                                                 href="#"
