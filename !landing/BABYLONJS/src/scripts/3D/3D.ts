@@ -8,7 +8,7 @@ export default class THREED {
     engine: Engine
     scene: Scene
     stats: Stats
-    canvas
+    canvas: HTMLCanvasElement
     camera
     camera_pivot
     lights: []

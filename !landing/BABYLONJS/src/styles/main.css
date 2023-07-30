@@ -1,4 +1,4 @@
-@font-face{
+/* @font-face{
     font-family: "Neuropol";
     src:
         url("/fonts/neuropol.otf") format("opentype")
@@ -15,7 +15,7 @@
     font-family: "Conthrax Sb";
     src:
         url("/fonts/conthrax-sb.otf") format("opentype")
-}
+} */
 @font-face{
     font-family: "Michroma";
     src:
