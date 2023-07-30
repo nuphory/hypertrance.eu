@@ -17,38 +17,34 @@ import Stats from 'stats-js';
 import { distort_frag } from './frag_bg_distort_postfx';
 import '@babylonjs/loaders/glTF';
 export default class THREED {
-	engine: Engine;
-	scene: Scene;
-	stats: Stats;
-	canvas;
-	camera;
-	camera_pivot;
-	lights: [];
-	init_rotation: Vector3;
-	frames_count: 0;
-	mouse_y = 0;
-	mouse_x = 0;
-	rotation_speed = 0;
-	constructor(
-		canvas: HTMLCanvasElement,
-		public on_loading?: () => void,
-		public on_loaded?: () => void
-	) {
-		this.engine = new Engine(canvas);
-		this.scene = new Scene(this.engine);
-		this.canvas = canvas;
-		this.stats = new Stats();
-		this.stats.showPanel(0);
-		document.body.appendChild(this.stats.dom);
-		this.mouse_y = this.mouse_x = 0;
-		this.frames_count = 0;
-		window.addEventListener('resize', () => {
-			this.engine.resize();
-		});
-		this.engine.loadingScreen = new CustomLoading(on_loading, on_loaded);
-		this.engine.displayLoadingUI();
-		this.init();
-	}
+    engine: Engine
+    scene: Scene
+    stats: Stats
+    canvas
+    camera
+    camera_pivot
+    lights: []
+    init_rotation: Vector3
+    frames_count: 0
+    mouse_y = 0
+    mouse_x = 0
+    rotation_speed = 0
+    constructor(canvas: HTMLCanvasElement, public on_loading?: () => void, public on_loaded?: () => void) {
+        this.engine = new Engine(canvas)
+        this.scene = new Scene(this.engine)
+        this.canvas = canvas
+        this.stats = new Stats();
+        this.stats.showPanel(0)
+        document.body.appendChild(this.stats.dom)
+        this.mouse_y = this.mouse_x = 0
+        this.frames_count = 0
+        window.addEventListener("resize", () => {
+            this.engine.resize()
+        })
+        this.engine.loadingScreen = new CustomLoading(on_loading, on_loaded)
+        this.engine.displayLoadingUI()
+        this.init()
+    }
 
 	async init() {
 		this.scene.clearColor = new Color4(0, 0, 0, 0);
