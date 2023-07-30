@@ -84,7 +84,7 @@
 			</li>
 			<li class="flex-1 order-1">
 				<button
-					class="w-full backdrop-blur shadow-lg button-neutral "
+					class="w-full backdrop-blur shadow-lg button-neutral"
 					on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
 					on:auxclick={() => window.open('http://discord.gg/673AfPB', '_blank')}
 				>

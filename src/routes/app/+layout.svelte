@@ -8,11 +8,13 @@
 
 	// Components
 	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
-	import Footer from '$lib/components/Footer.svelte';
+	import Header from './Header.svelte';
+	import Footer from './Footer.svelte';
 	// import Header from '$lib/components/Header.svelte';
 
 	// Styles
 	import '$lib/styles/app.scss';
+        import '@splidejs/svelte-splide/css';
 
 	import '@fontsource/montserrat';
 	import '@fontsource/inter/400.css';
@@ -45,13 +47,13 @@
 	<meta
 		name="keywords"
 		content="
-                        {name}, {name} music, music, house, trance, hypertrance, neoy2k, progressive house, 
-                        {Array.from(artists)
+			{name}, {name} music, music, house, trance, hypertrance, neoy2k, progressive house,
+			{Array.from(artists)
 			.map((artist) => {
 				return artist.name;
 			})
 			.join(', ')}
-                "
+		"
 	/>
 	<meta name="description" content={description} />
 
@@ -62,7 +64,7 @@
 	<meta name="twitter:creator" content="@{name}" />
 </svelte:head>
 
-<!-- <Header /> -->
+<Header />
 <slot />
 <AudioPlayer />
 <Footer />

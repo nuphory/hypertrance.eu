@@ -194,6 +194,11 @@ module.exports = {
 				secondary: 'var(--background-secondary)',
 				tertiary: 'var(--background-tertiary)',
 
+				'text-neutral': 'var(--text-neutral)',
+				'text-primary': 'var(--text-primary)',
+				'text-secondary': 'var(--text-secondary)',
+				'text-tertiary': 'var(--text-tertiary)',
+
 				'button-neutral': 'var(--button-background-neutral)',
 				'button-primary': 'var(--button-background-primary)',
 				'button-secondary': 'var(--button-background-secondary)',

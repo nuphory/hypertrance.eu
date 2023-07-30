@@ -59,7 +59,7 @@
 			</div>
 			<div
 				class="
-					relative flex justify-between 
+					relative flex justify-between
 					-mt-[25.5rem] md:-mt-[38.5rem] lg:-mt-[51rem]
 					uppercase
 				"
@@ -78,8 +78,8 @@
 							w-min
 							origin-top-right scale-50
 							-mr-1 -mt-2 md:-mt-[0.65rem] lg:-mt-4 -mb-14 md:-mb-[4.65rem] lg:-mb-28
-							text-[1.5rem] md:text-[2rem] lg:text-[3rem] 
-							leading-[3rem] md:leading-[4rem] lg:leading-[6rem] 
+							text-[1.5rem] md:text-[2rem] lg:text-[3rem]
+							leading-[3rem] md:leading-[4rem] lg:leading-[6rem]
 							tracking-[1.825rem] md:tracking-[2.85rem] lg:tracking-[3.6rem]
 							before:content-['']
 						"
@@ -94,9 +94,9 @@
 			<ul
 				class="z-50 container hidden md:flex justify-end gap-12 mt-36 lg:mt-48 [&>li]:w-48 list-none"
 			>
-				<li class="order-2 mr-5 ">
+				<li class="order-2 mr-5">
 					<button
-						class="w-full backdrop-blur shadow-lg  button-primary"
+						class="w-full backdrop-blur shadow-lg button-primary"
 						on:click={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 						on:auxclick={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 					>
@@ -109,9 +109,9 @@
 						></span
 					>
 				</li>
-				<li class="order-1 ">
+				<li class="order-1">
 					<button
-						class="w-full backdrop-blur shadow-lg button-neutral "
+						class="w-full backdrop-blur shadow-lg button-neutral"
 						on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
 						on:auxclick={() => window.open('http://discord.gg/673AfPB', '_blank')}
 					>
@@ -121,7 +121,7 @@
 			</ul>
 		</div>
 		<div
-			class="container relative flex justify-center gap-2 origin-bottom -translate-z-20 scale-150 rotate-x-[3deg] mt-64 md:mt-32 lg:mt-72 tracking-widest uppercase opacity-50 "
+			class="container relative flex justify-center gap-2 origin-bottom -translate-z-20 scale-150 rotate-x-[3deg] mt-64 md:mt-32 lg:mt-72 tracking-widest uppercase opacity-50"
 			aria-label="brought to you by various artists"
 		>
 			<span
