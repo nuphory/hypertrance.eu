@@ -8,6 +8,9 @@
 	db.collections.forEach((col) => {
 		col.metadata[0] = `The Eon Premium Collection includes a selection of high-quality hi-hats, powerful kicks,and crisp snares. When used in conjunction with the presets, creating a song start tofinish will take literal seconds. The Eon Premium Collection includes a selection of high-quality hi-hats, powerful kicks,and crisp snares. When used in conjunction with the presets, creating a song start tofinish will take literal seconds`;
 	});
+	db.songs.forEach((song) => {
+		song.url = new URL(import.meta.env.VITE_URL + song.url.pathname);
+	});
 	let canvas;
 	const audio = document.createElement('audio');
 	const player = new EuterpeBuilder(audio, db).build();

@@ -1,6 +1,7 @@
-@font-face {
-	font-family: 'Neuropol';
-	src: url('/fonts/neuropol.otf') format('opentype');
+/* @font-face{
+    font-family: "Neuropol";
+    src:
+        url("/fonts/neuropol.otf") format("opentype")
 }
 @font-face {
 	font-family: 'Pridi';
@@ -9,13 +10,15 @@
 		url('/fonts/Pridi-Light.ttf') format('TrueType'),
 		url('/fonts/Pridi-Regular.ttf') format('TrueType');
 }
-@font-face {
-	font-family: 'Conthrax Sb';
-	src: url('/fonts/conthrax-sb.otf') format('opentype');
-}
-@font-face {
-	font-family: 'Michroma';
-	src: url('/fonts/Michroma.ttf') format('truetype');
+@font-face{
+    font-family: "Conthrax Sb";
+    src:
+        url("/fonts/conthrax-sb.otf") format("opentype")
+} */
+@font-face{
+    font-family: "Michroma";
+    src:
+        url("/fonts/Michroma.ttf") format("truetype")
 }
 @font-face {
 	font-family: 'Suissnord';
