@@ -3,8 +3,6 @@
 	import { initCart, cart, isCartDrawerOpen } from '$lib/stores/cart';
 	import { onMount } from 'svelte';
 
-	let itemCount: number = 0;
-
 	onMount(() => {
     		initCart();
   	});
@@ -25,7 +23,6 @@
 			fill-text-neutral
 			opacity-100 
 		"
-		{itemCount}
 	/>
-	<span>{String(itemCount).padStart(3, '0')}</span>
+	<span>{String($cart?.totalQuantity).padStart(3, '0')}</span>
 </button>

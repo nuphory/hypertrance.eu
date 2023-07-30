@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
 	import { cart, isCartDrawerOpen, removeCartItems, isCartUpdating } from '$lib/stores/cart';
-	import ShopifyImage from "$lib/components/ShopifyImage.svelte";
+	import ShopifyImage from '$lib/components/ShopifyImage.svelte';
 	import { clickOutside } from '$lib/utils/click-outside';
 	import CartButton from './CartButton.svelte';
 	import Money from '$src/lib/components/Money.svelte';
+	import { goto } from '$app/navigation';
 
 	let cartDrawerEl: HTMLDivElement;
 
@@ -134,6 +135,7 @@
 													removeItem(item.id);
 												}}
 												type="button"
+												class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral"
 												disabled={$isCartUpdating}
 											>
 												<svg
@@ -183,7 +185,14 @@
 							</div>
 							<p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
 							<div class="mt-6">
-								<a href={$cart.checkoutUrl} class="button">Checkout</a>
+								<button
+									on:click={() => goto($cart.checkoutUrl)}
+									type="button"
+									class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-primary"
+								>
+									<!-- Heroicon name: outline/x-mark -->
+									Checkout
+								</button>
 							</div>
 						</div>
 					{/if}
