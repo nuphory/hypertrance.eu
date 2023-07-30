@@ -85,8 +85,9 @@
 						{/if}
 					</h2>
 					<a
-						on:click={() => closeCartDrawer()}
+						on:click={(e) => {e.preventDefault(); closeCartDrawer()}}
 						type="button"
+                                                href="#"
 						class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral cursor-pointer overflow-clip"
 						>
 						<!-- Heroicon name: outline/x-mark -->
@@ -131,10 +132,12 @@
 										</div>
 										<div class="col-span-2 items-end flex justify-between flex-col">
 											<a
-												on:click={() => {
+												on:click={
+                                                                                                        (e) => {e.preventDefault();
                                                                                                         if (!$isCartUpdating) return;
 													removeItem(item.id);
 												}}
+                                                                                                href="#"
 												type="button"
 												class="p-3 whitespace-nowrap backdrop-blur shadow-lg cursor-pointer"
 											>
