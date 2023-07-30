@@ -87,7 +87,7 @@
 					<button
 						on:click={() => closeCartDrawer()}
 						type="button"
-						class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral"
+						class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-hidden"
 						><span class="sr-only">Close panel</span>
 						<!-- Heroicon name: outline/x-mark -->
 						<svg
@@ -135,7 +135,7 @@
 													removeItem(item.id);
 												}}
 												type="button"
-												class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral"
+												class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-hidden"
 												disabled={$isCartUpdating}
 											>
 												<svg
@@ -188,7 +188,7 @@
 								<button
 									on:click={() => goto($cart.checkoutUrl)}
 									type="button"
-									class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-primary"
+									class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-primary overflow-hidden"
 								>
 									<!-- Heroicon name: outline/x-mark -->
 									Checkout
