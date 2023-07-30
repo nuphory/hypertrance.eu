@@ -64,7 +64,7 @@
 
 <style>
 	.clipping {
-		@apply fill-content_emphasis;
+		@apply fill-[rgba(20,20,20,.4)];
 		clip-path: var(--clip-time-path);
 	}
 </style>
