@@ -19,21 +19,12 @@
 	$: playing_song_id == song.id ? (am_i_playing = true) : (am_i_playing = false);
 
 	async function play() {
-		if (player.current_song_id == song.id) {
-			player.try_play_async().then(
-				() => {
-					am_i_playing = true;
-				},
-				(e) => alert!('Failed to resume playing' + e)
-			);
-		} else {
-			player.try_specific_song_async(song.id).then(
-				() => {
-					am_i_playing = true;
-				},
-				(e) => alert!('failed to play song' + e)
-			);
-		}
+		player.try_specific_song_async(song.id!).then(
+			() => {
+				am_i_playing = true;
+			},
+			(e) => alert!('failed to play song' + e)
+		);
 	}
 	function pause() {
 		player.pause();

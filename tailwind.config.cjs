@@ -10,10 +10,8 @@ module.exports = {
 			lg: '1024px'
 		},
 		extend: {
-                        fontFamily: {
-				michroma: 'Michroma',
-				yeysk: 'Yeysk',
-				suissnord: 'Suissnord'
+			fontFamily: {
+
 			},
 
 			container: {
@@ -72,7 +70,7 @@ module.exports = {
 				secondary: 'var(--text-secondary)',
 				tertiary: 'var(--text-tertiary)',
 
-                                "bg-neutral": 'var(--background-neutral)',
+				"bg-neutral": 'var(--background-neutral)',
 				"bg-primary": 'var(--background-primary)',
 				"bg-secondary": 'var(--background-secondary)',
 				"bg-tertiary": 'var(--background-tertiary)',
@@ -114,7 +112,7 @@ module.exports = {
 				secondary: 'var(--background-secondary)',
 				tertiary: 'var(--background-tertiary)',
 
-                                'text-neutral': 'var(--text-neutral)',
+				'text-neutral': 'var(--text-neutral)',
 				'text-primary': 'var(--text-primary)',
 				'text-secondary': 'var(--text-secondary)',
 				'text-tertiary': 'var(--text-tertiary)',
@@ -197,17 +195,19 @@ module.exports = {
 				'comsat-navy': 'Comsat Navy, sans-serif',
 				montserrat: 'Montserrat, sans-serif',
 				inter: 'Inter, sans-serif',
-				yeysk: 'Yeysk, sans-serif'
+				michroma: 'Michroma',
+				yeysk: 'Yeysk',
+				suissnord: 'Suissnord'
 			},
-                        fill: {
-                                'text-neutral': 'var(--text-neutral)',
+			fill: {
+				'text-neutral': 'var(--text-neutral)',
 				'text-primary': 'var(--text-primary)',
 				'text-secondary': 'var(--text-secondary)',
 				'text-tertiary': 'var(--text-tertiary)'
-                        },
+			},
 			colors: {
 
-                                bg_emphasis: 'var(--color-bg-emphasis)',
+				bg_emphasis: 'var(--color-bg-emphasis)',
 				bg_base: 'var(--color-bg-base)',
 				bg_side: 'var(--color-bg-side)',
 				bg_island: 'var(--color-bg-island)',
@@ -225,7 +225,7 @@ module.exports = {
 				primary: 'var(--background-primary)',
 				secondary: 'var(--background-secondary)',
 				tertiary: 'var(--background-tertiary)',
-				
+
 
 				'button-neutral': 'var(--button-background-neutral)',
 				'button-primary': 'var(--button-background-primary)',
@@ -275,4 +275,4 @@ module.exports = {
 		require('@tailwindcss/container-queries'),
 		require('@tailwindcss/line-clamp')
 	]
-};
+}

@@ -82,7 +82,7 @@ export function fresnel_material(): NodeMaterial {
 	bias.visibleInInspector = true;
 	bias.visibleOnFrame = false;
 	bias.target = 1;
-	bias.value = 0.63;
+	bias.value = 0.5;
 	bias.min = 0;
 	bias.max = 1;
 	bias.isBoolean = false;
@@ -144,18 +144,18 @@ export function fresnel_material(): NodeMaterial {
 	Gradient.target = 4;
 	Gradient.colorSteps = [];
 	Gradient.colorSteps.push(
-		new GradientBlockColorStep(0, new Color3(0.9058823529411765, 0.9921568627450981, 1))
+		new GradientBlockColorStep(0, new Color3(1, 1, 1))
 	);
 	Gradient.colorSteps.push(
 		new GradientBlockColorStep(
-			0.49,
-			new Color3(0.34901960784313724, 0.6470588235294118, 0.6784313725490196)
+			0.5,
+			new Color3(0.235, 0.55, 0.968)
 		)
 	);
 	Gradient.colorSteps.push(
 		new GradientBlockColorStep(
 			1,
-			new Color3(0.0784313725490196, 0.0784313725490196, 0.0784313725490196)
+			new Color3(0.04, 0.04, 0.04)
 		)
 	);
 

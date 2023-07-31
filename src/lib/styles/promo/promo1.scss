@@ -18,15 +18,15 @@
 @font-face{
     font-family: "Michroma";
     src:
-        url("/fonts/Michroma.ttf") format("truetype")
+        url("/assets/fonts/Michroma.ttf") format("truetype")
 }
 @font-face {
 	font-family: 'Suissnord';
-	src: url('/fonts/Suissnord.otf') format('opentype');
+	src: url('/assets/fonts/Suissnord.otf') format('opentype')
 }
 @font-face {
 	font-family: 'Yeysk';
-	src: url('/fonts/Yeysk.otf') format('opentype');
+	src: url('/assets/fonts/Yeysk.otf') format('opentype')
 }
 
 @tailwind base;
@@ -39,9 +39,9 @@ html {
 }
 
 :root {
-	-clip-time-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+	--clip-time-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
-	---color-content-emphasis: #ffffff;
+	--color-content-emphasis: #ffffff;
 	--color-content-base: #c6fafc;
 	--color-content-inverse: #19336f;
 
@@ -49,7 +49,7 @@ html {
 	--color-bg-base: #141414;
 	--color-bg-inverse: #c6fafc;
 	--color-bg-side: #c6fafc;
-	--color-bg-island: rgba(60, 216, 247, 0.2);
+	--color-bg-island: rgba(60, 144, 247, 0.2);
 
 	/*
     --color-content-emphasis: #F2FFFF;

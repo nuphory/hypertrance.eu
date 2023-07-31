@@ -20,7 +20,7 @@ float n1rand( vec2 n )
 
 vec2 distort_uvs(vec2 uv, float scale)
 {
-    float beta = (.3 * n1rand(uv));
+    float beta = (1. * n1rand(uv));
     vec2 uv1, uv2;
 
     uv1.x = uv.x + scale * (sin(beta));
@@ -37,7 +37,7 @@ void main(void)
 
 	vec3 fg = texture2D(textureSampler, uv ).xyz;
 
-    vec2 uv1 = distort_uvs(uv, .05);
+    vec2 uv1 = distort_uvs(uv, .03);
     vec2 uv2 = distort_uvs(uv, .2);
     vec2 uv3 = distort_uvs(uv, .4);
 
@@ -48,7 +48,7 @@ void main(void)
     vec3 bg_composite = mix(mix(bg1.xyz, bg2.xyz, 0.5), bg3.xyz, 0.5);
     vec3 res = vec3(0,0,0);
 
-    if(fg[0] + fg[1] + fg[2] > .28){
+    if(fg[0] + fg[1] + fg[2] > .2){
         res = fg;
     } else {
         res = bg_composite;
