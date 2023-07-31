@@ -3,8 +3,6 @@
 	import { initCart, cart, isCartDrawerOpen } from '$lib/stores/cart';
 	import { onMount } from 'svelte';
 
-	let itemCount: number = 0;
-
 	onMount(() => {
     		initCart();
   	});
@@ -15,7 +13,7 @@
 
 </script>
 
-<button class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral" on:click={openCart}>
+<button class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-clip" on:click={openCart}>
 	<CartIcon
 		class="
 			inline-block
@@ -25,7 +23,6 @@
 			fill-text-neutral
 			opacity-100 
 		"
-		{itemCount}
 	/>
-	<span>{String(itemCount).padStart(3, '0')}</span>
+	<span>{String($cart?.totalQuantity).padStart(3, '0')}</span>
 </button>

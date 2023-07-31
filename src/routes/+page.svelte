@@ -78,14 +78,12 @@
 						<p class="text-8xl">]</p>
 					</span> -->
 				</div>
-				<span class="font-sussnord text-xl flex justify-between mt-6 p-2 font">
+				<span class="font-sussnord text-xl flex justify-between mt-6 p-2">
 					<button
-						class="bg-bg_inverse p-4 m-2 text-content_inverse"
+						class="button-secondary p-4 m-2"
 						on:click={() => goto('app/store/product/hypertrance-sample-pack-01')}>buy now</button
 					>
-					<button class="border-bg_inverse border-2 p-4 m-2 text-content_emphasis"
-						>learn more</button
-					>
+					<button class="button-neutral p-4 m-2">learn more</button>
 				</span>
 			</div>
 			<div

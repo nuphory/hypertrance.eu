@@ -12,10 +12,12 @@ import {
 	type ILoadingScreen
 } from '@babylonjs/core'
 // import { Inspector } from "@babylonjs/inspector"
-import { fresnel_material } from './fresnel_mat'
-import Stats from 'stats-js'
-import { distort_frag } from './frag_bg_distort_postfx'
-import '@babylonjs/loaders/glTF'
+import { fresnel_material } from './fresnel_mat';
+import Stats from 'stats-js';
+import { distort_frag } from './frag_bg_distort_postfx';
+import '@babylonjs/loaders/glTF';
+
+import obj from "$lib/assets/obj/cinema-compressed.glb";
 export default class THREED {
 	engine: Engine
 	scene: Scene
@@ -49,8 +51,8 @@ export default class THREED {
 
 	async init() {
 		// this.scene.clearColor = new Color4(.078, .078, .078, 1)
-		this.scene.clearColor = new Color4(0, 0, 0, 0)
-		SceneLoader.AppendAsync('/', 'promo/cinema_compressed.glb', this.scene).then(() => {
+		this.scene.clearColor = new Color4(0, 0, 0, 0);
+		SceneLoader.AppendAsync(obj, undefined, this.scene).then(() => {
 			//this.scene.cameras[0].attachControl(this.canvas, true)
 			this.scene.cameras[0].maxZ = 3000
 			this.scene.cameras[0].minZ = 1

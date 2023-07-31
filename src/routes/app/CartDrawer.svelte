@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
 	import { cart, isCartDrawerOpen, removeCartItems, isCartUpdating } from '$lib/stores/cart';
-	import ShopifyImage from "$lib/components/ShopifyImage.svelte";
+	import ShopifyImage from '$lib/components/ShopifyImage.svelte';
 	import { clickOutside } from '$lib/utils/click-outside';
 	import CartButton from './CartButton.svelte';
 	import Money from '$src/lib/components/Money.svelte';
+	import { goto } from '$app/navigation';
 
 	let cartDrawerEl: HTMLDivElement;
 
@@ -54,7 +55,7 @@
 				out:fly={{ duration: 500, x: 500, opacity: 100 }}
 				class="pointer-events-auto w-screen max-w-lg max-h-screen backdrop-blur-lg shadow-lg"
 			>
-				<div class="flex justify-between items-center m-8">
+				<div class="flex justify-between items-center m-8 overflow-clip">
 					<h2
 						class="text-2xl flex gap-4 items-center font-comsat-navy text-neutral"
 						id="slide-over-title"
@@ -83,11 +84,12 @@
 							</svg>
 						{/if}
 					</h2>
-					<button
-						on:click={() => closeCartDrawer()}
+					<a
+						on:click={(e) => {e.preventDefault(); closeCartDrawer()}}
 						type="button"
-						class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral"
-						><span class="sr-only">Close panel</span>
+                                                href="#"
+						class="p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral cursor-pointer overflow-clip"
+						>
 						<!-- Heroicon name: outline/x-mark -->
 						<svg
 							class="h-6 w-6"
@@ -100,7 +102,7 @@
 						>
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 						</svg>
-					</button>
+					</a>
 				</div>
 				<div class="flex-1 overflow-y-scroll">
 					<div class="px-5">
@@ -109,7 +111,7 @@
 							<ul role="list" class="divide-y divide-zinc-100 {cartIsUpdatingClass}">
 								{#each $cart.lines?.nodes as item}
 									<li class="grid py-8 grid-cols-12 gap-3">
-										<div class="overflow-hidden rounded-lg col-span-3 lg:col-span-2">
+										<div class="overflow-clip rounded-lg col-span-3 lg:col-span-2">
 											<ShopifyImage
 												image={item.merchandise.image}
 												classList="object-cover h-full object-center aspect-1"
@@ -129,12 +131,15 @@
 											</p>
 										</div>
 										<div class="col-span-2 items-end flex justify-between flex-col">
-											<button
-												on:click={() => {
+											<a
+												on:click={
+                                                                                                        (e) => {e.preventDefault();
+                                                                                                        if ($isCartUpdating) return;
 													removeItem(item.id);
 												}}
+                                                                                                href="#"
 												type="button"
-												disabled={$isCartUpdating}
+												class="p-3 whitespace-nowrap backdrop-blur shadow-lg cursor-pointer"
 											>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +155,7 @@
 														d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
 													/>
 												</svg>
-											</button>
+											</a>
 											<div>
 												<p class="font-medium">
 													<Money price={item.cost.totalAmount} />
@@ -172,7 +177,7 @@
 					</div>
 				</div>
 
-				<div class="">
+				<div class="overflow-clip">
 					{#if $cart && $cart.lines?.nodes.length > 0}
 						<div class="border-t py-6 px-4 sm:px-6">
 							<div class="flex justify-between">
@@ -183,7 +188,14 @@
 							</div>
 							<p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
 							<div class="mt-6">
-								<a href={$cart.checkoutUrl} class="button">Checkout</a>
+								<a
+									on:click={() => goto($cart.checkoutUrl)}
+									type="button"
+									class="p-3 outline outline-neutral font-comsat-navy uppercase whitespace-nowrap backdrop-blur shadow-lg button-primary cursor-pointer overflow-clip"
+								>
+									<!-- Heroicon name: outline/x-mark -->
+									Checkout
+								</a>
 							</div>
 						</div>
 					{/if}
