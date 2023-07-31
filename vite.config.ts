@@ -6,5 +6,6 @@ export default defineConfig({
 	plugins: [sveltekit(), imagetools()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
-	}
+	},
+        assetsInclude: ['**/*.gltf', '**/*.glb']
 });
