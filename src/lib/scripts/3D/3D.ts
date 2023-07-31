@@ -50,7 +50,7 @@ export default class THREED {
 
 	async init() {
 		this.scene.clearColor = new Color4(0, 0, 0, 0);
-		SceneLoader.AppendAsync('/', obj, this.scene).then(() => {
+		SceneLoader.AppendAsync(obj, undefined, this.scene).then(() => {
 			//this.scene.cameras[0].attachControl(this.canvas, true)
 			this.scene.cameras[0].maxZ = 3000;
 			this.scene.cameras[0].minZ = 1;
