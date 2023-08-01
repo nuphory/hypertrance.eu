@@ -55,7 +55,7 @@ export default class THREED {
 		SceneLoader.AppendAsync(obj, undefined, this.scene).then(() => {
 			//this.scene.cameras[0].attachControl(this.canvas, true)
 			this.scene.cameras[0].maxZ = 3000
-			this.scene.cameras[0].minZ = 1
+			this.scene.cameras[0].minZ = 0.1
 
 			this.scene.activeCamera = this.scene.cameras[0]
 
@@ -95,11 +95,9 @@ export default class THREED {
 			this.frames_count * this.rotation_speed
 		)
 		this.camera_pivot.rotation.copyFrom(this.pivot_init_rotation.add(rotation_offset))
-
-		// this.camera.position.copyFrom(this.camera_init_position.add(new Vector3(this.mouse_x * 0.1 - this.canvas.clientWidth / 2, this.mouse_y * 0.1 - this.canvas.clientWidth / 2, 0)))
 		//scroll stuff
-		const scroll_offset = new Vector3(document.documentElement.scrollTop * (-0.001), 0, 0)
-		this.camera.rotation.copyFrom(this.camera_init_rotation.add(scroll_offset))
+		const scroll_offset = new Vector3(0, -document.documentElement.scrollTop / 2, 0)
+		this.camera.position.copyFrom(this.camera_init_rotation.add(scroll_offset))
 		this.scene.render()
 		this.stats.end()
 		this.engine.hideLoadingUI()

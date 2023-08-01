@@ -23,7 +23,7 @@
 			() => {
 				am_i_playing = true;
 			},
-			(e) => alert!('failed to play song' + e)
+			(e) => alert('failed to play song' + e)
 		);
 	}
 	function pause() {
@@ -31,7 +31,9 @@
 	}
 </script>
 
-<div class="flex justify-between items-center h-12 p-2">
+<div
+	class="{$$restProps.class} bg-bg_inverse text-content_inverse flex justify-between items-center h-12 p-2"
+>
 	<span>
 		<button on:click={is_playing && am_i_playing ? pause : play}
 			><Icon
@@ -43,7 +45,7 @@
 		<p class="inline">{song.name}</p>
 	</span>
 	<svg
-		class="h-full w-1/2 l:w-36 fill-content_base"
+		class="h-full w-1/2 l:w-36 fill-content_inverse"
 		bind:this={canvas}
 		viewBox="0 0 500 500"
 		preserveAspectRatio="none"
@@ -55,7 +57,7 @@
 
 <style>
 	.clipping {
-		@apply fill-[rgba(20,20,20,.4)];
+		@apply fill-[rgba(150,150,150,.4)];
 		clip-path: var(--clip-time-path);
 	}
 </style>

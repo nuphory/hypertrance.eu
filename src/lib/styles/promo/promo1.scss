@@ -41,6 +41,16 @@ html {
 :root {
 	--clip-time-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 
+	--color-content-emphasis: #fff;
+	--color-content-base: #cae1ee;
+	--color-content-inverse: #000;
+
+	--color-bg-emphasis: #19336f;
+	--color-bg-base: #12131a;
+	--color-bg-inverse: #cae1ee;
+	--color-bg-side: #061327;
+	--color-bg-island: #272a3c;
+	/*
 	--color-content-emphasis: #ffffff;
 	--color-content-base: #c6fafc;
 	--color-content-inverse: #19336f;
@@ -50,7 +60,7 @@ html {
 	--color-bg-inverse: #c6fafc;
 	--color-bg-side: #c6fafc;
 	--color-bg-island: rgba(60, 144, 247, 0.2);
-
+	*/
 	/*
     --color-content-emphasis: #F2FFFF;
     --color-content-base: #B7D3DA;

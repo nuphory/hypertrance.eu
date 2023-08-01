@@ -12,7 +12,7 @@
 
 	//temp description
 	db.collections.forEach((col) => {
-		col.metadata[0] = `The Eon Premium Collection includes a selection of high-quality hi-hats, powerful kicks,and crisp snares. When used in conjunction with the presets, creating a song start tofinish will take literal seconds. The Eon Premium Collection includes a selection of high-quality hi-hats, powerful kicks,and crisp snares. When used in conjunction with the presets, creating a song start tofinish will take literal seconds`;
+		col.metadata[0] = `This is the placeholder text for the bass. It is not very long and it goes on for about two or three lines. Yes this is a text, and it will be used as an amazing text. text.`;
 	});
 
 	db.songs.forEach((song) => {
@@ -61,33 +61,29 @@
 
 <div id="wrapper">
 	<main class="font-michroma text-content_base bg-bg_base">
-		<section class="w-full h-[110vh] relative">
-			<div class=" z-10 absolute right-[15vw] bottom-[30vh] bg-bg_island p-12">
-				<div class="font-suissnord flex flex-row justify-evenly space-x-6 text-content_emphasis">
-					<!-- <span class="h-full align-baseline">
-						<p class="text-8xl font-sans italic">[</p>
-					</span> -->
-					<span class="p-2 align-baseline h-full">
-						<h1 class="text-4xl w-full">hypertrance <br /> samplepack</h1>
-						<span class="flex justify-between w-full relative">
-							<!-- <h2 class="text-l">by hypertrance</h2> -->
-							<!-- <p class="text-5xl absolute right-0 -top-[1.5rem]">. . .</p> -->
-						</span>
+		<section class="w-full h-[110vh] relative text-content_inverse">
+			<div
+				class=" z-10 absolute right-[15vw] bottom-[30vh] [transform:skewX(25deg)] bg-bg_side pl-4"
+			>
+				<div class="bg-bg_inverse [&>*]:[transform:skewX(-25deg)] py-4 px-20">
+					<div class="font-suissnord">
+						<h1 class="block text-4xl w-full -mb-2">HyPERTRANCE</h1>
+						<h1 class="pl-24 block text-4xl">SAMPLEPACK</h1>
+					</div>
+					<span class="font-sussnord text-2xl flex justify-between">
+						<div
+							class="bg-bg_base [&>*]:[transform:skewX(-25deg)] [transform:skewX(25deg)] text-content_emphasis py-1 px-8 m-2"
+						>
+							<a class="before:content-['>_'] block" href="store/product/hypertrance-sample-pack-01"
+								>buy now</a
+							>
+						</div>
+						<a href="#about" class="block button-neutral py-1 px-2 m-2">learn more</a>
 					</span>
-					<!-- <span class="h-full align-baseline font-sans italic">
-						<p class="text-8xl">]</p>
-					</span> -->
 				</div>
-				<span class="font-sussnord text-xl flex justify-between mt-6 p-2">
-					<button
-						class="button-secondary p-4 m-2"
-						on:click={() => goto('app/store/product/hypertrance-sample-pack-01')}>buy now</button
-					>
-					<button class="button-neutral p-4 m-2">learn more</button>
-				</span>
 			</div>
 			<div
-				class="w-full h-full [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_75%,rgba(0,0,0,0)_100%)]"
+				class="w-full h-full [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_70%,rgba(0,0,0,0)_100%)]"
 			>
 				<div class="h-full overflow-hidden">
 					<Video autoplay={true} loop={true} muted={true} src_set={bg_video_sources} />
@@ -101,25 +97,31 @@
 				<canvas class="w-full h-full absolute left-0 top-0" bind:this={canvas} />
 			</div>
 		</section>
-		<section class="grid grid-cols-1 grid-rows-4 bg-bg_base">
+		<section id="about" class="grid grid-cols-1 grid-rows-4 bg-bg_base">
 			{#each db.collections as collection, i}
-				<div class="w-full h-full p-12 py-6 grid grid-cols-2 grid-rows-1 gap-6 relative">
+				<div
+					class="w-full h-full p-12 py-6 grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-6 relative"
+				>
 					{#if i % 2 == 0}
-						<div class="w-full h-full bg-bg_side" />
+						<div class="w-full h-full bg-bg_inverse" />
 					{/if}
 					<div class="w-full h-full bg-bg_island p-6">
-						<h3 class="mt-3 text-5xl text-content_emphasis font-suissnord">{collection.name}</h3>
-						<p class="mt-6">
+						<h3
+							class="bg-bg_inverse block text-5xl text-content_inverse -mx-6 -ml-8 pl-14 mt-3 py-1 font-suissnord before:content-['>_']"
+						>
+							{collection.name}
+						</h3>
+						<p class="mt-6 py-4 mx-8">
 							{collection.metadata[0]}
 						</p>
-						<div class="mt-6 grid grid-cols-1 l:grid-cols-2">
-							{#each collection.songs.slice(0, 3) as song}
+						<div class="mt-6 grid grid-cols-1 gap-2">
+							{#each collection.songs.slice(0, 4) as song}
 								<Sample {is_playing} {player} {playing_song_id} song={song.get(db)} />
 							{/each}
 						</div>
 					</div>
 					{#if i % 2 != 0}
-						<div class="w-full h-full bg-bg_side" />
+						<div class="w-full h-full bg-bg_inverse" />
 					{/if}
 				</div>
 			{/each}
