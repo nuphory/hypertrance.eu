@@ -18,13 +18,13 @@ devDependencies:
     version: 6.14.0(@babylonjs/core@6.14.0)
   '@babylonjs/gui-editor':
     specifier: ^6.14.0
-    version: 6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.17)
+    version: 6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.18)
   '@babylonjs/inspector':
     specifier: ^6.14.0
-    version: 6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui-editor@6.14.0)(@babylonjs/gui@6.14.0)(@babylonjs/loaders@6.14.0)(@babylonjs/materials@6.14.0)(@babylonjs/serializers@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.17)
+    version: 6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui-editor@6.14.0)(@babylonjs/gui@6.14.0)(@babylonjs/loaders@6.14.0)(@babylonjs/materials@6.14.0)(@babylonjs/serializers@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.18)
   '@babylonjs/loaders':
     specifier: ^6.14.0
-    version: 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.0)
+    version: 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1)
   '@babylonjs/materials':
     specifier: ^6.14.0
     version: 6.14.0(@babylonjs/core@6.14.0)
@@ -33,16 +33,16 @@ devDependencies:
     version: 6.14.0(@babylonjs/core@6.14.0)
   '@babylonjs/serializers':
     specifier: ^6.14.0
-    version: 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.0)
+    version: 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1)
   '@euterpe.js/euterpe':
-    specifier: ^1.0.10
-    version: 1.0.10(@euterpe.js/music-library@1.0.9)(@euterpe.js/player@1.0.5)(tslib@2.6.0)
+    specifier: ^1.0.11
+    version: 1.0.11(@euterpe.js/music-library@1.0.10)(@euterpe.js/player@1.0.6)(tslib@2.6.1)
   '@euterpe.js/music-library':
-    specifier: ^1.0.9
-    version: 1.0.9(tslib@2.6.0)
+    specifier: ^1.0.10
+    version: 1.0.10(tslib@2.6.1)
   '@euterpe.js/player':
-    specifier: ^1.0.5
-    version: 1.0.5(tslib@2.6.0)
+    specifier: ^1.0.6
+    version: 1.0.6(tslib@2.6.1)
   '@fontsource/fira-code':
     specifier: ^4.5.13
     version: 4.5.13
@@ -158,8 +158,8 @@ devDependencies:
     specifier: ^3.3.3
     version: 3.3.3
   tslib:
-    specifier: ^2.6.0
-    version: 2.6.0
+    specifier: ^2.6.1
+    version: 2.6.1
   typescript:
     specifier: ^4.9.5
     version: 4.9.5
@@ -195,7 +195,7 @@ packages:
     resolution: {integrity: sha512-ciIfWMMtV5jsnqxqTn+v/CS65yji6CXTP2drmvLlzk+k+IZjE8RfkpMqZgZozN/KNkOmIVn2Li7qRMjg4ZUGlw==}
     dev: true
 
-  /@babylonjs/gui-editor@6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.17):
+  /@babylonjs/gui-editor@6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.18):
     resolution: {integrity: sha512-6axCe80B63/PhWuS/GmQbaCRg4BL0L3UPQVrfS3KKl2JvG5Wl5qTj5s6Iv2g+ODcLQ8PWL4fstTA+5p7xD58Yg==}
     peerDependencies:
       '@babylonjs/core': ^6.0.0
@@ -205,7 +205,7 @@ packages:
     dependencies:
       '@babylonjs/core': 6.14.0
       '@babylonjs/gui': 6.14.0(@babylonjs/core@6.14.0)
-      '@types/react': 18.2.17
+      '@types/react': 18.2.18
       '@types/react-dom': 18.2.7
     dev: true
 
@@ -217,7 +217,7 @@ packages:
       '@babylonjs/core': 6.14.0
     dev: true
 
-  /@babylonjs/inspector@6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui-editor@6.14.0)(@babylonjs/gui@6.14.0)(@babylonjs/loaders@6.14.0)(@babylonjs/materials@6.14.0)(@babylonjs/serializers@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.17):
+  /@babylonjs/inspector@6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui-editor@6.14.0)(@babylonjs/gui@6.14.0)(@babylonjs/loaders@6.14.0)(@babylonjs/materials@6.14.0)(@babylonjs/serializers@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.18):
     resolution: {integrity: sha512-8wntNbVb9Yhj0q8Ll4kFGDDJPHk7IeosqVwXTPToTfDYC67pwkVQFXFViEXr1R0HrG0l1FmZzPVLY6szbFSwrw==}
     peerDependencies:
       '@babylonjs/core': ^6.0.0
@@ -231,25 +231,25 @@ packages:
     dependencies:
       '@babylonjs/core': 6.14.0
       '@babylonjs/gui': 6.14.0(@babylonjs/core@6.14.0)
-      '@babylonjs/gui-editor': 6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.17)
-      '@babylonjs/loaders': 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.0)
+      '@babylonjs/gui-editor': 6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.18)
+      '@babylonjs/loaders': 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1)
       '@babylonjs/materials': 6.14.0(@babylonjs/core@6.14.0)
-      '@babylonjs/serializers': 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.0)
+      '@babylonjs/serializers': 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1)
       '@fortawesome/fontawesome-svg-core': 6.4.0
       '@fortawesome/free-regular-svg-icons': 6.4.0
       '@fortawesome/free-solid-svg-icons': 6.4.0
-      '@types/react': 18.2.17
+      '@types/react': 18.2.18
       '@types/react-dom': 18.2.7
     dev: true
 
-  /@babylonjs/loaders@6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.0):
+  /@babylonjs/loaders@6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1):
     resolution: {integrity: sha512-rGDMuyHEphpOHBO4JtY0vNIri2VMAmwUw3UmDJ+C00erQpiQDXyzG3IkJpXDHt7mWOJZNASRJjC76bPDu9zarg==}
     peerDependencies:
       '@babylonjs/core': ^6.0.0
       babylonjs-gltf2interface: ^6.0.0
     dependencies:
       '@babylonjs/core': 6.14.0
-      babylonjs-gltf2interface: 6.14.0
+      babylonjs-gltf2interface: 6.14.1
     dev: true
 
   /@babylonjs/materials@6.14.0(@babylonjs/core@6.14.0):
@@ -268,14 +268,14 @@ packages:
       '@babylonjs/core': 6.14.0
     dev: true
 
-  /@babylonjs/serializers@6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.0):
+  /@babylonjs/serializers@6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1):
     resolution: {integrity: sha512-qJ1TDvzMeW0SLFJGa4Mo3LqEqtv16rUy6co6fMMlM6f+FG78gUhHR2lgxKbdBesXfrwj8keKqwKcqgrBQAtJUw==}
     peerDependencies:
       '@babylonjs/core': ^6.0.0
       babylonjs-gltf2interface: ^6.0.0
     dependencies:
       '@babylonjs/core': 6.14.0
-      babylonjs-gltf2interface: 6.14.0
+      babylonjs-gltf2interface: 6.14.1
     dev: true
 
   /@cloudflare/workers-types@4.20230724.0:
@@ -517,32 +517,32 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@euterpe.js/euterpe@1.0.10(@euterpe.js/music-library@1.0.9)(@euterpe.js/player@1.0.5)(tslib@2.6.0):
-    resolution: {integrity: sha512-eQoER4kXOo2ASfpdFJM1mEx2BeMAdU6u3dPk9tBGa/bZ8UoPZUnvCiGIG3ZvCUySMqzCsDOwLKUfcEwXwdWc+A==}
+  /@euterpe.js/euterpe@1.0.11(@euterpe.js/music-library@1.0.10)(@euterpe.js/player@1.0.6)(tslib@2.6.1):
+    resolution: {integrity: sha512-+Xd/Sv3GItSPx9HvFgfOY63S//Pi17kfFmqKQm09RT07d7qIMR32LLq5ULUAsa8m8lbjPZXPo3G0RUNU7/FBsA==}
     peerDependencies:
-      '@euterpe.js/music-library': 1.0.9
-      '@euterpe.js/player': 1.0.5
-      tslib: 2.6.0
+      '@euterpe.js/music-library': 1.0.10
+      '@euterpe.js/player': 1.0.6
+      tslib: 2.6.1
     dependencies:
-      '@euterpe.js/music-library': 1.0.9(tslib@2.6.0)
-      '@euterpe.js/player': 1.0.5(tslib@2.6.0)
-      tslib: 2.6.0
+      '@euterpe.js/music-library': 1.0.10(tslib@2.6.1)
+      '@euterpe.js/player': 1.0.6(tslib@2.6.1)
+      tslib: 2.6.1
     dev: true
 
-  /@euterpe.js/music-library@1.0.9(tslib@2.6.0):
-    resolution: {integrity: sha512-N4KT6hRKpvyYaq1Hq17qN/whvtNQlwPiAKh0smracIhAg07H7g5nUdCCFl2AYIfn2CycW0zIcYjXNZD9nMSmvg==}
+  /@euterpe.js/music-library@1.0.10(tslib@2.6.1):
+    resolution: {integrity: sha512-5KoDPTH+WcZoMMD5n44fp09Fhd6FpYWRqv4uVSprMS4OTh/JJb1QF0V9+TPSlj+dVCIIB20DaCulIMKvxm7ufA==}
     peerDependencies:
-      tslib: 2.6.0
+      tslib: 2.6.1
     dependencies:
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
-  /@euterpe.js/player@1.0.5(tslib@2.6.0):
-    resolution: {integrity: sha512-zqXZ41H+ZCsd4Oi+i6blbkkmZJ1F9ePnbnti8nAhTCMbYHgwKay0eZXO7DvaKs/rU+v0pn9itp8QsYMWrCnm8g==}
+  /@euterpe.js/player@1.0.6(tslib@2.6.1):
+    resolution: {integrity: sha512-t5PbnN8lYBGy1P3W4of7glMUYXFGeOttj/nzUNjWNSrnUszZO0EB1+w4ehshLYvRtE/kDBXmSPGSYBfNXfMkbw==}
     peerDependencies:
-      tslib: 2.6.0
+      tslib: 2.6.1
     dependencies:
-      tslib: 2.6.0
+      tslib: 2.6.1
     dev: true
 
   /@fontsource/fira-code@4.5.13:
@@ -870,11 +870,11 @@ packages:
   /@types/react-dom@18.2.7:
     resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
     dependencies:
-      '@types/react': 18.2.17
+      '@types/react': 18.2.18
     dev: true
 
-  /@types/react@18.2.17:
-    resolution: {integrity: sha512-u+e7OlgPPh+aryjOm5UJMX32OvB2E3QASOAqVMY6Ahs90djagxwv2ya0IctglNbNTexC12qCSMZG47KPfy1hAA==}
+  /@types/react@18.2.18:
+    resolution: {integrity: sha512-da4NTSeBv/P34xoZPhtcLkmZuJ+oYaCxHmyHzwaDQo9RQPBeXV+06gEk2FpqEcsX9XrnNLvRpVh6bdavDSjtiQ==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -1104,8 +1104,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /babylonjs-gltf2interface@6.14.0:
-    resolution: {integrity: sha512-fCv0Mc2zGblSlY7DzLPEfYDbcd1h1+wJJmF1MskMl4H30PBPl5EslYeHaHyjjRvwcOLlq4Dd+SS0in8B1nKFuA==}
+  /babylonjs-gltf2interface@6.14.1:
+    resolution: {integrity: sha512-CRINx68GFDdtwBbX7RoNBUsnN6puI3EJ6faAgsSkXiECXQREssMEbNzeOhIjCCv3L5YtteopbnC38DdOR1gJkA==}
     dev: true
 
   /balanced-match@1.0.2:
@@ -2822,8 +2822,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tslib@2.6.0:
-    resolution: {integrity: sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==}
+  /tslib@2.6.1:
+    resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
     dev: true
 
   /tsutils@3.21.0(typescript@4.9.5):
