@@ -1,5 +1,4 @@
 import {
-	ReflectionBlock,
 	Color3,
 	FragmentOutputBlock,
 	GradientBlockColorStep,
@@ -9,14 +8,11 @@ import {
 	VertexOutputBlock,
 	NodeMaterialSystemValues,
 	GradientBlock,
-	LerpBlock,
 	Vector2,
 	RemapBlock,
 	AnimatedInputBlockTypes,
 	FresnelBlock,
 	ViewDirectionBlock,
-	PBRMetallicRoughnessBlock,
-	ScaleBlock
 } from '@babylonjs/core';
 export function fresnel_material(): NodeMaterial {
 	const nodeMaterial = new NodeMaterial('node');
@@ -148,8 +144,8 @@ export function fresnel_material(): NodeMaterial {
 	);
 	Gradient.colorSteps.push(
 		new GradientBlockColorStep(
-			0.5,
-			new Color3(0.235, 0.55, 0.968)
+			0.4,
+			new Color3(0.25, 0.6, 0.89)
 		)
 	);
 	Gradient.colorSteps.push(

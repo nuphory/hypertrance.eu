@@ -28,7 +28,7 @@
 </script>
 
 <video
-	class="max-w-full min-h-full"
+	class="min-w-full min-h-full max-w-none max-h-none"
 	bind:this={video_element}
 	controls="null"
 	preload="metadata"
@@ -36,5 +36,5 @@
 	muted={muted || null}
 	loop={loop || null}
 >
-	<source src={src_set[3].path} type="video/webm" />
+	<source src={src_set[2].path} type="video/webm" />
 </video>

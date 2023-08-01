@@ -61,8 +61,8 @@
 
 <div id="wrapper">
 	<main class="font-michroma text-content_base bg-bg_base">
-		<section class="w-full h-screen">
-			<div class=" z-10 absolute right-[15vw] bottom-[20vh] bg-bg_island p-12">
+		<section class="w-full h-[110vh] relative">
+			<div class=" z-10 absolute right-[15vw] bottom-[30vh] bg-bg_island p-12">
 				<div class="font-suissnord flex flex-row justify-evenly space-x-6 text-content_emphasis">
 					<!-- <span class="h-full align-baseline">
 						<p class="text-8xl font-sans italic">[</p>
@@ -87,12 +87,10 @@
 				</span>
 			</div>
 			<div
-				class="w-full h-full absolute [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_50%,rgba(0,0,0,0)_100%)]"
+				class="w-full h-full [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_75%,rgba(0,0,0,0)_100%)]"
 			>
-				<div class="w-full h-full flex justify-center items-center align-middle">
-					<div class="w-5/6 h-5/6">
-						<Video autoplay={true} loop={true} muted={true} src_set={bg_video_sources} />
-					</div>
+				<div class="h-full overflow-hidden">
+					<Video autoplay={true} loop={true} muted={true} src_set={bg_video_sources} />
 				</div>
 				<img
 					class="h-full absolute left-0 top-0"
