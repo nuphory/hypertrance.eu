@@ -4,10 +4,11 @@
 
 	export let price: z.infer<typeof MoneyV2Result>;
 	export let showCurrency: boolean = false;
+        
 
 	$: formatPrice = parseFloat(price.amount).toFixed(2) + (showCurrency ? price.currencyCode : '');
 </script>
 
-<span>
+<span class="{$$restProps.class}">
 	{formatPrice}
 </span>

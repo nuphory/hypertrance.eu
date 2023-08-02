@@ -60,7 +60,8 @@ export const VariantResult = z.object({
 	title: z.string(),
 	availableForSale: z.boolean(),
 	quantityAvailable: z.number().int(),
-	price: MoneyV2Result
+	price: MoneyV2Result,
+        compareAtPrice: MoneyV2Result.nullable(),
 });
 
 export const ProductResult = z

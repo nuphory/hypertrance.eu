@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Money from '$src/lib/components/Money.svelte';
 	import ShopifyImage from '$src/lib/components/ShopifyImage.svelte';
 	import AddToCartForm from '../AddToCartForm.svelte';
 
@@ -46,11 +47,23 @@
 			</div>
 
 			<div class="@container max-md:container flex-1">
-				<h1 class="mb-1 before:content-['']">{product.title}</h1>
-				<p class="font-michroma before:content-[''] bg-text-primary text-bg-primary p-2 w-fit">
+				<h1 class="mb-3 before:content-['']">{product.title}</h1>
+				<Money
+					price={selectedVariant.price}
+					showCurrency={true}
+					class="font-michroma before:content-[''] bg-text-primary text-bg-primary p-2 w-fit"
+				/>
+				{#if selectedVariant.compareAtPrice !== null && selectedVariant.compareAtPrice !== selectedVariant.price}
+					<Money
+						price={selectedVariant.compareAtPrice}
+						showCurrency={true}
+						class="font-michroma text-primary p-2 w-fit line-through"
+					/>
+				{/if}
+				<!-- <p class="font-michroma before:content-[''] bg-text-primary text-bg-primary p-2 w-fit">
 					{parseFloat(selectedVariant.price.amount || '').toFixed(2)}
 					{selectedVariant.price.currencyCode}
-				</p>
+				</p> -->
 				<i class="[&>p]:my-4">{@html tagline}</i>
 				<!-- <AddToCart /> -->
 

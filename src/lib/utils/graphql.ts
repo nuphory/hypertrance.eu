@@ -70,6 +70,10 @@ fragment productFragment on Product {
       title
       availableForSale
       quantityAvailable
+      compareAtPrice {
+        amount
+        currencyCode
+      }
       price {
         amount
         currencyCode
