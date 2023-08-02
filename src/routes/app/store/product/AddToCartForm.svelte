@@ -4,6 +4,7 @@
 	import CartIcon from '$src/lib/components/icons/CartIcon.svelte';
 
 	export let variantId: string;
+        export let trackQuantity: boolean = false;
 
 	let quantity = "1";
 
@@ -23,7 +24,7 @@
 <form on:submit|preventDefault={(e) => addToCart(e)} class={$$restProps.class}>
 	<input type="hidden" name="id" value={variantId} />
 
-	<div class="max-lg:w-full pointer-events-none opacity-50">
+	<div class:hidden={!trackQuantity} class="max-lg:w-full pointer-events-none opacity-50">
 		<label for="quantity">QTY</label>
 		<div class="flex w-full">
 			<button class="pointer-events-none button-neutral aspect-square w-14 p-3" on:click={() => quantity--}>-</button>
@@ -37,9 +38,9 @@
 			<button class="pointer-events-none button-neutral aspect-square w-14 p-4" on:click={() => quantity++}>+</button>
 		</div>
 	</div>
-	<button class="button-secondary w-full lg:w-max" type="submit" disabled={$isCartUpdating}>
+	<button class="button-primary w-full lg:w-max" type="submit" disabled={$isCartUpdating}>
 		<CartIcon
-			class="inline-block transition-[fill,margin] duration-[var(--duration)] ease-out aspect-square h-[1.25em] mr-2 fill-text-neutral opacity-100"
+			class="inline-block transition-[fill,margin] duration-[var(--duration)] ease-out aspect-square h-[1.25em] mr-2 opacity-100"
 		/> purchase
 	</button>
 </form>

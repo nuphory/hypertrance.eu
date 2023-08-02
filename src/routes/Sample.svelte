@@ -32,7 +32,7 @@
 </script>
 
 <div
-	class="{$$restProps.class} bg-bg_inverse text-content_inverse flex justify-between items-center h-12 p-2"
+	class="{$$restProps.class} bg-text-primary text-bg-primary flex justify-between items-center h-12 p-2"
 >
 	<span>
 		<button on:click={is_playing && am_i_playing ? pause : play}
@@ -45,13 +45,13 @@
 		<p class="inline">{song.name}</p>
 	</span>
 	<svg
-		class="h-full w-1/2 l:w-36 fill-content_inverse"
+		class="h-full w-1/2 l:w-36 fill-primary"
 		bind:this={canvas}
 		viewBox="0 0 500 500"
 		preserveAspectRatio="none"
 	>
 		<path d={path_d} width="100%" height="100%" />
-		<path d={path_d} class={am_i_playing ? 'clipping' : 'invisible'} width="100%" height="100%" />
+		<path d={path_d} class="{am_i_playing ? 'clipping' : 'invisible'}" width="100%" height="100%" />
 	</svg>
 </div>
 

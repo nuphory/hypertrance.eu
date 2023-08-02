@@ -94,3 +94,122 @@
 		</ul>
 	</section>
 </main>
+
+<style lang="scss">
+	main {
+		@apply perspective-40 perspective-origin-top;
+		@apply w-full;
+		@apply overflow-x-clip overflow-y-scroll;
+		@apply @container;
+
+		height: calc(100vh - 5rem);
+		height: calc(100dvh - 5rem);
+
+		section {
+			@apply relative;
+
+			@apply transform-style-3d;
+
+			&:not(:first-of-type) {
+				@apply py-8;
+				@apply backdrop-blur bg-black/50;
+				&:not(:last-of-type) {
+					@apply mb-8;
+				}
+			}
+
+			// section {
+			// 	@apply relative;
+			// 	@apply mb-8 py-8 px-8;
+
+			// 	@apply flex flex-col justify-between;
+			// 	@apply backdrop-blur bg-black/50;
+			// }
+		}
+	}
+	button {
+		// @apply bg-white bg-blend-difference;
+		@apply text-[var(--button-text-main)] ring-1 ring-[var(--button-border-main)];
+
+		@apply font-comsat-navy uppercase;
+		@apply tracking-[0.2rem];
+
+		@apply relative p-4 px-4 2xs:px-8;
+
+		--blend-mode: difference;
+		--button-background-main: var(--button-background-neutral);
+		--button-border-main: var(--button-background-neutral);
+		--button-text-main: var(--button-text-neutral);
+		--button-text-hover: var(--button-text-neutral-hover);
+		--button-text-active: var(--button-text-neutral-active);
+
+		&.button-primary {
+			--blend-mode: normal;
+			// --button-background-main: var(--button-background-neutral);
+			--button-background-main: var(--button-background-primary);
+			--button-border-main: var(--button-background-neutral);
+			// --button-border-main: var(--button-background-primary);
+			--button-text-main: var(--button-text-neutral);
+			// --button-text-main: var(--button-text-primary);
+			--button-text-hover: var(--button-text-primary-hover);
+			--button-text-active: var(--button-text-primary-active);
+		}
+		&.button-secondary {
+			--blend-mode: normal;
+			// --button-background-main: var(--button-background-neutral);
+			--button-background-main: var(--button-background-secondary);
+			--button-border-main: var(--button-background-neutral);
+			// --button-border-main: var(--button-background-secondary);
+			--button-text-main: var(--button-text-neutral);
+			// --button-text-main: var(--button-text-secondary);
+			--button-text-hover: var(--button-text-secondary-hover);
+			--button-text-active: var(--button-text-secondary-active);
+		}
+		&.button-tertiary {
+			--blend-mode: normal;
+			// --button-background-main: var(--button-background-neutral);
+			--button-background-main: var(--button-background-tertiary);
+			--button-border-main: var(--button-background-neutral);
+			// --button-border-main: var(--button-background-tertiary);
+			--button-text-main: var(--button-text-neutral);
+			// --button-text-main: var(--button-text-tertiary);
+			--button-text-hover: var(--button-text-tertiary-hover);
+			--button-text-active: var(--button-text-tertiary-active);
+		}
+
+		&::before {
+			@apply transition-[transform,background-position,margin] duration-default ease-out absolute -z-10 inset-0 bg-left-top content-[''] mix-blend-normal;
+			@apply m-0;
+
+			background: linear-gradient(
+				135deg,
+				transparent 0% 25%,
+				var(--button-background-main) 25% 50%,
+				transparent 50% 75%,
+				var(--button-background-main) 75% 100%
+			);
+			background-size: 550%;
+		}
+
+		&:hover {
+			@apply text-[var(--button-text-hover)] ring-neutral-hover;
+			&::before {
+				@apply -m-1;
+				background-position: 33% 33%;
+			}
+		}
+		&:active {
+			@apply scale-95;
+			@apply text-[var(--button-text-active)];
+			&::before {
+				@apply -m-1;
+				@apply bg-right-bottom;
+			}
+		}
+
+		* {
+			mix-blend-mode: var(--blend-mode);
+			// @apply mix-blend-difference;
+		}
+	}
+</style>

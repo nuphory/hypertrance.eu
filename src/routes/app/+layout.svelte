@@ -14,7 +14,7 @@
 	// import Header from '$lib/components/Header.svelte';
 
 	// Styles
-	import '$lib/styles/app.scss';
+	import '$lib/styles/ui/_buttons.scss';
 	import '@splidejs/svelte-splide/css';
 
 	import '@fontsource/montserrat';
@@ -65,7 +65,6 @@
 	<meta name="twitter:creator" content="@{name}" />
 </svelte:head>
 
-<CartDrawer />
 <Header />
 <slot />
 <AudioPlayer />

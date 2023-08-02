@@ -1,21 +1,21 @@
 import { z } from 'zod';
-import { CartResult, ProductResult } from './schemas';
-import { config } from './publicConfig';
 import {
-	ProductsQuery,
-	ProductByHandleQuery,
-	CreateCartMutation,
-	AddCartLinesMutation,
-	GetCartQuery,
-	RemoveCartLinesMutation,
-	ProductRecommendationsQuery
+        AddCartLinesMutation,
+        CreateCartMutation,
+        GetCartQuery,
+        ProductByHandleQuery,
+        ProductRecommendationsQuery,
+        ProductsQuery,
+        RemoveCartLinesMutation
 } from './graphql';
+import { config } from './publicConfig';
+import { CartResult, ProductResult } from './schemas';
 
 // Make a request to Shopify's GraphQL API  and return the data object from the response body as JSON data.
 const makeShopifyRequest = async (
 	query: string,
 	variables: Record<string, unknown> = {},
-	buyerIP: string = ''
+	buyerIP = ''
 ) => {
 	const isSSR = false;
 	const apiUrl = `https://${config.shopifyShop}/api/${config.apiVersion}/graphql.json`;
@@ -155,6 +155,8 @@ export const removeCartLines = async (id: string, lineIds: string[]) => {
 
 	return parsedCart;
 };
+
+
 
 // Get a cart by its ID and return the cart object
 export const getCart = async (id: string) => {

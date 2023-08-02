@@ -57,8 +57,9 @@
 					02
 				</span>
 			</div>
-			<div
+			<h1
 				class="
+                                        font-comsat-navy
 					relative flex justify-between
 					-mt-[25.5rem] md:-mt-[38.5rem] lg:-mt-[51rem]
 					uppercase
@@ -90,7 +91,7 @@
 					</h1>
 				</div>
 				<div class="grow -ml-4 -mr-96 h-2 md:h-[0.65rem] lg:h-[0.9rem] bg-white" />
-			</div>
+			</h1>
 			<ul
 				class="z-50 container hidden md:flex justify-end gap-12 mt-36 lg:mt-48 [&>li]:w-48 list-none"
 			>

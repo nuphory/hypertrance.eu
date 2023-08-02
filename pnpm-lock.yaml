@@ -24,7 +24,7 @@ devDependencies:
     version: 6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui-editor@6.14.0)(@babylonjs/gui@6.14.0)(@babylonjs/loaders@6.14.0)(@babylonjs/materials@6.14.0)(@babylonjs/serializers@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.18)
   '@babylonjs/loaders':
     specifier: ^6.14.0
-    version: 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1)
+    version: 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.2)
   '@babylonjs/materials':
     specifier: ^6.14.0
     version: 6.14.0(@babylonjs/core@6.14.0)
@@ -33,7 +33,7 @@ devDependencies:
     version: 6.14.0(@babylonjs/core@6.14.0)
   '@babylonjs/serializers':
     specifier: ^6.14.0
-    version: 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1)
+    version: 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.2)
   '@euterpe.js/euterpe':
     specifier: ^1.0.11
     version: 1.0.11(@euterpe.js/music-library@1.0.10)(@euterpe.js/player@1.0.6)(tslib@2.6.1)
@@ -52,6 +52,9 @@ devDependencies:
   '@fontsource/inter':
     specifier: ^4.5.15
     version: 4.5.15
+  '@fontsource/michroma':
+    specifier: ^5.0.5
+    version: 5.0.5
   '@fontsource/montserrat':
     specifier: ^4.5.14
     version: 4.5.14
@@ -152,8 +155,8 @@ devDependencies:
     specifier: ^10.0.4
     version: 10.0.4
   tailwind-perspective:
-    specifier: 1.0.0-8
-    version: 1.0.0-8(tailwindcss@3.3.3)
+    specifier: 1.0.2
+    version: 1.0.2(tailwindcss@3.3.3)
   tailwindcss:
     specifier: ^3.3.3
     version: 3.3.3
@@ -232,9 +235,9 @@ packages:
       '@babylonjs/core': 6.14.0
       '@babylonjs/gui': 6.14.0(@babylonjs/core@6.14.0)
       '@babylonjs/gui-editor': 6.14.0(@babylonjs/core@6.14.0)(@babylonjs/gui@6.14.0)(@types/react-dom@18.2.7)(@types/react@18.2.18)
-      '@babylonjs/loaders': 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1)
+      '@babylonjs/loaders': 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.2)
       '@babylonjs/materials': 6.14.0(@babylonjs/core@6.14.0)
-      '@babylonjs/serializers': 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1)
+      '@babylonjs/serializers': 6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.2)
       '@fortawesome/fontawesome-svg-core': 6.4.0
       '@fortawesome/free-regular-svg-icons': 6.4.0
       '@fortawesome/free-solid-svg-icons': 6.4.0
@@ -242,14 +245,14 @@ packages:
       '@types/react-dom': 18.2.7
     dev: true
 
-  /@babylonjs/loaders@6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1):
+  /@babylonjs/loaders@6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.2):
     resolution: {integrity: sha512-rGDMuyHEphpOHBO4JtY0vNIri2VMAmwUw3UmDJ+C00erQpiQDXyzG3IkJpXDHt7mWOJZNASRJjC76bPDu9zarg==}
     peerDependencies:
       '@babylonjs/core': ^6.0.0
       babylonjs-gltf2interface: ^6.0.0
     dependencies:
       '@babylonjs/core': 6.14.0
-      babylonjs-gltf2interface: 6.14.1
+      babylonjs-gltf2interface: 6.14.2
     dev: true
 
   /@babylonjs/materials@6.14.0(@babylonjs/core@6.14.0):
@@ -268,14 +271,14 @@ packages:
       '@babylonjs/core': 6.14.0
     dev: true
 
-  /@babylonjs/serializers@6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.1):
+  /@babylonjs/serializers@6.14.0(@babylonjs/core@6.14.0)(babylonjs-gltf2interface@6.14.2):
     resolution: {integrity: sha512-qJ1TDvzMeW0SLFJGa4Mo3LqEqtv16rUy6co6fMMlM6f+FG78gUhHR2lgxKbdBesXfrwj8keKqwKcqgrBQAtJUw==}
     peerDependencies:
       '@babylonjs/core': ^6.0.0
       babylonjs-gltf2interface: ^6.0.0
     dependencies:
       '@babylonjs/core': 6.14.0
-      babylonjs-gltf2interface: 6.14.1
+      babylonjs-gltf2interface: 6.14.2
     dev: true
 
   /@cloudflare/workers-types@4.20230724.0:
@@ -555,6 +558,10 @@ packages:
 
   /@fontsource/inter@4.5.15:
     resolution: {integrity: sha512-FzleM9AxZQK2nqsTDtBiY0PMEVWvnKnuu2i09+p6DHvrHsuucoV2j0tmw+kAT3L4hvsLdAIDv6MdGehsPIdT+Q==}
+    dev: true
+
+  /@fontsource/michroma@5.0.5:
+    resolution: {integrity: sha512-6yEM7ZqI6dm/H4qvp+W2KnbFXsRYz9NWiF7uCdazBOiqjhgtcl8PSoLBaGW2P12h8hyB/P+AIuViTyuY6GTtBw==}
     dev: true
 
   /@fontsource/montserrat@4.5.14:
@@ -1104,8 +1111,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /babylonjs-gltf2interface@6.14.1:
-    resolution: {integrity: sha512-CRINx68GFDdtwBbX7RoNBUsnN6puI3EJ6faAgsSkXiECXQREssMEbNzeOhIjCCv3L5YtteopbnC38DdOR1gJkA==}
+  /babylonjs-gltf2interface@6.14.2:
+    resolution: {integrity: sha512-WL/7ChhtLpF48SynjD0IhUSyHR5AgmQRylQ8wccvtznKqKfR9N+mHaeUt/o/LSrv1TgGHB0KTXiM0rQfDutEbw==}
     dev: true
 
   /balanced-match@1.0.2:
@@ -2712,8 +2719,8 @@ packages:
     engines: {node: '>= 4.7.0'}
     dev: true
 
-  /tailwind-perspective@1.0.0-8(tailwindcss@3.3.3):
-    resolution: {integrity: sha512-UMBDwIPtCcqkkNELpjD2b00aac8PlQidRivO9uutc9hBhHa1eKDZw83GDiVqb3/1Fx+SxEkck7g1sHcp1e4dig==}
+  /tailwind-perspective@1.0.2(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-JJwDks+Txoox0zCCiqVLUKw9kqIXxkcrTA+Im28fju33IjX9DnKII6n3IE7XNGM1ixjqA2aM4pH3UF7JYIrNZg==}
     peerDependencies:
       tailwindcss: '>=3.2.0'
     dependencies:

@@ -6,7 +6,6 @@
 	import { db } from '$lib/scripts/music/db';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import '$lib/styles/promo/promo1.scss';
 	import { browser } from '$app/environment';
 	import Video from './Video.svelte';
 
@@ -59,72 +58,93 @@
 	});
 </script>
 
-<div id="wrapper">
-	<main class="font-michroma text-content_base bg-bg_base">
-		<section class="w-full h-[110vh] relative text-content_inverse">
-			<div
-				class=" z-10 absolute right-[15vw] bottom-[30vh] [transform:skewX(25deg)] bg-bg_side pl-4"
-			>
-				<div class="bg-bg_inverse [&>*]:[transform:skewX(-25deg)] py-4 px-20">
-					<div class="font-suissnord">
-						<h1 class="block text-4xl w-full -mb-2">HyPERTRANCE</h1>
-						<h1 class="pl-24 block text-4xl">SAMPLEPACK</h1>
-					</div>
-					<span class="font-sussnord text-2xl flex justify-between">
-						<div
-							class="bg-bg_base [&>*]:[transform:skewX(-25deg)] [transform:skewX(25deg)] text-content_emphasis py-1 px-8 m-2"
+<main id="landing-page" class="font-michroma text-primary bg-primary">
+	<section class="w-full h-[110vh] relative text-bg-primary">
+		<div
+			class="w-full h-full [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_70%,rgba(0,0,0,0)_100%)]"
+		>
+			<div class="h-full overflow-hidden">
+				<Video autoplay={true} loop={true} muted={true} src_set={bg_video_sources} />
+			</div>
+			<img
+				class="h-full absolute left-0 top-0"
+				hidden={hide_bg_img}
+				src="/assets/img/first_frame.webp"
+				alt="3D loading alternative"
+			/>
+			<canvas class="w-full h-full absolute left-0 top-0" bind:this={canvas} />
+		</div>
+		<div class="z-10 absolute right-[15vw] bottom-[30vh] skew-x-[25deg] bg-primary-side pl-4">
+			<div class="bg-text-primary text-black [&>*]:-skew-x-[25deg] py-4 px-20">
+				<h1 class="before:content-['']">
+					<span class="block text-4xl w-full -mb-2">HyPERTRANCE</span>
+					<span class="pl-24 block text-4xl">SAMPLEPACK</span>
+				</h1>
+
+				<div class="text-2xl flex justify-between">
+					<div class="bg-primary skew-x-[25deg] py-1 px-8 m-2">
+						<a
+                                                        data-sveltekit-reload 
+							class="-skew-x-[25deg] before:content-['>_']"
+							href="/app/store/product/hypertrance-samplepack">buy now</a
 						>
-							<a class="before:content-['>_'] block" href="store/product/hypertrance-sample-pack-01"
-								>buy now</a
-							>
-						</div>
-						<a href="#about" class="block button-neutral py-1 px-2 m-2">learn more</a>
-					</span>
+					</div>
+					<a
+						href="#about"
+						class="block text-bg-primary hover:text-black active:text-black py-1 px-2 m-2"
+						>learn more</a
+					>
 				</div>
 			</div>
+		</div>
+	</section>
+	<section id="about" class="grid grid-cols-1 grid-rows-4 bg-primary">
+		{#each db.collections as collection, i}
 			<div
-				class="w-full h-full [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_70%,rgba(0,0,0,0)_100%)]"
+				class="w-full h-full p-12 py-6 grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-6 relative"
 			>
-				<div class="h-full overflow-hidden">
-					<Video autoplay={true} loop={true} muted={true} src_set={bg_video_sources} />
-				</div>
-				<img
-					class="h-full absolute left-0 top-0"
-					hidden={hide_bg_img}
-					src="/assets/img/first_frame.webp"
-					alt="3D loading alternative"
-				/>
-				<canvas class="w-full h-full absolute left-0 top-0" bind:this={canvas} />
-			</div>
-		</section>
-		<section id="about" class="grid grid-cols-1 grid-rows-4 bg-bg_base">
-			{#each db.collections as collection, i}
-				<div
-					class="w-full h-full p-12 py-6 grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-6 relative"
-				>
-					{#if i % 2 == 0}
-						<div class="w-full h-full bg-bg_inverse" />
-					{/if}
-					<div class="w-full h-full bg-bg_island p-6">
-						<h3
-							class="bg-bg_inverse block text-5xl text-content_inverse -mx-6 -ml-8 pl-14 mt-3 py-1 font-suissnord before:content-['>_']"
-						>
-							{collection.name}
-						</h3>
-						<p class="mt-6 py-4 mx-8">
-							{collection.metadata[0]}
-						</p>
-						<div class="mt-6 grid grid-cols-1 gap-2">
-							{#each collection.songs.slice(0, 4) as song}
-								<Sample {is_playing} {player} {playing_song_id} song={song.get(db)} />
-							{/each}
-						</div>
+				{#if i % 2 == 0}
+					<div class="w-full h-full bg-text-primary" />
+				{/if}
+				<div class="w-full h-full bg-primary-island p-6">
+					<h2
+						class="bg-text-primary block text-5xl text-bg-primary -mx-6 -ml-8 pl-14 mt-3 py-1 font-suissnord"
+					>
+						{collection.name}
+					</h2>
+					<p class="mt-6 py-4 mx-8">
+						{collection.metadata[0]}
+					</p>
+					<div class="mt-6 grid grid-cols-1 gap-2">
+						{#each collection.songs.slice(0, 4) as song}
+							<Sample {is_playing} {player} {playing_song_id} song={song.get(db)} />
+						{/each}
 					</div>
-					{#if i % 2 != 0}
-						<div class="w-full h-full bg-bg_inverse" />
-					{/if}
 				</div>
-			{/each}
-		</section>
-	</main>
-</div>
+				{#if i % 2 != 0}
+					<div class="w-full h-full bg-text-primary" />
+				{/if}
+			</div>
+		{/each}
+	</section>
+</main>
+
+<style lang="scss">
+        :global(html) {
+                font-size: calc(0.6rem + 0.3vw);
+        }
+
+	:global(:root) {
+		--clip-time-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
+		--color-content-emphasis: #fff;
+		--color-content-base: #cae1ee;
+		--color-content-inverse: #000;
+
+		--color-bg-emphasis: #19336f;
+		--color-bg-base: #12131a;
+		--color-bg-inverse: #cae1ee;
+		--color-bg-side: #061327;
+		--color-bg-island: #272a3c;
+	}
+</style>

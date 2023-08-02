@@ -155,6 +155,21 @@ export const AddCartLinesMutation = `#graphql
   ${CART_FRAGMENT}
 `;
 
+export const UpdateCartLinesMutation = `#graphql
+  mutation ($cartId: ID!, $lineId: ID!, $quantity: Int!) {
+    cartLinesUpdate (cartId: $cartId, lines: [{ id: $lineId, quantity: $quantity }]) {
+      cart {
+        ...cartFragment
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+  ${CART_FRAGMENT}
+`;
+
 export const RemoveCartLinesMutation = `#graphql
   mutation ($cartId: ID!, $lineIds: [ID!]!) {
     cartLinesRemove (cartId: $cartId, lineIds: $lineIds) {

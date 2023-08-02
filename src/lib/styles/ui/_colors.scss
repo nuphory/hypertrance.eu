@@ -1,0 +1,23 @@
+@use 'sass:color';
+@use '$lib/styles/ui/themes' as *;
+
+html {
+	&[data-theme='dark'] {
+		.invert-colors {
+			@include light-theme;
+		}
+	}
+
+	&[data-theme='light'] {
+		.invert-colors {
+			@include dark-theme;
+		}
+	}
+
+	a {
+		@apply text-link-neutral;
+
+		@apply hover:text-link-neutral-hover;
+		@apply active:text-link-neutral-active;
+	}
+}

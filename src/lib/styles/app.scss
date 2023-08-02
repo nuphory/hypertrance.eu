@@ -1,6 +1,6 @@
-@use '$lib/styles/ui/base/themes';
-@use '$lib/styles/ui/base/typography';
-@use '$lib/styles/ui/base/colors';
+@use '$lib/styles/ui/themes';
+@use '$lib/styles/ui/typography';
+@use '$lib/styles/ui/colors';
 
 @tailwind base;
 @tailwind components;
@@ -24,41 +24,11 @@ html {
 	scroll-behavior: smooth;
 
 	body {
-		@apply bg-neutral text-neutral;
+		@apply bg-primary text-neutral;
 
 		main {
-			@apply perspective-40 perspective-origin-top;
-			@apply w-full;
-			@apply overflow-x-clip overflow-y-scroll;
-			@apply @container;
-
-			height: calc(100vh - 5rem);
-			height: calc(100dvh - 5rem);
-
-			section {
-				@apply relative;
-
-				@apply transform-style-3d;
-
-				&:not(:first-of-type) {
-					@apply py-8;
-					@apply backdrop-blur bg-black/50;
-					&:not(:last-of-type) {
-						@apply mb-8;
-					}
-				}
-
-				// section {
-				// 	@apply relative;
-				// 	@apply mb-8 py-8 px-8;
-
-				// 	@apply flex flex-col justify-between;
-				// 	@apply backdrop-blur bg-black/50;
-				// }
-			}
 			button {
 				@apply transition-quick duration-default ease-out;
-				@apply relative p-4 px-4 2xs:px-8;
 				@apply pointer-events-auto;
 			}
 			h1,
@@ -74,20 +44,12 @@ html {
 				@apply transition-quick duration-default ease-out;
 				@apply pointer-events-auto;
 
-				&:not(.reset) {
-					&:hover {
-						@apply -translate-y-px;
-					}
-					&:active {
-						@apply translate-y-px;
-					}
-				}
-			}
-		}
+				@apply hover:-translate-y-px;
+				@apply active:translate-y-px;
 
-		a {
-			&[disabled] {
-				@apply cursor-not-allowed hover:no-underline;
+				&[disabled] {
+					@apply pointer-events-none;
+				}
 			}
 		}
 	}
