@@ -58,7 +58,7 @@
 	</ul>
 
 	<button
-		class="w-full button-neutral mt-8"
+		class="hyper-button w-full button-neutral mt-8"
 		on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
 		on:auxclick={() => window.open('http://discord.gg/673AfPB', '_blank')}
 	>

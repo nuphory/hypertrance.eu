@@ -5,7 +5,7 @@
 	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
 	import { db } from '$lib/scripts/music/db';
 	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 	import Video from './Video.svelte';
 

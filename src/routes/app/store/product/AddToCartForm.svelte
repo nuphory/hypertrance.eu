@@ -27,7 +27,7 @@
 	<div class:hidden={!trackQuantity} class="max-lg:w-full pointer-events-none opacity-50">
 		<label for="quantity">QTY</label>
 		<div class="flex w-full">
-			<button class="pointer-events-none button-neutral aspect-square w-14 p-3" on:click={() => quantity--}>-</button>
+			<button class="hyper-button pointer-events-none button-neutral aspect-square w-14 p-3" on:click={() => quantity--}>-</button>
 			<input
 				id="quantity"
 				name="quantity"
@@ -35,10 +35,10 @@
 				type="number"
 				bind:value={quantity}
 			/>
-			<button class="pointer-events-none button-neutral aspect-square w-14 p-4" on:click={() => quantity++}>+</button>
+			<button class="hyper-button pointer-events-none button-neutral aspect-square w-14 p-4" on:click={() => quantity++}>+</button>
 		</div>
 	</div>
-	<button class="button-primary w-full lg:w-max" type="submit" disabled={$isCartUpdating}>
+	<button class="hyper-button button-primary w-full lg:w-max" type="submit" disabled={$isCartUpdating}>
 		<CartIcon
 			class="inline-block transition-[fill,margin] duration-[var(--duration)] ease-out aspect-square h-[1.25em] mr-2 opacity-100"
 		/> purchase

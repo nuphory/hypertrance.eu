@@ -97,7 +97,7 @@
 			>
 				<li class="order-2 mr-5">
 					<button
-						class="w-full backdrop-blur shadow-lg button-primary"
+						class="hyper-button w-full backdrop-blur shadow-lg button-primary"
 						on:click={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 						on:auxclick={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 					>
@@ -112,7 +112,7 @@
 				</li>
 				<li class="order-1">
 					<button
-						class="w-full backdrop-blur shadow-lg button-neutral"
+						class="hyper-button w-full backdrop-blur shadow-lg button-neutral"
 						on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
 						on:auxclick={() => window.open('http://discord.gg/673AfPB', '_blank')}
 					>

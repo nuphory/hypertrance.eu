@@ -71,7 +71,7 @@
 		<ul class="container flex justify-evenly items-start gap-8 list-none">
 			<li class="flex-1 order-2">
 				<button
-					class="w-full backdrop-blur shadow-lg button-primary"
+					class="hyper-button w-full backdrop-blur shadow-lg button-primary"
 					on:click={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 					on:auxclick={() => window.open('http://hypertrance.bandcamp.com', '_blank')}
 				>
@@ -84,7 +84,7 @@
 			</li>
 			<li class="flex-1 order-1">
 				<button
-					class="w-full backdrop-blur shadow-lg button-neutral"
+					class="hyper-button w-full backdrop-blur shadow-lg button-neutral"
 					on:click={() => window.open('http://discord.gg/673AfPB', '_blank')}
 					on:auxclick={() => window.open('http://discord.gg/673AfPB', '_blank')}
 				>

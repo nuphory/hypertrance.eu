@@ -15,6 +15,8 @@
 
 	let tagline = descSplit[0];
 	let description = descSplit.slice(1).join('\n');
+
+	console.log(product);
 </script>
 
 <main class="">
@@ -23,7 +25,7 @@
 			<button
 				data-sveltekit-reload
 				on:click={() => history.back()}
-				class="button-neutral hover:skew-x-[25deg] [&>*]:hover:-skew-x-[25deg] active:skew-x-[25deg] [&>*]:active:-skew-x-[25deg]"
+				class="hyper-button button-neutral hover:skew-x-[25deg] [&>*]:hover:-skew-x-[25deg] active:skew-x-[25deg] [&>*]:active:-skew-x-[25deg]"
 			>
 				<span class="inline-block before:content-['<_']"> &nbsp; back</span>
 			</button>
@@ -32,7 +34,7 @@
 			<div
 				class="mx-3 md:m-0 md:aspect-square flex-1 flex flex-row md:flex-col gap-3 overflow-scroll md:overflow-visible"
 			>
-				{#if product.images.nodes.length > 0 && product.images.nodes[0] !== null}
+				{#if product.images.nodes.length >= 2}
 					{#each product.images.nodes as image}
 						{#if image !== null}
 							<ShopifyImage
@@ -43,6 +45,19 @@
 							/>
 						{/if}
 					{/each}
+				{:else if product.images.nodes.length === 1}
+					<ShopifyImage
+						class="w-full aspect-square object-cover object-center"
+						image={product.images.nodes[0]}
+						sizes="(min-width: 1000px) 1000px"
+						loading="lazy"
+					/>
+				{:else}
+					<div
+						class="flex items-center justify-center p-4 w-full aspect-square font-michroma bg-text-primary text-bg-primary"
+					>
+						No preview available.
+					</div>
 				{/if}
 			</div>
 

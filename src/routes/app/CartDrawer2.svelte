@@ -191,7 +191,7 @@
 								<button
 									on:click={() => goto($cart.checkoutUrl)}
 									type="button"
-									class=" button-primary overflow-clip"
+									class="hyper-button button-primary overflow-clip"
 								>
 									<!-- Heroicon name: outline/x-mark -->
 									Checkout

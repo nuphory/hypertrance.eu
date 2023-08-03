@@ -51,7 +51,7 @@
 				<h2 class="before:content-['']">Cart</h2>
 				<button
 					on:click={closeCartDrawer}
-					class="button-neutral flex items-center justify-center h-12 aspect-square font-suissnord"
+					class="hyper-button button-neutral flex items-center justify-center h-12 aspect-square font-suissnord"
 					><span>X</span></button
 				>
 			</div>
@@ -81,7 +81,7 @@
 									<span>{item.quantity} x <Money price={item.cost.amountPerQuantity} showCurrency={true} /></span>
 									<!-- <div class="flex">
                                                                                 <button
-                                                                                        class="button-neutral flex items-center justify-center h-12 aspect-square font-suissnord"
+                                                                                        class="hyper-button button-neutral flex items-center justify-center h-12 aspect-square font-suissnord"
                                                                                         on:click={() => setQuantity(item.id, item.quantity--)}>-</button
                                                                                 >
                                                                                 <input
@@ -92,7 +92,7 @@
                                                                                         value={item.quantity}
                                                                                 />
                                                                                 <button
-                                                                                        class="button-neutral flex items-center justify-center h-12 aspect-square font-suissnord"
+                                                                                        class="hyper-button button-neutral flex items-center justify-center h-12 aspect-square font-suissnord"
                                                                                         on:click={() => setQuantity(item.id, item.quantity++)}>+</button
                                                                                 >
                                                                         </div> -->
@@ -103,7 +103,7 @@
 											if ($isCartUpdating) return;
 											removeItem(item.id);
 										}}
-										class="button-neutral flex w-full items-center justify-center font-suissnord"
+										class="hyper-button button-neutral flex w-full items-center justify-center font-suissnord"
 									>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +150,7 @@
 											if ($isCartUpdating) return;
 											removeItem(item.id);
 										}}
-										class="button-neutral flex items-center justify-center h-12 aspect-square font-suissnord"
+										class="hyper-button button-neutral flex items-center justify-center h-12 aspect-square font-suissnord"
 									>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +201,7 @@
 			<button
 				on:click={() => goto($cart.checkoutUrl)}
 				type="button"
-				class="transition-quick button-primary overflow-clip"
+				class="hyper-button transition-quick button-primary overflow-clip"
 			>
 				<!-- Heroicon name: outline/x-mark -->
 				Checkout

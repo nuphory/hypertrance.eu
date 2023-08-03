@@ -23,7 +23,7 @@
 			<button
 				data-sveltekit-reload
 				on:click={() => (window.location.href = '/')}
-				class="button-neutral hover:skew-x-[25deg] [&>*]:hover:-skew-x-[25deg] active:skew-x-[25deg] [&>*]:active:-skew-x-[25deg]"
+				class="hyper-button button-neutral hover:skew-x-[25deg] [&>*]:hover:-skew-x-[25deg] active:skew-x-[25deg] [&>*]:active:-skew-x-[25deg]"
 				><span class="inline-block before:content-['<_']"> &nbsp; back to front page</span></button
 			>
 		</div>

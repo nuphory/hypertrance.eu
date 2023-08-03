@@ -14,13 +14,13 @@
 
 		<div>
 			<button
-				class="button-neutral aspect-square disabled:opacity-50 disabled:pointer-events-none"
+				class="hyper-button button-neutral aspect-square disabled:opacity-50 disabled:pointer-events-none"
 				on:click={() => quantity--}
 				disabled={quantity <= 1}>-</button
 			>
 			<input class="bg-neutral aspect-square w-8" type="number" bind:value={quantity} min="1" />
-			<button class="button-neutral aspect-square" on:click={() => quantity++}> + </button>
+			<button class="hyper-button button-neutral aspect-square" on:click={() => quantity++}> + </button>
 		</div>
 	</div>
-	<button class="button-primary flex-1">add to cart</button>
+	<button class="hyper-button button-primary flex-1">add to cart</button>
 </div>
