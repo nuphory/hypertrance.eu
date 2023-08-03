@@ -139,14 +139,17 @@
 						>
 					</div> -->
 					<a
-						href="#about"
+						href="/app/store/product/hypertrance-samplepack"
+                                                data-sveltekit-reload
 						class="block text-bg-primary hover:text-black active:text-black py-1 px-2 m-2"
 						>learn more</a
 					>
 				</div>
 
 			</div>
+                        <a href="#about" class="block text-4xl -mb-7 py-4 text-center font-suissnord "><span class="inline-block -skew-x-[25deg]">🢗</span></a>
 		</div>
+                
 	</section>
 	<section id="about" class="grid grid-cols-1 grid-rows-4 bg-primary">
 		{#each db.collections as collection, i}
