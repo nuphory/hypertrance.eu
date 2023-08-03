@@ -24,6 +24,17 @@ button.hyper-button {
 		--button-text-hover: var(--button-text-primary-hover);
 		--button-text-active: var(--button-text-primary-active);
 	}
+	&.button-primary-inverse {
+		--blend-mode: normal;
+		// --button-background-main: var(--button-background-neutral);
+		--button-background-main: var(--button-background-primary);
+		// --button-border-main: var(--button-background-neutral);
+		--button-border-main: var(--button-background-primary);
+		// --button-text-main: var(--button-text-neutral);
+		--button-text-main: var(--button-background-primary);
+		--button-text-hover: var(--button-background-primary-hover);
+		--button-text-active: var(--button-background-primary-active);
+	}
 	&.button-secondary {
 		--blend-mode: normal;
 		// --button-background-main: var(--button-background-neutral);
