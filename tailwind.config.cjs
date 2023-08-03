@@ -330,4 +330,4 @@ module.exports = {
 		require('@tailwindcss/container-queries'),
 		require('@tailwindcss/line-clamp')
 	]
-};
+}
