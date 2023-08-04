@@ -68,11 +68,13 @@
 	<Volume {player} />
 	<section class="w-full h-[110vh] relative text-bg-primary">
 		<THREED />
-		<div class="z-10 absolute right-[15vw] bottom-[30vh] skew-x-[25deg] bg-primary-side pl-4">
+		<div
+			class="z-10 absolute w-full md:w-auto right-0 bottom-[30vh] md:right-[15vw] md:bottom-[30vh] md:skew-x-[25deg] bg-primary-side md:pl-4"
+		>
 			<div
-				class="flex flex-col bg-text-primary text-black [&>*]:-skew-x-[25deg] px-20 py-4 pb-8 gap-8"
+				class="flex flex-col bg-text-primary text-black md:[&>*]:-skew-x-[25deg] px-20 py-4 pb-8 gap-8"
 			>
-				<h1 class="before:content-[''] -mb-3">
+				<h1 class="before:content-[''] mx-auto md:-mb-3">
 					<span class="block text-4xl w-full -mb-2">HyPERTRANCE</span>
 					<span class="pl-24 block text-4xl">SAMPLEPACK</span>
 				</h1>
@@ -123,7 +125,7 @@
 		</div>
 	</section>
 	<section id="about" class="">
-		<div class="grid grid-cols-2 gap-2 px-12">
+		<div class="grid grid-cols-1 gap-2 px-12">
 			{#each demos.songs as song, i}
 				<Sample {is_playing} {player} {playing_song_id} song={song.get(db)} />
 			{/each}

@@ -6,15 +6,18 @@ import {
 	Color4,
 	Vector3,
 	DefaultRenderingPipeline,
-	Effect,
-	PostProcess,
-	Texture,
-	type ILoadingScreen
+	// Effect,
+	// PostProcess,
+	// Texture,
+	type ILoadingScreen,
+	SceneOptimizer,
+	SceneOptimizerOptions,
+	HardwareScalingOptimization
 } from '@babylonjs/core'
 // import { Inspector } from "@babylonjs/inspector"
 import { fresnel_material } from './fresnel_mat';
 import Stats from 'stats-js';
-import { distort_frag } from './frag_bg_distort_postfx';
+// import { distort_frag } from './frag_bg_distort_postfx';
 import '@babylonjs/loaders/glTF';
 
 import obj from "$lib/assets/obj/cinema-compressed.glb";
@@ -32,8 +35,9 @@ export default class THREED {
 	mouse_y = 0
 	mouse_x = 0
 	rotation_speed = 0
+	optimizer: SceneOptimizer
 	constructor(canvas: HTMLCanvasElement, public on_loading?: () => void, public on_loaded?: () => void) {
-		this.engine = new Engine(canvas)
+		this.engine = new Engine(canvas, false, { doNotHandleTouchAction: true }, true)
 		this.scene = new Scene(this.engine)
 		this.canvas = canvas
 		this.stats = new Stats()
@@ -45,6 +49,12 @@ export default class THREED {
 			this.engine.resize()
 		})
 		this.engine.loadingScreen = new CustomLoading(on_loading, on_loaded)
+		let target_fps
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) target_fps = 60
+		// if (target_fps) alert("Phone!")
+		const optimizer_opts = new SceneOptimizerOptions(target_fps, 500)
+		optimizer_opts.addOptimization(new HardwareScalingOptimization(0, 1.5))
+		this.optimizer = new SceneOptimizer(this.scene, optimizer_opts)
 		this.engine.displayLoadingUI()
 		this.init()
 	}
@@ -83,29 +93,34 @@ export default class THREED {
 	}
 
 	animate() {
-		this.stats.begin()
-
-		//mouse stuff
-		this.frames_count++
-		if (this.rotation_speed <= 0.0035) this.rotation_speed += 0.00001
-		const rotation_offset = new Vector3(
-			this.mouse_x * -0.00007,
-			this.mouse_y * -0.00005,
-			// 0,0,
-			this.frames_count * this.rotation_speed
-		)
-		this.camera_pivot.rotation.copyFrom(this.pivot_init_rotation.add(rotation_offset))
-		//scroll stuff
-		const scroll_offset = new Vector3(0, -document.documentElement.scrollTop / 2, 0)
-		this.camera.position.copyFrom(this.camera_init_rotation.add(scroll_offset))
-		this.scene.render()
-		this.stats.end()
-		this.engine.hideLoadingUI()
-		requestAnimationFrame(this.animate.bind(this))
-		this.stats.update()
+		this.optimizer.start()
+		this.optimizer.onNewOptimizationAppliedObservable.add((optim) => {
+			console.log(optim.getDescription())
+		})
+		this.engine.runRenderLoop(() => {
+			this.stats.begin()
+			//mouse stuff
+			this.frames_count++
+			if (this.rotation_speed <= 0.0035) this.rotation_speed += 0.00001
+			const rotation_offset = new Vector3(
+				this.mouse_x * -0.00007,
+				this.mouse_y * -0.00005,
+				// 0,0,
+				this.frames_count * this.rotation_speed
+			)
+			this.camera_pivot.rotation.copyFrom(this.pivot_init_rotation.add(rotation_offset))
+			//scroll stuff
+			const scroll_offset = new Vector3(0, -document.documentElement.scrollTop / 2, 0)
+			this.camera.position.copyFrom(this.camera_init_rotation.add(scroll_offset))
+			this.scene.render()
+			this.stats.end()
+			this.engine.hideLoadingUI()
+			// requestAnimationFrame(this.animate.bind(this))
+			this.stats.update()
+		})
 	}
-	create_pipeline() {
 
+	create_pipeline() {
 		const default_pipeline = new DefaultRenderingPipeline(
 			'DefaultPipe',
 			false,

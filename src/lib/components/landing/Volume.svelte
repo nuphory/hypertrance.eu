@@ -6,8 +6,8 @@
 </script>
 
 <div
-	class="fixed right-24 bottom-24 w-16 h-16 bg-text-primary z-10 rounded-full p-2
-    flex flex-col justify-between [transition-duration:_100ms] hover:brightness-75 transition-all
+	class=" hidden md:flex fixed right-24 bottom-24 w-16 h-16 bg-text-primary z-10 rounded-full p-2
+    flex-col justify-between [transition-duration:_100ms] hover:brightness-75 transition-all
     {is_hiding
 		? 'h-16 hover:scale-90 active:scale-105 active:brightness-105 shadow-[var(--color-bg-side)] shadow-[0_0_3rem_5px]'
 		: 'h-[20rem]'}
