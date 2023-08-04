@@ -29,7 +29,6 @@
 		player.try_seek_async(seek_percent * song.duration!).catch((r) => alert(r));
 	}
 	async function play() {
-		debugger;
 		player.try_specific_song_async(song.id!).then(
 			() => {
 				am_i_playing = true;
