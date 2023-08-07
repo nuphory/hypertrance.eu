@@ -33,9 +33,9 @@
 	onMount(() => {
 		if (browser) {
 			const audio = document.createElement('audio');
-			db.songs.forEach((s) => (s.url = new URL(s.url.href.replace('.ogg', '.mp3'))));
-			// if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
-			// }
+			if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+				db.songs.forEach((s) => (s.url = new URL(s.url.href.replace('.ogg', '.mp3'))));
+			}
 			player = new EuterpeBuilder(audio, db, { use_only_pathname_url: true }).build();
 			document.body.appendChild(audio);
 
