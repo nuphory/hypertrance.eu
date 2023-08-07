@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { Icon, ArrowUp } from 'svelte-hero-icons';
 	import THREED from '$lib/components/landing/THREED.svelte';
 	import { browser } from '$app/environment';
-	import { page } from '$app/stores';
 	import { db } from '$lib/scripts/music/db';
 	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
@@ -9,8 +9,17 @@
 	import Volume from '$lib/components/landing/Volume.svelte';
 	import Stats from '$lib/components/landing/Stats.svelte';
 	import Hero from '$lib/components/landing/Hero.svelte';
+	import { createCart } from '$src/lib/utils/shopify';
+	import { goto } from '$app/navigation';
 	export let data;
-
+	const { product } = data;
+	const selected_variant = product.variants.nodes[0];
+	async function direct_buy() {
+		if (!product) throw Error('Product not found');
+		const cart = await createCart(selected_variant.id, 1);
+		if (!cart) throw Error('Cart creation failed');
+		goto(cart.checkoutUrl);
+	}
 	//temp description
 	db.collections.forEach((col) => {
 		col.metadata[0] = `This is the placeholder text for the bass. It is not very long and it goes on for about two or three lines. Yes this is a text, and it will be used as an amazing text. text.`;
@@ -52,11 +61,11 @@
 
 <main id="landing-page" class="font-michroma text-primary bg-primary">
 	<Volume {player} />
-	<section id="about" class="w-full h-[110vh] relative text-bg-primary">
+	<section id="landing" class="w-full h-[110vh] relative text-bg-primary">
 		<THREED />
 		<Hero {data} />
 	</section>
-	<section class="my-4 px-24">
+	<section id="about" class="my-4 px-24">
 		<div class="grid grid-cols-1 gap-8 w-full">
 			<h2 class="text-5xl before:[content:''] text-center text-[var(--color-content-emphasis)]">
 				EXPERIENCE THE HyPE OR SMT
@@ -106,16 +115,36 @@
 			</div>
 		{/each}
 	</section>
-	<section>
+	<section class="mt-12">
 		<div class="w-fit h-fit mx-auto text-center">
-			<h3>Try it out</h3>
-			<div class="w-fit h-fit px-4 py-4 bg-[var(--color-bg-inverse)]">
-				<a class="text-[var(--color-content-inverse)]" href="https://mega.nz">demo samplepack.zip</a
-				>
-			</div>
+			<h3 class="text-5xl mb-12">Try it out</h3>
+			<a class="inline w-fit h-fit px-4 py-4 mr-8" href="https://mega.nz">demo samplepack.zip</a>
+			<button
+				class="inline px-4 py-4 ml-8 bg-[var(--color-bg-inverse)] text-[var(--color-content-inverse)]"
+				on:click={direct_buy}
+			>
+				<span class="inline-block text-2xl">buy now</span>
+			</button>
+		</div>
+		<div
+			class="float-right mr-24 bg-text-primary -mt-16 w-16 h-16 rounded-full p-2 transition-all hover:scale-90 active:scale-105 active:brightness-105
+			shadow-[var(--color-bg-side)] shadow-[0_0_3rem_5px] hover:brightness-75"
+		>
+			<a href="#landing">
+				<Icon
+					class="w-12 h-12 stroke-[var(--color-bg-side)] fill-[var(--color-bg-side)] "
+					src={ArrowUp}
+				/>
+			</a>
 		</div>
 	</section>
 </main>
+<footer
+	class="mt-24 w-full h-16 bg-[var(--color-bg-inverse)] text-[var(--color-content-inverse)] text-center pt-4"
+>
+	<p class="inline mx-12">© Hypertrance e.U.</p>
+	<a class="inline mx-12 text-[var(--color-content-inverse)]" href="store">Store</a>
+</footer>
 
 <style lang="scss">
 	:global(html) {
