@@ -1,14 +1,14 @@
 <script lang="ts">
-	import THREED from '../lib/components/landing/THREED.svelte';
+	import THREED from '$lib/components/landing/THREED.svelte';
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { db } from '$lib/scripts/music/db';
 	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
-	import Sample from '../lib/components/landing/Sample.svelte';
-	import Volume from '../lib/components/landing/Volume.svelte';
-	import Stats from '../lib/components/landing/Stats.svelte';
-	import Hero from '../lib/components/landing/Hero.svelte';
+	import Sample from '$lib/components/landing/Sample.svelte';
+	import Volume from '$lib/components/landing/Volume.svelte';
+	import Stats from '$lib/components/landing/Stats.svelte';
+	import Hero from '$lib/components/landing/Hero.svelte';
 	export let data;
 
 	//temp description
