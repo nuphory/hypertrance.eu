@@ -36,5 +36,5 @@
 		src="/assets/img/first_frame.webp"
 		alt="3D loading alternative"
 	/>
-	<canvas class="w-full h-full absolute left-0 top-0 touch-pan-x touch-pan-y" bind:this={canvas} />
+	<canvas id="iksdffgvbld" class="w-full h-full absolute left-0 top-0" bind:this={canvas} />
 </div>

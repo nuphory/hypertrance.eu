@@ -16,23 +16,18 @@
 		col.metadata[0] = `This is the placeholder text for the bass. It is not very long and it goes on for about two or three lines. Yes this is a text, and it will be used as an amazing text. text.`;
 	});
 
-	db.songs.forEach((song) => {
-		song.url = new URL(`${$page.url.origin}/${song.url.pathname}`);
-	});
-
 	let player: Euterpe;
 	let is_playing: boolean;
 	let playing_song_id: number;
 	const collections = db.collections.filter((c) => c.name != 'demos');
 	const demos = db.collections.find((c) => c.name == 'demos')!;
-	const demos_songs = demos.songs;
 	onMount(() => {
 		if (browser) {
 			const audio = document.createElement('audio');
 			db.songs.forEach((s) => (s.url = new URL(s.url.href.replace('.ogg', '.mp3'))));
 			// if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
 			// }
-			player = new EuterpeBuilder(audio, db).build();
+			player = new EuterpeBuilder(audio, db, { use_only_pathname_url: true }).build();
 			document.body.appendChild(audio);
 
 			audio.addEventListener('pause', () => {
@@ -110,6 +105,15 @@
 				{/if}
 			</div>
 		{/each}
+	</section>
+	<section>
+		<div class="w-fit h-fit mx-auto text-center">
+			<h3>Try it out</h3>
+			<div class="w-fit h-fit px-4 py-4 bg-[var(--color-bg-inverse)]">
+				<a class="text-[var(--color-content-inverse)]" href="https://mega.nz">demo samplepack.zip</a
+				>
+			</div>
+		</div>
 	</section>
 </main>
 

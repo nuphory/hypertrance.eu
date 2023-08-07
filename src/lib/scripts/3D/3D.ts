@@ -12,7 +12,8 @@ import {
 	type ILoadingScreen,
 	SceneOptimizer,
 	SceneOptimizerOptions,
-	HardwareScalingOptimization
+	HardwareScalingOptimization,
+	Tools
 } from '@babylonjs/core'
 // import { Inspector } from "@babylonjs/inspector"
 import { fresnel_material } from './fresnel_mat';
@@ -37,7 +38,7 @@ export default class THREED {
 	rotation_speed = 0
 	optimizer: SceneOptimizer
 	constructor(canvas: HTMLCanvasElement, public on_loading?: () => void, public on_loaded?: () => void) {
-		this.engine = new Engine(canvas, false, { doNotHandleTouchAction: true }, true)
+		this.engine = new Engine(canvas, false, { doNotHandleTouchAction: true, preserveDrawingBuffer: true }, true)
 		this.scene = new Scene(this.engine)
 		this.canvas = canvas
 		this.stats = new Stats()
@@ -98,9 +99,9 @@ export default class THREED {
 			console.log(optim.getDescription())
 		})
 		this.engine.runRenderLoop(() => {
+			this.frames_count++
 			this.stats.begin()
 			//mouse stuff
-			this.frames_count++
 			if (this.rotation_speed <= 0.0035) this.rotation_speed += 0.00001
 			const rotation_offset = new Vector3(
 				this.mouse_x * -0.00007,
@@ -112,12 +113,13 @@ export default class THREED {
 			//scroll stuff
 			const scroll_offset = new Vector3(0, -document.documentElement.scrollTop / 2, 0)
 			this.camera.position.copyFrom(this.camera_init_rotation.add(scroll_offset))
+
 			this.scene.render()
 			this.stats.end()
 			this.engine.hideLoadingUI()
-			// requestAnimationFrame(this.animate.bind(this))
 			this.stats.update()
 		})
+		// setTimeout(() => Tools.CreateScreenshot(this.engine, this.camera, { finalHeight: 1440, finalWidth: 2560 }), 3000)
 	}
 
 	create_pipeline() {
