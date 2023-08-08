@@ -139,21 +139,34 @@ export function fresnel_material(): NodeMaterial {
 	Gradient.visibleOnFrame = false;
 	Gradient.target = 4;
 	Gradient.colorSteps = [];
-	Gradient.colorSteps.push(
-		new GradientBlockColorStep(0, new Color3(1, 1, 1))
-	);
-	Gradient.colorSteps.push(
-		new GradientBlockColorStep(
-			0.4,
-			new Color3(0.25, 0.6, 0.89)
-		)
-	);
-	Gradient.colorSteps.push(
-		new GradientBlockColorStep(
-			1,
-			new Color3(0.04, 0.04, 0.04)
-		)
-	);
+	// Gradient.colorSteps.push(new GradientBlockColorStep(0.09, new Color3(0.9058823529411765, 0.9921568627450981, 1)));
+	// Gradient.colorSteps.push(new GradientBlockColorStep(0.16, new Color3(0.7725490196078432, 0.9215686274509803, 0.9686274509803922)));
+	// Gradient.colorSteps.push(new GradientBlockColorStep(0.45, new Color3(0.36470588235294116, 0.6941176470588235, 0.8117647058823529)));
+	// Gradient.colorSteps.push(new GradientBlockColorStep(0.86, new Color3(0.0392156862745098, 0.11764705882352941, 0.23921568627450981)));
+	// Gradient.colorSteps.push(new GradientBlockColorStep(1, new Color3(0.0196078431372549, 0.050980392156862744, 0.13333333333333333)));
+
+	Gradient.colorSteps.push(new GradientBlockColorStep(0.09, new Color3(0.9058823529411765, 0.9921568627450981, 1)));
+	Gradient.colorSteps.push(new GradientBlockColorStep(0.18, new Color3(0.6509803921568628, 0.8823529411764706, 0.9529411764705882)));
+	Gradient.colorSteps.push(new GradientBlockColorStep(0.38, new Color3(0.36470588235294116, 0.6588235294117647, 0.8117647058823529)));
+	Gradient.colorSteps.push(new GradientBlockColorStep(0.76, new Color3(0.07450980392156863, 0.12549019607843137, 0.20784313725490197)));
+	Gradient.colorSteps.push(new GradientBlockColorStep(1, new Color3(0.047058823529411764, 0.054901960784313725, 0.0784313725490196)));
+
+
+	// Gradient.colorSteps.push(
+	// 	new GradientBlockColorStep(0, new Color3(1, 1, 1))
+	// );
+	// Gradient.colorSteps.push(
+	// 	new GradientBlockColorStep(
+	// 		0.4,
+	// 		new Color3(0.25, 0.6, 0.89)
+	// 	)
+	// );
+	// Gradient.colorSteps.push(
+	// 	new GradientBlockColorStep(
+	// 		1,
+	// 		new Color3(0.04, 0.04, 0.04)
+	// 	)
+	// );
 
 	// FragmentOutputBlock
 	const FragmentOutput = new FragmentOutputBlock('FragmentOutput');
