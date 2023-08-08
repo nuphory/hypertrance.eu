@@ -7,6 +7,8 @@
 	let hide_bg_img = true;
 	let canvas: HTMLCanvasElement;
 
+        import first_frame_srcset from "$lib/assets/img/samplepack/first_frame.webp?format=webp&w=425;576;640;820;1024;1280;1920;2560&as=srcset";
+
 	onMount(() => {
 		if (browser) {
 			const ߜ = new ThreeD(canvas);
@@ -33,7 +35,7 @@
 	<img
 		class="h-full absolute left-0 top-0"
 		hidden={hide_bg_img}
-		src="/assets/img/first_frame.webp"
+		srcset={first_frame_srcset}
 		alt="3D loading alternative"
 	/>
 	<canvas id="iksdffgvbld" class="w-full h-full absolute left-0 top-0" bind:this={canvas} />
