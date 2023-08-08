@@ -44,7 +44,7 @@
 		</div>
 		<div class="text-2xl flex justify-between">
 			<button
-				class="hyper-button button-primary-inverse "
+				class="hyper-button !px-8 button-primary-inverse skew-x-[25deg] [&>*]:-skew-x-[25deg]"
 				on:click={direct_buy}
 			>
 				<span class="inline-block">buy now</span>
