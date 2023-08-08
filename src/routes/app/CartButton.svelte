@@ -14,7 +14,7 @@
 
 </script>
 
-<button class="hyper-button p-3 whitespace-nowrap backdrop-blur shadow-lg button-neutral overflow-clip" on:click={openCart}>
+<button class="hyper-button p-3 whitespace-nowrap backdrop-blur shadow-lg overflow-clip" on:click={openCart}>
 	<CartIcon
 		class="
 			inline-block
