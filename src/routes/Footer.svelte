@@ -1,0 +1,38 @@
+<footer class="bg-text-primary text-bg-primary py-4">
+	<div class="container grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
+		<section class="">
+			<h3>Sitemap</h3>
+			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
+				<li><a href="/">Sample Pack</a></li>
+				<li><a href="/app">Home</a></li>
+				<li><a href="/app/store">Store</a></li>
+				<li><a href="/app/wiki" disabled>Wiki</a></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Policies</h3>
+			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
+				<!-- <li><a href="#">Shipping</a></li> -->
+				<!-- <li><a href="#">Customs & Fees</a></li> -->
+				<!-- <li><a href="#">Return Policy</a></li> -->
+				<li><a href="#">Terms & Conditions</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+			</ul>
+		</section>
+		<section>
+			<h3>Support</h3>
+			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Impressum</a></li>
+			</ul>
+		</section>
+		<section
+			class="xs:col-span-2 md:col-span-3 flex max-xs:flex-col justify-center items-center gap-4"
+		>
+			<span>© hypertrance e.U.</span>
+			<span class="hidden xs:inline">—</span>
+			<span>written with ♡ by patchstep</span>
+		</section>
+	</div>
+</footer>
