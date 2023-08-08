@@ -32,7 +32,7 @@
 		>
 			<span>© hypertrance e.U.</span>
 			<span class="hidden xs:inline">—</span>
-			<span>written with ♡ by patchstep</span>
+			<span>written with ♡ by patchstep and djkáťo</span>
 		</section>
 	</div>
 </footer>
