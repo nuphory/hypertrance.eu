@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { Icon, ArrowUp } from 'svelte-hero-icons';
-	import THREED from '$lib/components/landing/THREED.svelte';
 	import { browser } from '$app/environment';
+	import { goto } from '$app/navigation';
 	import { db } from '$lib/scripts/music/db';
+	import { createCart } from '$src/lib/utils/shopify';
 	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
-	import Sample from '$lib/components/landing/Sample.svelte';
-	import Volume from '$lib/components/landing/Volume.svelte';
-	import Stats from '$lib/components/landing/Stats.svelte';
-	import Hero from '$lib/components/landing/Hero.svelte';
-	import { createCart } from '$src/lib/utils/shopify';
-	import { goto } from '$app/navigation';
+	import { ArrowUp, Icon } from 'svelte-hero-icons';
+	import Hero from './Hero.svelte';
+	import Sample from './Sample.svelte';
+	import Stats from './Stats.svelte';
+	import THREED from './THREED.svelte';
+	import Volume from './Volume.svelte';
 	export let data;
 	const { product } = data;
 	const selected_variant = product.variants.nodes[0];
@@ -59,14 +59,14 @@
 	});
 </script>
 
-<main id="landing-page" class="font-michroma text-primary bg-primary">
+<main id="landing-page" class="font-michroma text-primary bg-primary pb-16">
 	<Volume {player} />
-	<section id="landing" class="w-full h-[110vh] relative text-bg-primary">
+	<section id="landing" class="w-full h-[calc(100svh-10rem)] md:h-[calc(100svh-15rem)] relative text-bg-primary">
 		<THREED />
 		<Hero {data} />
 	</section>
-	<section id="about" class="my-4 px-24">
-		<div class="grid grid-cols-1 gap-8 w-full">
+	<section id="about" class="my-4 px-24 pt-8">
+		<div class="grid grid-cols-1 w-full">
 			<h2 class="text-5xl before:[content:''] text-center text-[var(--color-content-emphasis)]">
 				EXPERIENCE THE HyPE OR SMT
 			</h2>
@@ -120,10 +120,10 @@
 			<h3 class="text-5xl mb-12">Try it out</h3>
 			<a class="inline w-fit h-fit px-4 py-4 mr-8" href="https://mega.nz">demo samplepack.zip</a>
 			<button
-				class="inline px-4 py-4 ml-8 bg-[var(--color-bg-inverse)] text-[var(--color-content-inverse)]"
+				class="hyper-button button-primary whitespace-nowrap"
 				on:click={direct_buy}
 			>
-				<span class="inline-block text-2xl">buy now</span>
+				<span>buy now</span>
 			</button>
 		</div>
 		<div
@@ -139,12 +139,6 @@
 		</div>
 	</section>
 </main>
-<footer
-	class="mt-24 w-full h-16 bg-[var(--color-bg-inverse)] text-[var(--color-content-inverse)] text-center pt-4"
->
-	<p class="inline mx-12">© Hypertrance e.U.</p>
-	<a class="inline mx-12 text-[var(--color-content-inverse)]" href="store">Store</a>
-</footer>
 
 <style lang="scss">
 	:global(html) {

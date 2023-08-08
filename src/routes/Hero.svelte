@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="z-10 absolute w-full md:w-auto right-0 bottom-[30vh] md:right-[15vw] md:bottom-[30vh] md:skew-x-[25deg] bg-primary-side md:pl-4"
+	class="z-10 absolute w-full md:w-auto right-0 bottom-[15svh] md:right-[15vw] md:bottom-[23svh] md:skew-x-[25deg] bg-primary-side md:pl-4"
 >
 	<div
 		class="flex flex-col bg-text-primary text-black md:[&>*]:-skew-x-[25deg] px-20 py-4 pb-8 gap-8"
@@ -44,7 +44,7 @@
 		</div>
 		<div class="text-2xl flex justify-between">
 			<button
-				class="hyper-button !px-8 button-primary-inverse skew-x-[25deg] [&>*]:-skew-x-[25deg]"
+				class="hyper-button button-primary-inverse "
 				on:click={direct_buy}
 			>
 				<span class="inline-block">buy now</span>
@@ -63,7 +63,7 @@
 			>
 		</div>
 	</div>
-	<a href="#about" class="block text-4xl -mb-7 py-4 text-center font-suissnord"
+	<!-- <a href="#about" class="block text-4xl -mb-7 py-4 text-center font-suissnord"
 		><span class="inline-block -skew-x-[25deg]">🢗</span></a
-	>
+	> -->
 </div>
