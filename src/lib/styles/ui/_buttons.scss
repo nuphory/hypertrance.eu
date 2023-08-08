@@ -1,7 +1,9 @@
 button.hyper-button {
 	// @apply bg-white bg-blend-difference;
         @apply relative;
+        @apply scale-100;
 	@apply text-[var(--button-text-main)] fill-[var(--button-text-main)] ring-1 ring-[var(--button-border-main)];
+        @apply transition-quick duration-default ease-out;
         @apply font-michroma;
 
         @apply p-4;
