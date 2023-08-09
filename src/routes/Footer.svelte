@@ -1,9 +1,11 @@
-<footer class="bg-text-primary text-bg-primary py-4">
-	<div class="container grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
+<footer class="bg-text-primary text-bg-primary py-16">
+	<div
+		class="container grid grid-cols-1 xs:justify-items-center xs:grid-cols-2 md:grid-cols-3 gap-8"
+	>
 		<section class="">
 			<h3>Sitemap</h3>
 			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
-				<li><a href="/">Sample Pack</a></li>
+				<li><a data-sveltekit-reload data-sveltekit-preload-data="tap" href="/">Sample Pack</a></li>
 				<li><a href="/app">Home</a></li>
 				<li><a href="/app/store">Store</a></li>
 				<li><a href="/app/wiki" disabled>Wiki</a></li>
@@ -32,7 +34,13 @@
 		>
 			<span>© hypertrance e.U.</span>
 			<span class="hidden xs:inline">—</span>
-			<span>written with ♡ by patchstep and djkáťo</span>
+			<span>written with ♡ by patchstep & djkáťo</span>
 		</section>
 	</div>
 </footer>
+
+<style lang="scss">
+	h3 {
+		@apply tracking-widest;
+	}
+</style>
