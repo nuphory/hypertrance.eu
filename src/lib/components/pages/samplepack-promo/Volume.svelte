@@ -18,7 +18,7 @@
 		class=" mx-auto [transition-duration:_100ms] ml-6 {is_hiding ? 'w-0 h-0 ' : 'w-[15rem] h-4'}"
 	>
 		<input
-			on:mouseup={(e) => player.change_volume(e.target.valueAsNumber)}
+			on:input={(e) => player.change_volume(e.target.valueAsNumber)}
 			class="volumeSlider {is_hiding ? 'hidden' : 'block'}"
 			type="range"
 			min="0"
@@ -27,7 +27,7 @@
 			step="0.01"
 		/>
 	</div>
-	<div on:mouseup={() => (is_hiding = !is_hiding)}>
+	<div on:mousedown={() => (is_hiding = !is_hiding)}>
 		<Icon
 			class="w-12 h-12 stroke-[var(--color-bg-side)] fill-[var(--color-bg-side)] "
 			src={SpeakerWave}
