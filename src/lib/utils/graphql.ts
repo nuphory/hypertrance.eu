@@ -19,6 +19,7 @@ fragment cartFragment on Cart {
           id
           title
           image {
+            id
             url
             altText
             width
