@@ -1,4 +1,4 @@
-button.hyper-button {
+.hyper-button {
 	// @apply bg-white bg-blend-difference;
         @apply relative;
         @apply scale-100;
@@ -41,10 +41,10 @@ button.hyper-button {
 		--blend-mode: normal;
 		// --button-background-main: var(--button-background-neutral);
 		--button-background-main: var(--button-background-secondary);
-		--button-border-main: var(--button-background-neutral);
-		// --button-border-main: var(--button-background-secondary);
-		--button-text-main: var(--button-text-neutral);
-		// --button-text-main: var(--button-text-secondary);
+		// --button-border-main: var(--button-background-neutral);
+		--button-border-main: var(--button-background-secondary);
+		// --button-text-main: var(--button-text-neutral);
+		--button-text-main: var(--button-background-secondary);
 		--button-text-hover: var(--button-text-secondary-hover);
 		--button-text-active: var(--button-text-secondary-active);
 	}
@@ -52,12 +52,23 @@ button.hyper-button {
 		--blend-mode: normal;
 		// --button-background-main: var(--button-background-neutral);
 		--button-background-main: var(--button-background-tertiary);
-		--button-border-main: var(--button-background-neutral);
-		// --button-border-main: var(--button-background-tertiary);
-		--button-text-main: var(--button-text-neutral);
-		// --button-text-main: var(--button-text-tertiary);
+		// --button-border-main: var(--button-background-neutral);
+		--button-border-main: var(--button-background-tertiary);
+		// --button-text-main: var(--button-text-neutral);
+		--button-text-main: var(--button-background-tertiary);
 		--button-text-hover: var(--button-text-tertiary-hover);
 		--button-text-active: var(--button-text-tertiary-active);
+	}
+	&.button-tertiary-inverse {
+		--blend-mode: normal;
+		// --button-background-main: var(--button-background-neutral);
+		--button-background-main: var(--button-background-tertiary);
+		// --button-border-main: var(--button-background-neutral);
+		--button-border-main: var(--button-background-primary);
+		// --button-text-main: var(--button-text-neutral);
+		--button-text-main: var(--button-background-primary);
+		--button-text-hover: var(--button-background-primary-hover);
+		--button-text-active: var(--button-background-primary-active);
 	}
 
 	&::before {
@@ -71,7 +82,7 @@ button.hyper-button {
 			transparent 50% 75%,
 			var(--button-background-main) 75% 100%
 		);
-		background-size: 550%;
+		background-size: 750%;
 	}
 
 	&:hover {
