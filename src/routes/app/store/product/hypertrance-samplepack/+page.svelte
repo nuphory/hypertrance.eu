@@ -12,11 +12,9 @@
 
 	let descSplit = product.descriptionHtml.split('\n');
 
-	let tagline = descSplit[0];
-	let description = descSplit.slice(1).join('\n');
+	let tagline = descSplit.find((line: string) => line.startsWith('<p>'));
+        let description = descSplit.filter((line: string) => line !== tagline).join('\n');
 </script>
-
-
 
 <main class="py-2">
 	<div class="relative sm:container">
@@ -37,7 +35,9 @@
 						data-sveltekit-reload
 						on:click={() => (window.location.href = '/')}
 						class="hyper-button button-neutral w-full"
-						><span class="inline-block before:content-['<_']"> &nbsp; back to front page</span></button
+						><span class="inline-block before:content-['<_']">
+							&nbsp; back to front page</span
+						></button
 					>
 				</div>
 				{#if product.images.nodes.length >= 2}

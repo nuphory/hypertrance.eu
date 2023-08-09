@@ -28,7 +28,7 @@ html {
 	h4,
 	h5,
 	h6 {
-		@apply font-suissnord before:content-['>_'];
+		@apply font-suissnord before:content-['>_'] tracking-widest;
 	}
 
         h1 {
