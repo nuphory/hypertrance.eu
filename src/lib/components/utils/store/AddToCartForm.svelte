@@ -6,7 +6,7 @@
 	import CartIcon from '$src/lib/components/icons/CartIcon.svelte';
 
 	export let variantId: string;
-	export let trackQuantity: boolean = false;
+	export let trackQuantity: boolean = true;
 
 	let quantity = 1;
 
