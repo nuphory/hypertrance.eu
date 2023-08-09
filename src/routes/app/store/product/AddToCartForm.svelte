@@ -1,17 +1,19 @@
 <script lang="ts">
-	import { addCartItem, isCartUpdating, cart } from '$lib/stores/cart';
+	import { goto } from '$app/navigation';
+	import { addCartItem, isCartUpdating } from '$lib/stores/cart';
+	import { createCart } from '$src/lib/utils/shopify';
 
 	import CartIcon from '$src/lib/components/icons/CartIcon.svelte';
 
 	export let variantId: string;
-        export let trackQuantity: boolean = false;
+	export let trackQuantity: boolean = false;
 
-	let quantity = "1";
+	let quantity = 1;
 
-	function addToCart(e: Event) {
+	async function addToCart(e: Event) {
 		const form = e.target as HTMLFormElement;
 		const formData = new FormData(form);
-                console.log(formData);
+		console.log(formData);
 		const { id, quantity } = Object.fromEntries(formData);
 		const item = {
 			id: id as string,
@@ -19,30 +21,65 @@
 		};
 		addCartItem(item);
 	}
+
+	async function direct_buy(e) {
+                e.preventDefault();
+		const cart = await createCart(variantId, quantity);
+		if (!cart) throw Error('Cart creation failed');
+		goto(cart.checkoutUrl);
+	}
 </script>
 
 <form on:submit|preventDefault={(e) => addToCart(e)} class={$$restProps.class}>
 	<input type="hidden" name="id" value={variantId} />
 
-	<div class:hidden={!trackQuantity} class="max-lg:w-full pointer-events-none opacity-50">
-		<label for="quantity">QTY</label>
+	<div class:hidden={!trackQuantity} class="w-full max-lg:w-full">
+		<label class="inline-block mb-2" for="quantity">QTY</label>
 		<div class="flex w-full">
-			<button class="hyper-button pointer-events-none button-neutral aspect-square w-14 p-3" on:click={() => quantity--}>-</button>
+			<button
+				class="hyper-button button-primary-inverse aspect-square w-14 p-3 overflow-clip"
+				on:click={(e) => {
+					e.preventDefault();
+					quantity--;
+				}}>-</button
+			>
 			<input
 				id="quantity"
 				name="quantity"
-                                class="pointer-events-none max-lg:flex-1 bg-black lg:aspect-square w-14 px-6 text-right"
+				class="flex-1 bg-primary text-primary w-14 px-6 text-right hyper-button button-primary-inverse"
 				type="number"
 				bind:value={quantity}
 			/>
-			<button class="hyper-button pointer-events-none button-neutral aspect-square w-14 p-4" on:click={() => quantity++}>+</button>
+			<button
+				class="hyper-button button-primary-inverse aspect-square w-14 p-4 overflow-clip"
+				on:click={(e) => {
+					e.preventDefault();
+					quantity++;
+				}}>+</button
+			>
 		</div>
 	</div>
-	<button class="hyper-button button-primary w-full lg:w-max" type="submit" disabled={$isCartUpdating}>
-		<CartIcon
-			class="inline-block transition-[fill,margin] duration-[var(--duration)] ease-out aspect-square h-[1.25em] mr-2 opacity-100"
-		/> purchase
-	</button>
+
+	<div class="w-full flex max-lg:flex-col justify-start gap-4 lg:gap-8">
+		<button
+			class="hyper-button button-primary-inverse w-full"
+			type="submit"
+			disabled={$isCartUpdating}
+		>
+			<CartIcon
+				class="inline-block transition-[fill,margin] duration-[var(--duration)] ease-out aspect-square h-[1.25em] mr-2 opacity-100"
+			/> <span>add to cart</span>
+		</button>
+		<button
+			class="hyper-button button-tertiary-inverse w-full"
+			on:click={direct_buy}
+			disabled={$isCartUpdating}
+		>
+			<CartIcon
+				class="inline-block transition-[fill,margin] duration-[var(--duration)] ease-out aspect-square h-[1.25em] mr-2 opacity-100"
+			/> <span>buy now</span>
+		</button>
+	</div>
 </form>
 
 <style lang="scss">
