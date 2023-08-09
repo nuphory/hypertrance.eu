@@ -21,13 +21,20 @@
 	async function seek(event: MouseEvent) {
 		if (!am_i_playing) await play();
 
-                console.debug(event);
+                console.debug("event", event);
 
 		// @ts-ignore
 		const rect = event.target.getBoundingClientRect();
+                console.debug("rect", rect);
 		const x = event.clientX - rect.left;
+                console.debug("x", x);
 		const res_x = convert_range(x, [0, rect.width], [0, canvas.viewBox.baseVal.width]);
+                console.debug("res_x", res_x);
 		const seek_percent = res_x / canvas.viewBox.baseVal.width;
+                console.debug("seek_percent", seek_percent);
+
+                console.debug("song.duration", song.duration);
+                console.debug("percent of song duration", seek_percent * song.duration!);
 
 		player.try_seek(seek_percent * song.duration!).catch((r) => alert(r));
 	}
