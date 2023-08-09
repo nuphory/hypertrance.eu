@@ -20,21 +20,21 @@
 	//onClick => change to current song && seek to time
 	async function seek(event: MouseEvent) {
 		if (!am_i_playing) await play();
+
 		// @ts-ignore
 		const rect = event.target.getBoundingClientRect();
 		const x = event.clientX - rect.left;
 		const res_x = convert_range(x, [0, rect.width], [0, canvas.viewBox.baseVal.width]);
 		const seek_percent = res_x / canvas.viewBox.baseVal.width;
 
-		player.try_seek_async(seek_percent * song.duration!).catch((r) => alert(r));
+		player.try_seek(seek_percent * song.duration!).catch((r) => alert(r));
 	}
 	async function play() {
-		player.try_specific_song_async(song.id!).then(
-			() => {
-				am_i_playing = true;
-			},
-			(e) => alert('failed to play song' + e)
-		);
+		try {
+			await player.try_specific_song(song.id!);
+		} catch (e) {
+			alert('failed to play song' + e);
+		}
 	}
 	function pause() {
 		player.pause();
