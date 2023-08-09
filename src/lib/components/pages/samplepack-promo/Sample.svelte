@@ -21,6 +21,8 @@
 	async function seek(event: MouseEvent) {
 		if (!am_i_playing) await play();
 
+                console.debug(event);
+
 		// @ts-ignore
 		const rect = event.target.getBoundingClientRect();
 		const x = event.clientX - rect.left;
@@ -33,7 +35,7 @@
 		try {
 			await player.try_specific_song(song.id!);
 		} catch (e) {
-			alert('failed to play song' + e);
+			alert('failed to play song ' + e);
 		}
 	}
 	function pause() {
