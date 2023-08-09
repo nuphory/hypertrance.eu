@@ -109,7 +109,7 @@ export default class AudioPlayer {
 		}
 
 		if (this.element.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
-			this.element.addEventListener('canplay', () => this.play(), { once: true });
+			this.element.addEventListener('canplaythrough', () => this.play(), { once: true });
 		} else {
 			this.element.play();
 			this.updateContinuously();
