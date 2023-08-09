@@ -7,7 +7,7 @@
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	import summaryImgSrc from '$lib/assets/img/hypertrance-2-cover.jpg?jpg&w=800';
-	import { description, name, tagline, url } from '$lib/identity';
+	import { description, name, tagline, url } from '$lib/assets/identity';
 	import Hypertrance2 from '$lib/legacy/components/pages/hypertrance-2/Hypertrance2.svelte';
 
 	onMount(async () => {
