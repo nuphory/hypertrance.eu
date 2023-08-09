@@ -2,15 +2,11 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		screens: {
-			'2xs': '425px',
-			xs: '576px',
-			sm: '640px',
-			md: '820px',
-			lg: '1024px',
-                        xl: '1280px',
-		},
 		extend: {
+                        screens: {
+                                '2xs': '425px',
+                                xs: '576px',
+                        },
 			fontFamily: {
 				comsat: ['Comsat', 'sans-serif'],
 				'comsat-navy': ['Comsat Navy', 'sans-serif'],
