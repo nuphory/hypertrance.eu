@@ -5,59 +5,36 @@ labels: [
   "question"
 ]
 body:
-  - type: input
-    id: start_date
-    attributes:
-      label: "Start Date"
-      description: Start of development
-      placeholder: "month/day/year"
-    validations:
-      required: false
   - type: textarea
-    id: implementation_pr
+    id: motivation
     attributes:
-      label: "Implementation PR"
-      description: Pull request used
-      placeholder: "#Pull Request ID"
-    validations:
-      required: false
-  - type: textarea
-    id: reference_issues
-    attributes:
-      label: "Reference Issues"
-      description: Common issues
-      placeholder: "#Issues IDs"
-    validations:
-      required: false
-  - type: textarea
-    id: summary
-    attributes:
-      label: "Summary"
-      description: Provide a brief explanation of the feature
-      placeholder: Describe in a few lines your feature request
+      label: "Motivation"
+      description: Why are you requesting this feature?
+      placeholder: |
+        A clear and concise description of what your feature aims to solve. 
+        e.g. I'm always frustrated when [...]
     validations:
       required: true
   - type: textarea
-    id: basic_example
+    id: proposal
     attributes:
-      label: "Basic Example"
-      description: Indicate here some basic examples of your feature.
-      placeholder: A few specific words about your feature request.
+      label: "Proposed Solution"
+      description: Describe your requestion solution
+      placeholder: How do you think we should implement this feature? 
     validations:
       required: true
   - type: textarea
-    id: drawbacks
+    id: alternatives
     attributes:
-      label: "Drawbacks"
-      description: What are the drawbacks/impacts of your feature request ?
-      placeholder: Identify the drawbacks and impacts while being neutral on your feature request
+      label: "Alternative Solutions"
+      description: Any alternative solutions you've considered, and why they might not work
+      placeholder: What alternatives have you considered?
     validations:
-      required: true
+      required: false
   - type: textarea
-    id: unresolved_question
     attributes:
-      label: "Unresolved questions"
-      description: What questions still remain unresolved ?
-      placeholder: Identify any unresolved issues.
+      label: "Additional Context"
+      description: Provide any additional context about your feature request
+      placeholder: Screenshots, Environment information, etc.
     validations:
       required: false
