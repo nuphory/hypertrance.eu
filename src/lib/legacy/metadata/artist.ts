@@ -1,4 +1,4 @@
-import type { Link } from '$lib/metadata/link';
+import type { Link } from '$src/lib/legacy/metadata/link';
 
 const artists = new Set<Artist>();
 

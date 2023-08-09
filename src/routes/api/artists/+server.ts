@@ -1,7 +1,7 @@
 import { error, json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
-import type { Artist } from '$src/lib/metadata/artist';
+import type { Artist } from '$src/lib/legacy/metadata/artist';
 import { toSnakeCase } from '$lib/utils/stringFormat';
 
 const modules = await Promise.all(

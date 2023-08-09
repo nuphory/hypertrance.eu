@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Artist } from '$lib/metadata/artist';
+	import type { Artist } from '$src/lib/legacy/metadata/artist';
 
 	// Components
 	import LinkList from './LinkList.svelte';

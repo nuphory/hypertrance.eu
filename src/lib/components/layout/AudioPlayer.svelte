@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import AudioPlayer from '$lib/utils/AudioPlayer';
+	import AudioPlayer from '$src/lib/legacy/utils/AudioPlayer';
 	import { onMount } from 'svelte';
 	let player: AudioPlayer;
 

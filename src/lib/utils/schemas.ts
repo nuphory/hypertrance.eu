@@ -1,4 +1,4 @@
-import { description } from './../identity';
+import { description } from '../assets/identity';
 import { z } from 'zod';
 
 export const configSchema = z.object({

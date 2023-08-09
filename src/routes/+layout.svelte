@@ -1,15 +1,15 @@
 <script lang="ts">
 	// Assets
-	import artists from '$lib/metadata/artist';
+	import artists from '$src/lib/legacy/metadata/artist';
 
 	// Components
-	import Footer from './Footer.svelte';
-	import AudioPlayer from './AudioPlayer.svelte';
+	import Footer from '../lib/components/layout/Footer.svelte';
+	import AudioPlayer from '../lib/components/layout/AudioPlayer.svelte';
 
 	// Styles
         import '$lib/styles/app.scss';
 
-	import { description, name } from '$lib/identity';
+	import { description, name } from '$src/lib/assets/identity';
 </script>
 
 <svelte:head>

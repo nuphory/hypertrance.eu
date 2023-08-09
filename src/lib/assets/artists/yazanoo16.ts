@@ -1,5 +1,5 @@
-import { ArtistBuilder } from '$lib/metadata/artist';
-import { LinkBuilder, Platform } from '$lib/metadata/link';
+import { ArtistBuilder } from '$src/lib/legacy/metadata/artist';
+import { LinkBuilder, Platform } from '$src/lib/legacy/metadata/link';
 
 const YAZANOO16 = new ArtistBuilder()
 	.setName('yazan a.')

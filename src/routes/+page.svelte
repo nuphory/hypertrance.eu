@@ -6,11 +6,11 @@
 	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
-	import Hero from './Hero.svelte';
-	import Sample from './Sample.svelte';
-	import Stats from './Stats.svelte';
-	import THREED from './THREED.svelte';
-	import Volume from './Volume.svelte';
+	import Hero from '$lib/components/pages/samplepack-promo/Hero.svelte';
+	import Sample from '$lib/components/pages/samplepack-promo/Sample.svelte';
+	import Stats from '$lib/components/pages/samplepack-promo/Stats.svelte';
+	import THREED from '$lib/components/pages/samplepack-promo/THREED.svelte';
+	import Volume from '$lib/components/pages/samplepack-promo/Volume.svelte';
 	export let data;
 	const { product } = data;
 	const selected_variant = product.variants.nodes[0];

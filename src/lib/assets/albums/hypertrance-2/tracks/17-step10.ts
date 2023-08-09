@@ -1,5 +1,5 @@
-import { TrackBuilder } from '$lib/metadata/track';
-import { LinkBuilder, Platform } from '$lib/metadata/link';
+import { TrackBuilder } from '$src/lib/legacy/metadata/track';
+import { LinkBuilder, Platform } from '$src/lib/legacy/metadata/link';
 
 // Musicians
 import SAM_WAITIN from '$lib/assets/artists/sam_waitin';

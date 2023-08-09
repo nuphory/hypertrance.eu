@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Link } from '$lib/metadata/link';
+	import type { Link } from '$src/lib/legacy/metadata/link';
 
 	export let links: Link[];
 </script>

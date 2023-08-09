@@ -1,7 +1,7 @@
 <script>
 	import NUPHORY from '$lib/assets/artists/nuphory';
 	import AEKAE from '$lib/assets/artists/aekae';
-	import Artist from '$lib/components/utils/Artist.svelte';
+	import Artist from '$src/lib/legacy/components/utils/Artist.svelte';
 </script>
 
 <section id="about" class="transition-quick duration-default ease-out container [&>ul]:list-disc">

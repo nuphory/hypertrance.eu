@@ -1,6 +1,6 @@
-import { LinkBuilder, Platform } from '$lib/metadata/link';
+import { LinkBuilder, Platform } from '$src/lib/legacy/metadata/link';
 
-import { ArtistBuilder } from '$lib/metadata/artist';
+import { ArtistBuilder } from '$src/lib/legacy/metadata/artist';
 
 const KADACHI = new ArtistBuilder()
 	.setName('kadachi')

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { cart, isCartDrawerOpen, isCartUpdating, removeCartItems } from '$lib/stores/cart';
-	import Money from '$src/lib/components/Money.svelte';
-	import ShopifyImage from '$src/lib/components/ShopifyImage.svelte';
+	import Money from '$src/lib/components/utils/store/Money.svelte';
+	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
 	import { fade, slide } from 'svelte/transition';
 
 	let cartDrawerEl: HTMLDivElement;

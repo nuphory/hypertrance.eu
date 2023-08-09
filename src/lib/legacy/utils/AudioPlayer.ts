@@ -1,4 +1,4 @@
-import type { Track } from '$lib/metadata/track';
+import type { Track } from '$src/lib/legacy/metadata/track';
 
 export default class AudioPlayer {
 	private _audioElement: HTMLAudioElement;

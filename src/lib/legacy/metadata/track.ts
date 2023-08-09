@@ -1,5 +1,5 @@
-import type { Artist } from '$lib/metadata/artist';
-import type { Link } from '$lib/metadata/link';
+import type { Artist } from '$src/lib/legacy/metadata/artist';
+import type { Link } from '$src/lib/legacy/metadata/link';
 
 /**
  * a track featured on any hypertrance album

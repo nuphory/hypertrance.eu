@@ -4,8 +4,8 @@
 
 	// Components
 	import Hero from './components/Hero.svelte';
-	import Embed from '$lib/components/utils/Embed.svelte';
-	import Album from '$lib/components/utils/Album.svelte';
+	import Embed from '$src/lib/legacy/components/utils/Embed.svelte';
+	import Album from '$src/lib/legacy/components/utils/Album.svelte';
 
 	// Assets
 	import HYPERTRANCE_2 from '$lib/assets/albums/hypertrance-2/album';

@@ -1,6 +1,6 @@
-import type { Track, TrackList } from '$lib/metadata/track';
-import type { Link } from '$lib/metadata/link';
-import type { Artist } from '$lib/metadata/artist';
+import type { Track, TrackList } from '$src/lib/legacy/metadata/track';
+import type { Link } from '$src/lib/legacy/metadata/link';
+import type { Artist } from '$src/lib/legacy/metadata/artist';
 
 class Album {
 	readonly title: string;

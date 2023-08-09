@@ -1,13 +1,12 @@
 <script lang="ts">
-	import Money from '$src/lib/components/Money.svelte';
-	import ShopifyImage from '$src/lib/components/ShopifyImage.svelte';
-	import AddToCartForm from '../AddToCartForm.svelte';
+	import Money from '$src/lib/components/utils/store/Money.svelte';
+	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
+	import AddToCartForm from '../../../../../lib/components/utils/store/AddToCartForm.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 
 	let { product } = data;
-	console.log(product);
 
 	let selectedVariant = product.variants.nodes[0];
 

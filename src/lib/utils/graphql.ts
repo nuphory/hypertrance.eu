@@ -1,4 +1,4 @@
-import { description } from './../identity';
+import { description } from '../assets/identity';
 const CART_FRAGMENT = `#graphql
 fragment cartFragment on Cart {
   id

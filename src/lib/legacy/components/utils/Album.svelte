@@ -1,10 +1,10 @@
 <script lang="ts">
 	// Types
-	import type { Album } from '$lib/metadata/album';
-	import { LinkBuilder, Platform } from '$lib/metadata/link';
+	import type { Album } from '$src/lib/legacy/metadata/album';
+	import { LinkBuilder, Platform } from '$src/lib/legacy/metadata/link';
 
 	// Components
-	import LinkList from '$lib/components/utils/LinkList.svelte';
+	import LinkList from '$src/lib/legacy/components/utils/LinkList.svelte';
 	import Artist from './Artist.svelte';
 	import Track from './Track.svelte';
 

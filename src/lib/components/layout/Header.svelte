@@ -1,5 +1,5 @@
 <script>
-	import { id } from '$src/lib/identity';
+	import { id } from '$src/lib/assets/identity';
 	import Navigation from './Navigation.svelte';
 	import CartButton from './CartButton.svelte';
 	import CartDrawer from './CartDrawer.svelte';

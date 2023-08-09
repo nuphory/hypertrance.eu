@@ -1,6 +1,6 @@
-import { AlbumBuilder, type Album } from '$lib/metadata/album';
-import { ArtistBuilder } from '$lib/metadata/artist';
-import { LinkBuilder, Platform } from '$lib/metadata/link';
+import { AlbumBuilder, type Album } from '$src/lib/legacy/metadata/album';
+import { ArtistBuilder } from '$src/lib/legacy/metadata/artist';
+import { LinkBuilder, Platform } from '$src/lib/legacy/metadata/link';
 
 // Tracks
 import HYPERTRANCE from './tracks/01-hypertrance';

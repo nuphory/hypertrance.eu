@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Track } from '$lib/metadata/track';
+	import type { Track } from '$src/lib/legacy/metadata/track';
 
 	// Components
 	import Artist from './Artist.svelte';

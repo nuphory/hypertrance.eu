@@ -1,5 +1,5 @@
-import { LinkBuilder, Platform } from '$lib/metadata/link';
-import { TrackBuilder } from '$lib/metadata/track';
+import { LinkBuilder, Platform } from '$src/lib/legacy/metadata/link';
+import { TrackBuilder } from '$src/lib/legacy/metadata/track';
 
 // Musicians & Visual Artists
 import WYSTE from '$lib/assets/artists/wyste';

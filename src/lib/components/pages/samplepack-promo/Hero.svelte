@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Money from '$src/lib/components/Money.svelte';
+	import Money from '$src/lib/components/utils/store/Money.svelte';
 	import { goto } from '$app/navigation';
 	import { createCart } from '$src/lib/utils/shopify';
 	export let data;

@@ -1,8 +1,7 @@
 <script lang="ts">
 	import CartIcon from '$lib/components/icons/CartIcon.svelte';
-	import { initCart, cart, isCartDrawerOpen } from '$lib/stores/cart';
+	import { cart, initCart, isCartDrawerOpen } from '$lib/stores/cart';
 	import { onMount } from 'svelte';
-	import CartDrawer from './CartDrawer.svelte';
 
 	onMount(() => {
     		initCart();
