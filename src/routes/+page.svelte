@@ -116,6 +116,33 @@
 	});
 </script>
 
+<svelte:head>
+	<title>HYPERTRANCE SAMPLEPACK</title>
+
+	<meta name="title" content="HYPERTRANCE SAMPLEPACK" />
+
+	<meta property="og:title" content="HYPERTRANCE SAMPLEPACK" />
+	<meta property="og:description" content={product.description.substring(0, 155) + '...'} />
+	<meta property="og:image" content={product.featuredImage?.url} />
+	<meta
+		property="og:url"
+		content="Experience the world of hypertrance with this all-new samplepack developed by nuphory."
+	/>
+	<meta property="og:type" content="website" />
+
+	<meta property="twitter:card" content="product" />
+	<meta property="twitter:site" content="@hypertranceRT" />
+	<meta
+		property="twitter:description"
+		content="Experience the world of hypertrance with this all-new samplepack developed by nuphory."
+	/>
+	<meta property="twitter:title" content="HYPERTRANCE SAMPLEPACK" />
+	<meta property="twitter:label1" content="Price" />
+	<meta property="twitter:data1" content="39.00EUR" />
+	<meta property="twitter:label2" content="Tags" />
+	<meta property="twitter:data2" content="trance, samplepack, hypertrance" />
+</svelte:head>
+
 <main id="landing-page" class="font-michroma text-primary bg-primary pb-16">
 	<Volume {player} />
 	<section
