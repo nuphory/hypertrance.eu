@@ -7,12 +7,40 @@
 	export let data;
 
 	import Header from '../../lib/components/layout/Header.svelte';
+	import { browser } from '$app/environment';
 </script>
 
 <Header />
-{#key data.url}
+
+{#if browser}
+	<!-- content here -->
+	{#key data.url}
+		<div
+			class="flex-1"
+			in:fly={{
+				x: -50,
+				y: 0,
+				opacity: 0,
+				duration: transitionDuration,
+				delay: transitionDuration,
+				easing: easeOut
+			}}
+			out:fly={{
+				x: 50,
+				y: 0,
+				opacity: 0,
+				duration: transitionDuration,
+				delay: 0,
+				easing: easeIn
+			}}
+		>
+			<slot />
+		</div>
+	{/key}
+{:else}
+	<!-- else content here -->
 	<div
-		class="flex-1"
+		class="flex-1 opacity-0"
 		in:fly={{
 			x: -50,
 			y: 0,
@@ -32,4 +60,4 @@
 	>
 		<slot />
 	</div>
-{/key}
+{/if}

@@ -10,7 +10,7 @@
 
 	let { href } = data;
 
-	let { product }: { product: z.infer<typeof ProductResult> } = data;
+	const { product }: { product: z.infer<typeof ProductResult> } = data;
 
 	const descSplit = product.descriptionHtml.split('\n');
 
@@ -23,13 +23,13 @@
 
 	<meta name="title" content="{product.title} | {id.name}" />
 
-	<link rel="canonical" href={href} />
+	<link rel="canonical" {href} />
 
 	<meta name="robots" content="index, follow" />
 
 	<meta property="og:title" content="{product.title} | {id.name}" />
 	<meta property="og:description" content={product.description.substring(0, 155) + '...'} />
-	<meta property="og:image" content="{product.featuredImage?.url}" />
+	<meta property="og:image" content={product.featuredImage?.url} />
 	<meta property="og:url" content={href} />
 	<meta property="og:type" content="website" />
 
@@ -38,7 +38,7 @@
 	<meta name="twitter:creator" content="@hypertranceRT" />
 	<meta name="twitter:title" content="{product.title} | {id.name}" />
 	<meta name="twitter:description" content={product.description.substring(0, 155) + '...'} />
-	<meta name="twitter:image" content="{product.featuredImage?.url}" />
+	<meta name="twitter:image" content={product.featuredImage?.url} />
 </svelte:head>
 
 <main class="py-2">

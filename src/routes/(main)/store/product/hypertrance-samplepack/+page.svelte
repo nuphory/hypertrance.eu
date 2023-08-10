@@ -2,11 +2,12 @@
 	import { id } from '$src/lib/assets/identity';
 	import ProductForm from '$src/lib/components/utils/store/ProductForm.svelte';
 	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
+	import type { ProductResult } from '$src/lib/utils/shopify/schemas/product';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	let { product } = data;
+	const { product }: { product: z.infer<typeof ProductResult> } = data;
 
 	let { href } = data;
 
