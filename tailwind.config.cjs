@@ -3,10 +3,10 @@ module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
-                        screens: {
-                                '2xs': '425px',
-                                xs: '576px',
-                        },
+			screens: {
+				'2xs': '425px',
+				xs: '576px'
+			},
 			fontFamily: {
 				comsat: ['Comsat', 'sans-serif'],
 				'comsat-navy': ['Comsat Navy', 'sans-serif'],
@@ -327,4 +327,4 @@ module.exports = {
 		require('@tailwindcss/container-queries'),
 		require('@tailwindcss/line-clamp')
 	]
-}
+};

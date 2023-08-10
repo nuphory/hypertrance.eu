@@ -28,6 +28,7 @@
 				<li><a disabled href="#">Contact Us</a></li>
 				<li><a disabled href="#">FAQ</a></li>
 				<li><a disabled href="#">Impressum</a></li>
+				<li><a href="https://github.com/nuphory/hypertrance/issues">Report an Issue</a></li>
 			</ul>
 		</section>
 		<section

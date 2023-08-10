@@ -44,7 +44,7 @@
 		<div
 			in:slide={{ duration: 500 }}
 			out:slide={{ duration: 500 }}
-			class="absolute container flex flex-col justify-between py-4 max-w-lg bottom-100 right-0 w-full h-screen-small max-h-[min(calc(100dvh-6rem),48rem)] backdrop-blur backdrop-blur-lg bg-black/50 ring-1 ring-white"
+			class="absolute container flex flex-col justify-between py-8 max-w-lg bottom-100 right-0 w-full h-screen-small max-h-[min(calc(100dvh-6rem),48rem)] backdrop-blur backdrop-blur-lg bg-black/50 ring-1 ring-white"
 		>
 			<!-- Cart -->
 			<div class="flex justify-between items-center">
@@ -78,7 +78,12 @@
 									<a class="w-fit" href={`/products/${item.merchandise.product.handle}`}>
 										{item.merchandise.product.title}
 									</a>
-									<span>{item.quantity} x <Money price={item.cost.amountPerQuantity} showCurrency={true} /></span>
+									<span
+										>{item.quantity} x <Money
+											price={item.cost.amountPerQuantity}
+											showCurrency={true}
+										/></span
+									>
 									<!-- <div class="flex">
                                                                                 <button
                                                                                         class="hyper-button button-neutral flex items-center justify-center h-12 aspect-square font-suissnord"

@@ -156,7 +156,7 @@ class LinkBuilder {
 	}
 
 	build(): Link {
-		if (!this.url) throw new TypeError('A url is required to build a valid link');
+		if (!this.url) throw TypeError('A url is required to build a valid link');
 
 		return new Link(this.url, this.name, this.iconSrc, this.priority);
 	}

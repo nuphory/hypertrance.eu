@@ -7,7 +7,7 @@
 	import AudioPlayer from '../lib/components/layout/AudioPlayer.svelte';
 
 	// Styles
-        import '$lib/styles/app.scss';
+	import '$lib/styles/app.scss';
 
 	import { description, name } from '$src/lib/assets/identity';
 </script>

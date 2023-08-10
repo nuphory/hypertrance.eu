@@ -1,6 +1,7 @@
 # Contributing
 
 ## Request for changes/ Pull Requests
+
 You first need to create a fork of the [hypertrance](https://github.com/nuphory/hypertrance) repository to commit your changes to it. Methods to fork a repository can be found in the [GitHub Documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
 Then add your fork as a local project:
@@ -41,6 +42,7 @@ git remote -v
 ```
 
 ## Receive remote updates
+
 In view of staying up to date with the central repository :
 
 ```sh
@@ -48,14 +50,15 @@ git pull upstream master
 ```
 
 ## Choose a base branch
+
 Before starting development, you need to know which branch to base your modifications/additions on. When in doubt, use master.
 
-| Type of change                |           | Branches              |
-| :------------------           |:---------:| ---------------------:|
-| Documentation                 |           | `master`              |
-| Bug fixes                     |           | `master`              |
-| New features                  |           | `master`              |
-| New issues models             |           | `YOUR-USERNAME:patch` |
+| Type of change    |     |              Branches |
+| :---------------- | :-: | --------------------: |
+| Documentation     |     |              `master` |
+| Bug fixes         |     |              `master` |
+| New features      |     |              `master` |
+| New issues models |     | `YOUR-USERNAME:patch` |
 
 ```sh
 # Switch to the desired branch
@@ -69,36 +72,48 @@ git switch --create patch/1234-name-issue
 ```
 
 ## Start developing
+
 First you will want to install the project's dependencies, and start a `vite` dev server. You can do this with any node package manager
 
 #### using pnpm
+
 ```sh
 pnpm i;
 pnpm dev # --host # --open
 ```
+
 #### using yarn
+
 ```sh
 yarn i;
 yarn run dev # --host # --open
 ```
+
 #### using npm
+
 ```sh
 npm i;
 npm run dev # --host # --open
 ```
 
 ## Pushing your changes
+
 Before creating a pull request, make sure that your fork is able to build successfully with the `build` script.
 
 #### using pnpm
+
 ```sh
-pnpm format; pnpm lint; pnpm build 
+pnpm format; pnpm lint; pnpm build
 ```
+
 #### using yarn
+
 ```sh
 yarn run format; yarn run lint; yarn run build
 ```
+
 #### using npm
+
 ```sh
 npm run format; npm run lint; npm run build
 ```

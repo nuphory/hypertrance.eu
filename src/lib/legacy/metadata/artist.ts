@@ -80,7 +80,7 @@ class ArtistBuilder {
 	}
 
 	build(): Artist {
-		if (!this.name) throw new TypeError('A name is required to build a valid Artist');
+		if (!this.name) throw TypeError('A name is required to build a valid Artist');
 
 		if (Array.isArray(this.links)) {
 			this.links.sort((a, b) => a.priority - b.priority);
