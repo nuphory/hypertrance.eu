@@ -66,7 +66,7 @@
 	}
 </script>
 
-<div class="static {$$restProps.class}">
+<div id="product-form" class="static {$$restProps.class}">
 	<div class="flex flex-col gap-8 container py-8 bg-text-primary text-bg-primary">
 		<!-- Product Information -->
 		<div>

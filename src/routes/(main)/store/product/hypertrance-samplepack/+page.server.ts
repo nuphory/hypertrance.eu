@@ -3,7 +3,7 @@ import { getProductByHandle } from '$lib/utils/shopify/product.server';
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */
-export async function load({ getClientAddress }) {
+export async function load({ url, getClientAddress }) {
 	const handle = 'hypertrance-samplepack';
 
 	const product = await getProductByHandle({ handle }, getClientAddress());
@@ -13,6 +13,7 @@ export async function load({ getClientAddress }) {
 	}
 
 	return {
+		url,
 		product
 	};
 }

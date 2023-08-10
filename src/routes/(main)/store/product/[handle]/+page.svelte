@@ -1,17 +1,45 @@
 <script lang="ts">
+	import type { z } from 'zod';
+	import { id } from '$src/lib/assets/identity';
 	import ProductForm from '$src/lib/components/utils/store/ProductForm.svelte';
 	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
+	import type { ProductResult } from '$src/lib/utils/shopify/schemas/product';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	let { product } = data;
+	let { url } = data;
+
+	let { product }: { product: z.infer<typeof ProductResult> } = data;
 
 	const descSplit = product.descriptionHtml.split('\n');
 
 	const tagline = descSplit[0];
 	const description = descSplit.slice(1).join('\n');
 </script>
+
+<svelte:head>
+	<title>{product.title} | {id.name}</title>
+
+	<meta name="title" content="{product.title} | {id.name}" />
+
+	<link rel="canonical" href={url.href} />
+
+	<meta name="robots" content="index, follow" />
+
+	<meta property="og:title" content="{product.title} | {id.name}" />
+	<meta property="og:description" content={product.description.substring(0, 155) + '...'} />
+	<meta property="og:image" content="{product.featuredImage?.url}" />
+	<meta property="og:url" content={url.href} />
+	<meta property="og:type" content="website" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@hypertranceRT" />
+	<meta name="twitter:creator" content="@hypertranceRT" />
+	<meta name="twitter:title" content="{product.title} | {id.name}" />
+	<meta name="twitter:description" content={product.description.substring(0, 155) + '...'} />
+	<meta name="twitter:image" content="{product.featuredImage?.url}" />
+</svelte:head>
 
 <main class="py-2">
 	<div class="relative sm:container">
@@ -64,7 +92,10 @@
 				{/if}
 			</div>
 
-			<ProductForm {product} class="flex flex-col gap-8 flex-1 h-min sticky top-[5.5rem] ">
+			<ProductForm
+				{product}
+				class="flex flex-col gap-8 flex-1 h-min sticky top-[5.5rem] scroll-pt-[5.5rem]"
+			>
 				<span slot="tagline" style="display:contents">{@html tagline}</span>
 				<div slot="description" class="container flex flex-col gap-4">
 					<h2>Description</h2>
