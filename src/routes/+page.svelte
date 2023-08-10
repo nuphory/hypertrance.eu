@@ -13,7 +13,7 @@
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
 	import first_frame_srcset from '$lib/assets/img/samplepack/first_frame.webp?format=webp&w=425;576;640;820;1024;1280;1920;2560&as=srcset';
 	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
-
+	import hypertrance_2_cover from '$lib/assets/img/hypertrance-2-cover.jpg';
 	export let data;
 
 	let THREED;
@@ -120,21 +120,27 @@
 	<title>HYPERTRANCE SAMPLEPACK</title>
 
 	<meta name="title" content="HYPERTRANCE SAMPLEPACK" />
-
+	<meta property="og:type" content="product" />
 	<meta property="og:title" content="HYPERTRANCE SAMPLEPACK" />
-	<meta property="og:description" content={product.description.substring(0, 155) + '...'} />
-	<meta property="og:image" content={product.featuredImage?.url} />
+	<meta property="og:url" content="https://v3.hypertrance.pages.dev" />
+	<meta property="og:image" content={'https://v3.hypertrance.pages.dev' + hypertrance_2_cover} />
 	<meta
-		property="og:url"
+		property="og:description"
 		content="Experience the world of hypertrance with this all-new samplepack developed by nuphory."
 	/>
-	<meta property="og:type" content="website" />
+	<meta property="product:plural_title" content="HYPERTRANCE SAMPLEPACKS" />
+	<meta property="product:price.amount" content="39.00" />
+	<meta property="product:price.currency" content="EUR" />
 
 	<meta property="twitter:card" content="product" />
 	<meta property="twitter:site" content="@hypertranceRT" />
 	<meta
 		property="twitter:description"
 		content="Experience the world of hypertrance with this all-new samplepack developed by nuphory."
+	/>
+	<meta
+		property="twitter:image"
+		content={'https://v3.hypertrance.pages.dev' + hypertrance_2_cover}
 	/>
 	<meta property="twitter:title" content="HYPERTRANCE SAMPLEPACK" />
 	<meta property="twitter:label1" content="Price" />
