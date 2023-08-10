@@ -11,6 +11,7 @@
 	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
+	import first_frame_srcset from '$lib/assets/img/samplepack/first_frame.webp?format=webp&w=425;576;640;820;1024;1280;1920;2560&as=srcset';
 
 	export let data;
 
@@ -119,7 +120,20 @@
 		id="landing"
 		class="w-full h-[calc(100svh-10rem)] md:h-[calc(100svh-15rem)] relative text-bg-primary"
 	>
-		<svelte:component this={THREED} />
+		<div
+			class="w-full h-full [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_70%,rgba(0,0,0,0)_100%)]"
+		>
+			<div class="h-full overflow-hidden">
+				<Video autoplay={true} loop={true} muted={true} src_set={bg_video_sources} />
+			</div>
+			<img
+				id="threed-loading"
+				class="h-full absolute left-0 top-0"
+				srcset={first_frame_srcset}
+				alt="3D loading alternative"
+			/>
+			<svelte:component this={THREED} />
+		</div>
 		<Hero {data} />
 	</section>
 	<section id="about" class="my-4 px-24 pt-8">

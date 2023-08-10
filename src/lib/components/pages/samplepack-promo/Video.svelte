@@ -2,10 +2,17 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
-	export let src_set: { breakpoint: number; path: string }[];
 	export let muted: boolean;
 	export let autoplay: boolean;
 	export let loop: boolean;
+
+	const src_set = [
+		{ breakpoint: 480, path: '/bg/bg_480p' },
+		{ breakpoint: 720, path: '/bg/bg_720p' },
+		{ breakpoint: 1080, path: '/bg/bg_1080p' },
+		{ breakpoint: 1440, path: '/bg/bg_1440p' }
+	];
+
 	let video_element: HTMLVideoElement;
 	onMount(() => {
 		setTimeout(() => {
@@ -42,5 +49,6 @@
 	muted={muted || null}
 	loop={loop || null}
 >
-	<source src={src_set[0].path} type="video/webm" />
+	<source src={src_set[0].path + '.webm'} type="video/webm" />
+	<source src={src_set[0].path + '.mp4'} type="video/mp4" />
 </video>
