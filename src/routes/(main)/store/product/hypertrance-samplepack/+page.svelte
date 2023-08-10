@@ -64,7 +64,7 @@
 				{/if}
 			</div>
 
-			<ProductForm {product} class="flex flex-col gap-8 flex-1 h-min sticky top-[5.5rem] ">
+			<ProductForm {product} trackQuantity={false}  class="flex flex-col gap-8 flex-1 h-min sticky top-[5.5rem] ">
 				<span slot="tagline" style="display:contents">{@html tagline}</span>
 				<div slot="description" class="container flex flex-col gap-4">
 					<h2>Description</h2>
