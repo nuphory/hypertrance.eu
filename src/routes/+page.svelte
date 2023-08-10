@@ -4,15 +4,17 @@
 	import Hero from '$lib/components/pages/samplepack-promo/Hero.svelte';
 	import Sample from '$lib/components/pages/samplepack-promo/Sample.svelte';
 	import Stats from '$lib/components/pages/samplepack-promo/Stats.svelte';
-	import THREED from '$lib/components/pages/samplepack-promo/THREED.svelte';
+	// import THREED from '$lib/components/pages/samplepack-promo/THREED.svelte';
 	import Volume from '$lib/components/pages/samplepack-promo/Volume.svelte';
 	import { db } from '$lib/scripts/music/db';
-	import { createCart } from '$src/lib/utils/shopify/cart.js';
+	import { createCart } from '$lib/utils/shopify/cart';
 	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
 
 	export let data;
+
+	let THREED;
 
 	const { product } = data;
 	const selected_variant = product.variants.nodes[0];
@@ -33,8 +35,10 @@
 	let playing_song_id: number;
 	const collections = db.collections.filter((c) => c.name != 'demos');
 	const demos = db.collections.find((c) => c.name == 'demos')!;
-	onMount(() => {
+	onMount(async () => {
 		if (browser) {
+			THREED = (await import('$lib/components/pages/samplepack-promo/THREED.svelte')).default;
+
 			const audio = document.createElement('audio');
 			if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
 				db.songs.forEach((s) => (s.url = new URL(s.url.href.replace('.ogg', '.mp3'))));
@@ -68,7 +72,7 @@
 		id="landing"
 		class="w-full h-[calc(100svh-10rem)] md:h-[calc(100svh-15rem)] relative text-bg-primary"
 	>
-		<THREED />
+		<svelte:component this={THREED} />
 		<Hero {data} />
 	</section>
 	<section id="about" class="my-4 px-24 pt-8">
