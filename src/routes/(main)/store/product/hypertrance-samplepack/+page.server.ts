@@ -1,3 +1,6 @@
+export const prerender = true;
+export const ssr = true;
+
 // sveltekit load
 import { getProductByHandle } from '$lib/utils/shopify/product.server';
 import { error } from '@sveltejs/kit';
