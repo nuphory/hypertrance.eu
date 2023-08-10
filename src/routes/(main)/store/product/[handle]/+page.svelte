@@ -1,20 +1,16 @@
 <script lang="ts">
-	import Money from '$src/lib/components/utils/store/Money.svelte';
+	import ProductForm from '$src/lib/components/utils/store/ProductForm.svelte';
 	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
-	import AddToCartForm from '../../../../../lib/components/utils/store/AddToCartForm.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 
 	let { product } = data;
-	console.log(product);
 
-	let selectedVariant = product.variants.nodes[0];
+	const descSplit = product.descriptionHtml.split('\n');
 
-	let descSplit = product.descriptionHtml.split('\n');
-
-	let tagline = descSplit[0];
-	let description = descSplit.slice(1).join('\n');
+	const tagline = descSplit[0];
+	const description = descSplit.slice(1).join('\n');
 </script>
 
 <main class="py-2">
@@ -22,9 +18,9 @@
 		<div class="block md:hidden container sm:px-0 my-4">
 			<button
 				data-sveltekit-reload
-				on:click={history.back}
+				on:click={() => (window.location.href = '/')}
 				class="hyper-button button-neutral w-full"
-				><span class="inline-block before:content-['<_']"> &nbsp; back</span></button
+				><span class="inline-block before:content-['<_']"> &nbsp; back to front page</span></button
 			>
 		</div>
 		<div class="relative flex flex-col md:flex-row justify-start gap-8">
@@ -34,9 +30,11 @@
 				<div class="hidden md:block container sm:px-0">
 					<button
 						data-sveltekit-reload
-						on:click={history.back}
+						on:click={() => (window.location.href = '/')}
 						class="hyper-button button-neutral w-full"
-						><span class="inline-block before:content-['<_']"> &nbsp; back</span></button
+						><span class="inline-block before:content-['<_']">
+							&nbsp; back to front page</span
+						></button
 					>
 				</div>
 				{#if product.images.nodes.length >= 2}
@@ -66,39 +64,12 @@
 				{/if}
 			</div>
 
-			<div class="@container flex-1 h-min sticky top-20">
-				<div class="bg-text-primary text-bg-primary py-8 mb-8">
-					<div class="container">
-						<h1 class="mb-3 before:content-['']">{product.title}</h1>
-						<Money
-							price={selectedVariant.price}
-							showCurrency={true}
-							class="font-michroma before:content-[''] bg-primary text-primary p-2 w-fit"
-						/>
-						{#if selectedVariant.compareAtPrice !== null && selectedVariant.compareAtPrice !== selectedVariant.price}
-							<Money
-								price={selectedVariant.compareAtPrice}
-								compareAtPrice={true}
-								showCurrency={true}
-								class="font-michroma p-2 w-fit"
-							/>
-						{/if}
-						<!-- <p class="font-michroma before:content-[''] bg-text-primary text-bg-primary p-2 w-fit">
-                                                                                                {parseFloat(selectedVariant.price.amount || '').toFixed(2)}
-                                                                                                {selectedVariant.price.currencyCode}
-                                                                                        </p> -->
-						<i class="[&>p]:my-4">{@html tagline}</i>
-						<!-- <AddToCart /> -->
-						<AddToCartForm
-							trackQuantity={true}
-							variantAvailableForSale={true}
-							variantId={selectedVariant.id}
-							class="w-full flex flex-col items-start justify-between gap-8"
-						/>
-					</div>
-				</div>
-
-				<div class="container flex flex-col gap-4">
+			<ProductForm
+				{product}
+				class="flex flex-col gap-8 flex-1 h-min sticky top-[5.5rem] "
+			>
+				<span slot="tagline" style="display:contents">{@html tagline}</span>
+				<div slot="description" class="container flex flex-col gap-4">
 					<h2>Description</h2>
 					<div class="prose">
 						{#if description}
@@ -106,7 +77,7 @@
 						{/if}
 					</div>
 				</div>
-			</div>
+			</ProductForm>
 		</div>
 	</div>
 </main>
