@@ -11,7 +11,7 @@ export async function load({ url }) {
 
 	const { href } = url;
 
-	const product = await getProductByHandle({ handle });
+	const product = await getProductByHandle({ handle, selectedOptions: [] });
 
 	if (!product) {
 		throw error(404, { message: 'Product not found' });
