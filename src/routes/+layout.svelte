@@ -7,6 +7,7 @@
 
 	// Styles
 	import '$lib/styles/app.scss';
+	import { browser } from '$app/environment';
 
 	let ready = false;
 	onMount(() => {
@@ -26,14 +27,21 @@
 	<meta name="theme-color" content="#ffffff" />
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon.svg" />
 
-	
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@hypertranceRT" />
 	<meta name="twitter:creator" content="@hypertranceRT" />
 </svelte:head>
 
-{#if ready}
-	<div in:fade={{ duration: 500 }}>
+{#if browser}
+	{#if ready}
+		<!-- content here -->
+		<div in:fade={{ duration: 500 }}>
+			<slot />
+			<Footer />
+		</div>
+	{/if}
+{:else}
+	<div in:fade={{ duration: 500 }} class="opacity-0">
 		<slot />
 		<Footer />
 	</div>

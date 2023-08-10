@@ -1,6 +1,4 @@
 export const ssr = true;
-export const csr = false;
-
 // sveltekit load
 import { getProductByHandle } from '$lib/utils/shopify/product.server';
 import { error } from '@sveltejs/kit';
