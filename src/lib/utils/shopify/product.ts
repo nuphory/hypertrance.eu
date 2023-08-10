@@ -41,6 +41,7 @@ export async function getProduct(options: {
 	first_images?: number;
 	first_variants?: number;
 	selectedOptions?: z.infer<typeof SelectedOptionResult>[];
+	hasSelectedOptions?: boolean;
 }) {
 	const { id, handle } = options;
 
@@ -51,7 +52,10 @@ export async function getProduct(options: {
 	const input = {
 		...options,
 		...(id && { id }),
-		...(handle && { handle })
+		...(handle && { handle }),
+		hasSelectedOptions: options.selectedOptions?.length
+			? options.selectedOptions?.length > 0
+			: false
 	};
 
 	const data = await makeShopifyRequest(ProductQuery, input);
@@ -68,10 +72,10 @@ export async function getProductByHandle(options: {
 	first_images?: number;
 	first_variants?: number;
 	selectedOptions?: z.infer<typeof SelectedOptionResult>[];
-}) {
+	hasSelectedOptions?: boolean;
+},) {
 	const input = {
 		...options,
-		
 		hasSelectedOptions: options.selectedOptions?.length
 			? options.selectedOptions?.length > 0
 			: false

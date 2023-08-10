@@ -42,6 +42,7 @@ export async function getProduct(
 		first_images?: number;
 		first_variants?: number;
 		selectedOptions?: z.infer<typeof SelectedOptionResult>[];
+		hasSelectedOptions?: boolean;
 	},
 	buyerIP: string
 ) {
@@ -53,7 +54,11 @@ export async function getProduct(
 
 	const input = {
 		...(id && { id }),
-		...(handle && { handle })
+		...(handle && { handle }),
+		selectedOptions: [],
+		hasSelectedOptions: options.selectedOptions?.length
+			? options.selectedOptions?.length > 0
+			: false
 	};
 
 	const data = await makeShopifyRequest(ProductQuery, input, buyerIP);
