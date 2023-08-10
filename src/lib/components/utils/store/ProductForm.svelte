@@ -10,7 +10,7 @@
 	import { fly } from 'svelte/transition';
 
 	export let product: z.infer<typeof ProductResult>;
-	export let trackQuantity: boolean = true;
+	export let trackQuantity = true;
 
 	const descSplit = product.descriptionHtml.split('\n');
 
@@ -74,7 +74,7 @@
 			{#key selectedVariant.price}
 				<div
 					in:fly={{ x: -5, duration: 150, delay: 150 }}
-					out:fly={{ x: 5, duration: 150}}
+					out:fly={{ x: 5, duration: 150 }}
 					class="flex gap-2 mb-8 transition-none [&:nth-child(3)]:mb-0 [&:nth-child(3)]:h-0"
 				>
 					<Money

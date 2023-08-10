@@ -40,14 +40,16 @@ export const ProductResult = z.object({
 	featuredImage: ImageResult.optional(),
 	collections: z.object({
 		nodes: z.array(
-			z.object({
-				id: z.string(),
-				handle: z.string(),
-				title: z.string(),
-				description: z.string(),
-				descriptionHtml: z.string(),
-				image: ImageResult.optional()
-			}).optional()
+			z
+				.object({
+					id: z.string(),
+					handle: z.string(),
+					title: z.string(),
+					description: z.string(),
+					descriptionHtml: z.string(),
+					image: ImageResult.optional()
+				})
+				.optional()
 		)
 	}),
 	images: z.object({

@@ -21,7 +21,7 @@
 	<img
 		src={image.url}
 		alt={image.altText || 'Default alt text'}
-		class="{$$restProps.class}"
+		class={$$restProps.class}
 		width={image.width}
 		height={image.height}
 		{loading}

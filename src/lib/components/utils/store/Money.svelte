@@ -4,9 +4,9 @@
 	import type { z } from 'zod';
 
 	export let price: z.infer<typeof MoneyV2Result>;
-	export let showCurrency: boolean = false;
+	export let showCurrency = false;
 
-	export let compareAtPrice: boolean = false;
+	export let compareAtPrice = false;
 
 	$: formatPrice =
 		parseFloat(price.amount) > 0
@@ -16,7 +16,7 @@
 
 <div class="flex flex-col">
 	<slot />
-	<div class={$$restProps.class}>
+	<div class="static {$$restProps.class}">
 		<span class:line-through={compareAtPrice} class="inline-block">
 			{formatPrice}
 		</span>

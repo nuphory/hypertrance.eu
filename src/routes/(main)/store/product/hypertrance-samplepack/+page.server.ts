@@ -4,7 +4,7 @@ import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ getClientAddress }) {
-	const handle = "hypertrance-samplepack";
+	const handle = 'hypertrance-samplepack';
 
 	const product = await getProductByHandle({ handle }, getClientAddress());
 

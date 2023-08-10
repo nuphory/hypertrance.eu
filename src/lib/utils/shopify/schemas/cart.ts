@@ -30,12 +30,15 @@ export const CartResult = z.object({
 	discountCodes: z.array(CartDiscountCodeResult.optional()).optional(),
 	discountAllocations: z
 		.array(
-			z.object({
-				discountedAmount: MoneyV2Result,
-				title: z.string().nullable().optional(),
-				code: z.string().nullable().optional()
-			}).optional()
-		).optional(),
+			z
+				.object({
+					discountedAmount: MoneyV2Result,
+					title: z.string().nullable().optional(),
+					code: z.string().nullable().optional()
+				})
+				.optional()
+		)
+		.optional(),
 	lines: z.object({
 		nodes: z.array(CartLineResult)
 	})

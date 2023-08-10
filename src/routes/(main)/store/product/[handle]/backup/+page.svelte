@@ -87,7 +87,6 @@
                                                                                                 {selectedVariant.price.currencyCode}
                                                                                         </p> -->
 						<i class="[&>p]:my-4">{@html tagline}</i>
-
 					</div>
 				</div>
 

@@ -1,4 +1,10 @@
-import { addCartLines, createCart, getCart, removeCartLines, updateCartLines } from '$lib/utils/shopify/cart';
+import {
+	addCartLines,
+	createCart,
+	getCart,
+	removeCartLines,
+	updateCartLines
+} from '$lib/utils/shopify/cart';
 import type { CartResult } from '$lib/utils/shopify/schemas/cart';
 import { persistentAtom } from '@nanostores/persistent';
 import { atom } from 'nanostores';
@@ -124,33 +130,32 @@ export async function removeCartItems(lineIds: string[]) {
 	}
 }
 
-export async function updateCartItem(line: {lineId: string, quantity: number}) {
+export async function updateCartItem(line: { lineId: string; quantity: number }) {
+	const { lineId, quantity } = line;
 
-        const { lineId, quantity } = line;
-
-        if (quantity === 0) {
-                removeCartItems([lineId]);
-                return;
-        } 
+	if (quantity === 0) {
+		removeCartItems([lineId]);
+		return;
+	}
 
 	const localCart = cart.get();
 	const cartId = localCart?.id;
 
 	isCartUpdating.set(true);
 
-        if (cartId) {
+	if (cartId) {
 		const cartData = await updateCartLines(cartId, [line]);
 
-                if (cartData) {
-                        cart.set({
-                                ...cart.get(),
-                                id: cartData.id,
-                                cost: cartData.cost,
-                                checkoutUrl: cartData.checkoutUrl,
-                                totalQuantity: cartData.totalQuantity,
-                                lines: cartData.lines
-                        });
-                        isCartUpdating.set(false);
-                }
-        }
+		if (cartData) {
+			cart.set({
+				...cart.get(),
+				id: cartData.id,
+				cost: cartData.cost,
+				checkoutUrl: cartData.checkoutUrl,
+				totalQuantity: cartData.totalQuantity,
+				lines: cartData.lines
+			});
+			isCartUpdating.set(false);
+		}
+	}
 }

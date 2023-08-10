@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-// Assets
+	// Assets
 	import { description, name } from '$src/lib/assets/identity';
 	import artists from '$src/lib/legacy/metadata/artist';
-// Components
+	// Components
 	import Footer from '../lib/components/layout/Footer.svelte';
 
 	// Styles

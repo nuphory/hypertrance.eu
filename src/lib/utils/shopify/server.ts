@@ -16,7 +16,7 @@ export async function makeShopifyRequest(
 				`🔴 No buyer IP provided => make sure to pass the buyer IP when making a server side Shopify request.`
 			);
 		}
-		
+
 		const options = {
 			method: 'POST',
 			headers: {},

@@ -125,8 +125,7 @@ class AlbumBuilder {
 		if (!this.title) throw TypeError('A title is required to build a valid Album');
 		if (!this.albumArtists)
 			throw TypeError('At least one album artist is required to build a valid Track');
-		if (!this.trackList)
-			throw TypeError('At least one track is required to build a valid Album');
+		if (!this.trackList) throw TypeError('At least one track is required to build a valid Album');
 
 		if (Array.isArray(this.links)) {
 			this.links.sort((a, b) => a.priority - b.priority);

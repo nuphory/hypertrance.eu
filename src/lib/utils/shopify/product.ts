@@ -73,7 +73,7 @@ export async function getProductByHandle(options: {
 	first_variants?: number;
 	selectedOptions?: z.infer<typeof SelectedOptionResult>[];
 	hasSelectedOptions?: boolean;
-},) {
+}) {
 	const input = {
 		...options,
 		hasSelectedOptions: options.selectedOptions?.length
