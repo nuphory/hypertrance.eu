@@ -8,7 +8,7 @@
 
 	let { product } = data;
 
-	let { url } = data;
+	let { href } = data;
 
 	let descSplit = product.descriptionHtml.split('\n');
 
@@ -21,14 +21,14 @@
 
 	<meta name="title" content="{product.title} | {id.name}" />
 
-	<link rel="canonical" href={url.href} />
+	<link rel="canonical" href={href} />
 
 	<meta name="robots" content="index, follow" />
 
 	<meta property="og:title" content="{product.title} | {id.name}" />
 	<meta property="og:description" content={product.description.substring(0, 155) + '...'} />
 	<meta property="og:image" content="{product.featuredImage?.url}" />
-	<meta property="og:url" content={url.href} />
+	<meta property="og:url" content={href} />
 	<meta property="og:type" content="website" />
 
 	<meta name="twitter:card" content="summary_large_image" />

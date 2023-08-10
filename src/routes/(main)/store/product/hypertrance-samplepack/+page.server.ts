@@ -6,6 +6,8 @@ import { error } from '@sveltejs/kit';
 export async function load({ url, getClientAddress }) {
 	const handle = 'hypertrance-samplepack';
 
+	const { href } = url;
+
 	const product = await getProductByHandle({ handle }, getClientAddress());
 
 	if (!product) {
@@ -13,7 +15,7 @@ export async function load({ url, getClientAddress }) {
 	}
 
 	return {
-		url,
+		href,
 		product
 	};
 }
