@@ -25,9 +25,55 @@
 		if (!cart) throw Error('Cart creation failed');
 		goto(cart.checkoutUrl);
 	}
-	//temp description
-	db.collections.forEach((col) => {
-		col.metadata[0] = `This is the placeholder text for the bass. It is not very long and it goes on for about two or three lines. Yes this is a text, and it will be used as an amazing text. text.`;
+	//remove the 01, 02 ... from song names
+	for (const song of db.songs) {
+		song.name = song.name.slice(2);
+	}
+
+	//add descriptions
+	for (const collection of db.collections) {
+		switch (collection.name) {
+			//Not present atm!
+			case 'demos': {
+				collection.metadata[0] = `Got demos you want to share with us? Join our Discord! <a href="https://discord.gg/hypertrance">https://discord.gg/hypertrance</a>`;
+				collection.metadata[1] = 0;
+				break;
+			}
+			case 'synths': {
+				collection.metadata[0] = `The hypertrance samplepack includes a wide variety of different synth sounds, each including both .wav files and presets, which work on every platform and every DAW. All sounds come pre-EQd to fit into your mix and are fully customizable for your specific needs.`;
+				collection.metadata[1] = 1;
+				break;
+			}
+			case 'bass': {
+				collection.metadata[0] = `From offbeat-handsup styled basslines to arpeggiated trance basses, the hypertrance samplepack not only gives you timbres that cut, but sub basses that cleanly underpin your whole mix. All sounds are delivered with their respective presets for further customization.`;
+				collection.metadata[1] = 2;
+				break;
+			}
+			case 'loops': {
+				collection.metadata[0] = `The quickest way from a blank project to a banging beat. Our loops come pre-mixed to turn mixing a complicated trance beat into a simple thing anyone can do. Enjoy our fully mixed loops, or assemble your own from our broad selection of over 60 drumloops.`;
+				collection.metadata[1] = 3;
+				break;
+			}
+			case 'kicks': {
+				collection.metadata[0] = `Ever tire of trying to build a nice, clean, basic kick? Our pack provides not only that, but also custom layers for you to assemble your unique kickdrum, without having to worry about complicated mixing techniques. Create and tweak your ideal kick in seconds.`;
+				collection.metadata[1] = 4;
+				break;
+			}
+			case 'drums': {
+				collection.metadata[0] = `Sifting through hundreds of different claps, hats and percs, just to find one that works, can be tiring. We aim to provide you with samples that focus on doing one thing only, and doing it well. All of our drums are mixed and matched so that you can freely pick your favorite.`;
+				collection.metadata[1] = 5;
+				break;
+			}
+			case 'FX': {
+				collection.metadata[0] = `Looking for that huge, anthemic trance breakdown sound? We provide dozens of clean FX sounds that can be layered into one another without any effort. No more messy playlists and automations, our effect sounds work together out of the box.`;
+				collection.metadata[1] = 6;
+				break;
+			}
+		}
+	}
+	console.debug(db.collections);
+	db.collections.sort((a, b) => {
+		return a.metadata[1] - b.metadata[1];
 	});
 
 	let player: Euterpe;
@@ -78,21 +124,30 @@
 	<section id="about" class="my-4 px-24 pt-8">
 		<div class="grid grid-cols-1 w-full">
 			<h2 class="text-5xl before:[content:''] text-center text-[var(--color-content-emphasis)]">
-				EXPERIENCE THE HyPE OR SMT
+				DIVE IN. TAKE FLIGHT.
 			</h2>
-			<Stats />
 			<p class="my-4 indent-8 text-justify">
-				This would be another good spot to describe the product more, probably explain what it even
-				is and sound hype througout the whole thing. This could be a multi-line long description,
-				although not sure about that since we don't have a single serif font in our library yet. We
-				will cross that bridge once we get there, for now we don' even know if this paragraph will
-				be here. Aight not sure what more to say so let's end it here c:
+				Experience the world of hypertrance with this all-new samplepack developed by nuphory. From
+				Virtual Self - styled leads to Alphazone / Y2K influenced hardtrance loops, the hypertrance
+				samplepack delivers high quality samples and presets developed by producers, for producers.
+				Tired of having to sift through outdated, unoptimized sample packs? Whether you're an
+				advanced user or just starting out, the hypertrance samplepack provides mixed and matched
+				neoy2k samples for maximum efficiency in the studio, saving you time and energy so that you
+				can focus on what matters - nailing that sound. Our presets and samples require no
+				additional paid software and are compatible with all DAWs, ensuring barrier-free access on
+				every platform. Try our free sample pack demo today!
 			</p>
+			<Stats />
 			<div>
 				<h3 class="text-4xl mt-8 text-center text-[var(--color-content-emphasis)]">DEMOS</h3>
-				{#each demos.songs as song, i}
-					<Sample {is_playing} {player} {playing_song_id} song={song.get(db)} />
-				{/each}
+				<p class="my-8 mb-16 indent-8 text-center">
+					Got demos you want to share with us? Join our Discord! <a
+						href="https://discord.gg/hypertrance">https://discord.gg/hypertrance</a
+					>
+				</p>
+				<!-- {#each demos.songs as song, i} -->
+				<Sample {is_playing} {player} {playing_song_id} song={db.songs[0]} />
+				<!-- {/each} -->
 			</div>
 		</div>
 	</section>

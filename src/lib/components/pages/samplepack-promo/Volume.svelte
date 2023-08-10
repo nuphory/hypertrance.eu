@@ -3,9 +3,18 @@
 	import { Icon, SpeakerWave } from 'svelte-hero-icons';
 	export let player: Euterpe;
 	let is_hiding = true;
+	let timeout_id: any | undefined;
+	async function toggle_timeout() {
+		if (timeout_id) clearTimeout(timeout_id);
+		timeout_id = setTimeout(() => (is_hiding = true), 3000);
+	}
 </script>
 
 <div
+	on:mouseenter={() => {
+		if (timeout_id) clearTimeout(timeout_id);
+	}}
+	on:mouseleave={toggle_timeout}
 	class=" hidden md:grid fixed left-24 bottom-24 w-16 h-16 bg-text-primary z-10 rounded-full p-2
     grid-cols-1 grid-flow-row [transition-duration:_100ms] transition-all shadow-[var(--color-bg-side)] shadow-[0_0_3rem_5px]
 	place-items-end

@@ -27,7 +27,10 @@
 		const res_x = convert_range(x, [0, rect.width], [0, canvas.viewBox.baseVal.width]);
 		const seek_percent = res_x / canvas.viewBox.baseVal.width;
 
-		player.try_seek(seek_percent * song.duration!).catch((r) => alert(r));
+		player.try_seek(seek_percent * song.duration!).catch(async (r) => {
+			await play();
+			player.try_seek(seek_percent * song.duration!).catch((e) => alert(e));
+		});
 	}
 	async function play() {
 		try {
