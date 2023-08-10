@@ -15,17 +15,19 @@
 		<section>
 			<h3>Policies</h3>
 			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
+
 				<!-- <li><a href="#">Shipping</a></li> -->
 				<!-- <li><a href="#">Customs & Fees</a></li> -->
 				<!-- <li><a href="#">Return Policy</a></li> -->
-				<li><a disabled href="#">Terms & Conditions</a></li>
-				<li><a disabled href="#">Privacy Policy</a></li>
+				<li><a href="https://store.hypertrance.eu/policies/refund-policy">Refund Policy</a></li>
+				<li><a href="https://store.hypertrance.eu/policies/privacy-policy">Privacy Policy</a></li>
+				<li><a href="https://store.hypertrance.eu/policies/terms-of-service">Terms of Service</a></li>
 			</ul>
 		</section>
 		<section>
 			<h3>Support</h3>
 			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
-				<li><a disabled href="#">Contact Us</a></li>
+				<li><a href="https://store.hypertrance.eu/policies/contact-information">Contact Us</a></li>
 				<li><a disabled href="#">FAQ</a></li>
 				<li><a disabled href="#">Impressum</a></li>
 				<li><a href="https://github.com/nuphory/hypertrance/issues">Report an Issue</a></li>
