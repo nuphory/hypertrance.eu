@@ -1,8 +1,7 @@
-export const prerender = true;
 export const ssr = true;
 
 // sveltekit load
-import { getProductByHandle } from '$lib/utils/shopify/product.server';
+import { getProductByHandle as getProductByHandleSSR } from '$lib/utils/shopify/product.server';
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */
@@ -11,7 +10,7 @@ export async function load({ url, getClientAddress }) {
 
 	const { href } = url;
 
-	const product = await getProductByHandle({ handle }, getClientAddress());
+	const product = await getProductByHandleSSR({ handle }, getClientAddress());
 
 	if (!product) {
 		throw error(404, { message: 'Product not found' });
