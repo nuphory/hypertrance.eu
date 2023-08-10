@@ -5,7 +5,8 @@ module.exports = {
 		extend: {
 			screens: {
 				'2xs': '425px',
-				xs: '576px'
+				xs: '576px',
+				"3xl": "1920px",
 			},
 			fontFamily: {
 				comsat: ['Comsat', 'sans-serif'],
@@ -327,4 +328,4 @@ module.exports = {
 		require('@tailwindcss/container-queries'),
 		require('@tailwindcss/line-clamp')
 	]
-};
+}

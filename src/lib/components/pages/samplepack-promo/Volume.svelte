@@ -15,16 +15,16 @@
 		if (timeout_id) clearTimeout(timeout_id);
 	}}
 	on:mouseleave={toggle_timeout}
-	class=" hidden md:grid fixed left-24 bottom-24 w-16 h-16 bg-text-primary z-10 rounded-full p-2
-    grid-cols-1 grid-flow-row [transition-duration:_100ms] transition-all shadow-[var(--color-bg-side)] shadow-[0_0_3rem_5px]
+	class=" hidden md:grid fixed left-8 3xl:left-[calc((100vw-1920px)/2)] bottom-24 w-12 h-12 bg-text-primary z-10 rounded-full p-1
+    grid-cols-1 grid-flow-row [transition-duration:_100ms] transition-all shadow-[rgba(0,0,0,.3)] shadow-[0_0_.5rem_1px]
 	place-items-end
     {is_hiding
-		? 'h-16 grid-rows-[1fr_3rem] hover:scale-90 active:scale-105 active:brightness-105  hover:brightness-75'
-		: 'h-[20rem] grid-rows-[1fr_3rem]'}
+		? 'h-12 grid-rows-[1fr_2rem] hover:scale-90 active:scale-105 active:brightness-105  hover:brightness-75'
+		: 'h-[20rem] grid-rows-[1fr_2rem]'}
     "
 >
 	<div
-		class=" mx-auto [transition-duration:_100ms] ml-6 {is_hiding ? 'w-0 h-0 ' : 'w-[15rem] h-4'}"
+		class=" mx-auto [transition-duration:_100ms] ml-5 {is_hiding ? 'w-0 h-0 ' : 'w-[16rem] h-5'}"
 	>
 		<input
 			on:input={(e) => player.change_volume(e.target.valueAsNumber)}
@@ -38,7 +38,7 @@
 	</div>
 	<div on:mousedown={() => (is_hiding = !is_hiding)}>
 		<Icon
-			class="w-12 h-12 stroke-[var(--color-bg-side)] fill-[var(--color-bg-side)] "
+			class="w-10 h-10 stroke-[var(--color-bg-side)] fill-[var(--color-bg-side)] "
 			src={SpeakerWave}
 		/>
 	</div>
@@ -58,7 +58,7 @@
 	}
 	//  [-webkit-appearance:_slider-vertical] [writing-mode:_bt-lr] if custom track ain't workie
 	.volumeSlider {
-		@apply appearance-none [transform:rotate(270deg)] origin-left bg-transparent w-full h-4 relative m-0 p-0 py-2 border-none cursor-pointer -mb-[14rem];
+		@apply appearance-none [transform:rotate(270deg)] origin-left bg-transparent w-full h-4 relative m-0 p-0 border-none cursor-pointer -mb-[14rem];
 	}
 	.volumeSlider::-webkit-slider-runnable-track {
 		@apply bg-[var(--color-bg-side)] rounded-full w-full h-4 appearance-none;

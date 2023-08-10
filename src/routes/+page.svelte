@@ -30,6 +30,7 @@
 	//remove the 01, 02 ... from song names
 	for (const song of db.songs) {
 		song.name = song.name.slice(2);
+		song.name.replace(' and ', ' & ');
 	}
 
 	//add descriptions
@@ -137,8 +138,8 @@
 		</div>
 		<Hero {data} />
 	</section>
-	<section id="about" class="my-4 px-24 pt-8">
-		<div class="grid grid-cols-1 w-full">
+	<section id="about" class="my-4 pt-8">
+		<div class="px-12 grid grid-cols-1 w-full">
 			<h2 class="text-5xl before:[content:''] text-center text-[var(--color-content-emphasis)]">
 				DIVE IN. TAKE FLIGHT.
 			</h2>
@@ -170,7 +171,7 @@
 	<section class="mt-24 grid grid-cols-1 grid-rows-4 bg-primary">
 		{#each collections as collection, i}
 			<div
-				class="w-full h-full p-12 py-6 grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-6 relative"
+				class="w-full h-full p-12 py-6 grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-6 relative"
 			>
 				{#if i % 2 == 0}
 					<div class="w-full h-full bg-text-primary" />
@@ -227,7 +228,7 @@
 		font-size: clamp(0.5rem, calc(0.6rem + 0.3vw), 2rem);
 	}
 	section:not(:first-of-type) {
-		@apply mx-auto lg:max-w-[1920px];
+		@apply mx-auto lg:max-w-[1920px] px-16;
 	}
 
 	:global(:root) {
