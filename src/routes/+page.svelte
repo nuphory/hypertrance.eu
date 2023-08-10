@@ -12,6 +12,7 @@
 	import { onMount } from 'svelte';
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
 	import first_frame_srcset from '$lib/assets/img/samplepack/first_frame.webp?format=webp&w=425;576;640;820;1024;1280;1920;2560&as=srcset';
+	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
 
 	export let data;
 
@@ -124,7 +125,7 @@
 			class="w-full h-full [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_70%,rgba(0,0,0,0)_100%)]"
 		>
 			<div class="h-full overflow-hidden">
-				<Video autoplay={true} loop={true} muted={true} src_set={bg_video_sources} />
+				<Video autoplay={true} loop={true} muted={true} />
 			</div>
 			<img
 				id="threed-loading"
