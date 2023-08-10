@@ -1,14 +1,13 @@
 <script lang="ts" defer="true">
-	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import ThreeD from '$lib/scripts/3D/3D';
+	import { onMount } from 'svelte';
 	import Video from './Video.svelte';
 
 	let hide_bg_img = true;
 	let canvas: HTMLCanvasElement;
 
-        import first_frame_srcset from "$lib/assets/img/samplepack/first_frame.webp?format=webp&w=425;576;640;820;1024;1280;1920;2560&as=srcset";
-
+	import first_frame_srcset from '$lib/assets/img/samplepack/first_frame.webp?format=webp&w=425;576;640;820;1024;1280;1920;2560&as=srcset';
 	onMount(() => {
 		if (browser) {
 			const ߜ = new ThreeD(canvas);

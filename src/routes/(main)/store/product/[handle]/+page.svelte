@@ -1,20 +1,45 @@
 <script lang="ts">
-	import Money from '$src/lib/components/utils/store/Money.svelte';
+	import type { z } from 'zod';
+	import { id } from '$src/lib/assets/identity';
+	import ProductForm from '$src/lib/components/utils/store/ProductForm.svelte';
 	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
-	import AddToCartForm from '$lib/components/utils/store/AddToCartForm.svelte';
+	import type { ProductResult } from '$src/lib/utils/shopify/schemas/product';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	let { product } = data;
+	let { href } = data;
 
-	let selectedVariant = product.variants.nodes[0];
+	let { product }: { product: z.infer<typeof ProductResult> } = data;
 
-	let descSplit = product.descriptionHtml.split('\n');
+	const descSplit = product.descriptionHtml.split('\n');
 
-	let tagline = descSplit.find((line: string) => line.startsWith('<p>'));
-        let description = descSplit.filter((line: string) => line !== tagline).join('\n');
+	const tagline = descSplit[0];
+	const description = descSplit.slice(1).join('\n');
 </script>
+
+<svelte:head>
+	<title>{product.title} | {id.name}</title>
+
+	<meta name="title" content="{product.title} | {id.name}" />
+
+	<link rel="canonical" href={href} />
+
+	<meta name="robots" content="index, follow" />
+
+	<meta property="og:title" content="{product.title} | {id.name}" />
+	<meta property="og:description" content={product.description.substring(0, 155) + '...'} />
+	<meta property="og:image" content="{product.featuredImage?.url}" />
+	<meta property="og:url" content={href} />
+	<meta property="og:type" content="website" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@hypertranceRT" />
+	<meta name="twitter:creator" content="@hypertranceRT" />
+	<meta name="twitter:title" content="{product.title} | {id.name}" />
+	<meta name="twitter:description" content={product.description.substring(0, 155) + '...'} />
+	<meta name="twitter:image" content="{product.featuredImage?.url}" />
+</svelte:head>
 
 <main class="py-2">
 	<div class="relative sm:container">
@@ -67,39 +92,12 @@
 				{/if}
 			</div>
 
-			<div class="@container flex-1 h-min sticky top-20">
-				<div class="bg-text-primary text-bg-primary py-8 mb-8">
-					<div class="container">
-						<h1 class="mb-3 before:content-['']">{product.title}</h1>
-						<Money
-							price={selectedVariant.price}
-							showCurrency={true}
-							class="font-michroma before:content-[''] bg-primary text-primary p-2 w-fit"
-						/>
-						{#if selectedVariant.compareAtPrice !== null && selectedVariant.compareAtPrice !== selectedVariant.price}
-							<Money
-								price={selectedVariant.compareAtPrice}
-								compareAtPrice={true}
-								showCurrency={true}
-								class="font-michroma p-2 w-fit"
-							/>
-						{/if}
-						<!-- <p class="font-michroma before:content-[''] bg-text-primary text-bg-primary p-2 w-fit">
-                                                                                                {parseFloat(selectedVariant.price.amount || '').toFixed(2)}
-                                                                                                {selectedVariant.price.currencyCode}
-                                                                                        </p> -->
-						<i class="[&>p]:my-4">{@html tagline}</i>
-						<!-- <AddToCart /> -->
-						<AddToCartForm
-							trackQuantity={false}
-							variantAvailableForSale={true}
-							variantId={selectedVariant.id}
-							class="w-full flex flex-col items-start justify-between gap-8"
-						/>
-					</div>
-				</div>
-
-				<div class="container flex flex-col gap-4">
+			<ProductForm
+				{product}
+				class="flex flex-col gap-8 flex-1 h-min sticky top-[5.5rem] scroll-pt-[5.5rem]"
+			>
+				<span slot="tagline" style="display:contents">{@html tagline}</span>
+				<div slot="description" class="container flex flex-col gap-4">
 					<h2>Description</h2>
 					<div class="prose">
 						{#if description}
@@ -107,7 +105,7 @@
 						{/if}
 					</div>
 				</div>
-			</div>
+			</ProductForm>
 		</div>
 	</div>
 </main>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { z } from 'zod';
-	import type { ImageResult } from '$lib/utils/schemas';
+	import type { ImageResult } from '$lib/utils/shopify/schemas/common';
 
 	export let image: z.infer<typeof ImageResult>;
 	export let loading: 'lazy' | 'eager' = 'lazy';

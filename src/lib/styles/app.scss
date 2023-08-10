@@ -41,16 +41,17 @@ html {
 			p {
 				@apply pointer-events-auto;
 			}
-			a {
-				@apply transition-quick duration-default ease-out;
-				@apply pointer-events-auto;
+		}
+		a {
+			@apply transition-quick duration-default ease-out;
+			@apply pointer-events-auto;
 
-				@apply hover:-translate-y-px;
-				@apply active:translate-y-px;
+			@apply hover:-translate-y-px;
+			@apply active:translate-y-px;
 
-				&[disabled] {
-					@apply pointer-events-none;
-				}
+			&[disabled] {
+				@apply pointer-events-none;
+				@apply opacity-50;
 			}
 		}
 	}

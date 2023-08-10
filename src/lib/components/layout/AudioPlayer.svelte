@@ -33,17 +33,31 @@
 			<span>≫</span>
 		</button>
 		<!-- Progress/Seek bar -->
-		<input id="music-player__controls__seek-slider" class="flex-1" type="range" min="0" max="100" value="0" />
+		<input
+			id="music-player__controls__seek-slider"
+			class="flex-1"
+			type="range"
+			min="0"
+			max="100"
+			value="0"
+		/>
 		<!-- Volume -->
 		<div class="group">
-                        <input id="music-player__controls__volume-slider" class="opacity-0 w-0 group-hover:w-8" type="range" min="0" max="100" value="100" />
-                        <button
-                                id="music-player__controls__volume-mute-toggle"
-                                class="hyper-button button-neutral aspect-square overflow-clip"
-                        >
-                                <span>🔊</span>
-                        </button>
-                </div>
+			<input
+				id="music-player__controls__volume-slider"
+				class="opacity-0 w-0 group-hover:w-8"
+				type="range"
+				min="0"
+				max="100"
+				value="100"
+			/>
+			<button
+				id="music-player__controls__volume-mute-toggle"
+				class="hyper-button button-neutral aspect-square overflow-clip"
+			>
+				<span>🔊</span>
+			</button>
+		</div>
 		<!-- Optional: Queue -->
 		<!-- <div></div> -->
 	</form>

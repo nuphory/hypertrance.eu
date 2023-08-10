@@ -166,9 +166,9 @@ class TrackBuilder {
 	}
 
 	build(): Track {
-		if (!this.title) throw new TypeError('A track title is required to build a valid Track');
+		if (!this.title) throw TypeError('A track title is required to build a valid Track');
 		if (!this.primaryArtists)
-			throw new TypeError('At least one primary artist is required to build a valid Track');
+			throw TypeError('At least one primary artist is required to build a valid Track');
 
 		if (Array.isArray(this.links)) {
 			this.links.sort((a, b) => a.priority - b.priority);

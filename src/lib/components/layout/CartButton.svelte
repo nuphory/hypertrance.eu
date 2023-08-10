@@ -4,16 +4,18 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-    		initCart();
-  	});
+		initCart();
+	});
 
-  	function openCart() {
-    		isCartDrawerOpen.set(true);
-  	}
-
+	function openCart() {
+		isCartDrawerOpen.set(true);
+	}
 </script>
 
-<button class="hyper-button p-3 whitespace-nowrap backdrop-blur shadow-lg overflow-clip" on:click={openCart}>
+<button
+	class="hyper-button p-3 whitespace-nowrap backdrop-blur shadow-lg overflow-clip"
+	on:click={openCart}
+>
 	<CartIcon
 		class="
 			inline-block

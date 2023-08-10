@@ -6,9 +6,10 @@
 			<h3>Sitemap</h3>
 			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
 				<li><a data-sveltekit-reload data-sveltekit-preload-data="tap" href="/">Sample Pack</a></li>
-				<li><a href="/app">Home</a></li>
-				<li><a href="/app/store">Store</a></li>
-				<li><a href="/app/wiki" disabled>Wiki</a></li>
+				<li><a disabled href="/home">Home</a></li>
+				<li><a href="/store/product/hypertrance-samplepack">Store</a></li>
+				<li><a disabled href="/catalog">Catalog</a></li>
+				<li><a disabled href="/wiki">Wiki</a></li>
 			</ul>
 		</section>
 		<section>
@@ -17,16 +18,17 @@
 				<!-- <li><a href="#">Shipping</a></li> -->
 				<!-- <li><a href="#">Customs & Fees</a></li> -->
 				<!-- <li><a href="#">Return Policy</a></li> -->
-				<li><a href="#">Terms & Conditions</a></li>
-				<li><a href="#">Privacy Policy</a></li>
+				<li><a disabled href="#">Terms & Conditions</a></li>
+				<li><a disabled href="#">Privacy Policy</a></li>
 			</ul>
 		</section>
 		<section>
 			<h3>Support</h3>
 			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
-				<li><a href="#">Contact Us</a></li>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">Impressum</a></li>
+				<li><a disabled href="#">Contact Us</a></li>
+				<li><a disabled href="#">FAQ</a></li>
+				<li><a disabled href="#">Impressum</a></li>
+				<li><a href="https://github.com/nuphory/hypertrance/issues">Report an Issue</a></li>
 			</ul>
 		</section>
 		<section

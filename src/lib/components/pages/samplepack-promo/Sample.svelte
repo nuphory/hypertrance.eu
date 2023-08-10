@@ -5,7 +5,7 @@
 	import { Icon, PauseCircle, PlayCircle } from 'svelte-hero-icons';
 
 	export let song: Song;
-	export let is_playing: boolean = false;
+	export let is_playing = false;
 	export let player: Euterpe;
 	export let playing_song_id: number;
 

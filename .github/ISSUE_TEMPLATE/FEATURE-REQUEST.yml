@@ -1,0 +1,38 @@
+name: '💡 Feature Request'
+description: Create a new ticket for a new feature request
+title: '💡 - <title>'
+labels: ['question']
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 'Motivation'
+      description: Why are you requesting this feature?
+      placeholder: |
+        A clear and concise description of what your feature aims to solve. 
+        e.g. I'm always frustrated when [...]
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 'Proposed Solution'
+      description: Describe your requestion solution
+      placeholder: How do you think we should implement this feature?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 'Alternative Solutions'
+      description: Any alternative solutions you've considered, and why they might not work
+      placeholder: What alternatives have you considered?
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: 'Additional Context'
+      description: Provide any additional context about your feature request
+      placeholder: Screenshots, Environment information, etc.
+    validations:
+      required: false

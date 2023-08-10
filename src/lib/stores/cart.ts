@@ -1,14 +1,14 @@
+import {
+	addCartLines,
+	createCart,
+	getCart,
+	removeCartLines,
+	updateCartLines
+} from '$lib/utils/shopify/cart';
+import type { CartResult } from '$lib/utils/shopify/schemas/cart';
 import { persistentAtom } from '@nanostores/persistent';
 import { atom } from 'nanostores';
 import type { z } from 'zod';
-import type { CartResult } from '../utils/schemas';
-import { addCartLines, createCart, getCart, removeCartLines } from '../utils/shopify';
-
-// Cart drawer state (open or closed) with initial value (false) and no persistent state (local storage)
-export const isCartDrawerOpen = atom(false);
-
-// Cart is updating state (true or false) with initial value (false) and no persistent state (local storage)
-export const isCartUpdating = atom(false);
 
 const emptyCart = {
 	id: '',
@@ -18,16 +18,20 @@ const emptyCart = {
 	cost: { totalAmount: { amount: '', currencyCode: '' } }
 };
 
-// Cart store with persistent state (local storage) and initial value
+// Cart drawer state (open or closed) with initial value (false) and no persistent state (local storage)
+export const isCartDrawerOpen = atom(false);
+
+// Cart is updating state (true or false) with initial value (false) and no persistent state (local storage)
+export const isCartUpdating = atom(false);
+
 export const cart = persistentAtom<z.infer<typeof CartResult>>('cart', emptyCart, {
 	encode: JSON.stringify,
 	decode: JSON.parse
 });
 
-// Fetch cart data if a cart exists in local storage, this is called during session start only
-// This is useful to validate if the cart still exists in Shopify and if it's not empty
-// Shopify automatically deletes the cart when the customer completes the checkout or if the cart is unused or abandoned after 10 days
-// https://shopify.dev/custom-storefronts/cart#considerations
+/**
+ * Fetch cart data if a cart exists in local storage, this is called during session start only
+ */
 export async function initCart() {
 	const sessionStarted = sessionStorage.getItem('sessionStarted');
 	if (!sessionStarted) {
@@ -53,15 +57,21 @@ export async function initCart() {
 	}
 }
 
-// Add item to cart or create a new cart if it doesn't exist yet
-export async function addCartItem(item: { id: string; quantity: number }) {
+/**
+ * Add item to cart or create a new cart if it doesn't exist yet
+ * @param merchandise item to add to the cart
+ */
+export async function addCartItem(merchandise: { merchandiseId: string; quantity?: number }) {
+	console.debug(merchandise);
+	const { merchandiseId, quantity } = merchandise;
+
 	const localCart = cart.get();
 	const cartId = localCart?.id;
 
 	isCartUpdating.set(true);
 
 	if (!cartId) {
-		const cartData = await createCart(item.id, item.quantity);
+		const cartData = await createCart(merchandiseId, quantity ?? 1);
 
 		if (cartData) {
 			cart.set({
@@ -76,7 +86,7 @@ export async function addCartItem(item: { id: string; quantity: number }) {
 			isCartDrawerOpen.set(true);
 		}
 	} else {
-		const cartData = await addCartLines(cartId, item.id, item.quantity);
+		const cartData = await addCartLines(cartId, [{ merchandiseId, quantity: quantity ?? 1 }]);
 
 		if (cartData) {
 			cart.set({
@@ -93,6 +103,10 @@ export async function addCartItem(item: { id: string; quantity: number }) {
 	}
 }
 
+/**
+ * Remove items from cart
+ * @param lineIds array of ids for the lines to remove from the cart
+ */
 export async function removeCartItems(lineIds: string[]) {
 	const localCart = cart.get();
 	const cartId = localCart?.id;
@@ -101,6 +115,36 @@ export async function removeCartItems(lineIds: string[]) {
 
 	if (cartId) {
 		const cartData = await removeCartLines(cartId, lineIds);
+
+		if (cartData) {
+			cart.set({
+				...cart.get(),
+				id: cartData.id,
+				cost: cartData.cost,
+				checkoutUrl: cartData.checkoutUrl,
+				totalQuantity: cartData.totalQuantity,
+				lines: cartData.lines
+			});
+			isCartUpdating.set(false);
+		}
+	}
+}
+
+export async function updateCartItem(line: { lineId: string; quantity: number }) {
+	const { lineId, quantity } = line;
+
+	if (quantity === 0) {
+		removeCartItems([lineId]);
+		return;
+	}
+
+	const localCart = cart.get();
+	const cartId = localCart?.id;
+
+	isCartUpdating.set(true);
+
+	if (cartId) {
+		const cartData = await updateCartLines(cartId, [line]);
 
 		if (cartData) {
 			cart.set({

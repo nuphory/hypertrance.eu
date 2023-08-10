@@ -1,12 +1,12 @@
 .hyper-button {
 	// @apply bg-white bg-blend-difference;
-        @apply relative;
-        @apply scale-100;
+	@apply relative;
+	@apply scale-100;
 	@apply text-[var(--button-text-main)] fill-[var(--button-text-main)] ring-1 ring-[var(--button-border-main)];
-        @apply transition-quick duration-default ease-out;
-        @apply font-michroma;
+	@apply transition-quick duration-default ease-out;
+	@apply font-michroma;
 
-        @apply p-4;
+	@apply p-4;
 
 	--blend-mode: difference;
 	--button-background-main: var(--button-background-neutral);
@@ -86,8 +86,8 @@
 	}
 
 	&:hover {
-		@apply text-[var(--button-text-hover)] fill-[var(--button-text-hover)] ring-[var(--button-border-main)]; 
-                // @apply hover:skew-x-[25deg] [&>*]:hover:-skew-x-[25deg] duration-default [&>*]:transition-[transform,background-position,margin];
+		@apply text-[var(--button-text-hover)] fill-[var(--button-text-hover)] ring-[var(--button-border-main)];
+		// @apply hover:skew-x-[25deg] [&>*]:hover:-skew-x-[25deg] duration-default [&>*]:transition-[transform,background-position,margin];
 		&::before {
 			@apply -m-1;
 			background-position: 33% 33%;
@@ -96,7 +96,7 @@
 	&:active {
 		@apply scale-95;
 		@apply text-[var(--button-text-active)];
-                // @apply active:skew-x-[25deg] [&>*]:active:-skew-x-[25deg] duration-default [&>*]:transition-[transform,background-position,margin];
+		// @apply active:skew-x-[25deg] [&>*]:active:-skew-x-[25deg] duration-default [&>*]:transition-[transform,background-position,margin];
 		&::before {
 			@apply -m-1;
 			@apply bg-right-bottom;

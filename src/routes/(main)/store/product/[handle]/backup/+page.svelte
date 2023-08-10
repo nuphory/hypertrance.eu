@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Money from '$src/lib/components/utils/store/Money.svelte';
 	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
-	import AddToCartForm from '../../../../../lib/components/utils/store/AddToCartForm.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
@@ -88,13 +87,6 @@
                                                                                                 {selectedVariant.price.currencyCode}
                                                                                         </p> -->
 						<i class="[&>p]:my-4">{@html tagline}</i>
-						<!-- <AddToCart /> -->
-						<AddToCartForm
-							trackQuantity={true}
-							variantAvailableForSale={true}
-							variantId={selectedVariant.id}
-							class="w-full flex flex-col items-start justify-between gap-8"
-						/>
 					</div>
 				</div>
 
