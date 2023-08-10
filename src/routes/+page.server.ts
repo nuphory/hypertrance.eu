@@ -1,6 +1,3 @@
-export const ssr = false;
-export const prerender = true;
-
 import { getProductByHandle } from '$src/lib/utils/shopify/product.server';
 import { error } from '@sveltejs/kit';
 
