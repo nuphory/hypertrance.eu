@@ -17,7 +17,7 @@ import {
 } from '@babylonjs/core';
 // import { Inspector } from "@babylonjs/inspector"
 import { fresnel_material } from './fresnel_mat';
-import Stats from 'stats-js';
+// import Stats from 'stats-js';
 // import { distort_frag } from './frag_bg_distort_postfx';
 import '@babylonjs/loaders/glTF';
 
@@ -25,7 +25,7 @@ import obj from '$lib/assets/obj/cinema-compressed.glb';
 export default class THREED {
 	engine: Engine;
 	scene: Scene;
-	stats: Stats;
+	// stats: Stats;
 	canvas: HTMLCanvasElement;
 	camera: any;
 	camera_pivot: any;
@@ -50,9 +50,9 @@ export default class THREED {
 		);
 		this.scene = new Scene(this.engine);
 		this.canvas = canvas;
-		this.stats = new Stats();
-		this.stats.showPanel(0);
-		document.body.appendChild(this.stats.dom);
+		// this.stats = new Stats();
+		// this.stats.showPanel(0);
+		// document.body.appendChild(this.stats.dom);
 		this.mouse_y = this.mouse_x = 0;
 		this.frames_count = 0;
 		window.addEventListener('resize', () => {
@@ -110,7 +110,7 @@ export default class THREED {
 		});
 		this.engine.runRenderLoop(() => {
 			this.frames_count++;
-			this.stats.begin();
+			// this.stats.begin();
 			//mouse stuff
 			if (this.rotation_speed <= 0.0035) this.rotation_speed += 0.00001;
 			const rotation_offset = new Vector3(
@@ -125,9 +125,9 @@ export default class THREED {
 			this.camera.position.copyFrom(this.camera_init_rotation.add(scroll_offset));
 
 			this.scene.render();
-			this.stats.end();
+			// this.stats.end();
 			this.engine.hideLoadingUI();
-			this.stats.update();
+			// this.stats.update();
 		});
 		// setTimeout(() => Tools.CreateScreenshot(this.engine, this.camera, { finalHeight: 1440, finalWidth: 2560 }), 3000)
 	}
@@ -185,7 +185,7 @@ export default class THREED {
 class CustomLoading implements ILoadingScreen {
 	public loadingUIBackgroundColor: string;
 	public loadingUIText: string;
-	constructor(public on_loading?: () => void, public on_loaded?: () => void) {}
+	constructor(public on_loading?: () => void, public on_loaded?: () => void) { }
 	public displayLoadingUI(): void {
 		if (this.on_loading) this.on_loading();
 	}

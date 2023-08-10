@@ -209,7 +209,7 @@
 			</button>
 		</div>
 		<div
-			class="float-right mr-24 bg-text-primary -mt-16 w-16 h-16 rounded-full p-2 transition-all hover:scale-90 active:scale-105 active:brightness-105
+			class="md:float-right bg-text-primary mx-auto mt-12 md:mr-24 md:-mt-16 w-16 h-16 rounded-full p-2 transition-all hover:scale-90 active:scale-105 active:brightness-105
 			shadow-[var(--color-bg-side)] shadow-[0_0_3rem_5px] hover:brightness-75"
 		>
 			<a href="#landing">
