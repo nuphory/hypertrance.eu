@@ -103,9 +103,10 @@
 			player.on_time_tick((time) => {
 				playing_song_id = player.current_song_id;
 				if (player.is_playing) {
+					// debugger;
 					const x = `${(time / player.current_song_duration) * 100}%`;
 					const polygon = `polygon(0 0, ${x} 0, ${x} 100%, 0 100%)`;
-					document.documentElement.style.setProperty('--clip-time-path', polygon);
+					document.body.style.setProperty('--clip-time-path', polygon);
 				}
 			});
 		}
