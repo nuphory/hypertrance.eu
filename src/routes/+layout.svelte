@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	// Assets
-	import { description, name } from '$src/lib/assets/identity';
-	import artists from '$src/lib/legacy/metadata/artist';
+
 	// Components
 	import Footer from '../lib/components/layout/Footer.svelte';
 
@@ -28,26 +26,10 @@
 	<meta name="theme-color" content="#ffffff" />
 	<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon.svg" />
 
-	<meta property="og:site_name" content={name} />
-
-	<meta
-		name="keywords"
-		content="
-			{name}, {name} music, music, house, trance, hypertrance, neoy2k, progressive house,
-			{Array.from(artists)
-			.map((artist) => {
-				return artist.name;
-			})
-			.join(', ')}
-		"
-	/>
-	<meta name="description" content={description} />
-
-	<meta property="og:description" content={description} />
-
+	
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@{name}" />
-	<meta name="twitter:creator" content="@{name}" />
+	<meta name="twitter:site" content="@hypertranceRT" />
+	<meta name="twitter:creator" content="@hypertranceRT" />
 </svelte:head>
 
 {#if ready}

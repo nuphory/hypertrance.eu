@@ -9,6 +9,7 @@
 	import summaryImgSrc from '$lib/assets/img/hypertrance-2-cover.jpg?jpg&w=800';
 	import { description, name, tagline, url } from '$lib/assets/identity';
 	import Hypertrance2 from '$lib/legacy/components/pages/hypertrance-2/Hypertrance2.svelte';
+	import artists from '$src/lib/legacy/metadata/artist';
 
 	onMount(async () => {
 		if (!browser) return;
@@ -48,6 +49,18 @@
 	<link rel="canonical" href={url} />
 
 	<meta name="robots" content="index, follow" />
+
+	<meta
+		name="keywords"
+		content="
+			{name}, {name} music, music, house, trance, hypertrance, neoy2k, progressive house,
+			{Array.from(artists)
+			.map((artist) => {
+				return artist.name;
+			})
+			.join(', ')}
+		"
+	/>
 
 	<meta property="og:title" content="{name} {tagline ? `— ${tagline}` : ''}" />
 	<meta property="og:description" content={description} />
