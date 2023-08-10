@@ -1,15 +1,19 @@
 <script lang="ts">
-	// Assets
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+// Assets
+	import { description, name } from '$src/lib/assets/identity';
 	import artists from '$src/lib/legacy/metadata/artist';
-
-	// Components
+// Components
 	import Footer from '../lib/components/layout/Footer.svelte';
-	import AudioPlayer from '../lib/components/layout/AudioPlayer.svelte';
 
 	// Styles
 	import '$lib/styles/app.scss';
 
-	import { description, name } from '$src/lib/assets/identity';
+	let ready = false;
+	onMount(() => {
+		ready = true;
+	});
 </script>
 
 <svelte:head>
@@ -46,6 +50,10 @@
 	<meta name="twitter:creator" content="@{name}" />
 </svelte:head>
 
-<slot />
-<Footer />
+{#if ready}
+	<div in:fade={{ duration: 500 }}>
+		<slot />
+		<Footer />
+	</div>
+{/if}
 <!-- <AudioPlayer class="sticky bottom-0"/> -->
