@@ -1,20 +1,23 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
-	import { db } from '$lib/scripts/music/db';
-	import { createCart } from '$src/lib/utils/shopify';
-	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
-	import { onMount } from 'svelte';
-	import { ArrowUp, Icon } from 'svelte-hero-icons';
 	import Hero from '$lib/components/pages/samplepack-promo/Hero.svelte';
 	import Sample from '$lib/components/pages/samplepack-promo/Sample.svelte';
 	import Stats from '$lib/components/pages/samplepack-promo/Stats.svelte';
 	import THREED from '$lib/components/pages/samplepack-promo/THREED.svelte';
 	import Volume from '$lib/components/pages/samplepack-promo/Volume.svelte';
+	import { db } from '$lib/scripts/music/db';
+	import { createCart } from '$src/lib/utils/shopify/cart.js';
+	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
+	import { onMount } from 'svelte';
+	import { ArrowUp, Icon } from 'svelte-hero-icons';
+
 	export let data;
+
 	const { product } = data;
 	const selected_variant = product.variants.nodes[0];
-	async function direct_buy() {
+
+	async function buyNow() {
 		if (!product) throw Error('Product not found');
 		const cart = await createCart(selected_variant.id, 1);
 		if (!cart) throw Error('Cart creation failed');
@@ -61,7 +64,10 @@
 
 <main id="landing-page" class="font-michroma text-primary bg-primary pb-16">
 	<Volume {player} />
-	<section id="landing" class="w-full h-[calc(100svh-10rem)] md:h-[calc(100svh-15rem)] relative text-bg-primary">
+	<section
+		id="landing"
+		class="w-full h-[calc(100svh-10rem)] md:h-[calc(100svh-15rem)] relative text-bg-primary"
+	>
 		<THREED />
 		<Hero {data} />
 	</section>
@@ -118,11 +124,12 @@
 	<section class="mt-12">
 		<div class="w-fit h-fit mx-auto text-center">
 			<h3 class="text-5xl mb-12">Try it out</h3>
-			<a class="inline w-fit h-fit px-4 py-4 mr-8" href="https://mega.nz">demo samplepack.zip</a>
-			<button
-				class="hyper-button button-primary whitespace-nowrap"
-				on:click={direct_buy}
+			<a
+				data-sveltekit-reload
+				class="inline w-fit h-fit px-4 py-4 mr-8"
+				href="/store/product/hypertrance-samplepack">Free Demo</a
 			>
+			<button class="hyper-button button-primary whitespace-nowrap" on:click={buyNow}>
 				<span>buy now</span>
 			</button>
 		</div>

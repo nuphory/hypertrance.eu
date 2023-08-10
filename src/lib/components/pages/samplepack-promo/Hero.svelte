@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Money from '$src/lib/components/utils/store/Money.svelte';
 	import { goto } from '$app/navigation';
-	import { createCart } from '$src/lib/utils/shopify';
+	import { createCart } from '$src/lib/utils/shopify/cart';
 	export let data;
 	const { product } = data;
 	const selected_variant = product.variants.nodes[0];
-	async function direct_buy() {
+	async function buyNow() {
 		if (!product) throw Error('Product not found');
 		const cart = await createCart(selected_variant.id, 1);
 		if (!cart) throw Error('Cart creation failed');
@@ -45,7 +45,7 @@
 		<div class="text-2xl flex justify-between">
 			<button
 				class="hyper-button !px-8 button-primary-inverse skew-x-[25deg] [&>*]:-skew-x-[25deg]"
-				on:click={direct_buy}
+				on:click={buyNow}
 			>
 				<span class="inline-block">buy now</span>
 			</button>
@@ -57,7 +57,7 @@
 						>
 					</div> -->
 			<a
-				href="#about"
+				href="/store/product/hypertrance-samplepack"
 				data-sveltekit-reload
 				class="block text-bg-primary hover:text-black active:text-black py-1 px-2 m-2">learn more</a
 			>
