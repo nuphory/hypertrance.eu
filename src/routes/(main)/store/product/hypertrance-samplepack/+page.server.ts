@@ -1,16 +1,17 @@
+export const prerender = true;
 export const ssr = true;
 
 // sveltekit load
-import { getProductByHandle as getProductByHandleSSR } from '$lib/utils/shopify/product.server';
+import { getProductByHandle } from '$lib/utils/shopify/product';
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */
-export async function load({ url, getClientAddress }) {
+export async function load({ url }) {
 	const handle = 'hypertrance-samplepack';
 
 	const { href } = url;
 
-	const product = await getProductByHandleSSR({ handle }, getClientAddress());
+	const product = await getProductByHandle({ handle });
 
 	if (!product) {
 		throw error(404, { message: 'Product not found' });
