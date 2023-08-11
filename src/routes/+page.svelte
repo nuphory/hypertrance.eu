@@ -7,20 +7,19 @@
 	import Sample from '$lib/components/pages/samplepack-promo/Sample.svelte';
 	import Stats from '$lib/components/pages/samplepack-promo/Stats.svelte';
 	import Volume from '$lib/components/pages/samplepack-promo/Volume.svelte';
-	import { db } from '$lib/scripts/music/db';
+	import { make } from '$lib/scripts/music/db';
 	import { createCart } from '$lib/utils/shopify/cart';
 	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
-	import { make } from '$src/lib/scripts/music/player.js';
-	import type { Euterpe } from '@euterpe.js/euterpe';
+	import { EuterpeBuilder, type Euterpe } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
-	let first_frame_url: string | null = first_frame;
 
 	export let data;
 
+	let first_frame_url: string | null = first_frame;
 	let THREED: any;
 	let canvas_wrapper: HTMLElement;
-
+	const db = make();
 	const { product } = data;
 	const selected_variant = product.variants.nodes[0];
 
@@ -44,7 +43,11 @@
 			if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
 				db.songs.forEach((s) => (s.url = new URL(s.url.href.replace('.ogg', '.mp3'))));
 			}
-			player = make();
+			player = new EuterpeBuilder(document.createElement('audio'), db, {
+				use_only_pathname_url: true
+			}).build();
+
+			console.log(player);
 			document.body.appendChild(audio);
 
 			audio.addEventListener('pause', () => {
@@ -169,17 +172,17 @@
 	<section class="mt-24 grid grid-cols-1 grid-rows-4 bg-primary">
 		{#each collections as collection, i}
 			<div
-				class="w-full h-full p-12 py-6 grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-6 relative"
+				class="w-full h-fit p-12 py-6 grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-6 relative"
 			>
 				{#if i % 2 == 0}
-					<div class="w-full h-full">
+					<div class="h-full w-full overflow-hidden relative">
 						<img
-							class="w-full h-full object-cover"
+							class="h-full w-full object-cover"
 							srcset="
-						/promo/{collection.name}/{collection.name}_320p.webp 320w,
-						/promo/{collection.name}/{collection.name}_500p.webp 500w,
-						/promo/{collection.name}/{collection.name}_800p.webp 800w,
-						/promo/{collection.name}/{collection.name}_1000p.webp 1000w,
+						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_320p.webp 320w,
+						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_500p.webp 500w,
+						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_800p.webp 800w,
+						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_1000p.webp 1000w,
 						"
 							sizes="(max-width: 400px) 320px, 500px, 800px, 1000px"
 							src="/promo/{collection.name}/{collection.name}_500p.webp"
@@ -203,14 +206,14 @@
 					</div>
 				</div>
 				{#if i % 2 != 0}
-					<div class="w-full h-full">
+					<div class="w-full h-full overflow-hidden relative">
 						<img
-							class="w-full h-full object-cover"
+							class="h-full w-full object-cover"
 							srcset="
-						/promo/{collection.name}/{collection.name}_320p.webp 320w,
-						/promo/{collection.name}/{collection.name}_500p.webp 500w,
-						/promo/{collection.name}/{collection.name}_800p.webp 800w,
-						/promo/{collection.name}/{collection.name}_1000p.webp 1000w,
+						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_320p.webp 320w,
+						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_500p.webp 500w,
+						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_800p.webp 800w,
+						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_1000p.webp 1000w,
 						"
 							sizes="(max-width: 400px) 320px, 500px, 800px, 1000px"
 							src="/promo/{collection.name}/{collection.name}_500p.webp"
