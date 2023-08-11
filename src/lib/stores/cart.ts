@@ -49,7 +49,8 @@ export async function initCart() {
 					cost: data.cost,
 					checkoutUrl: data.checkoutUrl,
 					totalQuantity: data.totalQuantity,
-					lines: data.lines
+					lines: data.lines,
+					discountCodes: data.discountCodes
 				});
 			} else {
 				// If the cart doesn't exist in Shopify, reset the cart store
