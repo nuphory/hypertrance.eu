@@ -61,8 +61,8 @@
 
 			player.on_time_tick((time) => {
 				playing_song_id = player.current_song_id;
+				is_playing = player.is_playing;
 				if (player.is_playing) {
-					// debugger;
 					const x = `${(time / player.current_song_duration) * 100}%`;
 					const polygon = `polygon(0 0, ${x} 0, ${x} 100%, 0 100%)`;
 					// let style = window.getComputedStyle(document.body);
@@ -174,15 +174,18 @@
 	</section>
 	<section class="mt-24 grid grid-cols-1 grid-rows-4 bg-primary">
 		{#each collections as collection, i}
-			<div class="relative w-full h-fit p-12 py-6 flex max-lg:flex-col gap-6 ">
-				<div class="w-full max-lg:aspect-square relative flex justify-center items-center overflow-clip lg:w-half {i % 2 ? '' : 'lg:order-last'}">
-					
+			<div class="relative w-full h-fit p-12 py-6 flex max-lg:flex-col gap-6">
+				<div
+					class="w-full max-lg:aspect-square relative flex justify-center items-center overflow-clip lg:w-half {i %
+					2
+						? ''
+						: 'lg:order-last'}"
+				>
 					<ShopifyImage
-					image={product.images.nodes[i+1]}
-					loading="eager"
-					sizes="(min-width: 100px) 320px, 480px, 640px, 800px, 960px, 1120px, 1280px"
-					class=" w-full absolute left-50 top-50 -translate-x-50 -translate-y-50 "
-
+						image={product.images.nodes[i + 1]}
+						loading="eager"
+						sizes="(min-width: 100px) 320px, 480px, 640px, 800px, 960px, 1120px, 1280px"
+						class=" w-full absolute left-50 top-50 -translate-x-50 -translate-y-50 "
 					/>
 				</div>
 				<div class="bg-primary-island p-6 lg:w-half w-full">
