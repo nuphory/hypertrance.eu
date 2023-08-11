@@ -20,7 +20,6 @@ import { fresnel_material } from './fresnel_mat';
 // import Stats from 'stats-js';
 // import { distort_frag } from './frag_bg_distort_postfx';
 import '@babylonjs/loaders/glTF';
-// @ts-ignore
 import obj from '$lib/assets/obj/cinema-compressed.glb';
 export default class THREED {
 	engine: Engine;
@@ -58,7 +57,7 @@ export default class THREED {
 		window.addEventListener('resize', () => {
 			this.engine.resize();
 		});
-		this.engine.loadingScreen = new CustomLoading(on_loading, on_loaded);
+		this.engine.loadingScreen = new CustomLoading(this.on_loading, this.on_loaded);
 		let target_fps;
 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 			target_fps = 60;
@@ -108,6 +107,7 @@ export default class THREED {
 		this.optimizer.onNewOptimizationAppliedObservable.add((optim) => {
 			console.log(optim.getDescription());
 		});
+
 		this.engine.runRenderLoop(() => {
 			this.frames_count++;
 			// this.stats.begin();
@@ -126,9 +126,9 @@ export default class THREED {
 
 			this.scene.render();
 			// this.stats.end();
-			this.engine.hideLoadingUI();
 			// this.stats.update();
 		});
+		this.engine.hideLoadingUI();
 		// setTimeout(() => Tools.CreateScreenshot(this.engine, this.camera, { finalHeight: 1440, finalWidth: 2560 }), 3000)
 	}
 
@@ -189,9 +189,11 @@ class CustomLoading implements ILoadingScreen {
 		this.loadingUIText = this.loadingUIBackgroundColor = ""
 	}
 	public displayLoadingUI(): void {
+		console.log("loading")
 		if (this.on_loading) this.on_loading();
 	}
 	public hideLoadingUI(): void {
+		console.log("loaded", this.on_loaded)
 		if (this.on_loaded) this.on_loaded();
 	}
 }

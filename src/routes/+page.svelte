@@ -4,7 +4,6 @@
 	import Hero from '$lib/components/pages/samplepack-promo/Hero.svelte';
 	import Sample from '$lib/components/pages/samplepack-promo/Sample.svelte';
 	import Stats from '$lib/components/pages/samplepack-promo/Stats.svelte';
-	// import THREED from '$lib/components/pages/samplepack-promo/THREED.svelte';
 	import Volume from '$lib/components/pages/samplepack-promo/Volume.svelte';
 	import { db } from '$lib/scripts/music/db';
 	import { createCart } from '$lib/utils/shopify/cart';
@@ -13,9 +12,13 @@
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
 	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
 	import meta_cover from '$lib/assets/img/samplepack/meta-cover.webp';
+	import first_frame from '$lib/assets/img/samplepack/first_frame.webp';
+	let first_frame_url: string | null = first_frame;
+
 	export let data;
 
 	let THREED;
+	let canvas_wrapper;
 
 	const { product } = data;
 	const selected_variant = product.variants.nodes[0];
@@ -113,6 +116,10 @@
 			});
 		}
 	});
+
+	function on_loaded() {
+		canvas_wrapper.removeAttribute('style');
+	}
 </script>
 
 <svelte:head>
@@ -157,7 +164,13 @@
 			<div class="h-full overflow-hidden">
 				<Video autoplay={true} loop={true} muted={true} />
 			</div>
-			<svelte:component this={THREED} />
+			<div
+				bind:this={canvas_wrapper}
+				style="--first-frame-url:url({first_frame_url})"
+				class="[background-image:var(--first-frame-url)] bg-cover bg-no-repeat bg-center w-full h-full absolute left-0 top-0"
+			>
+				<svelte:component this={THREED} {on_loaded} />
+			</div>
 		</div>
 		<Hero {data} />
 	</section>
