@@ -10,6 +10,7 @@
 	import { make } from '$lib/scripts/music/db';
 	import { createCart } from '$lib/utils/shopify/cart';
 	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
+	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
 	import { EuterpeBuilder, type Euterpe } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
@@ -175,10 +176,13 @@
 		{#each collections as collection, i}
 			<div class="relative w-full h-fit p-12 py-6 flex max-lg:flex-col gap-6 ">
 				<div class="w-full max-lg:aspect-square relative flex justify-center items-center overflow-clip lg:w-half {i % 2 ? '' : 'lg:order-last'}">
-					<img
-						class=" w-full absolute left-50 top-50 -translate-x-50 -translate-y-50 w-full"
-						src="{product.images.nodes[i+1]?.url}"
-						alt="{collection.name} thumbnail"
+					
+					<ShopifyImage
+					image={product.images.nodes[i+1]}
+					loading="eager"
+					sizes="(min-width: 100px) 320px, 480px, 640px, 800px, 960px, 1120px, 1280px"
+					class=" w-full absolute left-50 top-50 -translate-x-50 -translate-y-50 "
+
 					/>
 				</div>
 				<div class="bg-primary-island p-6 lg:w-half w-full">
