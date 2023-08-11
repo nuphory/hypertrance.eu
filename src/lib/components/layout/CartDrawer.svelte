@@ -128,7 +128,7 @@
 											if ($isCartUpdating) return;
 											removeItem(item.id);
 										}}
-										class="hyper-button button-neutral flex w-full items-center justify-center font-suissnord"
+										class="hyper-button button-neutral flex w-full items-center justify-center font-suissnord m-px overflow-clip"
 									>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
