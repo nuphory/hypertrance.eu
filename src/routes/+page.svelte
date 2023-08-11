@@ -17,8 +17,8 @@
 
 	export let data;
 
-	let THREED;
-	let canvas_wrapper;
+	let THREED: any;
+	let canvas_wrapper: HTMLElement;
 
 	const { product } = data;
 	const selected_variant = product.variants.nodes[0];
@@ -110,7 +110,19 @@
 					// debugger;
 					const x = `${(time / player.current_song_duration) * 100}%`;
 					const polygon = `polygon(0 0, ${x} 0, ${x} 100%, 0 100%)`;
+					let style = window.getComputedStyle(document.body);
+					console.log(
+						`x: ${x}, polygon: ${polygon}, --clip-time-path before: ${style.getPropertyValue(
+							'--clip-time-path'
+						)}`
+					);
 					document.body.style.setProperty('--clip-time-path', polygon);
+					style = window.getComputedStyle(document.body);
+					console.log(
+						`x: ${x}, polygon: ${polygon}, --clip-time-path before: ${style.getPropertyValue(
+							'--clip-time-path'
+						)}`
+					);
 				}
 			});
 		}

@@ -6,25 +6,25 @@
 >
 	<div>
 		<h3>
-			<span>90</span>
+			<span>89</span>
 			<span>PRESETS</span>
 		</h3>
 	</div>
 	<div>
 		<h3>
-			<span>650</span>
+			<span>656</span>
 			<span>SAMPLES</span>
 		</h3>
 	</div>
 	<div>
 		<h3>
-			<span>750</span>
+			<span>763</span>
 			<span>MB</span>
 		</h3>
 	</div>
 	<div>
 		<h3>
-			<span>30+</span>
+			<span>54</span>
 			<span>MIDIs</span>
 		</h3>
 	</div>

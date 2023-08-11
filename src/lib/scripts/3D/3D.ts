@@ -189,11 +189,9 @@ class CustomLoading implements ILoadingScreen {
 		this.loadingUIText = this.loadingUIBackgroundColor = ""
 	}
 	public displayLoadingUI(): void {
-		console.log("loading")
 		if (this.on_loading) this.on_loading();
 	}
 	public hideLoadingUI(): void {
-		console.log("loaded", this.on_loaded)
 		if (this.on_loaded) this.on_loaded();
 	}
 }
