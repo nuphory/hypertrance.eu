@@ -20,7 +20,7 @@ import { fresnel_material } from './fresnel_mat';
 // import Stats from 'stats-js';
 // import { distort_frag } from './frag_bg_distort_postfx';
 import '@babylonjs/loaders/glTF';
-
+// @ts-ignore
 import obj from '$lib/assets/obj/cinema-compressed.glb';
 export default class THREED {
 	engine: Engine;
@@ -185,7 +185,9 @@ export default class THREED {
 class CustomLoading implements ILoadingScreen {
 	public loadingUIBackgroundColor: string;
 	public loadingUIText: string;
-	constructor(public on_loading?: () => void, public on_loaded?: () => void) { }
+	constructor(public on_loading?: () => void, public on_loaded?: () => void) {
+		this.loadingUIText = this.loadingUIBackgroundColor = ""
+	}
 	public displayLoadingUI(): void {
 		if (this.on_loading) this.on_loading();
 	}

@@ -11,9 +11,8 @@
 	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
-	import first_frame_srcset from '$lib/assets/img/samplepack/first_frame.webp?format=webp&w=425;576;640;820;1024;1280;1920;2560&as=srcset';
 	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
-	import hypertrance_2_cover from '$lib/assets/img/hypertrance-2-cover.jpg';
+	import meta_cover from '$lib/assets/img/samplepack/meta-cover.webp';
 	export let data;
 
 	let THREED;
@@ -123,7 +122,7 @@
 	<meta property="og:type" content="product" />
 	<meta property="og:title" content="HYPERTRANCE SAMPLEPACK" />
 	<meta property="og:url" content="https://v3.hypertrance.pages.dev" />
-	<meta property="og:image" content={'https://v3.hypertrance.pages.dev' + hypertrance_2_cover} />
+	<meta property="og:image" content={'https://v3.hypertrance.pages.dev' + meta_cover} />
 	<meta
 		property="og:description"
 		content="Experience the world of hypertrance with this all-new samplepack developed by nuphory."
@@ -138,10 +137,7 @@
 		property="twitter:description"
 		content="Experience the world of hypertrance with this all-new samplepack developed by nuphory."
 	/>
-	<meta
-		property="twitter:image"
-		content={'https://v3.hypertrance.pages.dev' + hypertrance_2_cover}
-	/>
+	<meta property="twitter:image" content={'https://v3.hypertrance.pages.dev' + meta_cover} />
 	<meta property="twitter:title" content="HYPERTRANCE SAMPLEPACK" />
 	<meta property="twitter:label1" content="Price" />
 	<meta property="twitter:data1" content="39.00EUR" />
@@ -161,12 +157,6 @@
 			<div class="h-full overflow-hidden">
 				<Video autoplay={true} loop={true} muted={true} />
 			</div>
-			<img
-				id="threed-loading"
-				class="h-full absolute left-0 top-0"
-				srcset={first_frame_srcset}
-				alt="3D loading alternative"
-			/>
 			<svelte:component this={THREED} />
 		</div>
 		<Hero {data} />
@@ -261,7 +251,7 @@
 		font-size: clamp(0.5rem, calc(0.6rem + 0.3vw), 2rem);
 	}
 	section:not(:first-of-type) {
-		@apply mx-auto lg:max-w-[1920px] px-16;
+		@apply mx-auto lg:max-w-[1920px] md:px-16;
 	}
 
 	:global(:root) {

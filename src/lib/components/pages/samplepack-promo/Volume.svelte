@@ -16,7 +16,7 @@
 	}}
 	on:mouseleave={toggle_timeout}
 	class=" hidden md:grid fixed left-8 3xl:left-[calc((100vw-1920px)/2)] bottom-24 w-12 h-12 bg-text-primary z-10 rounded-full p-1
-    grid-cols-1 grid-flow-row [transition-duration:_100ms] transition-all shadow-[rgba(0,0,0,.3)] shadow-[0_0_.5rem_1px]
+    grid-cols-1 grid-flow-row [transition-duration:_100ms] transition-all shadow-[rgba(255,255,255,.5)] shadow-[0_0_.5rem_1px]
 	place-items-end
     {is_hiding
 		? 'h-12 grid-rows-[1fr_2rem] hover:scale-90 active:scale-105 active:brightness-105  hover:brightness-75'
