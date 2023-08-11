@@ -10,7 +10,8 @@
 	import { db } from '$lib/scripts/music/db';
 	import { createCart } from '$lib/utils/shopify/cart';
 	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
-	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
+	import { make } from '$src/lib/scripts/music/player.js';
+	import type { Euterpe } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
 	let first_frame_url: string | null = first_frame;
@@ -29,56 +30,6 @@
 		if (!cart) throw Error('Cart creation failed');
 		goto(cart.checkoutUrl);
 	}
-	//remove the 01, 02 ... from song names
-	for (const song of db.songs) {
-		//To avoid demo song
-		if (!song.name.includes('Luna Lenta')) song.name = song.name.slice(2);
-		song.name = song.name.replace(' and ', ' & ');
-	}
-
-	//add descriptions
-	for (const collection of db.collections) {
-		switch (collection.name) {
-			case 'demos': {
-				collection.metadata[0] = `Got demos you want to share with us? Join our Discord! <a href="https://discord.gg/hypertrance">https://discord.gg/hypertrance</a>`;
-				collection.metadata[1] = 0;
-				break;
-			}
-			case 'synths': {
-				collection.metadata[0] = `The hypertrance samplepack includes a wide variety of different synth sounds, each including both .wav files and presets, which work on every platform and every DAW. All sounds come pre-EQd to fit into your mix and are fully customizable for your specific needs.`;
-				collection.metadata[1] = 1;
-				break;
-			}
-			case 'bass': {
-				collection.metadata[0] = `From offbeat-handsup styled basslines to arpeggiated trance basses, the hypertrance samplepack not only gives you timbres that cut, but sub basses that cleanly underpin your whole mix. All sounds are delivered with their respective presets for further customization.`;
-				collection.metadata[1] = 2;
-				break;
-			}
-			case 'loops': {
-				collection.metadata[0] = `The quickest way from a blank project to a banging beat. Our loops come pre-mixed to turn mixing a complicated trance beat into a simple thing anyone can do. Enjoy our fully mixed loops, or assemble your own from our broad selection of over 60 drumloops.`;
-				collection.metadata[1] = 3;
-				break;
-			}
-			case 'kicks': {
-				collection.metadata[0] = `Ever tire of trying to build a nice, clean, basic kick? Our pack provides not only that, but also custom layers for you to assemble your unique kickdrum, without having to worry about complicated mixing techniques. Create and tweak your ideal kick in seconds.`;
-				collection.metadata[1] = 4;
-				break;
-			}
-			case 'drums': {
-				collection.metadata[0] = `Sifting through hundreds of different claps, hats and percs, just to find one that works, can be tiring. We aim to provide you with samples that focus on doing one thing only, and doing it well. All of our drums are mixed and matched so that you can freely pick your favorite.`;
-				collection.metadata[1] = 5;
-				break;
-			}
-			case 'FX': {
-				collection.metadata[0] = `Looking for that huge, anthemic trance breakdown sound? We provide dozens of clean FX sounds that can be layered into one another without any effort. No more messy playlists and automations, our effect sounds work together out of the box.`;
-				collection.metadata[1] = 6;
-				break;
-			}
-		}
-	}
-	db.collections.sort((a, b) => {
-		return a.metadata[1] - b.metadata[1];
-	});
 
 	let player: Euterpe;
 	let is_playing: boolean;
@@ -93,7 +44,7 @@
 			if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
 				db.songs.forEach((s) => (s.url = new URL(s.url.href.replace('.ogg', '.mp3'))));
 			}
-			player = new EuterpeBuilder(audio, db, { use_only_pathname_url: true }).build();
+			player = make();
 			document.body.appendChild(audio);
 
 			audio.addEventListener('pause', () => {
@@ -221,7 +172,16 @@
 				class="w-full h-full p-12 py-6 grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-6 relative"
 			>
 				{#if i % 2 == 0}
-					<div class="w-full h-full bg-text-primary" />
+					<div class="w-full h-full bg-text-primary">
+						<img
+							srcset="
+						promo/{collection.name}/{collection.name}_320p.webp 320w,
+						promo/{collection.name}/{collection.name}_500.webp 500w,
+						promo/{collection.name}/{collection.name}_800p.webp 800,
+						promo/{collection.name}/{collection.name}_1000p.webp 1000w,
+						"
+						/>
+					</div>
 				{/if}
 				<div class="w-full h-full bg-primary-island p-6">
 					<h2
@@ -230,10 +190,10 @@
 						{collection.name}
 					</h2>
 					<p class="mt-6 py-4 mx-8 text-justify">
-						{collection.metadata[0]}
+						{@html collection.metadata[0]}
 					</p>
 					<div class="mt-6 grid grid-cols-1 gap-2">
-						{#each collection.songs.slice(0, 4) as song}
+						{#each collection.songs as song}
 							<Sample {is_playing} {player} {playing_song_id} song={song.get(db)} />
 						{/each}
 					</div>
@@ -247,6 +207,7 @@
 	<section class="mt-12">
 		<div class="w-fit h-fit mx-auto text-center">
 			<h3 class="text-5xl mb-12">Try it out</h3>
+			<p>Not convinced? Download our demo pack for free!</p>
 			<a
 				data-sveltekit-reload
 				class="inline w-fit h-fit px-4 py-4 mr-8"
