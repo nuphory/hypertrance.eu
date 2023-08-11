@@ -117,12 +117,12 @@
 					// 	)}`
 					// );
 					document.body.style.setProperty('--clip-time-path', polygon);
-					// style = window.getComputedStyle(document.body);
-					// console.log(
-					// 	`x: ${x}\npolygon: ${polygon}\n--clip-time-path before: ${style.getPropertyValue(
-					// 		'--clip-time-path'
-					// 	)}`
-					// );
+					const style = window.getComputedStyle(document.body);
+					console.log(
+						`x: ${x}\npolygon: ${polygon}\n--clip-time-path before: ${style.getPropertyValue(
+							'--clip-time-path'
+						)}`
+					);
 				}
 			});
 		}
