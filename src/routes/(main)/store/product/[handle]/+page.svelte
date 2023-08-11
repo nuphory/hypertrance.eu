@@ -8,14 +8,14 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	let { href } = data;
-
 	const { product }: { product: z.infer<typeof ProductResult> } = data;
 
-	const descSplit = product.descriptionHtml.split('\n');
+	let { href } = data;
 
-	const tagline = descSplit[0];
-	const description = descSplit.slice(1).join('\n');
+	let descSplit = product.descriptionHtml.split('\n');
+
+	let tagline = descSplit.find((line: string) => line.startsWith('<p>'));
+	let description = descSplit.filter((line: string) => line !== tagline).join('\n');
 </script>
 
 <svelte:head>
