@@ -33,7 +33,7 @@ export async function makeShopifyRequest(query: string, variables: Record<string
 		throw Error(errors.map((e: Error) => e.message).join('\n'));
 	}
 
-	console.log(data);
+	console.debug(data);
 
 	return data;
 }

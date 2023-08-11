@@ -51,13 +51,13 @@
 			console.log(player);
 			document.body.appendChild(audio);
 
-			audio.addEventListener('pause', () => {
-				is_playing = false;
-			});
+			// audio.addEventListener('pause', () => {
+			// 	is_playing = false;
+			// });
 
-			audio.addEventListener('play', () => {
-				is_playing = true;
-			});
+			// audio.addEventListener('play', () => {
+			// 	is_playing = true;
+			// });
 
 			player.on_time_tick((time) => {
 				playing_song_id = player.current_song_id;
