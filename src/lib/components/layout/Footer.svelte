@@ -15,13 +15,14 @@
 		<section>
 			<h3>Policies</h3>
 			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
-
 				<!-- <li><a href="#">Shipping</a></li> -->
 				<!-- <li><a href="#">Customs & Fees</a></li> -->
 				<!-- <li><a href="#">Return Policy</a></li> -->
 				<li><a href="https://store.hypertrance.eu/policies/refund-policy">Refund Policy</a></li>
 				<li><a href="https://store.hypertrance.eu/policies/privacy-policy">Privacy Policy</a></li>
-				<li><a href="https://store.hypertrance.eu/policies/terms-of-service">Terms of Service</a></li>
+				<li>
+					<a href="https://store.hypertrance.eu/policies/terms-of-service">Terms of Service</a>
+				</li>
 			</ul>
 		</section>
 		<section>
@@ -38,7 +39,15 @@
 		>
 			<span>© hypertrance e.U.</span>
 			<span class="hidden xs:inline">—</span>
-			<span>written with ♡ by patchstep & djkáťo</span>
+			<span
+				>written with ♡ by <a
+					class="text-bg-primary"
+					href="https://twitter.com/patchstep"
+					target="_blank">patchstep</a
+				>
+				&
+				<a class="text-bg-primary" href="https://djkato.net/" target="_blank">djkáťo</a></span
+			>
 		</section>
 	</div>
 </footer>

@@ -31,14 +31,14 @@
 	}
 	//remove the 01, 02 ... from song names
 	for (const song of db.songs) {
-		song.name = song.name.slice(2);
-		song.name.replace(' and ', ' & ');
+		//To avoid demo song
+		if (!song.name.includes('Luna Lenta')) song.name = song.name.slice(2);
+		song.name = song.name.replace(' and ', ' & ');
 	}
 
 	//add descriptions
 	for (const collection of db.collections) {
 		switch (collection.name) {
-			//Not present atm!
 			case 'demos': {
 				collection.metadata[0] = `Got demos you want to share with us? Join our Discord! <a href="https://discord.gg/hypertrance">https://discord.gg/hypertrance</a>`;
 				collection.metadata[1] = 0;
@@ -76,7 +76,6 @@
 			}
 		}
 	}
-	console.debug(db.collections);
 	db.collections.sort((a, b) => {
 		return a.metadata[1] - b.metadata[1];
 	});
@@ -198,9 +197,9 @@
 						href="https://discord.gg/hypertrance">https://discord.gg/hypertrance</a
 					>
 				</p>
-				<!-- {#each demos.songs as song, i} -->
-				<Sample {is_playing} {player} {playing_song_id} song={db.songs[0]} />
-				<!-- {/each} -->
+				{#each demos.songs as song, i}
+					<Sample {is_playing} {player} {playing_song_id} song={song.get(db)} />
+				{/each}
 			</div>
 		</div>
 	</section>
