@@ -172,14 +172,18 @@
 				class="w-full h-full p-12 py-6 grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-6 relative"
 			>
 				{#if i % 2 == 0}
-					<div class="w-full h-full bg-text-primary">
+					<div class="w-full h-full">
 						<img
+							class="w-full h-full object-cover"
 							srcset="
-						promo/{collection.name}/{collection.name}_320p.webp 320w,
-						promo/{collection.name}/{collection.name}_500.webp 500w,
-						promo/{collection.name}/{collection.name}_800p.webp 800,
-						promo/{collection.name}/{collection.name}_1000p.webp 1000w,
+						/promo/{collection.name}/{collection.name}_320p.webp 320w,
+						/promo/{collection.name}/{collection.name}_500p.webp 500w,
+						/promo/{collection.name}/{collection.name}_800p.webp 800w,
+						/promo/{collection.name}/{collection.name}_1000p.webp 1000w,
 						"
+							sizes="(max-width: 400px) 320px, 500px, 800px, 1000px"
+							src="/promo/{collection.name}/{collection.name}_500p.webp"
+							alt="{collection.name} thumbnail"
 						/>
 					</div>
 				{/if}
@@ -199,7 +203,20 @@
 					</div>
 				</div>
 				{#if i % 2 != 0}
-					<div class="w-full h-full bg-text-primary" />
+					<div class="w-full h-full">
+						<img
+							class="w-full h-full object-cover"
+							srcset="
+						/promo/{collection.name}/{collection.name}_320p.webp 320w,
+						/promo/{collection.name}/{collection.name}_500p.webp 500w,
+						/promo/{collection.name}/{collection.name}_800p.webp 800w,
+						/promo/{collection.name}/{collection.name}_1000p.webp 1000w,
+						"
+							sizes="(max-width: 400px) 320px, 500px, 800px, 1000px"
+							src="/promo/{collection.name}/{collection.name}_500p.webp"
+							alt="{collection.name} thumbnail"
+						/>
+					</div>
 				{/if}
 			</div>
 		{/each}
