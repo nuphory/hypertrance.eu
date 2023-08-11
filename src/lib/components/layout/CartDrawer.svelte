@@ -217,7 +217,14 @@
 					{#each $cart.discountCodes as discountCode}
 						{#if discountCode}
 							<!-- content here -->
-							<div class="p-2 flex justify-between items-center gap-4  w-min ring-1 ring-white {discountCode.applicable ? "" : "opacity-50"}">
+							<div
+								title={discountCode.applicable
+									? `Code ${discountCode.code} is not applicable to your cart.`
+									: `Code ${discountCode.code} has been applied!`}
+								class="p-2 flex justify-between items-center gap-4 w-min ring-1 ring-white {discountCode.applicable
+									? ''
+									: 'opacity-50'}"
+							>
 								<p class="m-0 ml-4 whitespace-nowrap">{discountCode.code}</p>
 								<button
 									on:click={() => {
@@ -225,7 +232,8 @@
 										removeDiscountCode(discountCode.code);
 									}}
 									class="hyper-button button-neutral flex items-center justify-center h-12 aspect-square font-suissnord ring-0"
-								><span>x</span></button>
+									><span>x</span></button
+								>
 							</div>
 						{/if}
 					{/each}

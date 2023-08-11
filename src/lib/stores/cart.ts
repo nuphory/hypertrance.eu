@@ -176,7 +176,7 @@ export async function addCartDiscountCode(discountCode: string) {
 		const discountCodes: string[] = [];
 
 		localCart.discountCodes?.forEach((code) => {
-			code?.code ? discountCodes.push(code.code) : null;
+			code?.code && code?.code != discountCode ? discountCodes.push(code.code) : null;
 		});
 
 		const cartData = await updateDiscountCodes(cartId, [...discountCodes, discountCode]);
