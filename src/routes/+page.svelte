@@ -137,7 +137,7 @@
 	<title>HYPERTRANCE SAMPLEPACK</title>
 
 	<meta name="title" content="HYPERTRANCE SAMPLEPACK" />
-	<meta property="og:type" content="product" />
+	<meta property="og:type" content="og:product" />
 	<meta property="og:title" content="HYPERTRANCE SAMPLEPACK" />
 	<meta property="og:url" content="https://v3.hypertrance.pages.dev" />
 	<meta property="og:image" content={'https://v3.hypertrance.pages.dev' + meta_cover} />
