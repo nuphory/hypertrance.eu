@@ -1,18 +1,18 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import first_frame from '$lib/assets/img/promo/samplepack/first_frame.webp';
+	import meta_cover from '$lib/assets/img/promo/samplepack/meta-cover.webp';
 	import Hero from '$lib/components/pages/samplepack-promo/Hero.svelte';
 	import Sample from '$lib/components/pages/samplepack-promo/Sample.svelte';
 	import Stats from '$lib/components/pages/samplepack-promo/Stats.svelte';
 	import Volume from '$lib/components/pages/samplepack-promo/Volume.svelte';
 	import { db } from '$lib/scripts/music/db';
 	import { createCart } from '$lib/utils/shopify/cart';
+	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
 	import { Euterpe, EuterpeBuilder } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
 	import { ArrowUp, Icon } from 'svelte-hero-icons';
-	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
-	import meta_cover from '$lib/assets/img/samplepack/meta-cover.webp';
-	import first_frame from '$lib/assets/img/samplepack/first_frame.webp';
 	let first_frame_url: string | null = first_frame;
 
 	export let data;
