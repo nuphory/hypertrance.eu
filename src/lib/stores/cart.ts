@@ -3,7 +3,8 @@ import {
 	createCart,
 	getCart,
 	removeCartLines,
-	updateCartLines
+	updateCartLines,
+	updateDiscountCodes
 } from '$lib/utils/shopify/cart';
 import type { CartResult } from '$lib/utils/shopify/schemas/cart';
 import { persistentAtom } from '@nanostores/persistent';
@@ -15,7 +16,8 @@ const emptyCart = {
 	checkoutUrl: '',
 	totalQuantity: 0,
 	lines: { nodes: [] },
-	cost: { totalAmount: { amount: '', currencyCode: '' } }
+	cost: { totalAmount: { amount: '', currencyCode: '' } },
+	discountCodes: [],
 };
 
 // Cart drawer state (open or closed) with initial value (false) and no persistent state (local storage)
@@ -47,7 +49,8 @@ export async function initCart() {
 					cost: data.cost,
 					checkoutUrl: data.checkoutUrl,
 					totalQuantity: data.totalQuantity,
-					lines: data.lines
+					lines: data.lines,
+					discountCodes: data.discountCodes
 				});
 			} else {
 				// If the cart doesn't exist in Shopify, reset the cart store
@@ -154,6 +157,70 @@ export async function updateCartItem(line: { lineId: string; quantity: number })
 				checkoutUrl: cartData.checkoutUrl,
 				totalQuantity: cartData.totalQuantity,
 				lines: cartData.lines
+			});
+			isCartUpdating.set(false);
+		}
+	}
+}
+
+
+export async function addCartDiscountCode(discountCode: string) {
+	const localCart = cart.get()
+	const cartId = localCart?.id
+
+
+	isCartUpdating.set(true);
+
+	if (cartId) {
+		
+		const discountCodes: string[] = [];
+
+		localCart.discountCodes?.forEach((code) => {
+			code?.code && code?.code != discountCode ? discountCodes.push(code.code) : null;
+		});
+
+		const cartData = await updateDiscountCodes(cartId, [...discountCodes, discountCode]);
+
+		if (cartData) {
+			cart.set({
+				...cart.get(),
+				id: cartData.id,
+				cost: cartData.cost,
+				checkoutUrl: cartData.checkoutUrl,
+				totalQuantity: cartData.totalQuantity,
+				lines: cartData.lines,
+				discountCodes: cartData.discountCodes
+			});
+			isCartUpdating.set(false);
+		}
+	}
+}
+
+export async function removeCartDiscountCode(discountCodes: string[]) {
+	const localCart = cart.get()
+	const cartId = localCart?.id
+
+	isCartUpdating.set(true);
+
+	if (cartId) {
+
+		const newDiscountCodes: string[] = [];
+
+		localCart.discountCodes?.forEach((code) => {
+			code?.code && !discountCodes.includes(code.code) ? newDiscountCodes.push(code.code) : null;
+		});
+
+		const cartData = await updateDiscountCodes(cartId, newDiscountCodes);
+
+		if (cartData) {
+			cart.set({
+				...cart.get(),
+				id: cartData.id,
+				cost: cartData.cost,
+				checkoutUrl: cartData.checkoutUrl,
+				totalQuantity: cartData.totalQuantity,
+				lines: cartData.lines,
+				discountCodes: cartData.discountCodes
 			});
 			isCartUpdating.set(false);
 		}

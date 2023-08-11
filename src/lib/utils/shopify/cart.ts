@@ -5,7 +5,8 @@ import {
 	CartLinesAddMutation,
 	CartLinesRemoveMutation,
 	CartLinesUpdateMutation,
-	GetCartQuery
+	GetCartQuery,
+	CartDiscountCodesUpdateMutation
 } from './graphql/cart';
 import { CartResult } from './schemas/cart';
 
@@ -69,6 +70,19 @@ export async function getCart(id: string) {
 	const data = await makeShopifyRequest(GetCartQuery, { id });
 
 	const { cart } = data;
+	const parsedCart = CartResult.parse(cart);
+
+	return parsedCart;
+}
+
+export async function updateDiscountCodes(id: string, discountCodes: string[]) {
+	const data = await makeShopifyRequest(CartDiscountCodesUpdateMutation, {
+		cartId: id,
+		discountCodes
+	});
+
+	const { cartDiscountCodesUpdate } = data;
+	const { cart } = cartDiscountCodesUpdate;
 	const parsedCart = CartResult.parse(cart);
 
 	return parsedCart;
