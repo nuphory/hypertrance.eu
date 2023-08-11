@@ -110,19 +110,19 @@
 					// debugger;
 					const x = `${(time / player.current_song_duration) * 100}%`;
 					const polygon = `polygon(0 0, ${x} 0, ${x} 100%, 0 100%)`;
-					let style = window.getComputedStyle(document.body);
-					console.log(
-						`x: ${x}, polygon: ${polygon}, --clip-time-path before: ${style.getPropertyValue(
-							'--clip-time-path'
-						)}`
-					);
+					// let style = window.getComputedStyle(document.body);
+					// console.log(
+					// 	`x: ${x}, polygon: ${polygon}\n--clip-time-path before: ${style.getPropertyValue(
+					// 		'--clip-time-path'
+					// 	)}`
+					// );
 					document.body.style.setProperty('--clip-time-path', polygon);
-					style = window.getComputedStyle(document.body);
-					console.log(
-						`x: ${x}, polygon: ${polygon}, --clip-time-path before: ${style.getPropertyValue(
-							'--clip-time-path'
-						)}`
-					);
+					// style = window.getComputedStyle(document.body);
+					// console.log(
+					// 	`x: ${x}\npolygon: ${polygon}\n--clip-time-path before: ${style.getPropertyValue(
+					// 		'--clip-time-path'
+					// 	)}`
+					// );
 				}
 			});
 		}
