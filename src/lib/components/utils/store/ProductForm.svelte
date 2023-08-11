@@ -80,6 +80,7 @@
 					<Money
 						price={selectedVariant.price}
 						showCurrency={true}
+						replace0WithFree={true}
 						class="font-michroma before:content-[''] bg-primary text-primary p-2 w-fit"
 					/>
 					{#if selectedVariant.compareAtPrice && selectedVariant.compareAtPrice !== selectedVariant.price}

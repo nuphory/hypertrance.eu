@@ -1,6 +1,13 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { cart, isCartDrawerOpen, isCartUpdating, removeCartItems } from '$lib/stores/cart';
+	import {
+		addCartDiscountCode,
+		cart,
+		isCartDrawerOpen,
+		isCartUpdating,
+		removeCartDiscountCode,
+		removeCartItems
+	} from '$lib/stores/cart';
 	import Money from '$src/lib/components/utils/store/Money.svelte';
 	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
 	import { fade, slide } from 'svelte/transition';
@@ -29,6 +36,18 @@
 		if (event.key === 'Escape') {
 			closeCartDrawer();
 		}
+	}
+
+	function addDiscountCode(e: SubmitEvent) {
+		const formData = new FormData(e.target as HTMLFormElement);
+
+		const discountCode = formData.get('discountCode') as string | null;
+
+		discountCode ? addCartDiscountCode(discountCode) : null;
+	}
+
+	function removeDiscountCode(code: string) {
+		removeCartDiscountCode([code]);
 	}
 </script>
 
@@ -81,6 +100,7 @@
 									<span
 										>{item.quantity} x <Money
 											price={item.cost.amountPerQuantity}
+											replace0WithFree={true}
 											showCurrency={true}
 										/></span
 									>
@@ -191,8 +211,44 @@
 					</div>
 				{/if}
 			</div>
-			<!-- Cart Summary -->
+
+			<div class="flex justify-start overflow-x-scroll gap-2 p-2 -ml-2 my-2">
+				{#if $cart.discountCodes}
+					{#each $cart.discountCodes as discountCode}
+						{#if discountCode}
+							<!-- content here -->
+							<div class="p-2 flex justify-between items-center gap-4  w-min ring-1 ring-white {discountCode.applicable ? "" : "opacity-50"}">
+								<p class="m-0 ml-4">{discountCode.code}</p>
+								<button
+									on:click={() => {
+										if ($isCartUpdating) return;
+										removeDiscountCode(discountCode.code);
+									}}
+									class="hyper-button button-neutral flex items-center justify-center h-12 aspect-square font-suissnord ring-0"
+								><span>x</span></button>
+							</div>
+						{/if}
+					{/each}
+				{/if}
+			</div>
+			<form
+				on:submit|preventDefault={addDiscountCode}
+				class="{cartIsUpdatingClass} flex justify-between gap-4"
+			>
+				<input
+					name="discountCode"
+					id="discount"
+					type="input"
+					class="hyper-button button-neutral flex-1 max-w-xs"
+					placeholder="Discount Code"
+				/>
+				<button
+					type="submit"
+					class="hyper-button transition-quick button-primary overflow-clip flex-grow">Apply</button
+				>
+			</form>
 			<div class="border-t my-2" />
+			<!-- Cart Summary -->
 			<div class="flex justify-between">
 				<p class="m-0">Subtotal</p>
 				<p class="m-0">
@@ -206,7 +262,7 @@
 			<button
 				on:click={() => goto($cart.checkoutUrl)}
 				type="button"
-				class="hyper-button transition-quick button-primary overflow-clip"
+				class="{cartIsUpdatingClass} hyper-button transition-quick button-primary overflow-clip"
 			>
 				<!-- Heroicon name: outline/x-mark -->
 				Checkout

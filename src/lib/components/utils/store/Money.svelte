@@ -7,9 +7,10 @@
 	export let showCurrency = false;
 
 	export let compareAtPrice = false;
+	export let replace0WithFree = false;
 
 	$: formatPrice =
-		parseFloat(price.amount) > 0
+		(parseFloat(price.amount) > 0 || !replace0WithFree)
 			? parseFloat(price.amount).toFixed(2) + (showCurrency ? price.currencyCode : '')
 			: 'FREE DOWNLOAD';
 </script>
