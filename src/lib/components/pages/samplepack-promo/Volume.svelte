@@ -6,7 +6,7 @@
 	let timeout_id: any | undefined;
 	async function toggle_timeout() {
 		if (timeout_id) clearTimeout(timeout_id);
-		timeout_id = setTimeout(() => (is_hiding = true), 3000);
+		// timeout_id = setTimeout(() => (is_hiding = true), 3000);
 	}
 </script>
 
@@ -73,12 +73,12 @@
 	}
 
 	.volumeSlider::-moz-range-thumb {
-		@apply h-4 w-4 appearance-none rounded-full bg-text-primary border-none;
+		@apply h-4 w-4 appearance-none rounded-full bg-text-primary border-none my-auto;
 	}
 	.volumeSlider::-ms-thumb {
-		@apply h-4 w-4 appearance-none rounded-full bg-text-primary border-none;
+		@apply h-4 w-4 appearance-none rounded-full bg-text-primary border-none my-auto;
 	}
 	.volumeSlider::-webkit-slider-thumb {
-		@apply h-4 w-4 -m-1.5 appearance-none rounded-full bg-text-primary border-none;
+		@apply h-4 w-4 -m-1.5 appearance-none rounded-full bg-text-primary border-none my-auto;
 	}
 </style>
