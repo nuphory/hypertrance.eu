@@ -13,8 +13,6 @@
 	let is_seeking = false;
 	let canvas: SVGSVGElement;
 	let path_d = song.metadata[0] as string;
-	//removes the whole <path ..." ...> from metadata
-	// path_d = path_d.slice(36, path_d.lastIndexOf('"'));
 
 	$: playing_song_id == song.id ? (am_i_playing = true) : (am_i_playing = false);
 	//onClick => change to current song && seek to time
@@ -26,11 +24,14 @@
 		const x = event.clientX - rect.left;
 		const res_x = convert_range(x, [0, rect.width], [0, canvas.viewBox.baseVal.width]);
 		const seek_percent = res_x / canvas.viewBox.baseVal.width;
-
-		player.try_seek(seek_percent * song.duration!).catch(async (r) => {
-			await play();
-			player.try_seek(seek_percent * song.duration!).catch((e) => console.error(e));
-		});
+		setTimeout(
+			() =>
+				player.try_seek(seek_percent * song.duration!).catch(async (r) => {
+					await play();
+					player.try_seek(seek_percent * song.duration!).catch((e) => console.error(e));
+				}),
+			20
+		);
 	}
 	async function play() {
 		try {
