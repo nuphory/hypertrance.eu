@@ -171,26 +171,22 @@
 	</section>
 	<section class="mt-24 grid grid-cols-1 grid-rows-4 bg-primary">
 		{#each collections as collection, i}
-			<div
-				class="w-full h-fit p-12 py-6 grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-6 relative"
-			>
-				{#if i % 2 == 0}
-					<div class="h-full w-full overflow-hidden relative">
-						<img
-							class="h-full w-full object-cover"
-							srcset="
-						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_320p.webp 320w,
-						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_500p.webp 500w,
-						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_800p.webp 800w,
-						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_1000p.webp 1000w,
-						"
-							sizes="(max-width: 400px) 320px, 500px, 800px, 1000px"
-							src="/promo/{collection.name}/{collection.name}_500p.webp"
-							alt="{collection.name} thumbnail"
-						/>
-					</div>
-				{/if}
-				<div class="w-full h-full bg-primary-island p-6">
+			<div class="w-full h-fit p-12 py-6 flex max-lg:flex-col  gap-6 relative">
+				<div class="relative overflow-clip w-half {i % 2 ? '' : 'lg:order-last'}">
+					<img
+						class="absolute left-50 top-50 -translate-x-50 -translate-y-50 w-full"
+						srcset="
+							/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_320p.webp 320w,
+							/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_500p.webp 500w,
+							/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_800p.webp 800w,
+							/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_1000p.webp 1000w,
+							"
+						sizes="(max-width: 400px) 320px, 500px, 800px, 1000px"
+						src="/promo/{collection.name}/{collection.name}_500p.webp"
+						alt="{collection.name} thumbnail"
+					/>
+				</div>
+				<div class="bg-primary-island p-6 w-half">
 					<h2
 						class="bg-text-primary block text-5xl text-bg-primary -mx-6 -ml-8 pl-14 mt-3 py-1 font-suissnord"
 					>
@@ -205,7 +201,7 @@
 						{/each}
 					</div>
 				</div>
-				{#if i % 2 != 0}
+				<!-- {#if i % 2 != 0}
 					<div class="w-full h-full overflow-hidden relative">
 						<img
 							class="h-full w-full object-cover"
@@ -220,7 +216,7 @@
 							alt="{collection.name} thumbnail"
 						/>
 					</div>
-				{/if}
+				{/if} -->
 			</div>
 		{/each}
 	</section>
