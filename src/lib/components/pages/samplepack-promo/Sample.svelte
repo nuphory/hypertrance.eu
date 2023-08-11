@@ -29,14 +29,14 @@
 
 		player.try_seek(seek_percent * song.duration!).catch(async (r) => {
 			await play();
-			player.try_seek(seek_percent * song.duration!).catch((e) => alert(e));
+			player.try_seek(seek_percent * song.duration!).catch((e) => console.error(e));
 		});
 	}
 	async function play() {
 		try {
 			await player.try_specific_song(song.id!);
 		} catch (e) {
-			alert('failed to play song' + e);
+			console.error('failed to play song', e);
 		}
 	}
 	function pause() {
