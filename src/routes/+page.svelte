@@ -174,14 +174,14 @@
 	<section class="mt-24 grid grid-cols-1 grid-rows-4 bg-primary">
 		{#each collections as collection, i}
 			<div class="relative w-full h-fit p-12 py-6 flex max-lg:flex-col gap-6 ">
-				<div class="relative flex justify-center items-center overflow-clip w-half {i % 2 ? '' : 'lg:order-last'}">
+				<div class="w-full max-lg:aspect-square relative flex justify-center items-center overflow-clip lg:w-half {i % 2 ? '' : 'lg:order-last'}">
 					<img
 						class=" w-full absolute left-50 top-50 -translate-x-50 -translate-y-50 w-full"
 						src="{product.images.nodes[i+1]?.url}"
 						alt="{collection.name} thumbnail"
 					/>
 				</div>
-				<div class="bg-primary-island p-6 w-half">
+				<div class="bg-primary-island p-6 lg:w-half w-full">
 					<h2
 						class="bg-text-primary block text-5xl text-bg-primary -mx-6 -ml-8 pl-14 mt-3 py-1 font-suissnord"
 					>
