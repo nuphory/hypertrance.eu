@@ -82,6 +82,8 @@
 		}
 	});
 
+	console.log('data', product);
+
 	function on_loaded() {
 		canvas_wrapper.removeAttribute('style');
 	}
@@ -171,18 +173,11 @@
 	</section>
 	<section class="mt-24 grid grid-cols-1 grid-rows-4 bg-primary">
 		{#each collections as collection, i}
-			<div class="w-full h-fit p-12 py-6 flex max-lg:flex-col  gap-6 relative">
+			<div class="relative w-full h-fit p-12 py-6 flex max-lg:flex-col gap-6 ">
 				<div class="relative overflow-clip w-half {i % 2 ? '' : 'lg:order-last'}">
 					<img
 						class="absolute left-50 top-50 -translate-x-50 -translate-y-50 w-full"
-						srcset="
-							/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_320p.webp 320w,
-							/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_500p.webp 500w,
-							/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_800p.webp 800w,
-							/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_1000p.webp 1000w,
-							"
-						sizes="(max-width: 400px) 320px, 500px, 800px, 1000px"
-						src="/promo/{collection.name}/{collection.name}_500p.webp"
+						src="{product.images.nodes[i+1]?.url}"
 						alt="{collection.name} thumbnail"
 					/>
 				</div>
@@ -201,22 +196,6 @@
 						{/each}
 					</div>
 				</div>
-				<!-- {#if i % 2 != 0}
-					<div class="w-full h-full overflow-hidden relative">
-						<img
-							class="h-full w-full object-cover"
-							srcset="
-						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_320p.webp 320w,
-						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_500p.webp 500w,
-						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_800p.webp 800w,
-						/promo/{collection.name.replace(' ', '_')}/{collection.name.replace(' ', '_')}_1000p.webp 1000w,
-						"
-							sizes="(max-width: 400px) 320px, 500px, 800px, 1000px"
-							src="/promo/{collection.name}/{collection.name}_500p.webp"
-							alt="{collection.name} thumbnail"
-						/>
-					</div>
-				{/if} -->
 			</div>
 		{/each}
 	</section>
