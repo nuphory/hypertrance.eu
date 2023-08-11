@@ -6,7 +6,6 @@ module.exports = {
 			screens: {
 				'2xs': '425px',
 				xs: '576px',
-				"3xl": "1940px",
 			},
 			fontFamily: {
 				comsat: ['Comsat', 'sans-serif'],

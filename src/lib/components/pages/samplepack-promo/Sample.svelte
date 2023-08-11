@@ -53,13 +53,13 @@
 	class="{$$restProps.class} bg-text-primary text-bg-primary flex justify-between flex-row flex-nowrap items-center h-12 p-2"
 >
 	<span class="whitespace-nowrap grid grid-cols-[2rem,1fr] grid-flow-row grid-rows-1 gap-2 mr-4">
-		<button on:click={is_playing && am_i_playing ? pause : play}
-			><Icon
+		<button on:click={is_playing && am_i_playing ? pause : play}>
+			<Icon
 				class="h-8 w-8 mr-2 hover:brightness-75 active:brightness-110 col-span-1"
 				src={am_i_playing && is_playing ? PauseCircle : PlayCircle}
 				solid
-			/></button
-		>
+			/>
+		</button>
 		<p class="truncate whitespace-nowrap w-full h-full text-center m-0 col-span-1 leading-10">
 			{song.name}
 		</p>

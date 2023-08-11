@@ -43,13 +43,11 @@
 
 	async function updateProduct(selectedOptions: z.infer<typeof SelectedOptionResult>[]) {
 		product = await getProductByHandle({ handle: product.handle, selectedOptions });
-		console.log(product);
 	}
 
 	async function addToCart(e: Event) {
 		const form = e.target as HTMLFormElement;
 		const formData = new FormData(form);
-		console.log(formData);
 		const { merchandiseId, quantity } = Object.fromEntries(formData);
 		const item = {
 			merchandiseId: merchandiseId as string,

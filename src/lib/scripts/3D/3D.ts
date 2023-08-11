@@ -105,7 +105,7 @@ export default class THREED {
 	animate() {
 		this.optimizer.start();
 		this.optimizer.onNewOptimizationAppliedObservable.add((optim) => {
-			console.log(optim.getDescription());
+			console.debug(optim.getDescription());
 		});
 
 		this.engine.runRenderLoop(() => {

@@ -6,7 +6,6 @@
 	export let data;
 
 	let { product } = data;
-	console.log(product);
 
 	let selectedVariant = product.variants.nodes[0];
 

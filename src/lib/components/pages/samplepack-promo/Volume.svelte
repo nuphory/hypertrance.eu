@@ -15,7 +15,7 @@
 		if (timeout_id) clearTimeout(timeout_id);
 	}}
 	on:mouseleave={toggle_timeout}
-	class=" hidden md:grid fixed left-8 3xl:left-[calc((100vw-1920px)/2)] bottom-24 w-12 h-12 bg-text-primary z-10 rounded-full p-1
+	class=" hidden md:grid fixed left-8 min-[1920px]:left-[calc((100vw-1920px)/2)] bottom-24 w-12 h-12 bg-text-primary z-10 rounded-full p-1
     grid-cols-1 grid-flow-row [transition-duration:_100ms] transition-all shadow-[rgba(0,0,0,.3)] shadow-[0_0_.5rem_1px]
 	place-items-end
     {is_hiding
