@@ -14,7 +14,7 @@
 </script>
 
 <div
-	class="z-10 absolute w-full md:w-auto right-0 bottom-[15svh] md:right-[10vw] 3xl:right-[20vw] lg md:bottom-[10vh] md:skew-x-[25deg] bg-primary-side md:pl-4"
+	class="z-10 absolute w-full md:w-auto right-0 bottom-0 md:right-[10vw] 3xl:right-[20vw] md:bottom-[10vh] md:skew-x-[25deg] bg-primary-side md:pl-4"
 >
 	<div
 		class="flex flex-col bg-text-primary text-black md:[&>*]:-skew-x-[25deg] px-20 py-4 pb-8 gap-8"
