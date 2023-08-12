@@ -124,7 +124,7 @@
 	<Volume {player} />
 	<section
 		id="landing"
-		class="w-full h-[calc(100svh-10rem)] md:h-[calc(100svh-15rem)] relative text-bg-primary"
+		class="w-full h-[max(calc(100svh),24rem)] md:h-[calc(100svh-15rem)] relative text-bg-primary"
 	>
 		<div
 			class="w-full h-full [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_70%,rgba(0,0,0,0)_100%)]"

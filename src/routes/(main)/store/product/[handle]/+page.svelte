@@ -41,7 +41,7 @@
 	<meta name="twitter:image" content={product.featuredImage?.url} />
 </svelte:head>
 
-<main class="py-2">
+<main id="main" class="py-2">
 	<div class="relative sm:container">
 		<div class="block md:hidden container sm:px-0 my-4">
 			<button
@@ -94,7 +94,7 @@
 
 			<ProductForm
 				{product}
-				class="flex flex-col gap-8 flex-1 h-min sticky top-[5.5rem] scroll-pt-[5.5rem]"
+				class="flex flex-col gap-8 flex-1 h-min sticky top-[5.5rem]"
 			>
 				<span slot="tagline" style="display:contents">{@html tagline}</span>
 				<div slot="description" class="container flex flex-col gap-4">

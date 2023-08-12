@@ -28,3 +28,14 @@ export const MoneyV2Result = z.object({
 	amount: z.string(),
 	currencyCode: z.string()
 });
+
+export const MetafieldResult = z.object({
+	id: z.string(),
+	description: z.string(),
+	value: z.string()
+});
+
+export const HasMetafieldsIdentifier = z.object({
+	key: z.string(),
+	value: z.string()
+});

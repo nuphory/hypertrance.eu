@@ -1,7 +1,8 @@
 import { z } from 'zod';
-import { ProductByHandleQuery, ProductQuery, ProductsQuery } from './graphql/product';
-import { ProductResult, SelectedOptionResult } from './schemas/product';
 import { makeShopifyRequest } from './client';
+import { ProductByHandleQuery, ProductQuery, ProductsQuery } from './graphql/product';
+import type { HasMetafieldsIdentifier } from './schemas/common';
+import { ProductResult, SelectedOptionResult } from './schemas/product';
 
 export async function getProducts(options: {
 	first?: number;
@@ -72,10 +73,12 @@ export async function getProductByHandle(options: {
 	first_images?: number;
 	first_variants?: number;
 	selectedOptions?: z.infer<typeof SelectedOptionResult>[];
-	hasSelectedOptions?: boolean;
+	metafieldIdentifiers?: z.infer<typeof HasMetafieldsIdentifier>[];
 }) {
 	const input = {
 		...options,
+		hasMetafields: options.metafieldIdentifiers?.length
+			? options.metafieldIdentifiers?.length > 0 : false,
 		hasSelectedOptions: options.selectedOptions?.length
 			? options.selectedOptions?.length > 0
 			: false
