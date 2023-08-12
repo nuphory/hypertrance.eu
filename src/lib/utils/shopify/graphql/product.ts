@@ -1,4 +1,4 @@
-import { FILTER_FRAGMENT, IMAGE_FRAGMENT, MONEY_FRAGMENT } from './common';
+import { FILTER_FRAGMENT, IMAGE_FRAGMENT, METAFIELD_FRAGMENT, MONEY_FRAGMENT } from './common';
 
 export const SELECTED_OPTION_FRAGMENT = `#graphql
 	fragment selectedOptionFragment on SelectedOption {
@@ -127,21 +127,29 @@ export const CollectionsQuery = `#graphql
 `;
 
 export const CollectionQuery = `#graphql
-	query ($handle: String, $id: String, $first_collections: Int, $first_images: Int, $first_variants: Int, $selectedOptions: [SelectedOptionInput!]) {
+	query ($handle: String, $id: String, $first_collections: Int, $first_images: Int, $first_variants: Int, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [], $hasMetafields: Boolean = false) {
 		collection(handle: $handle, id: $id) {
 			...collectionFragment
+			metafields(identifiers: $metafieldIdentifiers) @include (if: $hasMetafields) {
+				...metafieldFragment
+			}
 		}
 	}
 	${COLLECTION_FRAGMENT}
+	${METAFIELD_FRAGMENT}
 `;
 
 export const CollectionByHandleQuery = `#graphql
-	query ($handle: String!, $first_collections: Int, $first_images: Int, $first_variants: Int, $selectedOptions: [SelectedOptionInput!]) {
+	query ($handle: String!, $first_collections: Int, $first_images: Int, $first_variants: Int, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [], $hasMetafields: Boolean = false) {
 		collectionByHandle(handle: $handle, id: $id) {
 			...collectionFragment
+			metafields(identifiers: $metafieldIdentifiers) @include (if: $hasMetafields) {
+				...metafieldFragment
+			}
 		}
 	}
 	${COLLECTION_FRAGMENT}
+	${METAFIELD_FRAGMENT}
 `;
 
 export const ProductsQuery = `#graphql
@@ -164,21 +172,29 @@ export const ProductsQuery = `#graphql
 `;
 
 export const ProductQuery = `#graphql
-	query ($handle: String, $id: String, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean!) {
+	query ($handle: String, $id: String, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [], $hasMetafields: Boolean = false) {
 		product(handle: $handle, id: $id) {
 			...productFragment
+			metafields(identifiers: $metafieldIdentifiers) @include (if: $hasMetafields) {
+				...metafieldFragment
+			}
 		}
 	}
 	${PRODUCT_FRAGMENT}
+	${METAFIELD_FRAGMENT}
 `;
 
 export const ProductByHandleQuery = `#graphql
-	query ($handle: String!, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean!) {
+	query ($handle: String!, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [], $hasMetafields: Boolean = false) {
 		productByHandle(handle: $handle) {
 			...productFragment
+			metafields(identifiers: $metafieldIdentifiers) @include (if: $hasMetafields) {
+				...metafieldFragment
+			}
 		}
 	}
 	${PRODUCT_FRAGMENT}
+	${METAFIELD_FRAGMENT}
 `;
 
 export const ProductRecommendationsQuery = `#graphql
