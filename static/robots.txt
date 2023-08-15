@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /nobot/
+Disallow: /assets/
 
 Sitemap: https://hypertrance.eu/sitemap.xml
