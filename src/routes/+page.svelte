@@ -9,6 +9,7 @@
 	import Volume from '$lib/components/pages/samplepack-promo/Volume.svelte';
 	import { make } from '$lib/scripts/music/db';
 	import { createCart } from '$lib/utils/shopify/cart';
+	import { id } from '$src/lib/assets/identity.js';
 	import Video from '$src/lib/components/pages/samplepack-promo/Video.svelte';
 	import ShopifyImage from '$src/lib/components/utils/store/ShopifyImage.svelte';
 	import { EuterpeBuilder, type Euterpe } from '@euterpe.js/euterpe';
@@ -96,8 +97,9 @@
 	<meta name="title" content="HYPERTRANCE SAMPLEPACK" />
 	<meta property="og:type" content="og:product" />
 	<meta property="og:title" content="HYPERTRANCE SAMPLEPACK" />
-	<meta property="og:url" content="https://v3.hypertrance.pages.dev" />
-	<meta property="og:image" content={'https://v3.hypertrance.pages.dev' + meta_cover} />
+	<meta property="og:url" content={id.url} />
+	<link rel="canonical" href={id.url} />
+	<meta property="og:image" content={`${id.url}${meta_cover}`} />
 	<meta
 		property="og:description"
 		content="Experience the world of hypertrance with this all-new samplepack developed by nuphory."
@@ -112,7 +114,7 @@
 		property="twitter:description"
 		content="Experience the world of hypertrance with this all-new samplepack developed by nuphory."
 	/>
-	<meta property="twitter:image" content={'https://v3.hypertrance.pages.dev' + meta_cover} />
+	<meta property="twitter:image" content={`${id.url}${meta_cover}`}  />
 	<meta property="twitter:title" content="HYPERTRANCE SAMPLEPACK" />
 	<meta property="twitter:label1" content="Price" />
 	<meta property="twitter:data1" content="39.00EUR" />

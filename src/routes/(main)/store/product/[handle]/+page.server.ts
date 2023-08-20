@@ -8,7 +8,7 @@ import { error } from '@sveltejs/kit';
 export async function load({ params, url, getClientAddress }) {
 	const { handle } = params;
 
-	const { href } = url;
+	const { pathname } = url;
 
 	const product = await getProductByHandle({ handle }, getClientAddress());
 
@@ -17,7 +17,7 @@ export async function load({ params, url, getClientAddress }) {
 	}
 
 	return {
-		href,
+		pathname,
 		product
 	};
 }

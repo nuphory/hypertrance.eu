@@ -10,7 +10,9 @@
 
 	const { product }: { product: z.infer<typeof ProductResult> } = data;
 
-	let { href } = data;
+	let { pathname } = data;
+
+	console.debug(`${id.url}${pathname}`);
 
 	let descSplit = product.descriptionHtml.split('\n');
 
@@ -23,14 +25,14 @@
 
 	<meta name="title" content="{product.title} | {id.name}" />
 
-	<link rel="canonical" {href} />
+	<link rel="canonical" href={`${id.url}${pathname}`} />
 
 	<meta name="robots" content="index, follow" />
 
 	<meta property="og:title" content="{product.title} | {id.name}" />
 	<meta property="og:description" content={product.description.substring(0, 155) + '...'} />
 	<meta property="og:image" content={product.featuredImage?.url} />
-	<meta property="og:url" content={href} />
+	<meta property="og:url" content={`${id.url}${pathname}`} />
 	<meta property="og:type" content="website" />
 
 	<meta name="twitter:card" content="summary_large_image" />
