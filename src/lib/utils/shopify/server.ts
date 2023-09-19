@@ -44,7 +44,7 @@ export async function makeShopifyRequest(
 		throw Error(errors.map((e: Error) => e.message).join('\n'));
 	}
 
-	console.debug(data);
+	// console.debug(data);
 
 	return data;
 }

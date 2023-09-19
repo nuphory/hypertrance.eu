@@ -21,8 +21,6 @@
 
 	let selectedVariant = product.variants.nodes[0];
 
-	console.debug(selectedVariant);
-
 	$: {
 		if (product.variantBySelectedOptions) {
 			selectedVariant = product.variantBySelectedOptions;

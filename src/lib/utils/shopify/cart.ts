@@ -11,14 +11,14 @@ import {
 import { CartResult } from './schemas/cart';
 
 export async function createCart(id: string, quantity: number) {
-	console.debug('Creating cart', { id, quantity });
+	// console.debug('Creating cart', { id, quantity });
 
-	console.debug(CreateCartMutation);
+	// console.debug(CreateCartMutation);
 
 	const data = await makeShopifyRequest(CreateCartMutation, { id, quantity });
 
 	const { cartCreate } = data;
-	console.debug('Cart created', { cartCreate });
+	// console.debug('Cart created', { cartCreate });
 
 	const { cart } = cartCreate;
 	const parsedCart = CartResult.parse(cart);

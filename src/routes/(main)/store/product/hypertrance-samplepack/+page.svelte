@@ -12,7 +12,7 @@
 
 	let { pathname } = data;
 
-	console.debug(`${id.url}${pathname}`);
+	// console.debug(`${id.url}${pathname}`);
 
 	let descSplit = product.descriptionHtml.split('\n');
 
