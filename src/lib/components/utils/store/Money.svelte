@@ -13,6 +13,8 @@
 		(parseFloat(price.amount) > 0 || !replace0WithFree)
 			? parseFloat(price.amount).toFixed(2) + (showCurrency ? price.currencyCode : '')
 			: 'FREE DOWNLOAD';
+
+	
 </script>
 
 <div class="flex flex-col">

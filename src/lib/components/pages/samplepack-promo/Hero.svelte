@@ -4,10 +4,10 @@
 	import { createCart } from '$src/lib/utils/shopify/cart';
 	export let data;
 	const { product } = data;
-	const selected_variant = product.variants.nodes[0];
+	const selectedVariant = product.variants.nodes[0];
 	async function buyNow() {
 		if (!product) throw Error('Product not found');
-		const cart = await createCart(selected_variant.id, 1);
+		const cart = await createCart(selectedVariant.id, 1);
 		if (!cart) throw Error('Cart creation failed');
 		goto(cart.checkoutUrl);
 	}
@@ -25,17 +25,17 @@
 		</h1>
 		<div class="flex gap-3 justify-center items-end -mt-1">
 			<Money
-				price={selected_variant.price}
+				price={selectedVariant.price}
 				showCurrency={true}
 				class="p-2 ml-1 px-[2.4rem] w-fit skew-x-[25deg] [&>*]:-skew-x-[25deg] font-michroma before:content-[''] bg-primary-side ring-1 ring-primary text-primary"
 			>
 				<span class="text-xs whitespace-nowrap overflow-visible -ml-2 mb-1 w-0"
-					>introductory price</span
+					>full price</span
 				>
 			</Money>
-			{#if selected_variant.compareAtPrice !== null && selected_variant.compareAtPrice !== selected_variant.price}
+			{#if selectedVariant.compareAtPrice !== null && selectedVariant.compareAtPrice?.amount !== selectedVariant.price?.amount}
 				<Money
-					price={selected_variant.compareAtPrice}
+					price={selectedVariant.compareAtPrice}
 					compareAtPrice={true}
 					showCurrency={true}
 					class=" -ml-3 p-2 px-4 w-fit  skew-x-[25deg] [&>*]:-skew-x-[25deg] ring-1 ring-primary font-michroma  decoration-black"
