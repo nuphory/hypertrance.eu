@@ -65,7 +65,7 @@ export async function initCart() {
  * @param merchandise item to add to the cart
  */
 export async function addCartItem(merchandise: { merchandiseId: string; quantity?: number }) {
-	console.debug(merchandise);
+	// console.debug(merchandise);
 	const { merchandiseId, quantity } = merchandise;
 
 	const localCart = cart.get();

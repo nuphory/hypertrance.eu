@@ -84,7 +84,7 @@
 		}
 	});
 
-	console.log('data', product);
+	// console.debug('data', product);
 
 	function on_loaded() {
 		canvas_wrapper.removeAttribute('style');
