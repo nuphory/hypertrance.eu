@@ -21,6 +21,8 @@
 
 	let selectedVariant = product.variants.nodes[0];
 
+	console.debug(selectedVariant);
+
 	$: {
 		if (product.variantBySelectedOptions) {
 			selectedVariant = product.variantBySelectedOptions;
@@ -81,7 +83,7 @@
 						replace0WithFree={true}
 						class="font-michroma before:content-[''] bg-primary text-primary p-2 w-fit"
 					/>
-					{#if selectedVariant.compareAtPrice && selectedVariant.compareAtPrice !== selectedVariant.price}
+					{#if selectedVariant.compareAtPrice && selectedVariant.compareAtPrice?.amount !== selectedVariant.price?.amount}
 						<Money
 							price={selectedVariant.compareAtPrice}
 							compareAtPrice={true}
