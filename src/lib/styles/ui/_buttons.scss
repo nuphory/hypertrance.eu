@@ -85,6 +85,7 @@
 		background-size: 750%;
 	}
 
+	@apply group-hover:bg-[33%_33%]; // in case of group-hovers :)
 	&:hover {
 		@apply text-[var(--button-text-hover)] fill-[var(--button-text-hover)] ring-[var(--button-border-main)];
 		// @apply hover:skew-x-[25deg] [&>*]:hover:-skew-x-[25deg] duration-default [&>*]:transition-[transform,background-position,margin];

@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="py-4 relative flex gap-10 justify-between items-center">
 			<span class="flex-1"
-				><a data-sveltekit-reload class="whitespace-nowrap" href="/">:: {id.name}</a></span
+				><a data-sveltekit-reload class="p-3 whitespace-nowrap" href="/">:: {id.name}</a></span
 			>
 			<Navigation class="hidden lg:flex" />
 
