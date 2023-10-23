@@ -7,7 +7,7 @@
 			<ul class="[&_*]:text-bg-primary hover:[&_*]:text-bg-primary">
 				<li><a data-sveltekit-reload data-sveltekit-preload-data="tap" href="/">Sample Pack</a></li>
 				<li><a disabled href="/home">Home</a></li>
-				<li><a href="/store/product/hypertrance-samplepack">Store</a></li>
+				<li><a href="/store/products/hypertrance-samplepack">Store</a></li>
 				<li><a disabled href="/catalog">Catalog</a></li>
 				<li><a disabled href="/wiki">Wiki</a></li>
 			</ul>

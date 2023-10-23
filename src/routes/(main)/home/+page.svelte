@@ -11,6 +11,6 @@
 
 <div class="w-full">
 	<main class="container flex flex-col">
-		test
+		This is a temporary home page, please check out some of the pages in the nav bar!
 	</main>
 </div>

@@ -1,16 +1,13 @@
 <script lang="ts">
-	import { fly, slide } from 'svelte/transition';
 	import { cubicIn as easeIn, cubicOut as easeOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
 
 	const transitionDuration = 250;
 
 	export let data;
 
-	import Header from '../../lib/components/layout/Header.svelte';
 	import { browser } from '$app/environment';
 </script>
-
-<Header />
 
 {#if browser}
 	<!-- content here -->

@@ -9,11 +9,11 @@
 		<li class="group"><a title="Coming soon" href="/music">Music</a></li>
 		<li><a title="Coming soon" href="/club">Club</a></li>
 		<li class="group">
-			<a title="Coming soon" href="/store/product/hypertrance-samplepack">Sample Packs</a>
+			<a title="Coming soon" href="/store/products/hypertrance-samplepack">Sample Packs</a>
 		</li>
 		<li class="group"><a title="Coming soon" href="/artbooks">Art Books</a></li>
 		<li class="group">
-			<a title="View all of our products!" href="/store/product/hypertrance-samplepack">Store</a>
+			<a title="View all of our products!" href="/store/products/hypertrance-samplepack">Store</a>
 		</li>
 	</ul> -->
 
@@ -31,7 +31,7 @@
 					"
 					slot="title"
 					title="Hypertrance Music"
-					href="/music"
+					href="/music/hypertrance-worldwide"
 				>
 					<span> Music </span>
 				</a>
@@ -128,7 +128,7 @@
 							"
 								slot="title"
 								title="Hypertrance Music"
-								href="/music"
+								href="/music/hypertrance-worldwide"
 							>
 								<span> Music </span>
 							</a>
@@ -173,7 +173,7 @@
 								"
 								slot="title"
 								title="Hypertrance Sample Packs"
-								href="/samplepacks"
+								href="/store/products/hypertrance-samplepack"
 							>
 								<span> Sample Packs </span>
 							</a>
@@ -195,7 +195,7 @@
 								"
 							>
 								<li class="hyper-button">
-									<a title="Hypertrance Sample Pack" href="/samplepacks/hypertrance-samplepack"
+									<a title="Hypertrance Sample Pack" href="/store/products/hypertrance-samplepack"
 										>Hypertrance Samplepack</a
 									>
 								</li>
@@ -215,7 +215,7 @@
 								"
 								slot="title"
 								title="Hypertrance Art Books"
-								href="/artbooks"
+								href="/#"
 							>
 								<span> Art Books </span>
 							</a>
@@ -262,7 +262,7 @@
 					"
 					slot="title"
 					title="Coming soon"
-					href="/samplepacks"
+					href="/store/products/hypertrance-samplepack"
 				>
 					<span> Sample Packs </span>
 				</a>
@@ -284,7 +284,7 @@
 					"
 				>
 					<li class="hyper-button">
-						<a title="Coming soon" href="/samplepacks/hypertrance-samplepack"
+						<a title="Coming soon" href="/store/products/hypertrance-samplepack"
 							>Hypertrance Samplepack</a
 						>
 					</li>
@@ -305,7 +305,7 @@
 					"
 					slot="title"
 					title="Coming soon"
-					href="/artbooks"
+					href="/#"
 				>
 					<span> Art Books </span>
 				</a>
@@ -371,16 +371,16 @@
 					"
 				>
 					<li class="hyper-button">
-						<a title="Coming soon" href="/artbooks/hypertrance-1">Music</a>
+						<a title="Coming soon" href="/store/categories/music">Music</a>
 					</li>
 					<li class="hyper-button">
-						<a title="Coming soon" href="/artbooks/hypertrance-2">Sample Packs</a>
+						<a title="Coming soon" href="/store/categories/samplepacks">Sample Packs</a>
 					</li>
 					<li class="hyper-button">
-						<a title="Coming soon" href="/artbooks/hypertrance-2">Art Books</a>
+						<a title="Coming soon" href="/store/categories/artbooks">Art Books</a>
 					</li>
 					<li class="hyper-button">
-						<a title="Coming soon" href="/artbooks/hypertrance-2"> All Products </a>
+						<a title="Coming soon" href="/store/products"> All Products </a>
 					</li>
 				</ul>
 			</Dropdown>

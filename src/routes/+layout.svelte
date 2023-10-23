@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-
-	// Components
+// Components
 	import Footer from '../lib/components/layout/Footer.svelte';
-
 	// Styles
-	import '$lib/styles/app.scss';
 	import { browser } from '$app/environment';
+	import '$lib/styles/app.scss';
+	import Header from '$src/lib/components/layout/Header.svelte';
 
 	let ready = false;
 	onMount(() => {
@@ -34,6 +33,7 @@
 
 {#if browser}
 	{#if ready}
+		<Header />
 		<!-- content here -->
 		<div in:fade={{ duration: 500 }}>
 			<slot />
