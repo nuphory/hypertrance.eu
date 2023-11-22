@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Banner from './../lib/components/layout/Banner.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
@@ -36,12 +37,14 @@
 	{#if ready}
 		<!-- content here -->
 		<div in:fade={{ duration: 500 }}>
+			<Banner />
 			<slot />
 			<Footer />
 		</div>
 	{/if}
 {:else}
 	<div in:fade={{ duration: 500 }} class="opacity-0">
+		<Banner />
 		<slot />
 		<Footer />
 	</div>
