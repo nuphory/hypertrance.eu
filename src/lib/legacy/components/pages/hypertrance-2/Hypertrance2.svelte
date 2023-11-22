@@ -24,7 +24,7 @@
 	});
 </script>
 
-<Hero class="w-full -mb-[100dvh] h-screen-dynamic font-comsat-navy pointer-events-none" />
+<Hero class="w-full -mb-[100svh] h-screen-small font-comsat-navy pointer-events-none" />
 <section id="premiere" class="container !p-0 !mb-0 mt-[24rem] md:mt-[32rem] lg:mt-[40rem]">
 	<Embed
 		class="w-full shadow-lg shadow-black/50"

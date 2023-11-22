@@ -28,9 +28,9 @@
 	</figure>
 	<div
 		id="background"
-		class="absolute top-0 h-screen-dynamic w-full origin-top -translate-z-40 scale-[200%] pointer-events-none"
+		class="absolute top-0 h-screen-small w-full origin-top -translate-z-40 scale-[200%] pointer-events-none"
 	>
-		<div class="h-screen-dynamic w-full bg-gradient-to-t from-neutral via-transparent" />
+		<div class="h-screen-small w-full bg-gradient-to-t from-neutral via-transparent" />
 		<div class="min-h-[25dvh] w-full bg-neutral" />
 	</div>
 	<div
