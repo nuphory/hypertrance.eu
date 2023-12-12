@@ -15,6 +15,8 @@ export async function load({ url, getClientAddress }) {
 		throw error(404, { message: 'Product not found' });
 	}
 
+	console.log(product);
+
 	return {
 		pathname,
 		product

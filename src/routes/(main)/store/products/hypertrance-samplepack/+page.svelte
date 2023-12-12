@@ -14,6 +14,8 @@
 
 	// console.debug(`${id.url}${pathname}`);
 
+	console.log(product);
+
 	let descSplit = product.descriptionHtml.split('\n');
 
 	let tagline = descSplit.find((line: string) => line.startsWith('<p>'));

@@ -172,7 +172,7 @@ export const ProductsQuery = `#graphql
 `;
 
 export const ProductQuery = `#graphql
-	query ($handle: String, $id: String, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [], $hasMetafields: Boolean = false) {
+	query ($handle: String, $id: String, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = ["descriptors.subtitle"], $hasMetafields: Boolean = true) {
 		product(handle: $handle, id: $id) {
 			...productFragment
 			metafields(identifiers: $metafieldIdentifiers) @include (if: $hasMetafields) {
@@ -185,7 +185,7 @@ export const ProductQuery = `#graphql
 `;
 
 export const ProductByHandleQuery = `#graphql
-	query ($handle: String!, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [], $hasMetafields: Boolean = false) {
+	query ($handle: String!, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [HasMetafieldsIdentifier { key: "descriptors.subtitle"}], $hasMetafields: Boolean = true) {
 		productByHandle(handle: $handle) {
 			...productFragment
 			metafields(identifiers: $metafieldIdentifiers) @include (if: $hasMetafields) {
