@@ -5,7 +5,7 @@
 	import CartDrawer from './CartDrawer.svelte';
 </script>
 
-<header id="top" class="sticky z-40 pt-8 top-0 bg-primary">
+<header id="top" class="sticky z-30 top-0 bg-primary">
 	<div class="container">
 		<div class="py-4 relative flex gap-10 justify-between items-center">
 			<span class="flex-1"

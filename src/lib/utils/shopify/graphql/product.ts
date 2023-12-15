@@ -1,4 +1,5 @@
-import { FILTER_FRAGMENT, IMAGE_FRAGMENT, METAFIELD_FRAGMENT, MONEY_FRAGMENT } from './common';
+import { FILTER_FRAGMENT, IMAGE_FRAGMENT, MONEY_FRAGMENT } from './common';
+import { METAFIELD_FRAGMENT } from './custom';
 
 export const SELECTED_OPTION_FRAGMENT = `#graphql
 	fragment selectedOptionFragment on SelectedOption {
