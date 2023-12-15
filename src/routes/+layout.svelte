@@ -8,8 +8,6 @@
 	export let data: LayoutData;
 	const { announcements } = data;
 
-	console.log(announcements);
-
 	// Components
 	import Footer from '../lib/components/layout/Footer.svelte';
 
@@ -23,7 +21,7 @@
 
 		announcements.forEach((announcement) => {
 			const fields = announcement.fields;
-			const color = fields.filter((field) => field.key === 'color')[0].value;
+			const color = fields.find((field) => field.key === 'color').value;
 
 			document.body.style.setProperty(
 				`--announcement-${announcement.id.split('/').pop()}-color`,
@@ -61,7 +59,7 @@
 						style="background-color: var(--announcement-{announcement.id.split('/').pop()}-color)"
 						class="block text-center p-3"
 					>
-						{announcement.fields.filter((field) => field.key === 'label')[0].value}
+						{announcement.fields.find((field) => field.key === 'label').value}
 					</div>
 				{/each}
 			</div>
@@ -78,7 +76,7 @@
 					style="background-color: var(--announcement-{announcement.id.split('/').pop()}-color)"
 					class="block text-center p-3"
 				>
-					{announcement.fields.filter((field) => field.key === 'label')[0].value}
+					{announcement.fields.find((field) => field.key === 'label').value}
 				</div>
 			{/each}
 		</div>

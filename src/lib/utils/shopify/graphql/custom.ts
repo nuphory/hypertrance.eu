@@ -1,16 +1,15 @@
-export const METAFIELD_FRAGMENT = `#graphql
-	fragment metafieldFragment on Metafield {
-		id
-		description
-		value
-	}
-`;
-
 export const METAOBJECTFIELD_FRAGMENT = `#graphql
 	fragment metaobjectFieldFragment on MetaobjectField {
 		key
 		type
 		value
+		reference {
+			... on MediaImage {
+				image {
+					url
+				}
+			}
+		}
 	}
 `;
 
@@ -25,6 +24,39 @@ export const METAOBJECT_FRAGMENT = `#graphql
 		updatedAt
 	}
 	${METAOBJECTFIELD_FRAGMENT}
+`;
+
+export const TESTIMONIAL_FRAGMENT = `#graphql
+	fragment testimonialFragment on Metaobject {
+		fields {
+			key
+			type
+			value
+			reference {
+				...metaobjectFragment
+			}
+		}
+		handle
+		id
+		type
+		updatedAt
+	}
+	${METAOBJECT_FRAGMENT}
+`;
+
+export const METAFIELD_FRAGMENT = `#graphql
+	fragment metafieldFragment on Metafield {
+		namespace
+		key
+		description
+		value
+		references(first: 10) {
+			nodes {
+				...testimonialFragment
+			}
+		}
+	}
+	${TESTIMONIAL_FRAGMENT}
 `;
 
 export const MetaobjectsQuery = `#graphql
