@@ -29,8 +29,6 @@
 		.find((m) => m.key == 'testimonials')
 		?.references.nodes.map((r) => r.fields);
 
-	console.log(testimonials);
-
 	async function buyNow() {
 		if (!product) throw Error('Product not found');
 		const cart = await createCart(selected_variant.id, 1);
@@ -230,11 +228,11 @@
 			<div
 				id="testimonials"
 				class:fade-out={testimonialsOverflowing}
-				class="flex justify-start overflow-x-scroll gap-2"
+				class="flex justify-start overflow-x-scroll gap-2 snap-x snap-mandatory"
 			>
 				{#each testimonials as testimonial}
 					<div
-						class="min-w-[40rem] flex-1 flex items-center gap-8 h-48 bg-text-primary text-bg-primary px-16 p-8"
+						class="min-w-[40rem] flex-1 flex items-center gap-8 h-48 bg-text-primary text-bg-primary px-16 p-8 snap-center"
 					>
 						<img
 							class="aspect-square h-three-quarters rounded-full"

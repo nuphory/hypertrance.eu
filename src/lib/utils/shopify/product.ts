@@ -88,8 +88,6 @@ export async function getProductByHandle(options: {
 	const data = await makeShopifyRequest(ProductByHandleQuery, variables);
 	const { productByHandle } = data;
 
-	console.log(productByHandle);
-
 	if (productByHandle.options.length === 1 && productByHandle.options[0].name === 'Title') {
 		productByHandle.options = [];
 	}
