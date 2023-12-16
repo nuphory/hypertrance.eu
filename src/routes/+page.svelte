@@ -360,7 +360,7 @@
 		--scale: 0.25;
 		transition-property: --scale;
 		transition-duration: 0.3s;
-		transition-timing-function: ease-in-out;
+		transition-timing-function: ease-out;
 		mask-image: linear-gradient(
 			270deg,
 			rgba(255, 255, 255, 0) calc(var(--scale) * 0%),
