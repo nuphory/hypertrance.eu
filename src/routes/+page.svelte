@@ -232,10 +232,10 @@
 			>
 				{#each testimonials as testimonial}
 					<div
-						class="min-w-[40rem] flex-1 flex items-center gap-8 h-48 bg-text-primary text-bg-primary px-16 p-8 snap-center"
+						class="min-w-[40rem] min-h-fit flex-1 flex items-center gap-8 bg-text-primary text-bg-primary px-16 p-8 snap-center"
 					>
 						<img
-							class="aspect-square h-three-quarters rounded-full"
+							class="aspect-square w-32 rounded-full"
 							src={testimonial
 								.find((field) => field.key === 'author')
 								.reference.fields.find((field) => field.key === 'image')?.reference.image.url}
@@ -360,7 +360,7 @@
 		--scale: 0.25;
 		transition-property: --scale;
 		transition-duration: 0.3s;
-		transition-timing-function: ease-out;
+		transition-timing-function: ease-sout;
 		mask-image: linear-gradient(
 			270deg,
 			rgba(255, 255, 255, 0) calc(var(--scale) * 0%),
