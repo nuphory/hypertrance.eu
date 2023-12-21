@@ -29,10 +29,3 @@ export const MONEY_FRAGMENT = `#graphql
 	}
 `;
 
-export const METAFIELD_FRAGMENT = `#graphql
-	fragment metafieldFragment on Metafield {
-		id
-		description
-		value
-	}
-`;

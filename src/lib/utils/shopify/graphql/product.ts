@@ -1,4 +1,5 @@
-import { FILTER_FRAGMENT, IMAGE_FRAGMENT, METAFIELD_FRAGMENT, MONEY_FRAGMENT } from './common';
+import { FILTER_FRAGMENT, IMAGE_FRAGMENT, MONEY_FRAGMENT } from './common';
+import { METAFIELD_FRAGMENT } from './custom';
 
 export const SELECTED_OPTION_FRAGMENT = `#graphql
 	fragment selectedOptionFragment on SelectedOption {
@@ -185,10 +186,10 @@ export const ProductQuery = `#graphql
 `;
 
 export const ProductByHandleQuery = `#graphql
-	query ($handle: String!, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [HasMetafieldsIdentifier { key: "descriptors.subtitle"}], $hasMetafields: Boolean = true) {
+	query ($handle: String!, $first_collections: Int = 10, $first_images: Int = 50, $first_variants: Int = 10, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $hasMetafields: Boolean = true) {
 		productByHandle(handle: $handle) {
 			...productFragment
-			metafields(identifiers: $metafieldIdentifiers) @include (if: $hasMetafields) {
+			metafields(identifiers: [{namespace: "custom", key: "testimonials"}]) @include (if: $hasMetafields) {
 				...metafieldFragment
 			}
 		}

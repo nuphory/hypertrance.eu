@@ -25,12 +25,18 @@
 	const { product } = data;
 	const selected_variant = product.variants.nodes[0];
 
+	const testimonials = product.metafields
+		.find((m) => m.key == 'testimonials')
+		?.references.nodes.map((r) => r.fields);
+
 	async function buyNow() {
 		if (!product) throw Error('Product not found');
 		const cart = await createCart(selected_variant.id, 1);
 		if (!cart) throw Error('Cart creation failed');
 		goto(cart.checkoutUrl);
 	}
+
+	let testimonialsOverflowing = false;
 
 	let player: Euterpe;
 	let is_playing: boolean;
@@ -82,6 +88,62 @@
 				}
 			});
 		}
+
+		const testimonialsElement = document.querySelector('#testimonials') as HTMLDivElement;
+
+		if (!testimonialsElement) return;
+
+		testimonialsOverflowing = testimonialsElement.scrollWidth > testimonialsElement.clientWidth;
+
+		testimonialsElement.addEventListener('scroll', () => {
+			testimonialsOverflowing = testimonialsElement.scrollWidth > testimonialsElement.clientWidth;
+
+			let newScale: number;
+
+			if (testimonialsElement.scrollLeft <= 250) {
+				newScale = (250 - testimonialsElement.scrollLeft) / 1000;
+			} else {
+				newScale = 0;
+			}
+
+			testimonialsElement.style.setProperty(
+				'--scale',
+				testimonialsOverflowing ? newScale.toString() : '1'
+			);
+		});
+
+		let mouseDown = false;
+		let startX: number, scrollLeft: number;
+		const slider = testimonialsElement;
+
+		const startDragging = (e) => {
+			mouseDown = true;
+			startX = e.pageX - slider.offsetLeft;
+			scrollLeft = slider.scrollLeft;
+		};
+
+		const stopDragging = (e) => {
+			mouseDown = false;
+		};
+
+		const move = (e) => {
+			e.preventDefault();
+			if (!mouseDown) {
+				return;
+			}
+			const x = e.pageX - slider.offsetLeft;
+			const scroll = x - startX;
+			slider.scrollLeft = scrollLeft - scroll;
+		};
+
+		slider.addEventListener('mousemove', move, false);
+		slider.addEventListener('mousedown', startDragging, false);
+		slider.addEventListener('mouseup', stopDragging, false);
+		slider.addEventListener('mouseleave', stopDragging, false);
+
+		// if (testimonialsOverflowing) {
+		// 	testimonialsElement.classList.add('fade-out');
+		// }
 	});
 
 	// console.debug('data', product);
@@ -114,7 +176,7 @@
 		property="twitter:description"
 		content="Experience the world of hypertrance with this all-new samplepack developed by nuphory."
 	/>
-	<meta property="twitter:image" content={`${id.url}${meta_cover}`}  />
+	<meta property="twitter:image" content={`${id.url}${meta_cover}`} />
 	<meta property="twitter:title" content="HYPERTRANCE SAMPLEPACK" />
 	<meta property="twitter:label1" content="Price" />
 	<meta property="twitter:data1" content="39.00EUR" />
@@ -161,6 +223,38 @@
 				every platform. Try our free sample pack demo today!
 			</p>
 			<Stats />
+			<!-- grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] -->
+			<h3 class="text-4xl mt-8 text-center text-[var(--color-content-emphasis)]">TESTIMONIALS</h3>
+			<div
+				id="testimonials"
+				class:fade-out={testimonialsOverflowing}
+				class="flex justify-start overflow-x-scroll gap-2 snap-x snap-mandatory"
+			>
+				{#each testimonials as testimonial}
+					<div
+						class="min-w-[40rem] min-h-fit flex-1 flex items-center gap-8 bg-text-primary text-bg-primary px-16 p-8 snap-center"
+					>
+						<img
+							class="aspect-square w-32 rounded-full"
+							src={testimonial
+								.find((field) => field.key === 'author')
+								.reference.fields.find((field) => field.key === 'image')?.reference.image.url}
+							alt=""
+						/>
+						<!-- Author -->
+						<div class="flex flex-col">
+							<span class="text-2xl font-suissnord mb-0">
+								{testimonial
+									.find((field) => field.key === 'author')
+									.reference.fields.find((field) => field.key === 'name').value}
+							</span>
+							<span>{testimonial.find((field) => field.key === 'content').value}</span>
+						</div>
+						<!-- Content -->
+					</div>
+				{/each}
+			</div>
+
 			<div>
 				<h3 class="text-4xl mt-8 text-center text-[var(--color-content-emphasis)]">DEMOS</h3>
 				<p class="my-8 mb-16 indent-8 text-center">
@@ -255,5 +349,28 @@
 		--color-bg-inverse: #cae1ee;
 		--color-bg-side: #061327;
 		--color-bg-island: #272a3c;
+	}
+
+	@property --scale {
+		syntax: '<number>';
+		inherits: true;
+		initial-value: 1;
+	}
+	.fade-out {
+		--scale: 0.25;
+		transition-property: --scale;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-sout;
+		mask-image: linear-gradient(
+			270deg,
+			rgba(255, 255, 255, 0) calc(var(--scale) * 0%),
+			rgba(255, 255, 255, 0.1) calc(var(--scale) * 6%),
+			rgba(255, 255, 255, 0.5) calc(var(--scale) * 22.5%),
+			rgba(255, 255, 255, 0.6) calc(var(--scale) * 25.5%),
+			rgba(255, 255, 255, 0.7) calc(var(--scale) * 30%),
+			rgba(255, 255, 255, 0.8) calc(var(--scale) * 36%),
+			rgba(255, 255, 255, 0.9) calc(var(--scale) * 48%),
+			rgba(255, 255, 255, 1) calc(var(--scale) * 60%)
+		);
 	}
 </style>

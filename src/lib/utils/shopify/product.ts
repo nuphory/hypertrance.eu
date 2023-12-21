@@ -75,16 +75,17 @@ export async function getProductByHandle(options: {
 	selectedOptions?: z.infer<typeof SelectedOptionResult>[];
 	metafieldIdentifiers?: z.infer<typeof HasMetafieldsIdentifier>[];
 }) {
-	const input = {
+	const variables = {
 		...options,
 		hasMetafields: options.metafieldIdentifiers?.length
-			? options.metafieldIdentifiers?.length > 0 : false,
+			? options.metafieldIdentifiers?.length > 0
+			: false,
 		hasSelectedOptions: options.selectedOptions?.length
 			? options.selectedOptions?.length > 0
 			: false
 	};
 
-	const data = await makeShopifyRequest(ProductByHandleQuery, input);
+	const data = await makeShopifyRequest(ProductByHandleQuery, variables);
 	const { productByHandle } = data;
 
 	if (productByHandle.options.length === 1 && productByHandle.options[0].name === 'Title') {

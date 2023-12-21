@@ -58,6 +58,7 @@ export const ProductResult = z.object({
 	variants: z.object({
 		nodes: z.array(ProductVariantResult)
 	}),
+	metafields: z.any().optional(),
 
 	variantBySelectedOptions: ProductVariantResult.nullable().optional()
 });

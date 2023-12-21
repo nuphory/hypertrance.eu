@@ -1,8 +1,14 @@
 <script lang="ts">
-	import Banner from './../lib/components/layout/Banner.svelte';
+	import Announcement from '$lib/components/layout/Announcement.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-// Components
+
+	import type { LayoutData } from './$types';
+
+	export let data: LayoutData;
+	const { announcements } = data;
+
+	// Components
 	import Footer from '../lib/components/layout/Footer.svelte';
 	// Styles
 	import { browser } from '$app/environment';
@@ -12,6 +18,16 @@
 	let ready = false;
 	onMount(() => {
 		ready = true;
+
+		announcements.forEach((announcement) => {
+			const fields = announcement.fields;
+			const color = fields.find((field) => field.key === 'color').value;
+
+			document.body.style.setProperty(
+				`--announcement-${announcement.id.split('/').pop()}-color`,
+				color
+			);
+		});
 	});
 </script>
 
@@ -37,14 +53,34 @@
 		<Header />
 		<!-- content here -->
 		<div in:fade={{ duration: 500 }}>
-			<Banner />
+			<div class="flex flex-col w-full sticky top-0 z-20">
+				{#each announcements as announcement, i}
+					<!-- bg-[hsl(355_80%_55%)] -->
+					<div
+						style="background-color: var(--announcement-{announcement.id.split('/').pop()}-color)"
+						class="block text-center p-3"
+					>
+						{announcement.fields.find((field) => field.key === 'label').value}
+					</div>
+				{/each}
+			</div>
 			<slot />
 			<Footer />
 		</div>
 	{/if}
 {:else}
-	<div in:fade={{ duration: 500 }} class="opacity-0">
-		<Banner />
+	<div in:fade={{ duration: 500 }} class="opacity-0 relative">
+		<div class="flex flex-col w-full sticky top-0 z-20">
+			{#each announcements as announcement, i}
+				<!-- bg-[hsl(355_80%_55%)] -->
+				<div
+					style="background-color: var(--announcement-{announcement.id.split('/').pop()}-color)"
+					class="block text-center p-3"
+				>
+					{announcement.fields.find((field) => field.key === 'label').value}
+				</div>
+			{/each}
+		</div>
 		<slot />
 		<Footer />
 	</div>
