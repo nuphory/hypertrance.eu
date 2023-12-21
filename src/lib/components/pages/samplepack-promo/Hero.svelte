@@ -49,7 +49,7 @@
 					<span class="inline-block">buy now</span>
 				</button>
 				<a
-					href="/store/product/hypertrance-samplepack"
+					href="/store/products/hypertrance-samplepack"
 					data-sveltekit-reload
 					class="inline-block text-bg-primary hover:text-black active:text-black py-1 px-8 m-2"
 					>learn more</a
@@ -72,7 +72,7 @@
 			</div>
 			<div class="-mb-4 -mt-10 text-end text-lg">
 				<a
-					href="/store/product/hypertrance-samplepack"
+					href="/store/products/hypertrance-samplepack"
 					data-sveltekit-reload
 					class="inline-block text-bg-primary hover:text-black active:text-black py-1 px-8 m-2"
 					>learn more</a

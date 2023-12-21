@@ -50,7 +50,7 @@
 
 {#if browser}
 	{#if ready}
-		<Header />
+		<!-- <Header /> -->
 		<!-- content here -->
 		<div in:fade={{ duration: 500 }}>
 			<div class="flex flex-col w-full sticky top-0 z-20">

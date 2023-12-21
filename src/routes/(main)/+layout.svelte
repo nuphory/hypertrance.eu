@@ -7,9 +7,12 @@
 	export let data;
 
 	import { browser } from '$app/environment';
+	import Header from '$lib/components/layout/Header.svelte';
 </script>
 
 {#if browser}
+	<Header />
+
 	<!-- content here -->
 	{#key data.url}
 		<div
@@ -36,6 +39,8 @@
 	{/key}
 {:else}
 	<!-- else content here -->
+	<Header />
+
 	<div
 		class="flex-1 opacity-0"
 		in:fly={{
