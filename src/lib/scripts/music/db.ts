@@ -10,8 +10,9 @@ export function make() {
     //remove the 01, 02 ... from song names
     for (const song of db.songs) {
         //To avoid demo song
-        if (!song.name.includes('Luna Lenta')) song.name = song.name.slice(2);
+        song.name = song.name.slice(2);
         song.name = song.name.replace(' and ', ' & ');
+        song.name = song.name.replace('-', '/');
     }
 
     //add descriptions
@@ -29,7 +30,7 @@ export function make() {
             }
             case 'bass': {
                 collection.metadata[0] = `From offbeat-handsup styled basslines to arpeggiated trance basses, the hypertrance samplepack not only gives you timbres that cut, but sub basses that cleanly underpin your whole mix. All sounds are delivered with their respective presets for further customization.`;
-                collection.metadata[1] = 2;
+                collection.metadata[2] = 2;
                 break;
             }
             case 'loops': {

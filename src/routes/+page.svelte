@@ -80,11 +80,11 @@
 					// );
 					document.body.style.setProperty('--clip-time-path', polygon);
 					const style = window.getComputedStyle(document.body);
-					console.log(
+					/*console.log(
 						`x: ${x}\npolygon: ${polygon}\n--clip-time-path before: ${style.getPropertyValue(
 							'--clip-time-path'
 						)}`
-					);
+					);*/
 				}
 			});
 		}
@@ -262,9 +262,11 @@
 						href="https://discord.gg/hypertrance">https://discord.gg/hypertrance</a
 					>
 				</p>
-				{#each demos.songs as song, i}
-					<Sample {is_playing} {player} {playing_song_id} song={song.get(db)} />
-				{/each}
+				<div class="grid grid-cols-1 gap-2">
+					{#each demos.songs as song, i}
+						<Sample {is_playing} {player} {playing_song_id} song={song.get(db)} />
+					{/each}
+				</div>
 			</div>
 		</div>
 	</section>
