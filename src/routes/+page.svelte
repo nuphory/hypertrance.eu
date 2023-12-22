@@ -228,7 +228,7 @@
 			<div
 				id="testimonials"
 				class:fade-out={testimonialsOverflowing}
-				class="flex justify-start overflow-x-scroll gap-2 snap-x snap-mandatory"
+				class="flex justify-start overflow-x-scroll gap-2"
 			>
 				{#each testimonials as testimonial}
 					<div
