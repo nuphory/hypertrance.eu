@@ -10,7 +10,7 @@ export function make() {
     //remove the 01, 02 ... from song names
     for (const song of db.songs) {
         //To avoid demo song
-        if (!song.name.includes('Luna Lenta')) song.name = song.name.slice(2);
+        song.name = song.name.slice(2);
         song.name = song.name.replace(' and ', ' & ');
     }
 
