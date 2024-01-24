@@ -11,7 +11,7 @@
 			<span class="flex-1"
 				><a data-sveltekit-reload class="p-3 whitespace-nowrap" href="/">:: {id.name}</a></span
 			>
-			<Navigation class="hidden lg:flex" />
+			<!--<Navigation class="hidden lg:flex" />-->
 
 			<CartButton />
 		</div>
