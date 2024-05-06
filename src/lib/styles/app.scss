@@ -7,6 +7,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	.askew {
+		@apply skew-x-[25deg] [&>*]:-skew-x-[25deg];
+
+		&>span, &>a {
+			@apply inline-block;
+		}
+	}
+	.before {
+		@apply before:content-[''];
+		@apply before:block;
+		@apply before:absolute;
+		@apply before:inset-0;
+	}
+	.after {
+		@apply after:content-[''];
+		@apply after:block;
+		@apply after:absolute;
+		@apply after:inset-0;
+	}
+}
+
 :root {
 	--transition-duration: 400ms;
 }

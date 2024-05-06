@@ -61,17 +61,17 @@
 	on:mousedown={mousedown}
 	on:mouseup={mouseup}
 >
-	<slot name="title" />
+	<slot name="label" />
 	{#if isOpen}
 		<div
 			transition:slide={{ duration: 300 }}
 			class="
 				absolute
-				
+
 				{inset} {align}
 			"
 		>
-			<slot name="content" />
+			<slot name="submenu" />
 		</div>
 	{/if}
 </div>

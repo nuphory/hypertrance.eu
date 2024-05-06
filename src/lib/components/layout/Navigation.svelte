@@ -1,389 +1,92 @@
-<script>
+<script lang="ts">
 	import Dropdown from '$lib/components/utils/Dropdown.svelte';
+	import type { NavLink as TNavLink } from '$src/lib/types/navigation';
+	import CartButton from './CartButton.svelte';
+	import NavLink from './NavLink.svelte';
+
+	const navigation: TNavLink[] = [
+		{
+			label: 'music',
+			href: '/music',
+			submenu: [
+				{
+					label: 'hypertrance worldwide',
+					href: '/music/hypertrance-worldwide'
+				},
+				{
+					label: 'hypertrance 2',
+					href: '/music/hypertrance-2'
+				},
+				{
+					label: 'hypertrance 1',
+					href: '/music/hypertrance-1'
+				}
+			]
+		},
+		{
+			label: 'club',
+			href: '/club'
+		},
+		{
+			label: 'samplepacks',
+			href: '/samplepacks',
+			submenu: [
+				{
+					label: 'hypertrance samplepack',
+					href: '/products/hypertrance-samplepack'
+				}
+			]
+		},
+		{
+			label: 'artbooks',
+			href: '/artbooks',
+			submenu: [
+				{
+					label: 'hypertrance 2',
+					href: '/artbooks/hypertrance-2'
+				},
+				{
+					label: 'hypertrance 1',
+					href: '/artbooks/hypertrance-1'
+				}
+			]
+		},
+		{
+			label: 'store',
+			href: '/store',
+			submenu: [
+				{
+					label: 'all products',
+					href: '/store'
+				},
+				{
+					label: 'music',
+					href: '/store?filter=product_type:music'
+				},
+				{
+					label: 'samplepacks',
+					href: '/store?filter=product_type:samplepack'
+				},
+				{
+					label: 'artbooks',
+					href: '/store?filter=product_type:artbook'
+				}
+			]
+		}
+	];
 </script>
 
-<!-- TODO Coming soon -->
-<nav class="h-full flex gap-12 {$$restProps.class}">
-	<!-- <ul >
-		<li><a title="Coming soon" href="/home">Home</a></li>
-		<li class="group"><a title="Coming soon" href="/music">Music</a></li>
-		<li><a title="Coming soon" href="/club">Club</a></li>
-		<li class="group">
-			<a title="Coming soon" href="/store/products/hypertrance-samplepack">Sample Packs</a>
-		</li>
-		<li class="group"><a title="Coming soon" href="/artbooks">Art Books</a></li>
-		<li class="group">
-			<a title="View all of our products!" href="/store/products/hypertrance-samplepack">Store</a>
-		</li>
-	</ul> -->
-
-	<ul style="display: contents;">
-		<li class="max-xl:hidden">
-			<Dropdown>
-				<a
-					class="
-						hover:translate-y-0
-						hyper-button
-						ring-0 group-hover:ring-1
-						group-hover:before:bg-[33%_33%]
-						overflow-clip
-						py-3 px-4
-					"
-					slot="title"
-					title="Hypertrance Music"
-					href="/music/hypertrance-worldwide"
-				>
-					<span> Music </span>
-				</a>
-				<ul
-					slot="content"
-					class="
-						ring-1 ring-button-neutral
-						w-max
-						bg-primary
-						py-3
-						[&>.hyper-button]:p-0
-						[&>.hyper-button]:ring-0
-						hover:[&_a]:translate-y-0
-						[&_a]:py-3 [&_a]:px-8
-						first:[&>li]:mb-2
-					"
-				>
-					<li class="hyper-button">
-						<a title="Hypertrance Worldwide" href="/music/hypertrance-worldwide">
-							Hypertrance Worldwide
-						</a>
-					</li>
-					<li class="hyper-button">
-						<a title="Hypertrance 2" href="/music/hypertrance-2">Hypertrance 2</a>
-					</li>
-					<li class="hyper-button">
-						<a title="Hypertrance 1" href="/music/hypertrance-1">Hypertrance 1</a>
-					</li>
-				</ul>
-			</Dropdown>
-		</li>
-
-		<li>
-			<a
-				class="
-				translate-y-0
-				block
-				group-hover:before:bg-[33%_33%]
-				overflow-clip
-				py-3 px-4
-			"
-				title="Hypertrance Music Club"
-				href="/club"
-			>
-				<span> Club </span>
-			</a>
-		</li>
-
-		<li class="xl:hidden">
-			<Dropdown direction="down" alignment="right">
-				<a
-					class="
-						hover:translate-y-0
-						hyper-button
-						ring-0 group-hover:ring-1
-						group-hover:before:bg-[33%_33%]
-						overflow-clip
-						py-3 px-4
-					"
-					slot="title"
-					title="Catalog"
-					on:click={(event) => event.preventDefault()}
-					href="/#"
-				>
-					<span> Catalog </span>
-				</a>
-				<ul
-					slot="content"
-					class="
-						ring-1 ring-button-neutral
-						w-max
-						bg-primary
-						py-3
-						[&>.hyper-button]:p-0
-						[&>.hyper-button]:ring-0
-						[&_a]:block
-						[&_a]:whitespace-nowrap
-						[&_a]:overflow-clip
-						hover:[&_a]:translate-y-0
-						[&_a]:py-3 [&_a]:px-8
-						first:[&>li]:mb-2
-					"
-				>
-					<li class="xl:hidden">
-						<Dropdown direction="left" alignment="top">
-							<a
-								class="
-								hover:translate-y-0
-								hyper-button
-								ring-0 hover:ring-1
-								hover:before:bg-[33%_33%]
-								overflow-clip
-								py-3 px-4
-							"
-								slot="title"
-								title="Hypertrance Music"
-								href="/music/hypertrance-worldwide"
-							>
-								<span> Music </span>
-							</a>
-							<ul
-								slot="content"
-								class="
-								ring-1 ring-button-neutral
-								w-max
-								bg-primary
-								py-3
-								[&>.hyper-button]:p-0
-								[&>.hyper-button]:ring-0
-								hover:[&_a]:translate-y-0
-								[&_a]:py-3 [&_a]:px-8
-								first:[&>li]:mb-2
-							"
-							>
-								<li class="hyper-button">
-									<a title="Hypertrance Worldwide" href="/music/hypertrance-worldwide"
-										>Hypertrance Worldwide</a
-									>
-								</li>
-								<li class="hyper-button">
-									<a title="Hypertrance 2" href="/music/hypertrance-2">Hypertrance 2</a>
-								</li>
-								<li class="hyper-button">
-									<a title="Hypertrance 1" href="/music/hypertrance-1">Hypertrance 1</a>
-								</li>
-							</ul>
-						</Dropdown>
-					</li>
-					<li class="xl:hidden">
-						<Dropdown direction="left" alignment="top">
-							<a
-								class="
-									hover:translate-y-0
-									hyper-button
-									ring-0 hover:ring-1
-									hover:before:bg-[33%_33%]
-									overflow-clip
-									py-3 px-4
-								"
-								slot="title"
-								title="Hypertrance Sample Packs"
-								href="/store/products/hypertrance-samplepack"
-							>
-								<span> Sample Packs </span>
-							</a>
-							<ul
-								slot="content"
-								class="
-									ring-1 ring-button-neutral
-									w-max
-									bg-primary
-									py-3
-									[&>.hyper-button]:p-0
-									[&>.hyper-button]:ring-0
-									[&_a]:block
-									[&_a]:whitespace-nowrap
-									[&_a]:overflow-clip
-									hover:[&_a]:translate-y-0
-									[&_a]:py-3 [&_a]:px-8
-									first:[&>li]:mb-2
-								"
-							>
-								<li class="hyper-button">
-									<a title="Hypertrance Sample Pack" href="/store/products/hypertrance-samplepack"
-										>Hypertrance Samplepack</a
-									>
-								</li>
-							</ul>
-						</Dropdown>
-					</li>
-					<li class="xl:hidden">
-						<Dropdown direction="left" alignment="top">
-							<a
-								class="
-									hover:translate-y-0
-									hyper-button
-									ring-0 hover:ring-1
-									hover:before:bg-[33%_33%]
-									overflow-clip
-									py-3 px-4
-								"
-								slot="title"
-								title="Hypertrance Art Books"
-								href="/#"
-							>
-								<span> Art Books </span>
-							</a>
-							<ul
-								slot="content"
-								class="
-									ring-1 ring-button-neutral
-									w-max
-									bg-primary
-									py-3
-									[&>.hyper-button]:p-0
-									[&>.hyper-button]:ring-0
-									[&_a]:block
-									[&_a]:whitespace-nowrap
-									[&_a]:overflow-clip
-									hover:[&_a]:translate-y-0
-									[&_a]:py-3 [&_a]:px-8
-									first:[&>li]:mb-2
-								"
-							>
-								<li class="hyper-button">
-									<a title="Hypertrance 2 Art Book" href="/artbooks/hypertrance-2">Hypertrance 2</a>
-								</li>
-								<li class="hyper-button">
-									<a title="Hypertrance 1 Art Book" href="/artbooks/hypertrance-1">Hypertrance 1</a>
-								</li>
-							</ul>
-						</Dropdown>
-					</li>
-				</ul>
-			</Dropdown>
-		</li>
-
-		<li class="max-xl:hidden">
-			<Dropdown>
-				<a
-					class="
-						hover:translate-y-0
-						hyper-button
-						ring-0 group-hover:ring-1
-						group-hover:before:bg-[33%_33%]
-						overflow-clip
-						py-3 px-4
-					"
-					slot="title"
-					title="Coming soon"
-					href="/store/products/hypertrance-samplepack"
-				>
-					<span> Sample Packs </span>
-				</a>
-				<ul
-					slot="content"
-					class="
-						ring-1 ring-button-neutral
-						w-max
-						bg-primary
-						py-3
-						[&>.hyper-button]:p-0
-						[&>.hyper-button]:ring-0
-						[&_a]:block
-						[&_a]:whitespace-nowrap
-						[&_a]:overflow-clip
-						hover:[&_a]:translate-y-0
-						[&_a]:py-3 [&_a]:px-8
-						first:[&>li]:mb-2
-					"
-				>
-					<li class="hyper-button">
-						<a title="Coming soon" href="/store/products/hypertrance-samplepack"
-							>Hypertrance Samplepack</a
-						>
-					</li>
-				</ul>
-			</Dropdown>
-		</li>
-
-		<li class="max-xl:hidden">
-			<Dropdown>
-				<a
-					class="
-						hover:translate-y-0
-						hyper-button
-						ring-0 group-hover:ring-1
-						group-hover:before:bg-[33%_33%]
-						overflow-clip
-						py-3 px-4
-					"
-					slot="title"
-					title="Coming soon"
-					href="/#"
-				>
-					<span> Art Books </span>
-				</a>
-				<ul
-					slot="content"
-					class="
-						ring-1 ring-button-neutral
-						w-max
-						bg-primary
-						py-3
-						[&>.hyper-button]:p-0
-						[&>.hyper-button]:ring-0
-						[&_a]:block
-						[&_a]:whitespace-nowrap
-						[&_a]:overflow-clip
-						hover:[&_a]:translate-y-0
-						[&_a]:py-3 [&_a]:px-8
-						first:[&>li]:mb-2
-					"
-				>
-					<li class="hyper-button">
-						<a title="Coming soon" href="/artbooks/hypertrance-1">Hypertrance 1</a>
-					</li>
-					<li class="hyper-button">
-						<a title="Coming soon" href="/artbooks/hypertrance-2">Hypertrance 2</a>
-					</li>
-				</ul>
-			</Dropdown>
-		</li>
-
-		<li>
-			<Dropdown>
-				<a
-					class="
-						hover:translate-y-0
-						hyper-button
-						ring-0 group-hover:ring-1
-						group-hover:before:bg-[33%_33%]
-						overflow-clip
-						py-3 px-4
-					"
-					slot="title"
-					title="Coming soon"
-					href="/artbooks"
-				>
-					<span> Store </span>
-				</a>
-				<ul
-					slot="content"
-					class="
-						ring-1 ring-button-neutral
-						w-max
-						bg-primary
-						py-3
-						[&>.hyper-button]:p-0
-						[&>.hyper-button]:ring-0
-						[&_a]:block
-						[&_a]:whitespace-nowrap
-						[&_a]:overflow-clip
-						hover:[&_a]:translate-y-0
-						[&_a]:py-3 [&_a]:px-8
-						first:[&>li]:mb-2
-					"
-				>
-					<li class="hyper-button">
-						<a title="Coming soon" href="/store/categories/music">Music</a>
-					</li>
-					<li class="hyper-button">
-						<a title="Coming soon" href="/store/categories/samplepacks">Sample Packs</a>
-					</li>
-					<li class="hyper-button">
-						<a title="Coming soon" href="/store/categories/artbooks">Art Books</a>
-					</li>
-					<li class="hyper-button">
-						<a title="Coming soon" href="/store/products"> All Products </a>
-					</li>
-				</ul>
-			</Dropdown>
+<nav class={$$restProps.class}>
+	<slot />
+	<ul class="relative h-full flex gap-4">
+		{#each navigation as navlink, _i}
+			<NavLink {navlink} class="max-xl:hidden" />
+		{/each}
+		<li class="relative">
+			<CartButton />
 		</li>
 	</ul>
 </nav>
+
+<style lang="scss">
+</style>

@@ -1,21 +1,64 @@
-.hyper-button {
-	// @apply bg-white bg-blend-difference;
-	@apply relative;
-	@apply scale-100;
-	@apply text-[var(--button-text-main)] fill-[var(--button-text-main)] ring-1 ring-[var(--button-border-main)];
-	@apply transition-quick duration-default ease-out;
-	@apply font-michroma;
+@layer components {
 
-	@apply p-4;
+	.hyper-button {
+		// @apply bg-white bg-blend-difference;
+		@apply relative;
+		@apply scale-100;
+		@apply text-[var(--button-text-main)] fill-[var(--button-text-main)];
+		@apply transition-quick duration-default ease-out;
+		@apply font-michroma;
 
-	--blend-mode: difference;
-	--button-background-main: var(--button-background-neutral);
-	--button-border-main: var(--button-background-neutral);
-	--button-text-main: var(--button-text-neutral);
-	--button-text-hover: var(--button-text-neutral-hover);
-	--button-text-active: var(--button-text-neutral-active);
+		@apply p-4;
 
-	&.button-primary {
+		--blend-mode: difference;
+		--button-background-main: var(--button-background-neutral);
+		--button-border-main: var(--button-background-neutral);
+		--button-text-main: var(--button-text-neutral);
+		--button-text-hover: var(--button-text-neutral-hover);
+		--button-text-active: var(--button-text-neutral-active);
+
+
+
+		&::before {
+			@apply transition-[transform,background-position,margin] duration-default ease-out absolute -z-10 inset-0 bg-left-top content-[''] mix-blend-normal;
+			@apply m-0;
+
+			background: linear-gradient(
+				135deg,
+				transparent 0% 25%,
+				var(--button-background-main) 25% 50%,
+				transparent 50% 75%,
+				var(--button-background-main) 75% 100%
+			);
+			background-size: 750%;
+		}
+
+		@apply group-hover:bg-[33%_33%]; // in case of group-hovers :)
+		&:hover {
+			@apply text-[var(--button-text-hover)] fill-[var(--button-text-hover)] ring-[var(--button-border-main)];
+			// @apply hover:skew-x-[25deg] [&>*]:hover:-skew-x-[25deg] duration-default [&>*]:transition-[transform,background-position,margin];
+			&::before {
+				@apply -m-1;
+				background-position: 33% 33%;
+			}
+		}
+		&:active {
+			@apply scale-95;
+			@apply text-[var(--button-text-active)];
+			// @apply active:skew-x-[25deg] [&>*]:active:-skew-x-[25deg] duration-default [&>*]:transition-[transform,background-position,margin];
+			&::before {
+				@apply -m-1;
+				@apply bg-right-bottom;
+			}
+		}
+
+		* {
+			mix-blend-mode: var(--blend-mode);
+			// @apply mix-blend-difference;
+		}
+	}
+
+	.button-primary {
 		--blend-mode: normal;
 		// --button-background-main: var(--button-background-neutral);
 		--button-background-main: var(--button-text-primary);
@@ -26,7 +69,7 @@
 		--button-text-hover: var(--button-text-primary-hover);
 		--button-text-active: var(--button-text-primary-active);
 	}
-	&.button-primary-inverse {
+	.button-primary-inverse {
 		--blend-mode: normal;
 		// --button-background-main: var(--button-background-neutral);
 		--button-background-main: var(--button-background-primary);
@@ -37,7 +80,7 @@
 		--button-text-hover: var(--button-background-primary-hover);
 		--button-text-active: var(--button-background-primary-active);
 	}
-	&.button-secondary {
+	.button-secondary {
 		--blend-mode: normal;
 		// --button-background-main: var(--button-background-neutral);
 		--button-background-main: var(--button-background-secondary);
@@ -48,7 +91,7 @@
 		--button-text-hover: var(--button-text-secondary-hover);
 		--button-text-active: var(--button-text-secondary-active);
 	}
-	&.button-tertiary {
+	.button-tertiary {
 		--blend-mode: normal;
 		// --button-background-main: var(--button-background-neutral);
 		--button-background-main: var(--button-background-tertiary);
@@ -59,7 +102,7 @@
 		--button-text-hover: var(--button-text-tertiary-hover);
 		--button-text-active: var(--button-text-tertiary-active);
 	}
-	&.button-tertiary-inverse {
+	.button-tertiary-inverse {
 		--blend-mode: normal;
 		// --button-background-main: var(--button-background-neutral);
 		--button-background-main: var(--button-background-tertiary);
@@ -69,43 +112,5 @@
 		--button-text-main: var(--button-background-primary);
 		--button-text-hover: var(--button-background-primary-hover);
 		--button-text-active: var(--button-background-primary-active);
-	}
-
-	&::before {
-		@apply transition-[transform,background-position,margin] duration-default ease-out absolute -z-10 inset-0 bg-left-top content-[''] mix-blend-normal;
-		@apply m-0;
-
-		background: linear-gradient(
-			135deg,
-			transparent 0% 25%,
-			var(--button-background-main) 25% 50%,
-			transparent 50% 75%,
-			var(--button-background-main) 75% 100%
-		);
-		background-size: 750%;
-	}
-
-	@apply group-hover:bg-[33%_33%]; // in case of group-hovers :)
-	&:hover {
-		@apply text-[var(--button-text-hover)] fill-[var(--button-text-hover)] ring-[var(--button-border-main)];
-		// @apply hover:skew-x-[25deg] [&>*]:hover:-skew-x-[25deg] duration-default [&>*]:transition-[transform,background-position,margin];
-		&::before {
-			@apply -m-1;
-			background-position: 33% 33%;
-		}
-	}
-	&:active {
-		@apply scale-95;
-		@apply text-[var(--button-text-active)];
-		// @apply active:skew-x-[25deg] [&>*]:active:-skew-x-[25deg] duration-default [&>*]:transition-[transform,background-position,margin];
-		&::before {
-			@apply -m-1;
-			@apply bg-right-bottom;
-		}
-	}
-
-	* {
-		mix-blend-mode: var(--blend-mode);
-		// @apply mix-blend-difference;
 	}
 }
