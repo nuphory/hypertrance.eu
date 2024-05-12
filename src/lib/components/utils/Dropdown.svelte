@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { slide } from 'svelte/transition';
+	import { fly, slide } from 'svelte/transition';
 
 	export let on: 'mouseover' | 'mousedown' | 'mouseup' = 'mouseover';
 	export let isOpen: boolean = false;
@@ -64,7 +64,7 @@
 	<slot name="label" />
 	{#if isOpen}
 		<div
-			transition:slide={{ duration: 300 }}
+			transition:fly={{ x:15, duration: 300 }}
 			class="
 				absolute
 

@@ -33,7 +33,7 @@
 			submenu: [
 				{
 					label: 'hypertrance samplepack',
-					href: '/products/hypertrance-samplepack'
+					href: 'store/products/hypertrance-samplepack'
 				}
 			]
 		},
@@ -57,19 +57,19 @@
 			submenu: [
 				{
 					label: 'all products',
-					href: '/store'
+					href: '/store/products'
 				},
 				{
 					label: 'music',
-					href: '/store?filter=product_type:music'
+					href: '/store/products?filter=product_type:music'
 				},
 				{
 					label: 'samplepacks',
-					href: '/store?filter=product_type:samplepack'
+					href: '/store/products?filter=product_type:samplepack'
 				},
 				{
 					label: 'artbooks',
-					href: '/store?filter=product_type:artbook'
+					href: '/store/products?filter=product_type:artbook'
 				}
 			]
 		}

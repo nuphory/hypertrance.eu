@@ -2,6 +2,8 @@
 	import { onMount } from 'svelte';
 	import '$lib/styles/app.scss';
 
+	let ready = false;
+
 	onMount(() => {
 		ready = true;
 	});

@@ -43,7 +43,7 @@
 
 			<div class="flex justify-center text-xl w-full">
 				<button
-					class="hyper-button flex-1 button-primary-inverse skew-x-[25deg] [&>*]:-skew-x-[25deg]"
+					class="hyper-button border border-hypertrance-900 flex-1 button-primary-inverse skew-x-[25deg] [&>*]:-skew-x-[25deg]"
 					on:click={buyNow}
 				>
 					<span class="inline-block">buy now</span>

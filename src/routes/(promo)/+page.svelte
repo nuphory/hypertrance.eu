@@ -314,7 +314,7 @@
 				class="inline w-fit h-fit px-4 py-4 mr-8"
 				href="/store/products/hypertrance-samplepack">Free Demo</a
 			>
-			<button class="hyper-button button-primary whitespace-nowrap" on:click={buyNow}>
+			<button class="hyper-button border border-hypertrance-100 button-primary whitespace-nowrap" on:click={buyNow}>
 				<span>buy now</span>
 			</button>
 		</div>

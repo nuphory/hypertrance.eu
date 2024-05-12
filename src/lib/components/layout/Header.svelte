@@ -15,10 +15,11 @@
 		sticky z-30 top-0 {className}
 		bg-primary
 		before before:border-y before:border-white
+		overflow-x-clip
 	"
 >
 	<div class="container">
-		<div class="relative flex gap-10 justify-between items-center max-h-12">
+		<div class="relative flex gap-10 justify-between items-center max-h-12 ">
 			<span class="flex-1">
 				<a data-sveltekit-reload class="px-3 whitespace-nowrap" href="/">:: {id.name}</a>
 			</span>
@@ -27,7 +28,7 @@
 				class="
 					relative lg:flex self-start pb-4 pl-5 askew
 					border-t before:border-l before:border-b before:border-white
-					before before:w-[200%] before:bg-primary before:-z-10
+					before before:w-[200%] before:bg-primary before:-z-10 before:overflow-clip
 					after after:max-h-[calc(3rem-2px)] after:-left-px after:bg-primary after:-z-10
 				"
 			>
