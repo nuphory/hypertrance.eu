@@ -1,13 +1,16 @@
 export const ssr = true;
 
 // sveltekit load
+import type { PageServerLoad } from './$types';
 import { getProductByHandle } from '$lib/utils/shopify/product.server';
 import { error } from '@sveltejs/kit';
 
-/** @type {import('./$types').PageLoad} */
-export async function load({ params, url, getClientAddress }) {
+/**
+ * Load product data from shopify by handle
+ * @returns product data
+ */
+export const load: PageServerLoad = async ({ params, url, getClientAddress }) => {
 	const { handle } = params;
-
 	const { pathname } = url;
 
 	const product = await getProductByHandle({ handle }, getClientAddress());

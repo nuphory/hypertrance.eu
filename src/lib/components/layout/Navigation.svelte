@@ -53,7 +53,7 @@
 		},
 		{
 			label: 'store',
-			href: '/store',
+			href: '/store/products',
 			submenu: [
 				{
 					label: 'all products',
