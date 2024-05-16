@@ -110,9 +110,18 @@ const VideoFragment = `#graphql
 
 `
 
-export { ExternalVideoFragment, GenericFileFragment, ImageFragment, MediaImageFragment, Model3dFragment, MoneyV2Fragment, SEOFragment, VideoFragment }
+const PageInfoFragment = `#graphql
+        fragment PageInfoFragment on PageInfo {
+                endCursor
+                hasNextPage
+                hasPreviousPage
+                startCursor
+        }
+`
 
-const SimpleTypes = `
+export { ExternalVideoFragment, GenericFileFragment, ImageFragment, MediaImageFragment, Model3dFragment, MoneyV2Fragment, SEOFragment, VideoFragment, PageInfoFragment }
+
+const SimpleTypes = `#graphql
         ${ExternalVideoFragment}
         ${GenericFileFragment}
         ${ImageFragment}
@@ -121,6 +130,7 @@ const SimpleTypes = `
         ${MoneyV2Fragment}
         ${SEOFragment}
         ${VideoFragment}
+        ${PageInfoFragment}
 `
 
 export default SimpleTypes;

@@ -10,19 +10,34 @@ const ShopPolicyFragment = `#graphql
         }
 `
 
-const ShopFragment = `#graphql
-        fragment ShopFragment on Shop {
+const BaseShopFragment = `#graphql
+        fragment BaseShopFragment on Shop {
                 brand {
                         ...BrandFragment
                 }
                 description
                 id
-                metafields(identifiers: $metafieldIdentifiers) {
+                name
+                primaryDomain {
+                        host @include(if: $expansive)
+                        sslEnabled @include(if: $expansive)
+                        url
+                }
+        }
+
+        ${BrandFragment}
+`
+
+const ShopFragment = `#graphql
+        fragment ShopFragment on Shop {
+                ...BaseShopFragment
+
+                metafields(identifiers: $metafieldIdentifiers) @include (if: $expansive) {
                         ...MetafieldFragment
                 }
                 moneyFormat
-                name
-                paymentSettings {
+
+                paymentSettings @include (if: $expansive) {
                         acceptedCardBrands
                         cardVaultUrl
                         countryCode
@@ -31,11 +46,7 @@ const ShopFragment = `#graphql
                         shopifyPaymentsAccountId
                         supportedDigitalWallets
                 }
-                primaryDomain {
-                        host
-                        sslEnabled
-                        url
-                }
+
                 privacyPolicy {
                         ...ShopPolicyFragment
                 }
@@ -58,25 +69,10 @@ const ShopFragment = `#graphql
                 }
         }
 
-        ${BrandFragment}
+        ${BaseShopFragment}
         ${ShopPolicyFragment}
 `
 
-// Simplified fragment, only including top-level fields. This is necessary to prevent Metafields from nesting too deeply.
-const AShopFragment = `#graphql
-        fragment AShopFragment on Shop {
-                brand {
-                        ...BrandFragment
-                }
-                description
-                id
-                name
-                primaryDomain {
-                        url
-                }
-        }
 
-        ${BrandFragment}
-`
 
-export { ShopFragment, AShopFragment }
+export { ShopFragment, BaseShopFragment }
