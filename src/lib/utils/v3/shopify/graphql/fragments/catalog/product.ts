@@ -145,8 +145,8 @@ const AProductVariantFragment = `#graphql
 `;
 
 const AProductFragment = `#graphql
-        fragment ProductFragment on Product {
-                ...AProductFragment
+        fragment AProductFragment on Product {
+                ...BaseProductFragment
                 descriptionHtml @include(if: $expansive)
 
                 collections(
@@ -156,7 +156,7 @@ const AProductFragment = `#graphql
                 ) {
                         edges {
                                 node {
-                                        ...ACollectionFragment
+                                        ...BaseCollectionFragment
                                 }
                         }
                 }

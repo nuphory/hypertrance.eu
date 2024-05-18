@@ -128,7 +128,7 @@ export const CollectionsQuery = `#graphql
 `;
 
 export const CollectionQuery = `#graphql
-	query ($handle: String, $id: String, $first_collections: Int, $first_images: Int, $first_variants: Int, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [], $hasMetafields: Boolean = false) {
+	query ($handle: String, $id: ID, $first_collections: Int, $first_images: Int, $first_variants: Int, $selectedOptions: [SelectedOptionInput!]!, $hasSelectedOptions: Boolean = false, $metafieldIdentifiers: [HasMetafieldsIdentifier!] = [], $hasMetafields: Boolean = false) {
 		collection(handle: $handle, id: $id) {
 			...collectionFragment
 			metafields(identifiers: $metafieldIdentifiers) @include (if: $hasMetafields) {

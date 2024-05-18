@@ -47,7 +47,9 @@ const AuthorFragment = `#graphql
                         references (
                                 first: 100
                         ) {
-                                ...LinkFragment
+                                nodes {
+                                        ...LinkFragment
+                                }
                         }
                 }
 

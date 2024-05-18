@@ -1,7 +1,7 @@
 export const ssr = true;
 
 // sveltekit load
-import type { PageServerLoad } from './$types';
+import type { PageServerLoad } from '../$types';
 import { getProductByHandle } from '$lib/utils/shopify/product.server';
 import { error } from '@sveltejs/kit';
 

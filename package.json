@@ -36,7 +36,7 @@
 		"@fontsource/playfair-display-sc": "^4.5.11",
 		"@nanostores/persistent": "^0.9.1",
 		"@playwright/test": "^1.36.2",
-		"@shopify/storefront-api-client": "^0.1.0",
+		"@shopify/storefront-api-client": "^0.3.4",
 		"@sveltejs/adapter-auto": "^2.1.0",
 		"@sveltejs/adapter-cloudflare": "^2.3.2",
 		"@sveltejs/kit": "^1.30.4",
@@ -78,6 +78,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@shopify/graphql-client": "^0.10.4",
 		"@splidejs/svelte-splide": "^0.2.9"
 	}
 }

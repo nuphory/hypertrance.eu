@@ -39,18 +39,10 @@
 </ul>
 
 <div class="relative">
-	{#if browser}
-		{#if ready}
-			<Header class="top-16 -mb-12" />
-			<!-- content here -->
-			<div in:fade={{ duration: 500 }}>
-				<slot />
-				<Footer />
-			</div>
-		{/if}
-	{:else}
-		<div in:fade={{ duration: 500 }} class="opacity-0 relative">
-			<Header class="top-16 -mb-12"/>
+	{#if ready}
+		<Header class="top-16 -mb-12" />
+		<!-- content here -->
+		<div in:fade={{ duration: 500 }}>
 			<slot />
 			<Footer />
 		</div>

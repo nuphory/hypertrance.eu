@@ -1,6 +1,7 @@
 import CollectionFragments, {
 	ACollectionFragment,
-	BaseCollectionFragment
+	BaseCollectionFragment,
+	CollectionFragment
 } from '../fragments/catalog/collection';
 import {
 	AProductFragment,
@@ -9,14 +10,26 @@ import {
 	BaseProductVariantFragment,
 	ProductOptionFragment
 } from '../fragments/catalog/product';
-import MetaMediaFragment from '../fragments/custom/media';
-import MetadataFragment from '../fragments/custom/metadata';
+import MetaMediaFragment, {
+	AlbumFragment,
+	ArtworkFragment,
+	SongFragment
+} from '../fragments/custom/media';
+import MetadataFragment, { AuthorFragment, LinkFragment } from '../fragments/custom/metadata';
 import {
 	BaseMetafieldFragment,
 	BaseMetaobjectFieldFragment,
-	BaseMetaobjectFragment
+	BaseMetaobjectFragment,
+	MetaobjectSEOFragment
 } from '../fragments/custom/metafield';
-import SimpleTypes from '../fragments/simple-types';
+import SimpleTypes, {
+	GenericFileFragment,
+	ImageFragment,
+	MediaImageFragment,
+	MoneyV2Fragment,
+	SEOFragment,
+	VideoFragment
+} from '../fragments/simple-types';
 
 const BaseCollectionQuery = `#graphql
         query BaseCollectionQuery (
@@ -28,7 +41,16 @@ const BaseCollectionQuery = `#graphql
                 }
         }
 
-        ${SimpleTypes}
+        # {SimpleTypes}
+        # {ExternalVideoFragment}
+        # {GenericFileFragment}
+        ${ImageFragment}
+        ${MediaImageFragment}
+        # {Model3dFragment}
+        # {MoneyV2Fragment}
+        ${SEOFragment}
+        ${VideoFragment}
+        # {PageInfoFragment}
 
         ${BaseCollectionFragment}
 
@@ -71,15 +93,24 @@ const ACollectionQuery = `#graphql
         query ACollectionQuery (
                 $id: ID, $handle: String,
                 $expansive: Boolean = false, $verbose: Boolean = false,
-                $selectedOptions: [SelectedOptionInput!]! = [],
-                $filters: [ProductFilter!] = [productVendor: "hypertrance"],
+                $selectedOptions: [SelectedOptionInput!] = [],
+                $filters: [ProductFilter!] = [{productVendor: "hypertrance"}],
         ) {
                 collection(handle: $handle, id: $id) {
                         ...ACollectionFragment
                 }
         }
 
-        ${SimpleTypes}
+        # {SimpleTypes}
+        # {ExternalVideoFragment}
+        # {GenericFileFragment}
+        ${ImageFragment}
+        ${MediaImageFragment}
+        # {Model3dFragment}
+        ${MoneyV2Fragment}
+        ${SEOFragment}
+        ${VideoFragment}
+        # {PageInfoFragment}
 
         ${BaseCollectionFragment}
 
@@ -139,21 +170,40 @@ const CollectionQuery = `#graphql
         query CollectionQuery (
                 $id: ID, $handle: String,
                 $expansive: Boolean = false, $verbose: Boolean = false,
-                $selectedOptions: [SelectedOptionInput!]! = [],
+                $selectedOptions: [SelectedOptionInput!] = [],
                 $resultsPerPage: Int = 25, $cursor: String, $reverseCursor: String, $reverse: Boolean = false,
                 $productSortKey: ProductCollectionSortKeys = MANUAL,
-                $filters: [ProductFilter!] = [productVendor: "hypertrance"]
+                $filters: [ProductFilter!] = [{productVendor: "hypertrance"}]
         ) {
                 collection(handle: $handle, id: $id) {
                         ...CollectionFragment
                 }
         }
 
-        ${CollectionFragments}
+        # {CollectionFragments}
+        ${CollectionFragment}
+        ${ACollectionFragment}
+        ${BaseCollectionFragment}
 
-        ${SimpleTypes}
-        ${MetaMediaFragment}
-        ${MetadataFragment}
+        # {SimpleTypes}
+        # {ExternalVideoFragment}
+        ${GenericFileFragment}
+        ${ImageFragment}
+        ${MediaImageFragment}
+        # {Model3dFragment}
+        ${MoneyV2Fragment}
+        ${SEOFragment}
+        ${VideoFragment}
+        # {PageInfoFragment}
+
+        #{MetaMediaFragment}
+        ${ArtworkFragment}
+        #{DemoTrackFragment}
+        ${SongFragment}
+        ${AlbumFragment}
+
+        ${AuthorFragment}
+        ${LinkFragment}
 
         ${BaseMetafieldFragment}
         ${BaseProductFragment}
@@ -163,6 +213,7 @@ const CollectionQuery = `#graphql
 
         ${BaseMetaobjectFieldFragment}
         ${BaseMetaobjectFragment}
+        ${MetaobjectSEOFragment}
 
         ${AProductFragment}
         ${AProductVariantFragment}

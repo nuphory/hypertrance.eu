@@ -10,7 +10,7 @@ const ExternalVideoFragment = `#graphql
                         ...ImageFragment
                 }
         }
-`
+`;
 
 const GenericFileFragment = `#graphql
         fragment GenericFileFragment on GenericFile {
@@ -23,7 +23,7 @@ const GenericFileFragment = `#graphql
                 }
                 url
         }
-`
+`;
 
 const ImageFragment = `#graphql
         fragment ImageFragment on Image {
@@ -32,7 +32,7 @@ const ImageFragment = `#graphql
                 width
                 altText
         }
-`
+`;
 
 const MediaImageFragment = `#graphql
         fragment MediaImageFragment on MediaImage {
@@ -46,7 +46,7 @@ const MediaImageFragment = `#graphql
                         ...ImageFragment
                 }
         }
-`
+`;
 
 const Model3dSourceFragment = `#graphql
         fragment Model3dSourceFragment on Model3dSource {
@@ -55,7 +55,7 @@ const Model3dSourceFragment = `#graphql
                 mimeType
                 url
         }
-`
+`;
 
 const Model3dFragment = `#graphql
         fragment Model3dFragment on Model3d {
@@ -66,28 +66,25 @@ const Model3dFragment = `#graphql
                         ...ImageFragment
                 }
                 sources {
-                        nodes {
-                                ...Model3dSourceFragment
-                        }
+                        ...Model3dSourceFragment
                 }
-                url
         }
         ${Model3dSourceFragment}
-`
+`;
 
 const MoneyV2Fragment = `#graphql
         fragment MoneyV2Fragment on MoneyV2 {
                 amount
                 currencyCode
         }
-`
+`;
 
 const SEOFragment = `#graphql
         fragment SEOFragment on SEO {
                 description
                 title
         }
-`
+`;
 
 const VideoFragment = `#graphql
         fragment VideoFragment on Video {
@@ -98,17 +95,15 @@ const VideoFragment = `#graphql
                         ...ImageFragment
                 }
                 sources {
-                        nodes {
-                                format
-                                height
-                                mimeType
-                                url
-                                width
-                        }
+                        format
+                        height
+                        mimeType
+                        url
+                        width
                 }
         }
 
-`
+`;
 
 const PageInfoFragment = `#graphql
         fragment PageInfoFragment on PageInfo {
@@ -117,9 +112,19 @@ const PageInfoFragment = `#graphql
                 hasPreviousPage
                 startCursor
         }
-`
+`;
 
-export { ExternalVideoFragment, GenericFileFragment, ImageFragment, MediaImageFragment, Model3dFragment, MoneyV2Fragment, SEOFragment, VideoFragment, PageInfoFragment }
+export {
+	ExternalVideoFragment,
+	GenericFileFragment,
+	ImageFragment,
+	MediaImageFragment,
+	Model3dFragment,
+	MoneyV2Fragment,
+	SEOFragment,
+	VideoFragment,
+	PageInfoFragment
+};
 
 const SimpleTypes = `#graphql
         ${ExternalVideoFragment}
@@ -131,6 +136,6 @@ const SimpleTypes = `#graphql
         ${SEOFragment}
         ${VideoFragment}
         ${PageInfoFragment}
-`
+`;
 
 export default SimpleTypes;

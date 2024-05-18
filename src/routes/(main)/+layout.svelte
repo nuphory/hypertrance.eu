@@ -17,61 +17,33 @@
 	});
 </script>
 
-{#if browser}
-	{#if ready}
-		<Header class="top-4" />
-		<!-- content here -->
-		<div in:fade={{ duration: 500 }}>
-			{#key data.url}
-				<div
-					class="flex-1"
-					in:fly={{
-						x: -50,
-						y: 0,
-						opacity: 0,
-						duration: transitionDuration,
-						delay: transitionDuration,
-						easing: easeOut
-					}}
-					out:fly={{
-						x: 50,
-						y: 0,
-						opacity: 0,
-						duration: transitionDuration,
-						delay: 0,
-						easing: easeIn
-					}}
-				>
-					<slot />
-				</div>
-			{/key}
-			<Footer />
-		</div>
-	{/if}
-{:else}
-	<div in:fade={{ duration: 500 }} class="opacity-0 relative">
-		<Header class="top-4" />
-		<div
-			class="flex-1 opacity-0"
-			in:fly={{
-				x: -50,
-				y: 0,
-				opacity: 0,
-				duration: transitionDuration,
-				delay: transitionDuration,
-				easing: easeOut
-			}}
-			out:fly={{
-				x: 50,
-				y: 0,
-				opacity: 0,
-				duration: transitionDuration,
-				delay: 0,
-				easing: easeIn
-			}}
-		>
-			<slot />
-		</div>
+<!-- {#if ready} -->
+	<Header class="top-4" />
+	<!-- content here -->
+	<div in:fade={{ duration: 500 }}>
+		<!-- {#key data.url} -->
+			<div
+				class="flex-1"
+				in:fly={{
+					x: -50,
+					y: 0,
+					opacity: 0,
+					duration: transitionDuration,
+					delay: transitionDuration,
+					easing: easeOut
+				}}
+				out:fly={{
+					x: 50,
+					y: 0,
+					opacity: 0,
+					duration: transitionDuration,
+					delay: 0,
+					easing: easeIn
+				}}
+			>
+				<slot />
+			</div>
+		<!-- {/key} -->
 		<Footer />
 	</div>
-{/if}
+<!-- {/if} -->

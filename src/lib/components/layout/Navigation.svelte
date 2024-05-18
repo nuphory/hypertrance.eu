@@ -11,15 +11,15 @@
 			submenu: [
 				{
 					label: 'hypertrance worldwide',
-					href: '/music/hypertrance-worldwide'
+					href: '/hypertrance-worldwide'
 				},
 				{
 					label: 'hypertrance 2',
-					href: '/music/hypertrance-2'
+					href: '/hypertrance-2'
 				},
 				{
 					label: 'hypertrance 1',
-					href: '/music/hypertrance-1'
+					href: '/hypertrance-1'
 				}
 			]
 		},

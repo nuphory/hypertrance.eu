@@ -1,10 +1,21 @@
 // Queries
 
-import { CartFragment } from "../fragments/cart";
-import SimpleTypes from "../fragments/simple-types";
+import { CartFragment } from '../fragments/cart';
+import SimpleTypes from '../fragments/simple-types';
 
+/**
+ * query a cart by ID
+ * @param {string} cartId - the cart ID
+ * @param {number} resultsPerPage - the number of results (cart lines) to return in this query, also cascades down to merchandise fragments' connections (linked collections)
+ * @param {boolean} expansive - whether to include all possible fields in the query
+ * @param {boolean} verbose - whether to include verbose (traditionally useless) fields in the query, for debugging purposes
+ * @returns {string} - the query string
+ */
 const CartQuery = `#graphql
-        query CartQuery ($cartId: ID!, $resultsPerPage: Int = 250) {
+        query CartQuery (
+                $cartId: ID!, $resultsPerPage: Int = 250,
+                $expansive: Boolean = false, $verbose: Boolean = false
+        ) {
                 cart(id: $cartId) {
                         ...CartFragment
                 }
@@ -19,20 +30,25 @@ export { CartQuery };
 
 // Mutations
 
+/**
+ * create a cart with provided input.
+ * @param {object} input - the cart input object
+ */
 const CartCreateMutation = `#graphql
         mutation CartCreateMutation (
-                $merchandiseId: ID!, $quantity: Int = 1,
-                $discountCodes: [String!] = []
+                $input: CartInput
                 $resultsPerPage: Int = 250
+                $expansive: Boolean = false, $verbose: Boolean = false,
         ) {
                 cartCreate(
-                        input: {
-                                lines: [{
-                                        merchandiseId: $merchandiseId,
-                                        quantity: $quantity
-                                }],
-                                discountCodes: $discountCodes
-                        }
+                        input: $input
+                        # {
+                        #         lines: [{
+                        #                 merchandiseId: $merchandiseId,
+                        #                 quantity: $quantity
+                        #         }],
+                        #         discountCodes: $discountCodes
+                        # }
                 ) {
                         cart {
                                 ...CartFragment
@@ -165,5 +181,11 @@ const CartNoteUpdateMutation = `#graphql
         ${SimpleTypes}
 `;
 
-export { CartCreateMutation, CartDiscountCodesUpdateMutation, CartLinesAddMutation, CartLinesRemoveMutation, CartLinesUpdateMutation, CartNoteUpdateMutation };
-
+export {
+	CartCreateMutation,
+	CartDiscountCodesUpdateMutation,
+	CartLinesAddMutation,
+	CartLinesRemoveMutation,
+	CartLinesUpdateMutation,
+	CartNoteUpdateMutation
+};

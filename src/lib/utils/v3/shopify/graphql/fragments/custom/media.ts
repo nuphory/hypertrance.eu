@@ -7,7 +7,9 @@ const ArtworkFragment = `#graphql
                         references (
                                 first: 100
                         ) {
-                                ...AuthorFragment
+                                nodes {
+                                        ...AuthorFragment
+                                }
                         }
                 }
 
@@ -27,7 +29,10 @@ const ArtworkFragment = `#graphql
                         references (
                                 first: 100
                         ) {
-                                ...LinkFragment
+                                nodes {
+                                        ...LinkFragment
+                                }
+
                         }
                 }
 
@@ -36,7 +41,9 @@ const ArtworkFragment = `#graphql
                         references (
                                 first: 250
                         ) {
-                                ...GenericFileFragment
+                                nodes {
+                                        ...GenericFileFragment
+                                }
                         }
                 }
 
@@ -62,7 +69,9 @@ const DemoTrackFragment = `#graphql
                         references (
                                 first: 100
                         ) {
-                                ...AuthorFragment
+                                nodes {
+                                        ...AuthorFragment
+                                }
                         }
                 }
 
@@ -99,7 +108,9 @@ const SongFragment = `#graphql
                         references (
                                 first: 100
                         ) {
-                                ...AuthorFragment
+                                nodes {
+                                        ...AuthorFragment
+                                }
                         }
                 }
 
@@ -119,7 +130,9 @@ const SongFragment = `#graphql
                         references (
                                 first: 100
                         ) {
-                                ...LinkFragment
+                                nodes {
+                                        ...LinkFragment
+                                }
                         }
                 }
 
@@ -127,7 +140,7 @@ const SongFragment = `#graphql
                         ...BaseMetaobjectFieldFragment
                 }
         }
-`
+`;
 
 const AlbumFragment = `#graphql
         fragment AlbumFragment on Metaobject {
@@ -138,7 +151,9 @@ const AlbumFragment = `#graphql
                         references (
                                 first: 100
                         ) {
-                                ...AuthorFragment
+                                nodes {
+                                        ...AuthorFragment
+                                }
                         }
                 }
 
@@ -158,7 +173,9 @@ const AlbumFragment = `#graphql
                         references (
                                 first: 100
                         ) {
-                                ...LinkFragment
+                                nodes {
+                                        ...LinkFragment
+                                }
                         }
                 }
 
@@ -167,8 +184,12 @@ const AlbumFragment = `#graphql
                         references (
                                 first: 250
                         ) {
-                                ...SongFragment
-                                ...ArtworkFragment
+                                edges {
+                                        node {
+                                                ...SongFragment
+                                                ...ArtworkFragment
+                                        }
+                                }
                         }
                 }
 
@@ -179,7 +200,7 @@ const AlbumFragment = `#graphql
         }
 `;
 
-export { ArtworkFragment, DemoTrackFragment, SongFragment, AlbumFragment }
+export { ArtworkFragment, DemoTrackFragment, SongFragment, AlbumFragment };
 
 const MetaMediaFragment = `#graphql
         ${ArtworkFragment}

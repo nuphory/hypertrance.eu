@@ -9,7 +9,7 @@ const BaseMetafieldFragment = `#graphql
                 updatedAt @include(if: $expansive)
                 value
         }
-`
+`;
 
 const BaseMetaobjectFieldFragment = `#graphql
         fragment BaseMetaobjectFieldFragment on MetaobjectField {
@@ -17,20 +17,34 @@ const BaseMetaobjectFieldFragment = `#graphql
                 type @include(if: $verbose)
                 value
         }
-`
+`;
+
+const MetaobjectSEOFragment = `#graphql
+        fragment MetaobjectSEOFragment on MetaobjectSEO {
+                description {
+                        ...BaseMetaobjectFieldFragment
+                }
+                title {
+                        ...BaseMetaobjectFieldFragment
+                }
+        }
+
+`;
 
 const BaseMetaobjectFragment = `#graphql
         fragment BaseMetaobjectFragment on Metaobject {
                 handle
                 id
-                seo
+                seo {
+                        ...MetaobjectSEOFragment
+                }
                 type @include(if: $verbose)
                 updatedAt @include(if: $expansive)
-                fields {
-                        ...BaseMetaobjectFieldFragment
-                }
+                # fields {
+                #         ...BaseMetaobjectFieldFragment
+                # }
         }
-`
+`;
 
 const AMetafieldFragment = `#graphql
         fragment AMetafieldFragment on Metafield {
@@ -52,7 +66,7 @@ const AMetafieldFragment = `#graphql
                         ...VideoFragment
                 }
         }
-`
+`;
 
 const AMetaobjectFieldFragment = `#graphql
         fragment AMetaobjectFieldFragment on MetaobjectField {
@@ -74,15 +88,15 @@ const AMetaobjectFieldFragment = `#graphql
                         ...VideoFragment
                 }
         }
-`
+`;
 const AMetaobjectFragment = `#graphql
         fragment AMetaobjectFragment on Metaobject {
                 ...BaseMetaobjectFragment
-                fields {
-                        ...AMetaobjectFieldFragment
-                }
+                # fields {
+                #         ...AMetaobjectFieldFragment
+                # }
         }
-`
+`;
 
 const MetafieldFragment = `#graphql
         fragment MetafieldFragment on Metafield {
@@ -104,7 +118,7 @@ const MetafieldFragment = `#graphql
                         ...VideoFragment
                 }
         }
-`
+`;
 
 const MetaobjectFieldFragment = `#graphql
         fragment MetaobjectFieldFragment on MetaobjectField {
@@ -126,16 +140,16 @@ const MetaobjectFieldFragment = `#graphql
                         ...VideoFragment
                 }
         }
-`
+`;
 
 const MetaobjectFragment = `#graphql
         fragment MetaobjectFragment on Metaobject {
                 ...AMetaobjectFragment
-                fields {
-                        ...MetaobjectFieldFragment
-                }
+                # fields {
+                #         ...MetaobjectFieldFragment
+                # }
         }
-`
+`;
 
 export {
         AMetafieldFragment,
@@ -146,5 +160,7 @@ export {
         BaseMetaobjectFragment,
         MetafieldFragment,
         MetaobjectFieldFragment,
-        MetaobjectFragment
-}
+        MetaobjectFragment,
+        MetaobjectSEOFragment
+};
+

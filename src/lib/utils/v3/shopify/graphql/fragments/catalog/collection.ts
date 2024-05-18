@@ -120,8 +120,8 @@ const CollectionFragment = `#graphql
 export { CollectionFragment, ACollectionFragment, BaseCollectionFragment };
 
 const CollectionFragments = `
-        ${ACollectionFragment}
         ${BaseCollectionFragment}
+        ${ACollectionFragment}
         ${CollectionFragment}
 `;
 
