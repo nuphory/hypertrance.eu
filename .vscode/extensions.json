@@ -1,5 +1,26 @@
 {
         "recommendations": [
-                "supermaven.supermaven"
+                "supermaven.supermaven",
+                "1yib.svelte-bundle",
+                "pivaszbs.svelte-autoimport",
+                "jakobkruse.svelte-kit-snippets",
+                "nawaz.svelte-snippets",
+                "mramericanmike.sveltekitsnippets",
+                "stordahl.sveltekit-snippets",
+                "bradlc.vscode-tailwindcss",
+                "stivo.tailwind-fold",
+                "zarifprogrammer.tailwind-snippets",
+                "formulahendry.auto-complete-tag",
+                "steoates.autoimport",
+                "editorconfig.editorconfig",
+                "dbaeumer.vscode-eslint",
+                "eamodio.gitlens",
+                "wix.vscode-import-cost",
+                "esbenp.prettier-vscode",
+                "yoavbls.pretty-ts-errors",
+                "zengxingxin.sort-js-object-keys",
+                "richie5um2.vscode-sort-json",
+                "unional.vscode-sort-package-json",
+                "miclo.sort-typescript-imports"
         ]
 }
