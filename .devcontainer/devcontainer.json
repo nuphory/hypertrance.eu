@@ -1,0 +1,12 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers-contrib/features/cloudflare-wrangler:1": {},
+    "ghcr.io/devcontainers-contrib/features/corepack:1": {},
+    "ghcr.io/devcontainers-contrib/features/turborepo-npm:1": {},
+    "ghcr.io/devcontainers-contrib/features/wireguard-apt-get:1": {},
+    "ghcr.io/joedmck/devcontainer-features/wrangler:1": {}
+  }
+}
