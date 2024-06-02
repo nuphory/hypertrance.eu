@@ -2,6 +2,8 @@ import { z } from 'zod';
 import BaseMetafield from '../../custom/metafield/BaseMetafield';
 import { Image, MediaImage, SEO, Video } from '../../simple-types';
 
+// TODO fix zod required fields (metaofields / references)
+
 const BaseCollection = z.object({
 	description: z.string().nullish(),
 	handle: z.string(),
