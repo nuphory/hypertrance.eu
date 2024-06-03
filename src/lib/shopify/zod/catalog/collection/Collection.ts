@@ -5,7 +5,7 @@ import { MediaImage, Video } from '../../simple-types';
 import AProduct from '../product/AProduct';
 import ACollection from './ACollection';
 
-const Collection = ACollection.extend({
+export const Collection = ACollection.extend({
 	album: BaseMetafield.extend({
 		reference: Album
 	})

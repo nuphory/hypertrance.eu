@@ -23,14 +23,14 @@ export const load: PageServerLoad = async () => {
 
 	if (errors) {
 		console.error(500, errors);
-		throw error(500, 'Error fetching product data from Shopify');
+		error(500, 'Error fetching product data from Shopify');
 	}
 
 	const { product } = data;
 
 	if (!product || product === null || product.vendor !== 'hypertrance') {
 		console.error(404, `Product not found: ${handle}`);
-		throw error(404, { message: `Product not found: ${handle}` });
+		error(404, { message: `Product not found: ${handle}` });
 	}
 
 	data.product = Product.parse(product);
@@ -41,20 +41,3 @@ export const load: PageServerLoad = async () => {
 		extensions
 	};
 };
-// export async function load({ getClientAddress }) {
-// 	// const handle = 'hypertrance-samplepack';
-
-// 	// const product = await getProductByHandle({ handle }, getClientAddress());
-
-// 	// const announcements = await getMetaobjects({ type: 'announcement' });
-
-// 	// if (!product) {
-// 	// 	throw error(404, { message: 'Product not found' });
-// 	// }
-
-// 	// return {
-// 	// 	product,
-// 	// 	announcements
-// 	// };
-
-// }

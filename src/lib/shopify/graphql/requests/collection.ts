@@ -27,6 +27,7 @@ import SimpleTypes, {
 	ImageFragment,
 	MediaImageFragment,
 	MoneyV2Fragment,
+	PageInfoFragment,
 	SEOFragment,
 	VideoFragment
 } from '../fragments/simple-types';
@@ -222,14 +223,14 @@ const CollectionQuery = `#graphql
 const CollectionsQuery = `#graphql
         query CollectionsQuery (
                 $expansive: Boolean = false, $verbose: Boolean = false,
-                $selectedOptions: [SelectedOptionInput!]! = [],
+                $selectedOptions: [SelectedOptionInput!] = [],
 
                 $cursor: String, $reverseCursor: String, $first: Int = 25, $last: Int,
                 $query: String, $reverse: Boolean = false,
-                $sortKey: CollectionSortKeys = MANUAL,
+                $sortKey: CollectionSortKeys = RELEVANCE,
 
                 $productSortKey: ProductCollectionSortKeys = MANUAL,
-                $filters: [ProductFilter!] = [productVendor: "hypertrance"]
+                $filters: [ProductFilter!] = [{productVendor: "hypertrance"}]
         ) {
                 collections (
                         after: $cursor, before: $reverseCursor, first: $first, last: $last,
@@ -249,11 +250,30 @@ const CollectionsQuery = `#graphql
                 }
         }
 
-        ${CollectionFragments}
+         # {CollectionFragments}
+        ${CollectionFragment}
+        ${ACollectionFragment}
+        ${BaseCollectionFragment}
 
-        ${SimpleTypes}
-        ${MetaMediaFragment}
-        ${MetadataFragment}
+        # {SimpleTypes}
+        # {ExternalVideoFragment}
+        ${GenericFileFragment}
+        ${ImageFragment}
+        ${MediaImageFragment}
+        # {Model3dFragment}
+        ${MoneyV2Fragment}
+        ${SEOFragment}
+        ${VideoFragment}
+        ${PageInfoFragment}
+
+        #{MetaMediaFragment}
+        ${ArtworkFragment}
+        #{DemoTrackFragment}
+        ${SongFragment}
+        ${AlbumFragment}
+
+        ${AuthorFragment}
+        ${LinkFragment}
 
         ${BaseMetafieldFragment}
         ${BaseProductFragment}
@@ -263,6 +283,7 @@ const CollectionsQuery = `#graphql
 
         ${BaseMetaobjectFieldFragment}
         ${BaseMetaobjectFragment}
+        ${MetaobjectSEOFragment}
 
         ${AProductFragment}
         ${AProductVariantFragment}

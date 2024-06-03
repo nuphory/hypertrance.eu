@@ -74,7 +74,6 @@ const set_cookie = (
 				break;
 		}
 	}
-	console.debug(cookie);
 	document.cookie = cookie;
 	return get_cookie(key);
 };

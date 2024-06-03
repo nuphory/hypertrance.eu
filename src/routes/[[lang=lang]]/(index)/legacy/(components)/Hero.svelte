@@ -2,13 +2,14 @@
 	import Money from '$lib/components/(v2)/shopify/Money.svelte';
 	import { goto } from '$app/navigation';
 	import { createCart } from '$lib/shopify/(v2)/cart';
+	import { error } from '@sveltejs/kit';
 	export let data;
 	const { product } = data;
 	const selectedVariant = product.variants.nodes[0];
 	async function buyNow() {
-		if (!product) throw Error('Product not found');
+		if (!product) error(404, 'Product not found');
 		const cart = await createCart(selectedVariant.id, 1);
-		if (!cart) throw Error('Cart creation failed');
+		if (!cart) error(500, 'Cart creation failed');
 		goto(cart.checkoutUrl);
 	}
 </script>

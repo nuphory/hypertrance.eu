@@ -1,7 +1,8 @@
 import type { Settings } from '$lib/stores/settings';
 import type { Handle } from '@sveltejs/kit';
+import { sequence } from '@sveltejs/kit/hooks';
 
-export const handle: Handle = async ({ event, resolve }) => {
+const settings: Handle = async ({ event, resolve }) => {
 	const cookies = event.cookies.getAll();
 
 	const settings: Settings = {
@@ -41,3 +42,5 @@ const get_attributes_string = (settings: Settings) => {
 
 	return string;
 };
+
+export const handle = sequence(settings);

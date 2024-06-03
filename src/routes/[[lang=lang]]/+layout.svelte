@@ -1,24 +1,23 @@
 <script lang="ts">
 	// imports
-	import { onMount, type Snippet } from 'svelte';
 	import { browser } from '$app/environment';
+	import { onDestroy, onMount, type Snippet } from 'svelte';
 	// types
-	import type { LayoutData } from './$types.js';
+	import type { LayoutData } from './$types';
 	// transitions
-	import { scale } from 'svelte/transition';
 	import { expoOut } from 'svelte/easing';
-
+	import { scale } from 'svelte/transition';
 	// stores / state
 	import { apply_settings, settings_store } from '$lib/stores/settings';
 
 	// components
-	import PageTransition from './PageTransition.svelte';
-	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
-
+	import Header from './Header.svelte';
+	import PageTransition from './PageTransition.svelte';
 	// styles
+	import { beforeNavigate } from '$app/navigation';
+	import { apply_cookie_consent, cookie_consent_store } from '$lib/stores/cookie-consent';
 	import '$lib/styles/app.scss';
-	import { apply_cookie_consent, cookie_consent_store } from '$lib/stores/cookie-consent.js';
 
 	let {
 		data,
@@ -31,7 +30,6 @@
 	let ready = $state(false);
 
 	onMount(() => {
-
 		// apply cookie consent
 		const cookie_consent = cookie_consent_store.get();
 		if (cookie_consent) apply_cookie_consent(cookie_consent);
@@ -41,6 +39,13 @@
 		if (settings) apply_settings(settings);
 
 		ready = true; // fadeIn transition
+	});
+	onDestroy(() => {
+		ready = false;
+	});
+
+	beforeNavigate(({ to, from, type, willUnload, cancel }) => {
+		if (willUnload) ready = false;
 	});
 </script>
 
@@ -67,22 +72,32 @@
 	<Footer />
 {/snippet}
 
-{#if browser}
-	{#if ready}
-		<div
-			class="max-h-screen overflow-y-scroll"
-			in:scale={{
-				duration: 1500,
-				easing: expoOut,
-				start: 1.01,
-				opacity: 0
-			}}
-		>
-			{@render layout()}
-		</div>
-	{/if}
-{:else}
-	<div class="max-h-screen overflow-y-scroll">
+<!-- {#if browser} -->
+{#if ready}
+	<div
+		class="max-h-screen overflow-y-scroll"
+		in:scale={{
+			duration: 1500,
+			easing: expoOut,
+			start: 1.01,
+			opacity: 0
+		}}
+		out:scale={{
+			duration: 1500,
+			easing: expoOut,
+			start: 1.01,
+			opacity: 0
+		}}
+	>
 		{@render layout()}
+		<a href="/hypertrance-1">hypertrance-1</a>
+		<a href="/hypertrance-2">hypertrance-2</a>
 	</div>
 {/if}
+<!-- {:else}
+	<div class="max-h-screen overflow-y-scroll">
+		{@render layout()}
+		<a href="/hypertrance-1">hypertrance-1</a>
+		<a href="/hypertrance-2">hypertrance-2</a>
+	</div>
+{/if} -->
