@@ -18,8 +18,9 @@
 	import type { z } from 'zod';
 	import type Product from '$lib/shopify/zod/catalog/product/Product';
 	import { error } from '@sveltejs/kit';
+	import type { PageData } from '../$types';
 
-	export let data../$types.js;
+	export let data: PageData;
 
 	let first_frame_url: string | null = first_frame;
 	let THREED: any;
