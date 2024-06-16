@@ -2,6 +2,21 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/audacioustux/devcontainers/bun:1": {},
     "ghcr.io/devcontainers-contrib/features/corepack:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers-contrib/features/ffmpeg-apt-get:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-contrib/features/neovim-apt-get:1": {},
+    "ghcr.io/itsmechlark/features/postgresql:1": {},
+    "ghcr.io/devcontainers-community/npm-features/prettier:1": {},
+    "ghcr.io/frntn/devcontainers-features/postman:1": {},
+    "ghcr.io/devcontainers/features/rust:1": {},
+    "ghcr.io/devcontainers-contrib/features/shopify-cli:1": {},
+    "ghcr.io/warrenbuckley/codespace-features/sqlite:1": {},
+    "ghcr.io/devcontainers-contrib/features/turborepo-npm:1": {},
+    "ghcr.io/devcontainers-community/npm-features/typescript:1": {},
+    "ghcr.io/lumenpink/devcontainer-features/wasm-pack:0": {},
+    "ghcr.io/devcontainers-contrib/features/cloudflare-wrangler:1": {}
   }
 }
