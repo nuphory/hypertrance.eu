@@ -2,9 +2,10 @@
 	import { page } from '$app/stores';
 </script>
 
-<header class="sticky">
-	<section class="absolute top-4 z-10">
-		<nav class="container">
+<header class="sticky top-0 z-10">
+	<section class="py-xl">
+                <div data-role="background" class="bg-dark-primary-island"></div>
+		<nav>
 			<a href="/"
 				>{$page.url.hostname
 					.split('.')

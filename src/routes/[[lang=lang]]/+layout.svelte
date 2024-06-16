@@ -76,17 +76,17 @@
 <!-- {#if browser} -->
 {#if ready}
 	<div
-		class="h-screen-large overflow-y-scroll"
+		class="h-lvh w-lvw overflow-y-scroll"
 		in:scale={{
 			duration: 1500,
 			easing: expoOut,
-			start: 1.01,
+			start: 1.025,
 			opacity: 0
 		}}
 		out:scale={{
 			duration: 1500,
 			easing: expoOut,
-			start: 1.01,
+			start: 1.025,
 			opacity: 0
 		}}
 	>

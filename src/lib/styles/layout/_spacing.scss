@@ -18,12 +18,12 @@
 			@apply relative py-xxl;
 
 			&:not(:has([data-role='background'])) {
-				@apply container;
+				@apply container p-xxl;
 			}
 
 			&:has([data-role='background']) {
-				:not([data-role='background']) {
-					@apply container relative;
+				>:not([data-role='background']) {
+					@apply container px-xxl relative;
 				}
 			}
 		}
