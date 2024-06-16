@@ -1,0 +1,93 @@
+@layer base {
+	:is(header, main, footer) {
+		@apply relative;
+
+		[data-role='background'] {
+			@apply absolute inset-0 z-0;
+			@apply bg-cover bg-no-repeat bg-center;
+		}
+
+		section {
+			&:where(:first-of-type) {
+				@apply pt-xxxl;
+			}
+			&:where(:last-of-type) {
+				@apply pb-xxxl;
+			}
+
+			@apply relative py-xxl;
+
+			&:not(:has([data-role='background'])) {
+				@apply container;
+			}
+
+			&:has([data-role='background']) {
+				:not([data-role='background']) {
+					@apply container relative;
+				}
+			}
+		}
+
+		%display-heading {
+			@apply mb-xl;
+			&:where(%subtitled) {
+				@apply mb-sm;
+			}
+		}
+
+		h3 {
+			@apply mb-lg;
+			&:where(%subtitled) {
+				@apply mb-xs;
+			}
+		}
+
+		:where(%heading) {
+			@apply mb-md;
+			&:where(%subtitled) {
+				@apply mb-xs;
+			}
+		}
+
+		%suptitle,
+		%subtitle {
+			@apply block;
+		}
+
+		%subtitle {
+			&:is(h1 + *):not(:last-child) {
+				@apply mb-xl;
+			}
+			&:is(h2 + *):not(:last-child) {
+				@apply mb-xl;
+			}
+			&:is(h3 + *):not(:last-child) {
+				@apply mb-lg;
+			}
+			&:where(:is(%heading + *):not(:last-child)) {
+				@apply mb-md;
+			}
+		}
+
+		%suptitle {
+			&:where(&:has(+ h1)) {
+				@apply mb-sm;
+			}
+			&:where(&:has(+ h2)) {
+				@apply mb-sm;
+			}
+			&:where(&:has(+ h3)) {
+				@apply mb-xs;
+			}
+			&:where(&:has(+ %heading)) {
+				@apply mb-xs;
+			}
+		}
+
+		p {
+			&:where(:not(:last-child)) {
+				@apply mb-xxl;
+			}
+		}
+	}
+}

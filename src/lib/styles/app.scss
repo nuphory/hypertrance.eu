@@ -1,0 +1,86 @@
+@use './layout/scaling';
+@use './type/type';
+
+@import './global/placeholders';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		@apply box-border;
+		@apply transition-sizes duration-default ease-out;
+		@apply scroll-smooth;
+	}
+
+	html {
+		@apply transition-colors duration-default ease-out;
+		@apply scroll-smooth;
+	}
+
+	[data-theme] {
+		@apply transition-colors duration-default ease-out;
+
+		@apply dark:bg-dark auto-dark:bg-dark;
+		@apply light:bg-dark auto-light:bg-dark;
+
+		@apply dark:text-dark auto-dark:text-dark;
+		@apply light:text-dark auto-light:text-dark;
+	}
+
+	body {
+		@apply transition-colors duration-default ease-out;
+
+		@apply dark:bg-dark auto-dark:bg-dark;
+		@apply light:bg-dark auto-light:bg-dark;
+
+		@apply dark:text-dark auto-dark:text-dark;
+		@apply light:text-dark auto-light:text-dark;
+	}
+
+	main {
+		button {
+			@apply transition-easy duration-default ease-out;
+			@apply pointer-events-auto;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		a {
+			@apply transition-easy duration-default ease-out;
+			@apply pointer-events-auto;
+		}
+	}
+
+	a,
+	button,
+	span {
+		@apply relative inline-block;
+	}
+
+	a {
+		@apply hover:-translate-y-px active:translate-y-px;
+		&[disabled] {
+			@apply pointer-events-none;
+			@apply opacity-50;
+		}
+	}
+}
+
+@layer utilities {
+	.theme {
+		@apply dark:bg-dark auto-dark:bg-dark;
+		@apply light:bg-dark auto-light:bg-dark;
+
+		@apply dark:text-dark auto-dark:text-dark;
+		@apply light:text-dark auto-light:text-dark;
+	}
+}

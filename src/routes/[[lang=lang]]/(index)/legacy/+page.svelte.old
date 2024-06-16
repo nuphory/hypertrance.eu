@@ -3,14 +3,14 @@
 	import { goto } from '$app/navigation';
 	import first_frame from './(assets)/img/first_frame.webp';
 	import meta_cover from './(assets)/img/meta-cover.webp';
-	import Hero from '../(components)/Hero.svelte';
-	import Sample from '../(components)/Sample.svelte';
-	import Stats from '../(components)/Stats.svelte';
-	import Volume from '../(components)/Volume.svelte';
-	import { make } from '../(assets)/music/db';
+	import Hero from './(components)/Hero.svelte';
+	import Sample from './(components)/Sample.svelte';
+	import Stats from './(components)/Stats.svelte';
+	import Volume from './(components)/Volume.svelte';
+	import { make } from './(assets)/music/db';
 	import { createCart } from '$lib/shopify/(v2)/cart';
 	import { id } from '$lib/assets/identity';
-	import Video from '../(components)/Video.svelte';
+	import Video from './(components)/Video.svelte';
 	import ShopifyImage from '$lib/components/(v2)/shopify/ShopifyImage.svelte';
 	import { EuterpeBuilder, type Euterpe } from '@euterpe.js/euterpe';
 	import { onMount } from 'svelte';
@@ -55,7 +55,7 @@
 
 	onMount(async () => {
 		if (browser) {
-			THREED = (await import('../(components)/THREED.svelte')).default;
+			THREED = (await import('./(components)/THREED.svelte')).default;
 
 			const audio = document.createElement('audio');
 			if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {

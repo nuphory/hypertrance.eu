@@ -1,0 +1,59 @@
+// @use './comsat.scss';
+// @use './yeysk.scss';
+@use './suissnord.scss';
+
+// @import '@fontsource/inter/400';
+@import '@fontsource/montserrat/400';
+@import '@fontsource/michroma';
+
+@layer base {
+	html {
+		@apply font-michroma;
+	}
+
+	main {
+		:where(%display-heading) {
+			@apply font-suissnord;
+			@apply leading-suissnord-display;
+			@apply tracking-suissnord-display;
+
+			@apply before:content-['>_'];
+		}
+
+		:where(%heading) {
+			@apply leading-michroma-heading;
+			@apply tracking-michroma-heading;
+
+			@apply font-normal-heading;
+
+			&:is(.font-suissnord) {
+				@apply leading-suissnord-heading;
+				@apply tracking-suissnord-heading;
+			}
+		}
+
+		:where(%overline) {
+			@apply leading-michroma-overline;
+			@apply tracking-michroma-overline;
+			@apply uppercase;
+
+			&:is(.font-suissnord) {
+				@apply leading-suissnord-overline;
+				@apply tracking-suissnord-overline;
+			}
+		}
+
+		%suptitle {
+			@apply opacity-65;
+		}
+		%subtitle {
+			@apply opacity-85;
+		}
+	}
+
+	a {
+		&:not(.fancy) {
+			@apply hover:underline active:underline;
+		}
+	}
+}

@@ -1,0 +1,62 @@
+@use './spacing.scss';
+
+@layer base {
+	:is(header, main, footer) {
+		[data-role='background'] {
+			@apply w-full h-full;
+		}
+
+		.text-hero {
+			@apply max-lg:text-display;
+			@apply max-sm:text-primary;
+		}
+		.text-display {
+			@apply max-lg:text-primary;
+			@apply max-sm:text-secondary;
+		}
+
+		h1 {
+			@apply text-primary;
+		}
+
+		h2 {
+			@apply text-secondary;
+		}
+
+		h3 {
+			@apply text-tertiary;
+		}
+
+		h4,
+		h5,
+		h6 {
+			@apply text-heading;
+		}
+
+		%suptitle,
+		%subtitle {
+			// @apply bg-lime-400;
+
+			&:is(h1 + *),
+			&:has(+ h1) {
+				@apply text-secondary;
+			}
+			&:is(h2 + *),
+			&:has(+ h2) {
+				@apply text-tertiary;
+			}
+			// &:is(h3 + *),
+			// &:has(+ h3) {
+			// 	@apply text-subheading;
+			// }
+
+			&:where(:is(%heading + *), &:has(+ %heading)):not(.text-overline) {
+				@apply text-subheading;
+			}
+		}
+
+		p {
+			@apply text-base;
+		}
+	}
+}

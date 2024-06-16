@@ -17,6 +17,7 @@
 	// styles
 	import { beforeNavigate } from '$app/navigation';
 	import { apply_cookie_consent, cookie_consent_store } from '$lib/stores/cookie-consent';
+
 	import '$lib/styles/app.scss';
 
 	let {
@@ -75,7 +76,7 @@
 <!-- {#if browser} -->
 {#if ready}
 	<div
-		class="max-h-screen overflow-y-scroll"
+		class="h-screen-large overflow-y-scroll"
 		in:scale={{
 			duration: 1500,
 			easing: expoOut,
@@ -90,8 +91,6 @@
 		}}
 	>
 		{@render layout()}
-		<a href="/hypertrance-1">hypertrance-1</a>
-		<a href="/hypertrance-2">hypertrance-2</a>
 	</div>
 {/if}
 <!-- {:else}

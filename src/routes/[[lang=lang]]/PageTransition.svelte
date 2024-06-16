@@ -53,7 +53,7 @@
 <div class="relative">
 	{#key url}
 		<div
-			class="absolute"
+			class="absolute w-full"
 			in:inFn="{inParams}"
 			out:outFn="{outParams}"
 			onintrostart="{introstart}"
