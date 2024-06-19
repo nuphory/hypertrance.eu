@@ -1,19 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const {
-	canAnyHover,
-	colorsInverted,
-	landscape,
-	noAnyHover,
-	portrait,
-	prefersHighContrast,
-	prefersLowContrast,
-	prefersReducedMotion,
-	prefersReducedTransparency,
-	print,
-	themeVariants,
-	prefersLight,
-	prefersDark
-} = require('tailwindcss-theme-variants');
+const { prefersDark, prefersLight, default: themes, canHover } = require('@mia-cx/tailwindcss-themes');
 
 const tailwind_colors = require('tailwindcss/colors');
 
@@ -281,7 +267,7 @@ module.exports = {
 				xxl: '2.5rem',
 				xxxl: '4rem',
 				pill: '100em',
-				circle: '50%',
+				circle: '50%'
 			},
 
 			container: {
@@ -445,19 +431,7 @@ module.exports = {
 			}
 		}
 	},
-	variants: {
-		extend: {
-			backgroundColor: ['schemes'],
-			textColor: ['schemes'],
-			fill: ['schemes'],
-			stroke: ['schemes'],
-			borderColor: ['schemes'],
-			outlineColor: ['schemes'],
-			ringColor: ['schemes'],
-			ringOffsetColor: ['schemes'],
-			boxShadow: ['schemes']
-		}
-	},
+
 	plugins: [
 		require('@tailwindcss/aspect-ratio'),
 		require('@tailwindcss/container-queries'),
@@ -467,126 +441,118 @@ module.exports = {
 		require('tailwindcss-logical'),
 
 		// Color Schemes
-		themeVariants({
-			group: 'schemes',
+		themes({
 			themes: {
-				// Basic Dark / Light Themes
 				dark: {
-					selector: ":is([data-theme='dark'], :has(>[data-theme='dark']))"
-				},
-
-				light: {
-					selector: ":is([data-theme='light'], :has(>[data-theme='light']))"
-				},
-
-				'auto-light': {
-					selector: ":is([data-theme='auto'], :has([data-theme='auto']))",
-					mediaQuery: prefersLight
-				},
-
-				'auto-dark': {
-					selector: ":is([data-theme='auto'], :has([data-theme='auto']))",
+					selectors: '[data-theme="dark"]',
 					mediaQuery: prefersDark
+				},
+				light: {
+					selectors: '[data-theme="light"]',
+					mediaQuery: prefersLight
 				}
-
-				// // Inverted Colors (make sure there's no compatibility issues with inverted colors)
-				// 'colors-inverted': {
-				// 	mediaQuery: colorsInverted
-				// }
 			},
-			baseSelector: '*'
-			// fallback: 'auto-dark'
+			baseSelector: '*',
+			fallback: 'dark'
 		}),
 
 		// Responsive Themes
-		themeVariants({
-			group: 'responsive',
+		themes({
 			themes: {
-				// Responsiveness
 				'can-hover': {
-					mediaQuery: canAnyHover
+					mediaQuery: canHover
 				},
-				'no-hover': {
-					mediaQuery: noAnyHover
-				},
-				landscape: {
-					mediaQuery: landscape
-				},
-				portrait: {
-					mediaQuery: portrait
-				},
-
-				'update-fast': {
-					mediaQuery: '@media (update: fast)'
-				},
-				'update-slow': {
-					mediaQuery: '@media (update: slow)'
-				},
-				'update-none': {
-					mediaQuery: '@media (update: none)'
-				},
-
-				// Print
-				print: {
-					selector: '[data-print="true"]',
-					mediaQuery: print
-				}
 			}
-		}),
-
-		// Accessibility Themes
-		themeVariants({
-			group: 'accessibility',
-			themes: {
-				// Accessibility
-				'motion-reduced': {
-					selector: '[data-motion="reduced"]',
-					mediaQuery: prefersReducedMotion
-				},
-				'transparency-reduced': {
-					selector: '[data-transparency="reduced"]',
-					mediaQuery: prefersReducedTransparency
-				},
-				'forced-colors': {
-					mediaQuery: '@media (forced-colors: active)'
-				},
-
-				// Contrast
-				'contrast-more': {
-					selector: '[data-contrast="more"]',
-					mediaQuery: prefersHighContrast
-				},
-				'contrast-less': {
-					selector: '[data-contrast="less"]',
-					mediaQuery: prefersLowContrast
-				}
-			}
-		}),
-
-		// Creative Feature Themes
-		themeVariants({
-			group: 'creative',
-			themes: {
-				browser: {
-					mediaQuery: '@media (display-mode: browser)'
-				},
-				fullscreen: {
-					mediaQuery: '@media (display-mode: fullscreen)'
-				},
-				'minimal-ui': {
-					mediaQuery: '@media (display-mode: minimal-ui)'
-				},
-				standalone: {
-					mediaQuery: '@media (display-mode: standalone)'
-				},
-				'picture-in-picture': {
-					mediaQuery: '@media (display-mode: picture-in-picture)'
-				},
-				'window-controls-overlay': {
-					mediaQuery: '@media (display-mode: window-controls-overlay)'
-				}
-			},
-			fallback: 'browser'
 		})
+		// // Responsive Themes
+		// themeVariants({
+		// 	group: 'responsive',
+		// 	themes: {
+		// 		// Responsiveness
+		// 		'can-hover': {
+		// 			mediaQuery: canAnyHover
+		// 		},
+		// 		'no-hover': {
+		// 			mediaQuery: noAnyHover
+		// 		},
+		// 		landscape: {
+		// 			mediaQuery: landscape
+		// 		},
+		// 		portrait: {
+		// 			mediaQuery: portrait
+		// 		},
+
+		// 		'update-fast': {
+		// 			mediaQuery: '@media (update: fast)'
+		// 		},
+		// 		'update-slow': {
+		// 			mediaQuery: '@media (update: slow)'
+		// 		},
+		// 		'update-none': {
+		// 			mediaQuery: '@media (update: none)'
+		// 		},
+
+		// 		// Print
+		// 		print: {
+		// 			selector: '[data-print="true"]',
+		// 			mediaQuery: print
+		// 		}
+		// 	}
+		// }),
+
+		// // Accessibility Themes
+		// themeVariants({
+		// 	group: 'accessibility',
+		// 	themes: {
+		// 		// Accessibility
+		// 		'motion-reduced': {
+		// 			selector: '[data-motion="reduced"]',
+		// 			mediaQuery: prefersReducedMotion
+		// 		},
+		// 		'transparency-reduced': {
+		// 			selector: '[data-transparency="reduced"]',
+		// 			mediaQuery: prefersReducedTransparency
+		// 		},
+		// 		'forced-colors': {
+		// 			mediaQuery: '@media (forced-colors: active)'
+		// 		},
+
+		// 		// Contrast
+		// 		'contrast-more': {
+		// 			selector: '[data-contrast="more"]',
+		// 			mediaQuery: prefersHighContrast
+		// 		},
+		// 		'contrast-less': {
+		// 			selector: '[data-contrast="less"]',
+		// 			mediaQuery: prefersLowContrast
+		// 		}
+		// 	}
+		// }),
+
+		// // Creative Feature Themes
+		// themeVariants({
+		// 	group: 'creative',
+		// 	themes: {
+		// 		browser: {
+		// 			mediaQuery: '@media (display-mode: browser)'
+		// 		},
+		// 		fullscreen: {
+		// 			mediaQuery: '@media (display-mode: fullscreen)'
+		// 		},
+		// 		'minimal-ui': {
+		// 			mediaQuery: '@media (display-mode: minimal-ui)'
+		// 		},
+		// 		standalone: {
+		// 			mediaQuery: '@media (display-mode: standalone)'
+		// 		},
+		// 		'picture-in-picture': {
+		// 			mediaQuery: '@media (display-mode: picture-in-picture)'
+		// 		},
+		// 		'window-controls-overlay': {
+		// 			mediaQuery: '@media (display-mode: window-controls-overlay)'
+		// 		}
+		// 	},
+		// 	fallback: 'browser'
+		// })
 	]
 };

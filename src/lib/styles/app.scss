@@ -24,21 +24,21 @@
 	[data-theme] {
 		@apply transition-colors duration-default ease-out;
 
-		@apply dark:bg-dark auto-dark:bg-dark;
-		@apply light:bg-dark auto-light:bg-dark;
+		@apply dark:bg-dark;
+		@apply light:bg-dark;
 
-		@apply dark:text-dark auto-dark:text-dark;
-		@apply light:text-dark auto-light:text-dark;
+		@apply dark:text-dark;
+		@apply light:text-dark;
 	}
 
 	body {
 		@apply transition-colors duration-default ease-out;
 
-		@apply dark:bg-dark auto-dark:bg-dark;
-		@apply light:bg-dark auto-light:bg-dark;
+		@apply dark:bg-dark;
+		@apply light:bg-dark;
 
-		@apply dark:text-dark auto-dark:text-dark;
-		@apply light:text-dark auto-light:text-dark;
+		@apply dark:text-dark;
+		@apply light:text-dark;
 	}
 
 	main {
@@ -77,10 +77,10 @@
 
 @layer utilities {
 	.theme {
-		@apply dark:bg-dark auto-dark:bg-dark;
-		@apply light:bg-dark auto-light:bg-dark;
+		@apply dark:bg-dark;
+		@apply light:bg-dark;
 
-		@apply dark:text-dark auto-dark:text-dark;
-		@apply light:text-dark auto-light:text-dark;
+		@apply dark:text-dark;
+		@apply light:text-dark;
 	}
 }

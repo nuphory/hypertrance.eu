@@ -45,6 +45,7 @@
 		"@iconify/json": "^2.2.215",
 		"@iconify/svelte": "^4.0.2",
 		"@kitql/eslint-config": "^0.3.2",
+		"@mia-cx/tailwindcss-themes": "^0.0.6",
 		"@nanostores/i18n": "^0.12.1",
 		"@nanostores/persistent": "^0.10.1",
 		"@neoconfetti/svelte": "^1.0.0",
