@@ -1,19 +1,16 @@
 @layer base {
-	:is(h1, h2, h3, h4, h5, h6) {
-		@extend %hx !optional;
-		&:is(%suptitle + *) {
-			@extend %suptitled !optional;
-		}
+	:where(h1, h2, h3, h4, h5, h6) {
+		@extend %heading !optional;
 
-		&:has(+ %subtitle) {
-			@extend %subtitled !optional;
-		}
-
-		&:is(.text-hero, .text-display, .text-primary, .text-secondary, h1, h2) {
+		&:is(.text-hero, .text-display) {
 			@extend %display-heading !optional;
 		}
-		&:is(.text-tertiary, .text-heading, h3, h4, h5, h6) {
-			@extend %heading !optional;
+
+		&:has(+ [role='doc-subtitle']) {
+			@extend %subtitled !optional;
+		}
+		&:is([role='doc-subtitle'] + *) {
+			@extend %suptitled !optional;
 		}
 	}
 
@@ -22,13 +19,11 @@
 	}
 
 	[role='doc-subtitle'] {
-		&:where(&:has(+ %hx)) {
-			// @apply border border-other-orange-300;
+		&:where(&:has(+ :is(h1, h2, h3, h4, h5, h6))) {
 			@extend %suptitle !optional;
 		}
 
-		&:where(%hx + *) {
-			// @apply border border-other-green-400;
+		&:where(:is(h1, h2, h3, h4, h5, h6) + *) {
 			@extend %subtitle !optional;
 		}
 	}

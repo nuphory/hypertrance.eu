@@ -1,5 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { prefersDark, prefersLight, default: themes, canHover } = require('@mia-cx/tailwindcss-themes');
+const {
+	prefersDark,
+	prefersLight,
+	default: themes,
+	canHover
+} = require('@mia-cx/tailwindcss-themes');
 
 const tailwind_colors = require('tailwindcss/colors');
 
@@ -114,6 +119,62 @@ const color_scheme = {
 		success: colors.green[400],
 		warning: colors.amber[400],
 		error: colors.red[400]
+	},
+
+	light: {
+		DEFAULT: colors.zinc[300],
+
+		background: {
+			DEFAULT: colors.zinc[900],
+
+			primary: {
+				DEFAULT: colors.hypertrance[900],
+
+				side: colors.hypertrance[800],
+				island: colors.hypertrance[700]
+			}
+		},
+
+		border: {
+			DEFAULT: colors.white,
+
+			// hover: colors.white,
+			// active: colors.white
+
+			primary: {
+				DEFAULT: colors.hypertrance[100],
+
+				hover: colors.hypertrance[800],
+				active: colors.hypertrance[900]
+			}
+		},
+
+		button: {
+			DEFAULT: colors.white,
+
+			// hover: colors.white,
+			// active: colors.white
+
+			primary: {
+				DEFAULT: colors.hypertrance[100],
+
+				hover: colors.hypertrance[800],
+				active: colors.hypertrance[900]
+			}
+		},
+
+		link: {
+			DEFAULT: colors.white,
+
+			hover: colors.white,
+			active: colors.white
+		},
+
+		information: colors.zinc[300],
+		// debug: colors.zinc[300] / 65,
+		success: colors.green[400],
+		warning: colors.amber[400],
+		error: colors.red[400]
 	}
 
 	// TODO add light theme
@@ -165,13 +226,13 @@ module.exports = {
 			},
 
 			// TODO add light theme
-			// light: {
-			// 	...color_scheme.light.background,
+			light: {
+				...color_scheme.light.background,
 
-			// 	button: {
-			// 		...color_scheme.light.button
-			// 	}
-			// },
+				button: {
+					...color_scheme.light.button
+				}
+			},
 
 			other: {
 				...tailwind_colors,
@@ -184,9 +245,9 @@ module.exports = {
 			},
 
 			// TODO add light theme
-			// light: {
-			// 	...color_scheme.light.border,
-			// }
+			light: {
+				...color_scheme.light.border
+			},
 
 			other: {
 				...tailwind_colors,
@@ -199,9 +260,9 @@ module.exports = {
 			},
 
 			// TODO add light theme
-			// light: {
-			// 	...color_scheme.light.border,
-			// }
+			light: {
+				...color_scheme.light.border
+			},
 
 			other: {
 				...tailwind_colors,
@@ -215,9 +276,9 @@ module.exports = {
 			},
 
 			// TODO add light theme
-			// light: {
-			// 	...color_scheme.light.border,
-			// }
+			light: {
+				...color_scheme.light.border
+			},
 
 			other: {
 				...tailwind_colors,
@@ -350,7 +411,7 @@ module.exports = {
 				'suissnord-heading': '1.125',
 				'suissnord-overline': '1.125',
 
-				michroma: '0.925',
+				michroma: '1.25',
 				'michroma-display': '1.3',
 				'michroma-heading': '1.125',
 				'michroma-overline': '1.125'
@@ -461,7 +522,7 @@ module.exports = {
 			themes: {
 				'can-hover': {
 					mediaQuery: canHover
-				},
+				}
 			}
 		})
 		// // Responsive Themes

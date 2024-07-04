@@ -33,24 +33,23 @@
 			@apply text-heading;
 		}
 
-		%suptitle,
-		%subtitle {
-			// @apply bg-lime-400;
-
-			&:is(h1 + *),
-			&:has(+ h1) {
+		[role='doc-subtitle'] {
+			&:where(:is(h1, .text-primary) + *, &:has(+ :is(h1, .text-primary))) {
 				@apply text-secondary;
 			}
-			&:is(h2 + *),
-			&:has(+ h2) {
+			&:where(:is(h2, .text-secondary) + *, &:has(+ :is(h2, .text-secondary))) {
 				@apply text-tertiary;
 			}
-			// &:is(h3 + *),
-			// &:has(+ h3) {
-			// 	@apply text-subheading;
-			// }
-
-			&:where(:is(%heading + *), &:has(+ %heading)):not(.text-overline) {
+			&:where(:is(h3, .text-tertiary) + *, &:has(+ :is(h3, .text-tertiary))) {
+				@apply text-subheading;
+			}
+			&:where(:is(h4, .text-heading) + *, &:has(+ :is(h4, .text-heading))) {
+				@apply text-subheading;
+			}
+			&:where(:is(h5, .text-heading) + *, &:has(+ :is(h5, .text-heading))) {
+				@apply text-subheading;
+			}
+			&:where(:is(h6, .text-heading) + *, &:has(+ :is(h6, .text-heading))) {
 				@apply text-subheading;
 			}
 		}

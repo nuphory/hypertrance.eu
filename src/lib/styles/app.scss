@@ -1,5 +1,6 @@
 @use './layout/scaling';
 @use './type/type';
+@use './colors';
 
 @import './global/placeholders';
 
@@ -21,24 +22,8 @@
 		@apply scroll-smooth;
 	}
 
-	[data-theme] {
+	[data-theme], body {
 		@apply transition-colors duration-default ease-out;
-
-		@apply dark:bg-dark;
-		@apply light:bg-dark;
-
-		@apply dark:text-dark;
-		@apply light:text-dark;
-	}
-
-	body {
-		@apply transition-colors duration-default ease-out;
-
-		@apply dark:bg-dark;
-		@apply light:bg-dark;
-
-		@apply dark:text-dark;
-		@apply light:text-dark;
 	}
 
 	main {
@@ -67,7 +52,6 @@
 	}
 
 	a {
-		@apply hover:-translate-y-px active:translate-y-px;
 		&[disabled] {
 			@apply pointer-events-none;
 			@apply opacity-50;
@@ -75,12 +59,4 @@
 	}
 }
 
-@layer utilities {
-	.theme {
-		@apply dark:bg-dark;
-		@apply light:bg-dark;
 
-		@apply dark:text-dark;
-		@apply light:text-dark;
-	}
-}

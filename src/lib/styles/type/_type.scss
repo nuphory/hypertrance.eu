@@ -11,8 +11,19 @@
 		@apply font-michroma;
 	}
 
-	main {
-		:where(%display-heading) {
+	:is(header, main, footer) {
+
+		:where(*) {
+			@apply leading-michroma;
+			@apply tracking-michroma;
+
+			&:is(.font-suissnord) {
+				@apply leading-suissnord;
+				@apply tracking-suissnord;
+			}
+		}
+
+		:is(%display-heading, h1, h2) {
 			@apply font-suissnord;
 			@apply leading-suissnord-display;
 			@apply tracking-suissnord-display;
@@ -20,7 +31,7 @@
 			@apply before:content-['>_'];
 		}
 
-		:where(%heading) {
+		:is(%heading) {
 			@apply leading-michroma-heading;
 			@apply tracking-michroma-heading;
 
@@ -43,17 +54,41 @@
 			}
 		}
 
-		%suptitle {
+		[role='doc-subtitle'] {
+			@apply leading-michroma-heading;
+			@apply tracking-michroma-heading;
+
+			&:is(.font-suissnord) {
+				@apply leading-suissnord-heading;
+				@apply tracking-suissnord-heading;
+			}
+		}
+
+		:where(%suptitle) {
 			@apply opacity-65;
 		}
-		%subtitle {
+		:where(%subtitle) {
 			@apply opacity-85;
 		}
-	}
 
-	a {
-		&:not(.fancy) {
-			@apply hover:underline active:underline;
+		a {
+			&:is(.reset):not(:has(span)) {
+				@apply hover:underline active:underline;
+			}
+
+			&:not(.reset) {
+				@apply transition-colors duration-default ease-out;
+
+				&::after {
+					@apply content-[''];
+					@apply absolute left-0 bottom-0 w-0 h-px;
+					@apply transition-easy duration-default ease-out;
+				}
+
+				&:hover::after {
+					@apply w-full;
+				}
+			}
 		}
 	}
 }

@@ -22,71 +22,146 @@
 			}
 
 			&:has([data-role='background']) {
-				>:not([data-role='background']) {
-					@apply container px-xxl relative;
+				> :not([data-role='background']) {
+					@apply container block px-xxl relative;
 				}
 			}
 		}
 
-		%display-heading {
-			@apply mb-xl;
-			&:where(%subtitled) {
+		:where(%display-heading) {
+			&:is(:first-child) {
+				@apply mt-0;
+			}
+
+			&:is(%subtitled) {
 				@apply mb-sm;
 			}
-		}
 
-		h3 {
-			@apply mb-lg;
-			&:where(%subtitled) {
-				@apply mb-xs;
+			&:is(%suptitled) {
+				@apply mt-sm;
+			}
+
+			&:where(h1, .text-hero) {
+				@apply mt-xxl;
+				@apply mb-lg;
+			}
+
+			&:where(h2, .text-display) {
+				@apply mt-xl;
+				@apply mb-lg;
 			}
 		}
 
 		:where(%heading) {
-			@apply mb-md;
-			&:where(%subtitled) {
-				@apply mb-xs;
+			&:is(:first-child) {
+				@apply mt-0;
 			}
-		}
 
-		%suptitle,
-		%subtitle {
-			@apply block;
-		}
+			&:is(%subtitled) {
+				@apply mb-xxs;
+			}
 
-		%subtitle {
-			&:is(h1 + *):not(:last-child) {
-				@apply mb-xl;
+			&:is(%suptitled) {
+				@apply mt-xxs;
 			}
-			&:is(h2 + *):not(:last-child) {
-				@apply mb-xl;
-			}
-			&:is(h3 + *):not(:last-child) {
+
+			&:where(h1, .text-primary) {
+				@apply mt-xxl;
 				@apply mb-lg;
 			}
-			&:where(:is(%heading + *):not(:last-child)) {
+			&:where(h2, .text-secondary) {
+				@apply mt-xl;
+				@apply mb-lg;
+			}
+			&:where(h3, .text-tertiary) {
+				@apply mt-lg;
 				@apply mb-md;
 			}
-		}
-
-		%suptitle {
-			&:where(&:has(+ h1)) {
+			&:where(h4, .text-heading) {
+				@apply mt-md;
+				@apply mb-md;
+			}
+			&:where(h5, .text-heading) {
+				@apply mt-md;
+				@apply mb-md;
+			}
+			&:where(h6, .text-heading) {
+				@apply mt-sm;
 				@apply mb-sm;
-			}
-			&:where(&:has(+ h2)) {
-				@apply mb-sm;
-			}
-			&:where(&:has(+ h3)) {
-				@apply mb-xs;
-			}
-			&:where(&:has(+ %heading)) {
-				@apply mb-xs;
 			}
 		}
 
-		p {
-			&:where(:not(:last-child)) {
+		[role='doc-subtitle'] {
+			@apply inline-block;
+		}
+
+		[role='doc-subtitle'] {
+			&:is(:last-child) {
+				@apply mb-0;
+			}
+
+			&:is(.text-hero + *) {
 				@apply mb-xxl;
+			}
+			&:is(.text-display + *) {
+				@apply mb-xl;
+			}
+
+			&:where(:is(h1, .text-primary) + *) {
+				@apply mb-lg;
+			}
+			&:where(:is(h2, .text-secondary) + *) {
+				@apply mb-lg;
+			}
+			&:where(:is(h3, .text-tertiary) + *) {
+				@apply mb-md;
+			}
+			&:where(:is(h4, .text-heading) + *) {
+				@apply mb-md;
+			}
+			&:where(:is(h5, .text-heading) + *) {
+				@apply mb-md;
+			}
+			&:where(:is(h6, .text-heading) + *) {
+				@apply mb-sm;
+			}
+		}
+
+		[role='doc-subtitle'] {
+			&:is(:first-child) {
+				@apply mt-0;
+			}
+
+			&:is(&:has(+ .text-hero)) {
+				@apply mt-xxl;
+			}
+			&:is(&:has(+ .text-display)) {
+				@apply mt-xl;
+			}
+
+			&:where(&:has(+ :is(h1, .text-primary))) {
+				@apply mt-xxl;
+			}
+			&:where(&:has(+ :is(h2, .text-secondary))) {
+				@apply mt-xl;
+			}
+			&:where(&:has(+ :is(h3, .text-tertiary))) {
+				@apply mt-lg;
+			}
+			&:where(&:has(+ :is(h4, .text-heading))) {
+				@apply mt-md;
+			}
+			&:where(&:has(+ :is(h5, .text-heading))) {
+				@apply mt-md;
+			}
+			&:where(&:has(+ :is(h6, .text-heading))) {
+				@apply mt-sm;
+			}
+		}
+
+		:where(p, ul, ol) {
+			&:not(:last-child) {
+				@apply mb-lg;
 			}
 		}
 	}
