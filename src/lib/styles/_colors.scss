@@ -1,0 +1,52 @@
+@layer base {
+	[data-theme],
+	body {
+		@apply dark:bg-dark;
+		@apply light:bg-light;
+
+		@apply dark:text-dark;
+		@apply light:text-light;
+	}
+
+	a {
+		@apply dark:text-dark-link;
+		@apply light:text-light-link;
+
+		&:hover {
+			@apply dark:text-dark-link-hover;
+			@apply light:text-light-link-hover;
+		}
+
+		&:active {
+			@apply dark:text-dark-link-active;
+			@apply light:text-light-link-active;
+		}
+
+		&:not(.reset) {
+			&::after {
+				@apply dark:bg-other-dark-link;
+				@apply light:bg-other-light-link;
+			}
+
+			&:hover::after {
+				@apply dark:bg-other-dark-link-hover;
+				@apply light:bg-other-light-link-hover;
+			}
+
+			&:active::after {
+				@apply dark:bg-other-dark-link-active;
+				@apply light:bg-other-light-link-active;
+			}
+		}
+	}
+}
+
+@layer utilities {
+	.theme {
+		@apply dark:bg-dark;
+		@apply light:bg-light;
+
+		@apply dark:text-dark;
+		@apply light:text-light;
+	}
+}
