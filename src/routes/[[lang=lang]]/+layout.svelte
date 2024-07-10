@@ -1,6 +1,5 @@
 <script lang="ts">
 	// imports
-	import { browser } from '$app/environment';
 	import { onDestroy, onMount, type Snippet } from 'svelte';
 	// types
 	import type { LayoutData } from './$types';
