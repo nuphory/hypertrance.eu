@@ -21,6 +21,10 @@
                 "zengxingxin.sort-js-object-keys",
                 "richie5um2.vscode-sort-json",
                 "unional.vscode-sort-package-json",
-                "miclo.sort-typescript-imports"
+                "miclo.sort-typescript-imports",
+                "chanzhaoyu.svelte-5-snippets",
+                "svelte.svelte-vscode",
+                "ardenivanov.svelte-intellisense",
+                "rvest.vs-code-prettier-eslint"
         ]
 }
