@@ -16,9 +16,7 @@ export const Collection = ACollection.extend({
 		.optional()
 		.nullable(),
 
-	feature: BaseMetafield.extend({
-		reference: z.union([MediaImage, Video])
-	})
+	feature: BaseMetafield
 		.optional()
 		.nullable(),
 
