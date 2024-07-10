@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { MediaImage } from '../simple-types';
+import { MediaImage, RefNodesArray } from '../simple-types';
 import BaseMetaobjectField from './metafield/BaseMetaobjectField';
 
 const Link = z.object({
@@ -13,6 +13,8 @@ const Link = z.object({
 	url: BaseMetaobjectField
 });
 
+const LinkArray = RefNodesArray(Link);
+
 const Author = z.object({
 	description: BaseMetaobjectField.optional().nullish().nullable(),
 	image: BaseMetaobjectField.extend({
@@ -20,15 +22,11 @@ const Author = z.object({
 	})
 		.optional()
 		.nullable(),
-	links: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(Link)
-		})
-	})
-		.optional()
-		.nullable(),
+	links: BaseMetaobjectField.extend(LinkArray).optional().nullable(),
 	title: BaseMetaobjectField,
 	url: BaseMetaobjectField.optional().nullish().nullable()
 });
 
-export { Author, Link };
+const AuthorArray = RefNodesArray(Author);
+
+export { Author, AuthorArray, Link, LinkArray };

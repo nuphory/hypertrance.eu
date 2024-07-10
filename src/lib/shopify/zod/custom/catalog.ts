@@ -1,9 +1,8 @@
-import { z } from 'zod';
-import { GenericFile, MediaImage } from '../simple-types';
+import BaseProduct from '../catalog/product/BaseProduct';
+import { GenericFile, MediaImage, RefNodesArray } from '../simple-types';
 import { Author } from './metadata';
 import BaseMetaobject from './metafield/BaseMetaobject';
 import BaseMetaobjectField from './metafield/BaseMetaobjectField';
-import BaseProduct from '../catalog/product/BaseProduct';
 
 const Testimonial = BaseMetaobject.extend({
 	author: BaseMetaobjectField.extend({
@@ -30,13 +29,7 @@ const License = BaseMetaobject.extend({
 	})
 		.optional()
 		.nullable(),
-	files: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(GenericFile)
-		})
-	})
-		.optional()
-		.nullable(),
+	files: BaseMetaobjectField.extend(RefNodesArray(GenericFile)).optional().nullable(),
 	title: BaseMetaobjectField.optional().nullable()
 });
 

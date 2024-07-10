@@ -1,37 +1,19 @@
 import { z } from 'zod';
-import { MediaImage } from '../simple-types';
-import { Author, Link } from './metadata';
+import { GenericFile, MediaImage, RefEdgesNodeArray, RefNodesArray } from '../simple-types';
+import { AuthorArray, LinkArray } from './metadata';
 import BaseMetaobject from './metafield/BaseMetaobject';
 import BaseMetaobjectField from './metafield/BaseMetaobjectField';
 
 const Artwork = BaseMetaobject.extend({
-	authors: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(Author)
-		})
-	})
-		.optional()
-		.nullable(),
+	authors: BaseMetaobjectField.extend(AuthorArray).optional().nullable(),
 	image: BaseMetaobjectField.extend({
 		reference: MediaImage
 	})
 		.optional()
 		.nullable(),
 	index: BaseMetaobjectField.optional().nullable(),
-	links: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(Link)
-		})
-	})
-		.optional()
-		.nullable(),
-	media: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(MediaImage)
-		})
-	})
-		.optional()
-		.nullable(),
+	links: BaseMetaobjectField.extend(LinkArray).optional().nullable(),
+	media: BaseMetaobjectField.extend(RefNodesArray(MediaImage)).optional().nullable(),
 	title: BaseMetaobjectField.optional().nullable()
 });
 
@@ -41,13 +23,7 @@ const DemoTrack = BaseMetaobject.extend({
 	})
 		.optional()
 		.nullable(),
-	authors: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(Author)
-		})
-	})
-		.optional()
-		.nullable(),
+	authors: BaseMetaobjectField.extend(AuthorArray).optional().nullable(),
 	image: BaseMetaobjectField.extend({
 		reference: MediaImage
 	})
@@ -59,15 +35,11 @@ const DemoTrack = BaseMetaobject.extend({
 
 const Song = BaseMetaobject.extend({
 	audio: BaseMetaobjectField.extend({
-		reference: MediaImage
+		reference: GenericFile
 	})
 		.optional()
 		.nullable(),
-	authors: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(Author)
-		})
-	})
+	authors: BaseMetaobjectField.extend(AuthorArray)
 		.optional()
 		.nullable(),
 	image: BaseMetaobjectField.extend({
@@ -76,22 +48,14 @@ const Song = BaseMetaobject.extend({
 		.optional()
 		.nullable(),
 	index: BaseMetaobjectField.optional().nullable(),
-	links: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(Link)
-		})
-	})
+	links: BaseMetaobjectField.extend(LinkArray)
 		.optional()
 		.nullable(),
 	title: BaseMetaobjectField.optional().nullable()
 });
 
 const Album = BaseMetaobject.extend({
-	authors: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(Author)
-		})
-	})
+	authors: BaseMetaobjectField.extend(AuthorArray)
 		.optional()
 		.nullable(),
 
@@ -103,22 +67,11 @@ const Album = BaseMetaobject.extend({
 		.optional()
 		.nullable(),
 	index: BaseMetaobjectField.optional().nullable(),
-	links: BaseMetaobjectField.extend({
-		references: z.object({
-			nodes: z.array(Link)
-		})
-	})
+	links: BaseMetaobjectField.extend(LinkArray)
 		.optional()
 		.nullable(),
-	media: BaseMetaobjectField.extend({
-		references: z.object({
-			edges: z.array(
-				z.object({
-					node: MediaImage
-				})
-			)
-		})
-	})
+
+	media: BaseMetaobjectField.extend(RefEdgesNodeArray(z.union([Artwork, Song])))
 		.optional()
 		.nullable(),
 	title: BaseMetaobjectField.optional().nullable()
