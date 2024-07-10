@@ -79,16 +79,31 @@ const PageInfo = z.object({
 	startCursor: z.string().optional().nullable()
 });
 
-export {
-        ExternalVideo,
-        GenericFile,
-        Image,
-        MediaImage,
-        Model3d,
-        Model3dSource,
-        MoneyV2,
-        PageInfo,
-        SEO,
-        Video
-};
+export function RefNodesArray<T extends z.ZodTypeAny>(schema: T) {
+	return {
+		references: z.object({
+			nodes: z.array(schema as z.infer<T>)
+		})
+	};
+}
 
+export function RefEdgesNodeArray<T extends z.ZodTypeAny>(schema: T) {
+	return {
+		references: z.object({
+			edges: z.array(z.object({ node: schema as z.infer<T> }))
+		})
+	};
+}
+
+export {
+	ExternalVideo,
+	GenericFile,
+	Image,
+	MediaImage,
+	Model3d,
+	Model3dSource,
+	MoneyV2,
+	PageInfo,
+	SEO,
+	Video
+};
