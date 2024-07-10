@@ -1,7 +1,7 @@
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 
 import ProductQuery from '$lib/shopify/graphql/requests/product';
-import client from '$lib/shopify/server';
+import client from '$lib/shopify/client';
 import { error } from '@sveltejs/kit';
 import Product from '$lib/shopify/zod/catalog/product/Product';
 
@@ -9,7 +9,7 @@ import Product from '$lib/shopify/zod/catalog/product/Product';
  * Load collection data from shopify by handle
  * @returns {Promise<import('./$types').PageData>} Product data + extensions
  */
-export const load: PageServerLoad = async () => {
+export const load: PageLoad = async () => {
 	const handle = 'hypertrance-samplepack';
 
 	const response = await client.request(ProductQuery, {

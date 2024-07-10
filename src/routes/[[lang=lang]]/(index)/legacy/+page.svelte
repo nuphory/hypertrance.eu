@@ -18,7 +18,7 @@
 	import type { z } from 'zod';
 	import type Product from '$lib/shopify/zod/catalog/product/Product';
 	import { error } from '@sveltejs/kit';
-	import type { PageData } from '../$types';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 
@@ -26,10 +26,12 @@
 	let THREED: any;
 	let canvas_wrapper: HTMLElement;
 	const db = make();
+
 	const { product }: { product: z.infer<typeof Product> } = data as {
 		[x: string]: any;
 		product: z.infer<typeof Product>;
 	};
+
 	const selected_variant = product.variants.nodes[0];
 
 	// const testimonials = product.metafields
