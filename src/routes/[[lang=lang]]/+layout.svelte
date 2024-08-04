@@ -10,9 +10,11 @@
 	import { apply_settings, settings_store } from '$lib/stores/settings';
 
 	// components
-	import Footer from './Footer.svelte';
-	import Header from './Header.svelte';
-	import PageTransition from './PageTransition.svelte';
+	import Footer from './(+layout)/Footer.svelte';
+	import Header from './(+layout)/Header.svelte';
+	import PageTransition from './(+layout)/PageTransition.svelte';
+	import SEO from './(+layout)/SEO.svelte';
+
 	// styles
 	import { beforeNavigate } from '$app/navigation';
 	import { apply_cookie_consent, cookie_consent_store } from '$lib/stores/cookie-consent';
@@ -65,6 +67,8 @@
 	<meta name="twitter:site" content="@hypertranceRT" />
 	<meta name="twitter:creator" content="@hypertranceRT" />
 </svelte:head>
+
+<SEO />
 
 {#snippet layout()}
 	<Header />
