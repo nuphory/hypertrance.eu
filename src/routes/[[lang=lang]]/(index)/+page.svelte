@@ -16,13 +16,9 @@
 		</p>
 
 		<p>Also check out the following pages:</p>
-		<ul>
-			<li><Link href="/hypertrance-1">hypertrance 1</Link></li>
-			<li><Link href="/hypertrance-2">hypertrance 2</Link></li>
-			<li><Link href="/hypertrance-worldwide">hypertrance worldwide</Link></li>
-		</ul>
-
-		<ul>
+		<ul class="list-disc list-inside">
+                        <li><Link href="/hypertrance-worldwide">hypertrance worldwide</Link></li>
+			<li><Link href="/demos/typography">typography demo</Link></li>
 			<li><Link href="/store/products/hypertrance-samplepack">hypertrance samplepack</Link></li>
 		</ul>
 
