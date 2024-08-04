@@ -1,6 +1,6 @@
 // Queries
 
-import { CartFragment } from '../fragments/cart';
+import { ACartFragment } from '../fragments/cart';
 import SimpleTypes from '../fragments/simple-types';
 
 /**
@@ -18,11 +18,11 @@ const CartQuery = `#graphql
                 $expansive: Boolean = false, $verbose: Boolean = false
         ) {
                 cart(id: $cartId) {
-                        ...CartFragment
+                        ...ACartFragment
                 }
         }
 
-        ${CartFragment}
+        ${ACartFragment}
         ${SimpleTypes}
 `;
 
@@ -52,7 +52,7 @@ const CartCreateMutation = `#graphql
                         # }
                 ) {
                         cart {
-                                ...CartFragment
+                                ...ACartFragment
                         }
                         userErrors {
                                 code
@@ -62,7 +62,7 @@ const CartCreateMutation = `#graphql
                 }
         }
 
-        ${CartFragment}
+        ${ACartFragment}
         ${SimpleTypes}
 `;
 
@@ -76,7 +76,7 @@ const CartDiscountCodesUpdateMutation = `#graphql
                         cartId: $cartId, discountCodes: $discountCodes
                 ) {
                         cart {
-                                ...CartFragment
+                                ...ACartFragment
                         }
                         userErrors {
                                 code
@@ -86,7 +86,7 @@ const CartDiscountCodesUpdateMutation = `#graphql
                 }
         }
 
-        ${CartFragment}
+        ${ACartFragment}
         ${SimpleTypes}
 `;
 
@@ -99,7 +99,7 @@ const CartLinesAddMutation = `#graphql
                         cartId: $cartId, lines: $lines
                 ) {
                         cart {
-                                ...CartFragment
+                                ...ACartFragment
                         }
                         userErrors {
                                 code
@@ -109,7 +109,7 @@ const CartLinesAddMutation = `#graphql
                 }
         }
 
-        ${CartFragment}
+        ${ACartFragment}
         ${SimpleTypes}
 `;
 
@@ -122,7 +122,7 @@ const CartLinesRemoveMutation = `#graphql
                         cartId: $cartId, lineIds: $lineIds
                 ) {
                         cart {
-                                ...CartFragment
+                                ...ACartFragment
                         }
                         userErrors {
                                 code
@@ -132,7 +132,7 @@ const CartLinesRemoveMutation = `#graphql
                 }
         }
 
-        ${CartFragment}
+        ${ACartFragment}
         ${SimpleTypes}
 `;
 
@@ -145,7 +145,7 @@ const CartLinesUpdateMutation = `#graphql
                         cartId: $cartId, lines: [{ id: $lineId, quantity: $quantity }]
                 ) {
                         cart {
-                                ...CartFragment
+                                ...ACartFragment
                         }
                         userErrors {
                                 code
@@ -155,7 +155,7 @@ const CartLinesUpdateMutation = `#graphql
                 }
         }
 
-        ${CartFragment}
+        ${ACartFragment}
         ${SimpleTypes}
 `;
 
@@ -168,7 +168,7 @@ const CartNoteUpdateMutation = `#graphql
                         cartId: $cartId, note: $note
                 ) {
                         cart {
-                                ...CartFragment
+                                ...ACartFragment
                         }
                         userErrors {
                                 code
@@ -178,7 +178,7 @@ const CartNoteUpdateMutation = `#graphql
                 }
         }
 
-        ${CartFragment}
+        ${ACartFragment}
         ${SimpleTypes}
 `;
 
