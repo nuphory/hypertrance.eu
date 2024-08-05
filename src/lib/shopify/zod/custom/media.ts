@@ -39,25 +39,19 @@ const Song = BaseMetaobject.extend({
 	})
 		.optional()
 		.nullable(),
-	authors: BaseMetaobjectField.extend(AuthorArray)
-		.optional()
-		.nullable(),
+	authors: BaseMetaobjectField.extend(AuthorArray).optional().nullable(),
 	image: BaseMetaobjectField.extend({
 		reference: MediaImage
 	})
 		.optional()
 		.nullable(),
 	index: BaseMetaobjectField.optional().nullable(),
-	links: BaseMetaobjectField.extend(LinkArray)
-		.optional()
-		.nullable(),
+	links: BaseMetaobjectField.extend(LinkArray).optional().nullable(),
 	title: BaseMetaobjectField.optional().nullable()
 });
 
 const Album = BaseMetaobject.extend({
-	authors: BaseMetaobjectField.extend(AuthorArray)
-		.optional()
-		.nullable(),
+	authors: BaseMetaobjectField.extend(AuthorArray).optional().nullable(),
 
 	description: BaseMetaobjectField.optional().nullable(),
 
@@ -67,9 +61,7 @@ const Album = BaseMetaobject.extend({
 		.optional()
 		.nullable(),
 	index: BaseMetaobjectField.optional().nullable(),
-	links: BaseMetaobjectField.extend(LinkArray)
-		.optional()
-		.nullable(),
+	links: BaseMetaobjectField.extend(LinkArray).optional().nullable(),
 
 	media: BaseMetaobjectField.extend(RefEdgesNodeArray(z.union([Artwork, Song])))
 		.optional()

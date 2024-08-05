@@ -82,7 +82,7 @@ const PageInfo = z.object({
 export function RefNodesArray<T extends z.ZodTypeAny>(schema: T) {
 	return {
 		references: z.object({
-			nodes: z.array(schema as z.infer<T>)
+			nodes: z.array(schema as z.infer<T>).default([])
 		})
 	};
 }
@@ -90,7 +90,7 @@ export function RefNodesArray<T extends z.ZodTypeAny>(schema: T) {
 export function RefEdgesNodeArray<T extends z.ZodTypeAny>(schema: T) {
 	return {
 		references: z.object({
-			edges: z.array(z.object({ node: schema as z.infer<T> }))
+			edges: z.array(z.object({ node: schema as z.infer<T> })).default([])
 		})
 	};
 }

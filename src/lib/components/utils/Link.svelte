@@ -18,18 +18,17 @@
 	} = $props();
 </script>
 
-<span>
-	<a {href} class="reset group/fancy-link {className}" {...props}>
-		<span>{@render children()}</span>
+<a {href} class="reset group/fancy-link {className}" {...props}>
+	<span>{@render children()}</span>
 
-		{#if icon}
-			{@render icon()}
-		{:else if href.startsWith('http')}
-			<ArrowUpRight
-				size={16}
-				strokeWidth={1.5}
-				absoluteStrokeWidth={true}
-				class="
+	{#if icon}
+		{@render icon()}
+	{:else if href.startsWith('http')}
+		<ArrowUpRight
+			size={16}
+			strokeWidth={1.5}
+			absoluteStrokeWidth={true}
+			class="
                                         inline-block
                                         -mt-2 -ml-0.5
                                         transition-colors duration-default ease-out
@@ -38,13 +37,13 @@
 
                                         group-hover/fancy-link:opacity-100
                                 "
-			/>
-		{:else}
-			<ArrowRight
-				size={16}
-				strokeWidth={1.5}
-				absoluteStrokeWidth={true}
-				class="
+		/>
+	{:else}
+		<ArrowRight
+			size={16}
+			strokeWidth={1.5}
+			absoluteStrokeWidth={true}
+			class="
                                         inline-block
                                         -mt-1
                                         -translate-x-0.5
@@ -55,15 +54,12 @@
                                         group-hover/fancy-link:translate-x-0
                                         group-hover/fancy-link:opacity-100
                                 "
-			/>
-		{/if}
-	</a>
-</span>
+		/>
+	{/if}
+</a>
 
 <style lang="scss">
 	a {
-
-
 		:first-child {
 			&::after {
 				@apply absolute left-0 bottom-0 w-0 h-px;
