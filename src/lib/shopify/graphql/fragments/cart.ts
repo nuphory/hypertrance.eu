@@ -106,7 +106,7 @@ const BaseCartFragment = `#graphql
         }
 `;
 
-const CartFragment = `#graphql
+const ACartFragment = `#graphql
         fragment ACartFragment on Cart {
                 ...BaseCartFragment
 
@@ -144,4 +144,4 @@ const CartFragment = `#graphql
         ${CartCustomDiscountAllocationFragment}
 `;
 
-export { CartFragment, BaseCartFragment, BaseCartLineFragment };
+export { ACartFragment, BaseCartFragment, BaseCartLineFragment };

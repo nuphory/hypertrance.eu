@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-name="favicon"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <defs>
+                <style>
+                        .cls-1 {
+                                opacity: 0;
+                        }
+                        [data-name="favicon"] {
+                                fill: var(--clr);
+                        }
+                        @media (prefers-color-scheme: dark) { 
+                                [data-name="favicon"] {
+                                        --clr: var(--text-neutral,#fff);
+                                }
+                        }
+                        @media (prefers-color-scheme: light) { 
+                                [data-name="favicon"] {
+                                        --clr: var(--text-neutral,#000);
+                                }
+                        }
+                </style>
+        </defs>
+        <circle class="cls-1" cx="15.71" cy="15.71" r="5.71"/>
+        <circle cx="84.29" cy="84.29" r="5.71"/>
+        <circle cx="84.29" cy="72.86" r="5.71"/>
+        <circle cx="84.29" cy="61.43" r="5.71"/>
+        <circle cx="84.29" cy="50" r="5.71"/>
+        <circle cx="84.29" cy="38.57" r="5.71"/>
+        <circle cx="72.86" cy="84.29" r="5.71"/>
+        <circle cx="72.86" cy="72.86" r="5.71"/>
+        <circle cx="72.86" cy="61.43" r="5.71"/>
+        <circle cx="72.86" cy="50" r="5.71"/>
+        <circle cx="72.86" cy="38.57" r="5.71"/>
+        <circle cx="61.43" cy="38.57" r="4.66"/>
+        <circle cx="50" cy="38.57" r="4.66"/>
+        <circle cx="38.57" cy="38.57" r="3.6"/>
+        <circle cx="27.14" cy="38.57" r="3.6"/>
+        <circle cx="15.71" cy="38.57" r="2.54"/>
+        <circle cx="27.14" cy="27.14" r="3.6"/>
+        <circle cx="15.71" cy="27.14" r="2.54"/>
+        <circle cx="27.14" cy="15.71" r="3.6"/>
+        <circle cx="15.71" cy="15.71" r="2.54"/>
+        <circle cx="27.14" cy="50" r="3.6"/>
+        <circle cx="15.71" cy="50" r="2.54"/>
+        <circle cx="27.14" cy="61.43" r="3.6"/>
+        <circle cx="15.71" cy="61.43" r="2.54"/>
+        <circle cx="27.14" cy="72.86" r="3.6"/>
+        <circle cx="15.71" cy="72.86" r="2.54"/>
+        <circle cx="27.14" cy="84.29" r="3.6"/>
+</svg>

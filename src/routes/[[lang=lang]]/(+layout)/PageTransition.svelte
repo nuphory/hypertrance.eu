@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TransitionParams } from '$lib/types/transition.js';
+	import type { TransitionParams } from '$lib/types/transition';
 	import { onMount, type Snippet } from 'svelte';
 	import { expoOut } from 'svelte/easing';
 	import { fly, type TransitionConfig } from 'svelte/transition';
