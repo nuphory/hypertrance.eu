@@ -26,17 +26,18 @@
 	<slot />
 	<div
 		class="static {$$restProps.class} flex flex-col h-fit font-bold text-lg {discountPrice &&
-			`pb-0.5`}"
+			`pb-0.5 pt-0.5`}"
 	>
+		<span class="text-xs mt-0 text-slate-400">before VAT</span>
 		{#if discountPrice}
-			<span class="block -mb-1">
+			<span class="block -mb-1 pl-1">
 				{prettyPrice}
 			</span>
 		{/if}
 		<span
 			class:line-through={discountPrice}
-			class="inline-block text-slate-400 decoration-hyperblue-50/50 {discountPrice &&
-				`text-sm mb-1`}"
+			class="inline-block decoration-hyperblue-50/50 {discountPrice &&
+				`text-sm mb-1 text-slate-400`}"
 		>
 			{discountPrice ? prettyDiscountedPrice : prettyPrice}
 		</span>
